@@ -13,7 +13,9 @@ procedural Blender 5.2 models. Read `README.md`, `docs/DESIGN.md`, `docs/CONTENT
   them automatically. After adding a new `class_name` script run `godot --headless --import --path .`.
 - Static vars holding Callables must be cleared on exit (see `HUD._exit_tree`) or the engine
   crashes at shutdown.
-- Never `pkill -f <pattern>` with a pattern that appears in your own command line; use `pkill -x godot`.
+- Never `pkill -f <pattern>` with a pattern that appears in your own command line (it kills your shell); use `pkill -x godot` or a bracket pattern like `pkill -f "[h]ttp.server"`.
+- Smoke test of every game system: `godot --headless --path . -- --smoke` (must print SMOKE PASSED).
+- Exports: templates for 4.7.2 live in `~/.local/share/godot/export_templates/4.7.2.stable/`; `godot --headless --path . --export-release "Linux" build/linux/Industrium.x86_64`.
 
 ## Verifying changes
 - Screenshot: `xvfb-run -a -s "-screen 0 1920x1080x24" godot --path . --rendering-driver opengl3 -- --fresh --shot=/path/out.png --frames=60 [--zoom=0.5] [--panel=build|research|...] [--line=N] [--tree] [--intro]`
