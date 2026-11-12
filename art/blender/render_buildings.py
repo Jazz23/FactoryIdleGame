@@ -20,11 +20,11 @@ from buildings import ARCHETYPES  # noqa: E402
 
 def parse(argv):
     opts = {"quality": "draft", "ids": None, "archetype": None, "all": False, "frames": None,
-            "spec": None, "missing": False}
+            "spec": None, "missing": False, "maxframes": None}
     i = 0
     while i < len(argv):
         a = argv[i]
-        if a in ("--ids", "--archetype", "--quality", "--frames", "--spec"):
+        if a in ("--ids", "--archetype", "--quality", "--frames", "--spec", "--maxframes"):
             opts[a[2:]] = argv[i + 1]
             i += 2
             continue
@@ -36,7 +36,7 @@ def parse(argv):
     return opts
 
 
-def render_building(spec, quality, frames_override=None):
+def render_building(spec, quality, frames_override=None, maxframes=None):
     vis = spec.get("visual", {})
     arch = vis.get("archetype")
     if arch not in ARCHETYPES:
@@ -54,6 +54,10 @@ def render_building(spec, quality, frames_override=None):
     pts = studio.footprint_points(w, d, rig.height) + list(rig.extra_points)
     info = studio.frame_iso_camera(pts)
     frames = int(frames_override) if frames_override else rig.frames
+    fps = rig.fps
+    if maxframes and frames > int(maxframes):
+        fps = max(4, round(rig.fps * int(maxframes) / frames))   # keep the loop duration
+        frames = int(maxframes)
     out = os.path.join(studio.RENDER_DIR, "buildings", spec["id"])
     os.makedirs(out, exist_ok=True)
     for f in os.listdir(out):
@@ -63,7 +67,7 @@ def render_building(spec, quality, frames_override=None):
         rig.update(i / frames)
         studio.render_to(os.path.join(out, f"f_{i:02d}.png"))
     meta = {
-        "id": spec["id"], "archetype": arch, "frames": frames, "fps": rig.fps,
+        "id": spec["id"], "archetype": arch, "frames": frames, "fps": fps,
         "frame_w": info["width"], "frame_h": info["height"], "origin": info["origin"],
         "size": [w, d], "height": rig.height,
         "lights": [dict(l, px=studio.world_to_px(l["pos"])) for l in rig.lights],
@@ -92,7 +96,7 @@ def main():
         if o["missing"]:
             specs = [s for s in specs if not os.path.exists(os.path.join(studio.RENDER_DIR, "buildings", s["id"], "meta.json"))]
     for s in specs:
-        render_building(s, o["quality"], o["frames"])
+        render_building(s, o["quality"], o["frames"], o["maxframes"])
 
 
 main()

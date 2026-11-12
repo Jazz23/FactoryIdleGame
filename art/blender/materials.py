@@ -122,7 +122,7 @@ class NT:
     def edge_mask(self, radius=0.012, lo=0.002, hi=0.05):
         """1 on convex/concave hard edges, 0 on flat faces (Cycles Bevel node trick)."""
         bev = self.node("ShaderNodeBevel")
-        bev.samples = 8
+        bev.samples = 4
         bev.inputs["Radius"].default_value = radius
         geo = self.node("ShaderNodeNewGeometry")
         dot = self.node("ShaderNodeVectorMath", operation="DOT_PRODUCT")
@@ -132,7 +132,7 @@ class NT:
         return self.maprange(inv, lo, hi)
 
     def cavity(self, distance=0.25):
-        ao = self.node("ShaderNodeAmbientOcclusion", samples=8)
+        ao = self.node("ShaderNodeAmbientOcclusion", samples=4)
         ao.inputs["Distance"].default_value = distance
         return self.math("SUBTRACT", 1.0, ao.outputs["AO"])
 

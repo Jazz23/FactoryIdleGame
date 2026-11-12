@@ -7,7 +7,7 @@ Machine: 4 CPU cores, no GPU, ~4 GB free RAM → keep test renders small (`--qua
 ## Modules (`art/blender/`)
 - `studio.py` — scene reset (Cycles, AgX, HDRI + key sun), `shadow_catcher()`, iso camera framing
   (`frame_iso_camera`), `product_camera` (icons), `render_to`, `world_to_px`, `load_data`.
-- `materials.py` — PBR library. **Colours are LINEAR RGB** (0.03 = near-black paint, 0.2 = mid grey,
+- `materials.py` — PBR library. **Colours are LINEAR RGB everywhere, including `visual.params` colours in the content data** (0.03 = near-black paint, 0.2 = mid grey,
   0.6 = light grey; saturated industrial yellow ≈ (0.75, 0.42, 0.02)). Main factories:
   `painted(color, wear, grime, rough, under, rust)` (the workhorse: chipped edges, scratches,
   drip streaks, cavity grime, rust), `metal(kind)` (`METALS` table), `scanned(tex_id)`,

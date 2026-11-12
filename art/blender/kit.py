@@ -177,13 +177,13 @@ def pivot(name="pivot", loc=(0, 0, 0), rot=(0, 0, 0)):
 
 
 def attach(children, parent):
+    """Parent `children` to `parent`, treating their current transforms as parent-local
+    (parts are modelled around the origin, then placed/rotated via the pivot)."""
     for c in children:
         if c is None:
             continue
-        mw = c.matrix_world.copy()
         c.parent = parent
-        c.matrix_parent_inverse = parent.matrix_world.inverted()
-        c.matrix_world = mw
+        c.matrix_parent_inverse = Matrix.Identity(4)
     return parent
 
 
