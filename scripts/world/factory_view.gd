@@ -207,6 +207,34 @@ func _build_bay(l: ProdLine) -> void:
 	line.joint_mode = Line2D.LINE_JOINT_SHARP
 	ground.add_child(line)
 	b.ground.append(line)
+	# --- floor wear & aisle clutter (deterministic per line)
+	var rnd := RandomNumberGenerator.new()
+	rnd.seed = hash(l.uid * 7919 + 13)
+	for k in rnd.randi_range(1, 3):
+		var dk: String = ["decal_oil_0", "decal_oil_1", "decal_grime_0", "decal_grime_1", "decal_rust_0", "decal_rust_1", "decal_puddle_0", "decal_puddle_1"][rnd.randi() % 8]
+		var dn := _env_sprite(dk)
+		if dn:
+			dn.position = iso(o.x + rnd.randf_range(1.0, BAY_W - 1.0), o.y + rnd.randf_range(0.8, BAY_D - 0.8))
+			dn.z_index = -1
+			dn.modulate.a = rnd.randf_range(0.6, 1.0)
+			ground.add_child(dn)
+			b.ground.append(dn)
+	if rnd.randf() < 0.35:
+		var drn := _env_sprite("decal_drain_0")
+		if drn:
+			drn.position = iso(o.x + BAY_W + AISLE_X * 0.5, o.y + rnd.randf_range(1.0, BAY_D - 1.0))
+			ground.add_child(drn)
+			b.ground.append(drn)
+	if rnd.randf() < 0.55:
+		var pk: String = ["prop_pallet", "prop_drums", "prop_gas_cage", "prop_toolcart", "prop_bollards", "prop_pallet", "prop_forklift"][rnd.randi() % 7]
+		var pn := _env_sprite(pk)
+		if pn:
+			var ps := Node2D.new()
+			ps.position = iso(o.x + BAY_W + AISLE_X * 0.5, o.y + rnd.randf_range(1.2, BAY_D - 1.2))
+			pn.position = Vector2.ZERO
+			ps.add_child(pn)
+			sorted.add_child(ps)
+			b.ground.append(ps)
 	# --- deposit patch for extraction lines
 	var rs: Dictionary = l.recipe_spec()
 	if rs.has("deposit"):
@@ -288,6 +316,29 @@ func _build_bay(l: ProdLine) -> void:
 	bays[l.uid] = b
 
 
+var _env_cache := {}
+
+
+func _env_sprite(key: String) -> Sprite2D:
+	if not _env_cache.has(key):
+		var tex := Content.env_texture(key)
+		var org := Vector2.ZERO
+		var mp := "res://assets/env/" + key + ".json"
+		if tex and FileAccess.file_exists(mp):
+			var m = JSON.parse_string(FileAccess.get_file_as_string(mp))
+			if m is Dictionary and m.has("origin"):
+				org = Vector2(m.origin[0], m.origin[1])
+		_env_cache[key] = [tex, org]
+	var e: Array = _env_cache[key]
+	if e[0] == null:
+		return null
+	var s := Sprite2D.new()
+	s.texture = e[0]
+	s.centered = false
+	s.offset = -e[1]
+	return s
+
+
 func _make_sign(l: ProdLine) -> Control:
 	var p := PanelContainer.new()
 	p.add_theme_stylebox_override("panel", UI.box(Color(0.05, 0.055, 0.06, 0.82), Color(0.85, 0.62, 0.1, 0.6), 4, 8))
@@ -328,7 +379,8 @@ func _process(delta: float) -> void:
 		var l: ProdLine = b.line
 		var act := l.activity if l.enabled else 0.0
 		for m in b.machines:
-			m.animate(act, l.anim_phase * (0.5 + 0.5 * act) + 0.0, delta)
+			if m is MachineSprite:
+				m.animate(act, l.anim_phase * (0.5 + 0.5 * act) + 0.0, delta)
 		if b.has("belt"):
 			var o: Vector2 = b.origin
 			var n: int = b.items.size()

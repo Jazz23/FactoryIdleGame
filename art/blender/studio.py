@@ -33,6 +33,11 @@ QUALITY = {
 
 def reset(quality="draft", hdri="industrial_workshop_foundry_2k.hdr", hdri_strength=0.3, sun=5.0):
     bpy.ops.wm.read_factory_settings(use_empty=True)
+    try:
+        import materials
+        materials._cache.clear()   # cached datablocks died with the old scene
+    except ImportError:
+        pass
     s = bpy.context.scene
     s.render.engine = "CYCLES"
     s.cycles.device = "CPU"
