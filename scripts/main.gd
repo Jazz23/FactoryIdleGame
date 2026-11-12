@@ -7,6 +7,9 @@ var hud: HUD
 
 func _ready() -> void:
 	for a in OS.get_cmdline_user_args():
+		if a == "--smoke":
+			add_child(load("res://tests/smoke_test.gd").new())
+			return
 		if a.begins_with("--autoplay"):
 			var scr = load("res://tests/autoplay.gd")
 			if scr == null or not scr.can_instantiate():
