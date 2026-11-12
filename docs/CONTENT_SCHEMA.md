@@ -163,3 +163,18 @@ Building `params`: `{"tier": 1-4 (detail/paint level), "paint": [r,g,b], "accent
 - Deposit sprite: `assets/env/deposit_<deposit_id>.png`.
 
 Godot falls back to a generated placeholder when a file is missing, so content and art can progress independently.
+
+## Defense fields
+
+Defense buildings (`role: "defense"`) always carry all three fields:
+
+| field | type | notes |
+|---|---|---|
+| defense | float | defense rating this building adds while supplied (walls/radar/shields: always) |
+| ammo | `"ballistic"` \| `"explosive"` \| `"incendiary"` \| `"energy"` \| null | ammo class it consumes; null = needs no ammo (walls, radar, shield domes) |
+| ammo_per_min | float | ammo items consumed per minute per building while the frontier is under threat (0 when `ammo` is null) |
+
+Ammo items carry `ammo: {"class": <ammo class>, "mult": float}`. A turret's effective rating is
+`defense × mult` of the best ammo of its class in storage (player can pin one); with no ammo of its
+class it contributes 0. Powered turrets/shields (`power_kw > 0`) are also scaled by `power_sat`.
+`defense` tech effects multiply ratings: `target` null = all defense, or an ammo class.

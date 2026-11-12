@@ -1,0 +1,2654 @@
+{
+ "settings": {
+  "base_cap_solid": 500,
+  "base_cap_fluid": 5000,
+  "base_throughput": 6,
+  "offline_cap_hours": 8,
+  "day_length_s": 600,
+  "market_buy_mult": 1.6,
+  "repeatable_cost_mult": 1.5
+ },
+ "start": {
+  "credits": 500,
+  "items": {
+   "coal": 60,
+   "stone": 40,
+   "iron_plate": 40,
+   "iron_gear": 12,
+   "copper_wire": 20,
+   "stone_brick": 10
+  },
+  "buildings": {
+   "burner_drill": 4,
+   "stone_furnace": 2,
+   "fitting_bench": 1,
+   "burner_boiler": 1,
+   "steam_engine": 1,
+   "shore_intake": 1,
+   "drafting_office": 1,
+   "supply_crate": 1
+  },
+  "sectors": [
+   "rustfield_lot"
+  ],
+  "lines": [
+   {
+    "building": "burner_drill",
+    "recipe": "mine_iron_ore",
+    "count": 2
+   },
+   {
+    "building": "burner_drill",
+    "recipe": "mine_coal",
+    "count": 1
+   },
+   {
+    "building": "burner_drill",
+    "recipe": "mine_copper_ore",
+    "count": 1
+   },
+   {
+    "building": "stone_furnace",
+    "recipe": "iron_ingot",
+    "count": 1
+   },
+   {
+    "building": "stone_furnace",
+    "recipe": "copper_ingot",
+    "count": 1
+   },
+   {
+    "building": "fitting_bench",
+    "recipe": "iron_plate",
+    "count": 1
+   },
+   {
+    "building": "shore_intake",
+    "recipe": "pump_water",
+    "count": 1
+   },
+   {
+    "building": "burner_boiler",
+    "recipe": "steam",
+    "count": 1
+   },
+   {
+    "building": "steam_engine",
+    "recipe": "",
+    "count": 1
+   },
+   {
+    "building": "drafting_office",
+    "recipe": "",
+    "count": 1
+   },
+   {
+    "building": "supply_crate",
+    "recipe": "",
+    "count": 1
+   }
+  ]
+ },
+ "deposits": [
+  {
+   "id": "iron_ore",
+   "name": "Iron Ore Seam",
+   "item": "iron_ore",
+   "kind": "solid",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "iron_ore",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "copper_ore",
+   "name": "Copper Ore Vein",
+   "item": "copper_ore",
+   "kind": "solid",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "copper_ore",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "coal",
+   "name": "Coal Seam",
+   "item": "coal",
+   "kind": "solid",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "coal",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "stone",
+   "name": "Rubble Field",
+   "item": "stone",
+   "kind": "solid",
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "stone",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "water",
+   "name": "Freshwater Inlet",
+   "item": "water",
+   "kind": "fluid",
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.25,
+     0.45,
+     0.75
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "limestone",
+   "name": "Limestone Face",
+   "item": "limestone",
+   "kind": "solid",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "limestone",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "quartz_sand",
+   "name": "Quartz Sandbar",
+   "item": "quartz_sand",
+   "kind": "solid",
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "sand",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "cassiterite",
+   "name": "Cassiterite Placer",
+   "item": "cassiterite",
+   "kind": "solid",
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "stone",
+    "color": [
+     0.22,
+     0.18,
+     0.15
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "native_sulfur",
+   "name": "Sulfur Fumarole",
+   "item": "native_sulfur",
+   "kind": "solid",
+   "visual": {
+    "archetype": "crystal_cluster",
+    "material": "sulfur",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "crude_oil",
+   "name": "Crude Oil Reservoir",
+   "item": "crude_oil",
+   "kind": "fluid",
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.08,
+     0.07,
+     0.06
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "natural_gas",
+   "name": "Gas Pocket",
+   "item": "natural_gas",
+   "kind": "fluid",
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.9,
+     0.75,
+     0.2
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "brine",
+   "name": "Brine Aquifer",
+   "item": "brine",
+   "kind": "fluid",
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.55,
+     0.7,
+     0.72
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "bauxite",
+   "name": "Bauxite Laterite",
+   "item": "bauxite",
+   "kind": "solid",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "bauxite",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "ilmenite",
+   "name": "Ilmenite Black Sand",
+   "item": "ilmenite",
+   "kind": "solid",
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "ilmenite",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "monazite_sand",
+   "name": "Monazite Beach",
+   "item": "monazite_sand",
+   "kind": "solid",
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "monazite",
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "wolframite",
+   "name": "Wolframite Lode",
+   "item": "wolframite",
+   "kind": "solid",
+   "visual": {
+    "archetype": "crystal_cluster",
+    "material": "graphite",
+    "color": [
+     0.18,
+     0.18,
+     0.2
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "rare_earth_ore",
+   "name": "Carbonatite Pipe",
+   "item": "rare_earth_ore",
+   "kind": "solid",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "stone",
+    "color": [
+     0.62,
+     0.42,
+     0.4
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  },
+  {
+   "id": "helium_gas",
+   "name": "Helium Reservoir",
+   "item": "helium_gas",
+   "kind": "fluid",
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.85,
+     0.5,
+     0.75
+    ],
+    "params": {
+     "deposit": true
+    }
+   }
+  }
+ ],
+ "sectors": [
+  {
+   "id": "rustfield_lot",
+   "name": "Rustfield Lot",
+   "desc": "The abandoned works where it all starts.",
+   "tier": 0,
+   "order": 0,
+   "claim_cost": {},
+   "defense_required": 0,
+   "deposits": {
+    "iron_ore": 3,
+    "copper_ore": 2,
+    "coal": 3,
+    "stone": 2,
+    "water": 2
+   },
+   "threat": 0,
+   "hazards": [
+    "scrap_swarm"
+   ]
+  },
+  {
+   "id": "slag_hills",
+   "name": "Slag Hills",
+   "desc": "Old spoil heaps over limestone and quartz.",
+   "tier": 0,
+   "order": 1,
+   "claim_cost": {
+    "iron_plate": 60,
+    "iron_gear": 30,
+    "stone_brick": 40
+   },
+   "defense_required": 0,
+   "deposits": {
+    "iron_ore": 2,
+    "coal": 2,
+    "limestone": 2,
+    "quartz_sand": 2,
+    "water": 1
+   },
+   "threat": 0,
+   "hazards": [
+    "scrap_swarm",
+    "dust_storm"
+   ]
+  },
+  {
+   "id": "copper_gulch",
+   "name": "Copper Gulch",
+   "desc": "A dry ravine streaked green with copper.",
+   "tier": 1,
+   "order": 2,
+   "claim_cost": {
+    "steel_plate": 40,
+    "iron_pipe": 30,
+    "glass_pane": 20
+   },
+   "defense_required": 5,
+   "deposits": {
+    "copper_ore": 4,
+    "stone": 2,
+    "coal": 1,
+    "water": 2
+   },
+   "threat": 3,
+   "hazards": [
+    "dust_storm",
+    "rogue_salvager"
+   ]
+  },
+  {
+   "id": "tinmouth_delta",
+   "name": "Tinmouth Delta",
+   "desc": "Braided river channels heavy with tin gravel.",
+   "tier": 1,
+   "order": 3,
+   "claim_cost": {
+    "concrete": 50,
+    "steel_beam": 20,
+    "gearbox": 10
+   },
+   "defense_required": 10,
+   "deposits": {
+    "cassiterite": 3,
+    "quartz_sand": 2,
+    "water": 3
+   },
+   "threat": 6,
+   "hazards": [
+    "rogue_salvager",
+    "scrap_swarm"
+   ]
+  },
+  {
+   "id": "limestone_terraces",
+   "name": "Limestone Terraces",
+   "desc": "Stepped quarry benches above the delta.",
+   "tier": 2,
+   "order": 4,
+   "claim_cost": {
+    "circuit_board": 40,
+    "electric_motor": 10,
+    "concrete": 100
+   },
+   "defense_required": 20,
+   "deposits": {
+    "limestone": 3,
+    "stone": 3,
+    "cassiterite": 2,
+    "coal": 2
+   },
+   "threat": 12,
+   "hazards": [
+    "dust_storm",
+    "rust_crawlers"
+   ]
+  },
+  {
+   "id": "blackwater_fields",
+   "name": "Blackwater Fields",
+   "desc": "Seeping crude and sulfur crusts on a dead marsh.",
+   "tier": 2,
+   "order": 5,
+   "claim_cost": {
+    "electric_motor": 20,
+    "steel_frame": 10,
+    "pump_unit": 6
+   },
+   "defense_required": 30,
+   "deposits": {
+    "crude_oil": 3,
+    "native_sulfur": 2,
+    "water": 2
+   },
+   "threat": 20,
+   "hazards": [
+    "rust_crawlers",
+    "acid_rain"
+   ]
+  },
+  {
+   "id": "cinder_basin",
+   "name": "Cinder Basin",
+   "desc": "A coal-black basin of slag and fresh ore.",
+   "tier": 2,
+   "order": 6,
+   "claim_cost": {
+    "steel_frame": 20,
+    "circuit_board": 60,
+    "glass_pane": 50
+   },
+   "defense_required": 40,
+   "deposits": {
+    "coal": 4,
+    "iron_ore": 3,
+    "copper_ore": 3
+   },
+   "threat": 30,
+   "hazards": [
+    "rust_crawlers",
+    "rogue_salvager"
+   ]
+  },
+  {
+   "id": "salt_flats",
+   "name": "Salt Flats",
+   "desc": "Blinding white pans over a brine aquifer.",
+   "tier": 3,
+   "order": 7,
+   "claim_cost": {
+    "plastic_sheet": 100,
+    "insulated_cable": 60,
+    "pump_unit": 10
+   },
+   "defense_required": 60,
+   "deposits": {
+    "brine": 4,
+    "limestone": 2,
+    "quartz_sand": 2
+   },
+   "threat": 45,
+   "hazards": [
+    "dust_storm",
+    "feral_harvester"
+   ]
+  },
+  {
+   "id": "sulfur_vents",
+   "name": "Sulfur Vents",
+   "desc": "Steaming fumaroles over sour gas.",
+   "tier": 3,
+   "order": 8,
+   "claim_cost": {
+    "rubber": 100,
+    "steel_frame": 30,
+    "plastic_sheet": 100
+   },
+   "defense_required": 80,
+   "deposits": {
+    "native_sulfur": 4,
+    "natural_gas": 3
+   },
+   "threat": 60,
+   "hazards": [
+    "acid_rain",
+    "feral_harvester"
+   ]
+  },
+  {
+   "id": "red_mesa",
+   "name": "Red Mesa",
+   "desc": "Rust-red tableland of bauxite laterite.",
+   "tier": 3,
+   "order": 9,
+   "claim_cost": {
+    "control_board": 30,
+    "battery_cell": 20,
+    "concrete": 200
+   },
+   "defense_required": 100,
+   "deposits": {
+    "bauxite": 4,
+    "iron_ore": 3,
+    "water": 2
+   },
+   "threat": 80,
+   "hazards": [
+    "dust_storm",
+    "feral_harvester"
+   ]
+  },
+  {
+   "id": "black_sand_coast",
+   "name": "Black Sand Coast",
+   "desc": "Storm beaches dark with ilmenite.",
+   "tier": 3,
+   "order": 10,
+   "claim_cost": {
+    "aluminum_sheet": 60,
+    "control_board": 40,
+    "hydraulic_ram": 20
+   },
+   "defense_required": 130,
+   "deposits": {
+    "ilmenite": 4,
+    "quartz_sand": 3,
+    "brine": 2
+   },
+   "threat": 100,
+   "hazards": [
+    "acid_rain",
+    "magnetic_storm"
+   ]
+  },
+  {
+   "id": "dry_gas_field",
+   "name": "Dry Gas Field",
+   "desc": "Flat scrubland over a sweet gas dome.",
+   "tier": 4,
+   "order": 11,
+   "claim_cost": {
+    "titanium_plate": 40,
+    "duralumin_ingot": 40,
+    "control_board": 60
+   },
+   "defense_required": 180,
+   "deposits": {
+    "natural_gas": 5,
+    "crude_oil": 3
+   },
+   "threat": 140,
+   "hazards": [
+    "scavenger_convoy",
+    "magnetic_storm"
+   ]
+  },
+  {
+   "id": "quartz_dunes",
+   "name": "Quartz Dunes",
+   "desc": "Wind-sorted dunes of pure silica.",
+   "tier": 4,
+   "order": 12,
+   "claim_cost": {
+    "microchip": 100,
+    "titanium_alloy": 30,
+    "steel_frame": 60
+   },
+   "defense_required": 240,
+   "deposits": {
+    "quartz_sand": 5,
+    "limestone": 3,
+    "bauxite": 2
+   },
+   "threat": 190,
+   "hazards": [
+    "dust_storm",
+    "scavenger_convoy"
+   ]
+  },
+  {
+   "id": "monazite_strand",
+   "name": "Monazite Strand",
+   "desc": "A faintly warm beach of heavy mineral sand.",
+   "tier": 4,
+   "order": 13,
+   "claim_cost": {
+    "embedded_controller": 40,
+    "titanium_alloy": 40,
+    "concrete": 400
+   },
+   "defense_required": 320,
+   "deposits": {
+    "monazite_sand": 4,
+    "ilmenite": 2,
+    "brine": 2
+   },
+   "threat": 250,
+   "hazards": [
+    "scavenger_convoy",
+    "toxic_fog"
+   ]
+  },
+  {
+   "id": "wolfram_ridge",
+   "name": "Wolfram Ridge",
+   "desc": "A knife-edged ridge of tungsten lodes.",
+   "tier": 5,
+   "order": 14,
+   "claim_cost": {
+    "embedded_controller": 60,
+    "lithium_cell": 60,
+    "servo_motor": 40
+   },
+   "defense_required": 400,
+   "deposits": {
+    "wolframite": 4,
+    "copper_ore": 3,
+    "cassiterite": 2
+   },
+   "threat": 320,
+   "hazards": [
+    "siege_walker",
+    "magnetic_storm"
+   ]
+  },
+  {
+   "id": "helium_steppe",
+   "name": "Helium Steppe",
+   "desc": "Endless grass over radiogenic gas traps.",
+   "tier": 5,
+   "order": 15,
+   "claim_cost": {
+    "flight_computer": 20,
+    "airframe_panel": 30,
+    "rare_earth_magnet": 60
+   },
+   "defense_required": 520,
+   "deposits": {
+    "helium_gas": 3,
+    "natural_gas": 4
+   },
+   "threat": 420,
+   "hazards": [
+    "siege_walker",
+    "ion_tempest"
+   ]
+  },
+  {
+   "id": "rare_earth_caldera",
+   "name": "Rare Earth Caldera",
+   "desc": "A collapsed volcano ringed with carbonatite.",
+   "tier": 5,
+   "order": 16,
+   "claim_cost": {
+    "brushless_motor": 40,
+    "tungsten_carbide": 80,
+    "embedded_controller": 80
+   },
+   "defense_required": 650,
+   "deposits": {
+    "rare_earth_ore": 4,
+    "monazite_sand": 2,
+    "wolframite": 2
+   },
+   "threat": 520,
+   "hazards": [
+    "toxic_fog",
+    "salvage_leviathan"
+   ]
+  },
+  {
+   "id": "shattered_crater",
+   "name": "Shattered Crater",
+   "desc": "An impact crater laced with every ore on the frontier.",
+   "tier": 6,
+   "order": 17,
+   "claim_cost": {
+    "quantum_processor": 10,
+    "superconductor_tape": 100,
+    "graphene": 100
+   },
+   "defense_required": 1000,
+   "deposits": {
+    "iron_ore": 6,
+    "copper_ore": 6,
+    "bauxite": 4,
+    "ilmenite": 4,
+    "rare_earth_ore": 3,
+    "helium_gas": 2,
+    "crude_oil": 4
+   },
+   "threat": 800,
+   "hazards": [
+    "salvage_leviathan",
+    "ion_tempest"
+   ]
+  },
+  {
+   "id": "abyssal_trench",
+   "name": "Abyssal Trench",
+   "desc": "A drowned rift venting brine, gas and heavy sands.",
+   "tier": 7,
+   "order": 18,
+   "claim_cost": {
+    "metamaterial_lattice": 40,
+    "plasma_coil": 10,
+    "nano_coating": 100
+   },
+   "defense_required": 1800,
+   "deposits": {
+    "monazite_sand": 4,
+    "wolframite": 4,
+    "rare_earth_ore": 4,
+    "helium_gas": 4,
+    "natural_gas": 6,
+    "brine": 6,
+    "quartz_sand": 6
+   },
+   "threat": 1400,
+   "hazards": [
+    "salvage_leviathan",
+    "hive_barge",
+    "ion_tempest"
+   ]
+  }
+ ],
+ "threats": [
+  {
+   "id": "scrap_swarm",
+   "name": "Scrap Swarm",
+   "kind": "machine",
+   "desc": "Clouds of palm-sized salvage drones that strip anything loose.",
+   "strength": 5,
+   "appears_at_pollution": 50
+  },
+  {
+   "id": "dust_storm",
+   "name": "Dust Storm",
+   "kind": "weather",
+   "desc": "A brown wall of grit that clogs intakes and buries extractors.",
+   "strength": 8,
+   "appears_at_pollution": 120
+  },
+  {
+   "id": "rogue_salvager",
+   "name": "Rogue Salvager",
+   "kind": "machine",
+   "desc": "A reawakened demolition rig still following its last work order.",
+   "strength": 20,
+   "appears_at_pollution": 300
+  },
+  {
+   "id": "acid_rain",
+   "name": "Acid Rain",
+   "kind": "weather",
+   "desc": "Sulfurous downpours that eat exposed steel.",
+   "strength": 30,
+   "appears_at_pollution": 600
+  },
+  {
+   "id": "rust_crawlers",
+   "name": "Rust Crawlers",
+   "kind": "machine",
+   "desc": "Corroded maintenance bots that cannibalize pipework.",
+   "strength": 50,
+   "appears_at_pollution": 1000
+  },
+  {
+   "id": "feral_harvester",
+   "name": "Feral Harvester Rig",
+   "kind": "machine",
+   "desc": "An autonomous strip-mining rig gone off its claim map.",
+   "strength": 90,
+   "appears_at_pollution": 2000
+  },
+  {
+   "id": "magnetic_storm",
+   "name": "Magnetic Storm",
+   "kind": "weather",
+   "desc": "Geomagnetic surges that fry control boards and relays.",
+   "strength": 140,
+   "appears_at_pollution": 3500
+  },
+  {
+   "id": "scavenger_convoy",
+   "name": "Scavenger Convoy",
+   "kind": "machine",
+   "desc": "Armored haul trucks on a looping salvage route.",
+   "strength": 220,
+   "appears_at_pollution": 6000
+  },
+  {
+   "id": "siege_walker",
+   "name": "Siege Walker",
+   "kind": "machine",
+   "desc": "A legged excavator platform that tears down walls for scrap.",
+   "strength": 400,
+   "appears_at_pollution": 10000
+  },
+  {
+   "id": "toxic_fog",
+   "name": "Toxic Fog Bank",
+   "kind": "weather",
+   "desc": "A smog front so thick that crews and sensors go blind.",
+   "strength": 600,
+   "appears_at_pollution": 16000
+  },
+  {
+   "id": "salvage_leviathan",
+   "name": "Salvage Leviathan",
+   "kind": "machine",
+   "desc": "A crawling factory-ship that eats whole sectors.",
+   "strength": 1000,
+   "appears_at_pollution": 25000
+  },
+  {
+   "id": "ion_tempest",
+   "name": "Ion Tempest",
+   "kind": "weather",
+   "desc": "A charged superstorm drawn to large power grids.",
+   "strength": 1600,
+   "appears_at_pollution": 40000
+  },
+  {
+   "id": "hive_barge",
+   "name": "Hive Barge",
+   "kind": "machine",
+   "desc": "A drifting carrier that launches endless scrap swarms.",
+   "strength": 2500,
+   "appears_at_pollution": 60000
+  }
+ ],
+ "contracts": [
+  {
+   "id": "t0_blueprint_sheet",
+   "name": "Blueprint Sheets for Old Pike Smithy",
+   "tier": 0,
+   "requires": {
+    "blueprint_sheet": 30
+   },
+   "reward_credits": 945.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t0_copper_sheet",
+   "name": "Copper Sheet for Dustwater Mission",
+   "tier": 0,
+   "requires": {
+    "copper_sheet": 80
+   },
+   "reward_credits": 552.0,
+   "reward_items": {
+    "burner_drill": 2
+   }
+  },
+  {
+   "id": "t0_copper_wire",
+   "name": "Copper Wire for Harlan Brothers Haulage",
+   "tier": 0,
+   "requires": {
+    "copper_wire": 120
+   },
+   "reward_credits": 531.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t0_fasteners",
+   "name": "Fasteners for Harlan Brothers Haulage",
+   "tier": 0,
+   "requires": {
+    "fasteners": 400
+   },
+   "reward_credits": 871.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t0_iron_gear",
+   "name": "Iron Gear for Dustwater Mission",
+   "tier": 0,
+   "requires": {
+    "iron_gear": 80
+   },
+   "reward_credits": 1040.0,
+   "reward_items": {
+    "burner_drill": 2
+   }
+  },
+  {
+   "id": "t0_iron_pipe",
+   "name": "Iron Pipe for Rustfield Co-op",
+   "tier": 0,
+   "requires": {
+    "iron_pipe": 50
+   },
+   "reward_credits": 878.0,
+   "reward_items": {
+    "supply_crate": 2
+   }
+  },
+  {
+   "id": "t0_iron_plate",
+   "name": "Iron Plate for Rustfield Co-op",
+   "tier": 0,
+   "requires": {
+    "iron_plate": 120
+   },
+   "reward_credits": 797.0,
+   "reward_items": {
+    "supply_crate": 2
+   }
+  },
+  {
+   "id": "t0_stone_brick",
+   "name": "Stone Brick for Old Pike Smithy",
+   "tier": 0,
+   "requires": {
+    "stone_brick": 120
+   },
+   "reward_credits": 648.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t1_cement",
+   "name": "Cement for Meridian Rail Co.",
+   "tier": 1,
+   "requires": {
+    "cement": 250
+   },
+   "reward_credits": 2660.0,
+   "reward_items": {
+    "electric_drill": 2
+   }
+  },
+  {
+   "id": "t1_coke",
+   "name": "Coke for Coldharbor Mill",
+   "tier": 1,
+   "requires": {
+    "coke": 500
+   },
+   "reward_credits": 4330.0,
+   "reward_items": {
+    "conveyor_hub": 1
+   }
+  },
+  {
+   "id": "t1_concrete",
+   "name": "Concrete Slab for Granite Republic Works",
+   "tier": 1,
+   "requires": {
+    "concrete": 250
+   },
+   "reward_credits": 4130.0,
+   "reward_items": {
+    "storage_shed": 1
+   }
+  },
+  {
+   "id": "t1_gearbox",
+   "name": "Gearbox for Meridian Rail Co.",
+   "tier": 1,
+   "requires": {
+    "gearbox": 30
+   },
+   "reward_credits": 3200.0,
+   "reward_items": {
+    "electric_drill": 2
+   }
+  },
+  {
+   "id": "t1_glass_pane",
+   "name": "Glass Pane for Coldharbor Mill",
+   "tier": 1,
+   "requires": {
+    "glass_pane": 120
+   },
+   "reward_credits": 2510.0,
+   "reward_items": {
+    "conveyor_hub": 1
+   }
+  },
+  {
+   "id": "t1_steel_beam",
+   "name": "Steel Beam for Halvorsen Shipyards",
+   "tier": 1,
+   "requires": {
+    "steel_beam": 20
+   },
+   "reward_credits": 1940.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t1_steel_frame",
+   "name": "Steel Frame for Granite Republic Works",
+   "tier": 1,
+   "requires": {
+    "steel_frame": 8
+   },
+   "reward_credits": 2070.0,
+   "reward_items": {
+    "storage_shed": 1
+   }
+  },
+  {
+   "id": "t1_steel_plate",
+   "name": "Steel Plate for Meridian Rail Co.",
+   "tier": 1,
+   "requires": {
+    "steel_plate": 150
+   },
+   "reward_credits": 2780.0,
+   "reward_items": {
+    "electric_drill": 2
+   }
+  },
+  {
+   "id": "t1_valve",
+   "name": "Valve for Halvorsen Shipyards",
+   "tier": 1,
+   "requires": {
+    "valve": 50
+   },
+   "reward_credits": 3070.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t2_bearing",
+   "name": "Bearing for Kingsfield Waterworks",
+   "tier": 2,
+   "requires": {
+    "bearing": 300
+   },
+   "reward_credits": 8580.0,
+   "reward_items": {
+    "warehouse": 1
+   }
+  },
+  {
+   "id": "t2_bronze_ingot",
+   "name": "Bronze Ingot for Vell & Sons Motors",
+   "tier": 2,
+   "requires": {
+    "bronze_ingot": 600
+   },
+   "reward_credits": 12400.0,
+   "reward_items": {
+    "economizer_card_1": 1
+   }
+  },
+  {
+   "id": "t2_capacitor",
+   "name": "Capacitor for Vell & Sons Motors",
+   "tier": 2,
+   "requires": {
+    "capacitor": 1000
+   },
+   "reward_credits": 7820.0,
+   "reward_items": {
+    "economizer_card_1": 1
+   }
+  },
+  {
+   "id": "t2_circuit_board",
+   "name": "Circuit Board for Duskwater Utilities",
+   "tier": 2,
+   "requires": {
+    "circuit_board": 250
+   },
+   "reward_credits": 10600.0,
+   "reward_items": {
+    "overclock_card_1": 1
+   }
+  },
+  {
+   "id": "t2_electric_motor",
+   "name": "Electric Motor for Ostrander Telegraph",
+   "tier": 2,
+   "requires": {
+    "electric_motor": 30
+   },
+   "reward_credits": 7140.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t2_optical_sensor",
+   "name": "Optical Sensor for Duskwater Utilities",
+   "tier": 2,
+   "requires": {
+    "optical_sensor": 120
+   },
+   "reward_credits": 12600.0,
+   "reward_items": {
+    "overclock_card_1": 1
+   }
+  },
+  {
+   "id": "t2_pump_unit",
+   "name": "Pump Unit for Ostrander Telegraph",
+   "tier": 2,
+   "requires": {
+    "pump_unit": 20
+   },
+   "reward_credits": 10000.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t2_pv_cell",
+   "name": "Photovoltaic Cell for Kingsfield Waterworks",
+   "tier": 2,
+   "requires": {
+    "pv_cell": 150
+   },
+   "reward_credits": 14000.0,
+   "reward_items": {
+    "warehouse": 1
+   }
+  },
+  {
+   "id": "t2_solar_array",
+   "name": "Solar Array for Duskwater Utilities",
+   "tier": 2,
+   "requires": {
+    "solar_array": 4
+   },
+   "reward_credits": 8320.0,
+   "reward_items": {
+    "overclock_card_1": 1
+   }
+  },
+  {
+   "id": "t3_battery_cell",
+   "name": "Sodium-Sulfur Cell for Basalt Chemical Union",
+   "tier": 3,
+   "requires": {
+    "battery_cell": 400
+   },
+   "reward_credits": 39600.0,
+   "reward_items": {
+    "yield_optimizer_2": 1
+   }
+  },
+  {
+   "id": "t3_control_board",
+   "name": "Control Board for Saltmarsh Cooperative",
+   "tier": 3,
+   "requires": {
+    "control_board": 80
+   },
+   "reward_credits": 24700.0,
+   "reward_items": {
+    "signal_relay": 1
+   }
+  },
+  {
+   "id": "t3_fiberglass_panel",
+   "name": "Fiberglass Laminate for Saltmarsh Cooperative",
+   "tier": 3,
+   "requires": {
+    "fiberglass_panel": 800
+   },
+   "reward_credits": 45200.0,
+   "reward_items": {
+    "signal_relay": 1
+   }
+  },
+  {
+   "id": "t3_hydraulic_ram",
+   "name": "Hydraulic Ram for Basalt Chemical Union",
+   "tier": 3,
+   "requires": {
+    "hydraulic_ram": 150
+   },
+   "reward_credits": 26900.0,
+   "reward_items": {
+    "yield_optimizer_2": 1
+   }
+  },
+  {
+   "id": "t3_insulated_cable",
+   "name": "Insulated Cable for Morrow Tire & Rubber",
+   "tier": 3,
+   "requires": {
+    "insulated_cable": 1500
+   },
+   "reward_credits": 43800.0,
+   "reward_items": {
+    "emission_filter_2": 2
+   }
+  },
+  {
+   "id": "t3_lubricant",
+   "name": "Lubricant for Pellucid Polymers",
+   "tier": 3,
+   "requires": {
+    "lubricant": 15000
+   },
+   "reward_credits": 34600.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t3_plastic_sheet",
+   "name": "Plastic Sheet for Basalt Chemical Union",
+   "tier": 3,
+   "requires": {
+    "plastic_sheet": 500
+   },
+   "reward_credits": 33400.0,
+   "reward_items": {
+    "yield_optimizer_2": 1
+   }
+  },
+  {
+   "id": "t3_rubber",
+   "name": "Rubber for Pellucid Polymers",
+   "tier": 3,
+   "requires": {
+    "rubber": 1000
+   },
+   "reward_credits": 19400.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t3_sulfuric_acid",
+   "name": "Sulfuric Acid for Morrow Tire & Rubber",
+   "tier": 3,
+   "requires": {
+    "sulfuric_acid": 20000
+   },
+   "reward_credits": 20200.0,
+   "reward_items": {
+    "emission_filter_2": 2
+   }
+  },
+  {
+   "id": "t4_aluminum_sheet",
+   "name": "Aluminum Sheet for Kestrel Aerospace",
+   "tier": 4,
+   "requires": {
+    "aluminum_sheet": 1000
+   },
+   "reward_credits": 100000.0,
+   "reward_items": {
+    "overclock_card_3": 1
+   }
+  },
+  {
+   "id": "t4_composite_panel",
+   "name": "Composite Panel for Northgate Foundries",
+   "tier": 4,
+   "requires": {
+    "composite_panel": 150
+   },
+   "reward_credits": 70000.0,
+   "reward_items": {
+    "economizer_card_3": 1
+   }
+  },
+  {
+   "id": "t4_embedded_controller",
+   "name": "Embedded Controller for Kestrel Aerospace",
+   "tier": 4,
+   "requires": {
+    "embedded_controller": 100
+   },
+   "reward_credits": 103000.0,
+   "reward_items": {
+    "overclock_card_3": 1
+   }
+  },
+  {
+   "id": "t4_lithium_cell",
+   "name": "Lithium-Ion Cell for Ironveil Robotics",
+   "tier": 4,
+   "requires": {
+    "lithium_cell": 200
+   },
+   "reward_credits": 88000.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t4_microchip",
+   "name": "Microchip for Tamsin Instruments",
+   "tier": 4,
+   "requires": {
+    "microchip": 1200
+   },
+   "reward_credits": 110000.0,
+   "reward_items": {
+    "robotic_arm": 4
+   }
+  },
+  {
+   "id": "t4_robotic_arm",
+   "name": "Robotic Arm for Northgate Foundries",
+   "tier": 4,
+   "requires": {
+    "robotic_arm": 30
+   },
+   "reward_credits": 111000.0,
+   "reward_items": {
+    "economizer_card_3": 1
+   }
+  },
+  {
+   "id": "t4_servo_motor",
+   "name": "Servo Motor for Tamsin Instruments",
+   "tier": 4,
+   "requires": {
+    "servo_motor": 100
+   },
+   "reward_credits": 66200.0,
+   "reward_items": {
+    "robotic_arm": 4
+   }
+  },
+  {
+   "id": "t4_titanium_plate",
+   "name": "Titanium Plate for Ironveil Robotics",
+   "tier": 4,
+   "requires": {
+    "titanium_plate": 250
+   },
+   "reward_credits": 57800.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t4_turbine_blade",
+   "name": "Turbine Blade for Kestrel Aerospace",
+   "tier": 4,
+   "requires": {
+    "turbine_blade": 200
+   },
+   "reward_credits": 70800.0,
+   "reward_items": {
+    "overclock_card_3": 1
+   }
+  },
+  {
+   "id": "t5_avionics_suite",
+   "name": "Avionics Suite for Highline Avionics",
+   "tier": 5,
+   "requires": {
+    "avionics_suite": 20
+   },
+   "reward_credits": 174000.0,
+   "reward_items": {
+    "thorium_fuel_rod": 4
+   }
+  },
+  {
+   "id": "t5_brushless_motor",
+   "name": "Brushless Motor for Frontier Survey Bureau",
+   "tier": 5,
+   "requires": {
+    "brushless_motor": 300
+   },
+   "reward_credits": 195000.0,
+   "reward_items": {
+    "overclock_card_4": 1
+   }
+  },
+  {
+   "id": "t5_flight_computer",
+   "name": "Flight Computer for Varga Atomics",
+   "tier": 5,
+   "requires": {
+    "flight_computer": 40
+   },
+   "reward_credits": 160000.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t5_heat_shield_tile",
+   "name": "Heat Shield Tile for Frontier Survey Bureau",
+   "tier": 5,
+   "requires": {
+    "heat_shield_tile": 3000
+   },
+   "reward_credits": 295000.0,
+   "reward_items": {
+    "overclock_card_4": 1
+   }
+  },
+  {
+   "id": "t5_liquid_oxygen",
+   "name": "Liquid Oxygen for Orison Launch Authority",
+   "tier": 5,
+   "requires": {
+    "liquid_oxygen": 50000
+   },
+   "reward_credits": 135000.0,
+   "reward_items": {
+    "yield_optimizer_4": 1
+   }
+  },
+  {
+   "id": "t5_rare_earth_magnet",
+   "name": "Rare-Earth Magnet for Highline Avionics",
+   "tier": 5,
+   "requires": {
+    "rare_earth_magnet": 3000
+   },
+   "reward_credits": 317000.0,
+   "reward_items": {
+    "thorium_fuel_rod": 4
+   }
+  },
+  {
+   "id": "t5_rocket_engine",
+   "name": "Rocket Engine for Orison Launch Authority",
+   "tier": 5,
+   "requires": {
+    "rocket_engine": 30
+   },
+   "reward_credits": 248000.0,
+   "reward_items": {
+    "yield_optimizer_4": 1
+   }
+  },
+  {
+   "id": "t5_thorium_fuel_rod",
+   "name": "Thorium Fuel Rod for Orison Launch Authority",
+   "tier": 5,
+   "requires": {
+    "thorium_fuel_rod": 100
+   },
+   "reward_credits": 269000.0,
+   "reward_items": {
+    "yield_optimizer_4": 1
+   }
+  },
+  {
+   "id": "t5_tungsten_carbide",
+   "name": "Tungsten Carbide for Varga Atomics",
+   "tier": 5,
+   "requires": {
+    "tungsten_carbide": 1500
+   },
+   "reward_credits": 269000.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t6_cryocooler",
+   "name": "Cryocooler for Deepcold Labs",
+   "tier": 6,
+   "requires": {
+    "cryocooler": 400
+   },
+   "reward_credits": 879000.0,
+   "reward_items": {
+    "fusion_pellet": 10
+   }
+  },
+  {
+   "id": "t6_fusion_pellet",
+   "name": "Fusion Fuel Pellet for Aurelian Quantum",
+   "tier": 6,
+   "requires": {
+    "fusion_pellet": 1200
+   },
+   "reward_credits": 832000.0,
+   "reward_items": {
+    "overclock_card_5": 1
+   }
+  },
+  {
+   "id": "t6_graphene",
+   "name": "Graphene Film for Lattice Dynamics",
+   "tier": 6,
+   "requires": {
+    "graphene": 10000
+   },
+   "reward_credits": 1010000.0,
+   "reward_items": {
+    "yield_optimizer_5": 1
+   }
+  },
+  {
+   "id": "t6_metamaterial_lattice",
+   "name": "Metamaterial Lattice for Deepcold Labs",
+   "tier": 6,
+   "requires": {
+    "metamaterial_lattice": 400
+   },
+   "reward_credits": 677000.0,
+   "reward_items": {
+    "fusion_pellet": 10
+   }
+  },
+  {
+   "id": "t6_nano_coating",
+   "name": "Nano-Ceramic Coating for Lattice Dynamics",
+   "tier": 6,
+   "requires": {
+    "nano_coating": 2500
+   },
+   "reward_credits": 548000.0,
+   "reward_items": {
+    "yield_optimizer_5": 1
+   }
+  },
+  {
+   "id": "t6_plasma_coil",
+   "name": "Plasma Containment Coil for Helix Fusion Consortium",
+   "tier": 6,
+   "requires": {
+    "plasma_coil": 200
+   },
+   "reward_credits": 677000.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t6_quantum_processor",
+   "name": "Quantum Processor for Helix Fusion Consortium",
+   "tier": 6,
+   "requires": {
+    "quantum_processor": 50
+   },
+   "reward_credits": 541000.0,
+   "reward_items": {}
+  },
+  {
+   "id": "t6_superconductor_tape",
+   "name": "Superconductor Tape for Aurelian Quantum",
+   "tier": 6,
+   "requires": {
+    "superconductor_tape": 2500
+   },
+   "reward_credits": 648000.0,
+   "reward_items": {
+    "overclock_card_5": 1
+   }
+  },
+  {
+   "id": "t7_ark_hull_segment",
+   "name": "Ark Hull Segment for Exodus Provisioning Board",
+   "tier": 7,
+   "requires": {
+    "ark_hull_segment": 40
+   },
+   "reward_credits": 1300000.0,
+   "reward_items": {
+    "yield_optimizer_5": 2
+   }
+  },
+  {
+   "id": "t7_cryostasis_pod",
+   "name": "Cryostasis Pod for Ark Steering Council",
+   "tier": 7,
+   "requires": {
+    "cryostasis_pod": 120
+   },
+   "reward_credits": 1750000.0,
+   "reward_items": {
+    "plasma_coil": 4
+   }
+  },
+  {
+   "id": "t7_heavy_launch_vehicle",
+   "name": "Heavy Launch Vehicle for Ark Steering Council",
+   "tier": 7,
+   "requires": {
+    "heavy_launch_vehicle": 10
+   },
+   "reward_credits": 1930000.0,
+   "reward_items": {
+    "quantum_processor": 10
+   }
+  },
+  {
+   "id": "t7_seed_vault",
+   "name": "Seed Vault Capsule for Last Light Foundation",
+   "tier": 7,
+   "requires": {
+    "seed_vault": 200
+   },
+   "reward_credits": 2970000.0,
+   "reward_items": {
+    "economizer_card_5": 2
+   }
+  }
+ ],
+ "achievements": [
+  {
+   "id": "first_pour",
+   "name": "First Pour",
+   "desc": "Smelt your first 100 iron ingots.",
+   "condition": {
+    "type": "produce",
+    "target": "iron_ingot",
+    "value": 100
+   }
+  },
+  {
+   "id": "plate_mountain",
+   "name": "Plate Mountain",
+   "desc": "Press 10,000 iron plates.",
+   "condition": {
+    "type": "produce",
+    "target": "iron_plate",
+    "value": 10000
+   }
+  },
+  {
+   "id": "miles_of_wire",
+   "name": "Miles of Wire",
+   "desc": "Draw 25,000 copper wire.",
+   "condition": {
+    "type": "produce",
+    "target": "copper_wire",
+    "value": 25000
+   }
+  },
+  {
+   "id": "drafting_department",
+   "name": "Drafting Department",
+   "desc": "Produce 1,000 Blueprint Sheets.",
+   "condition": {
+    "type": "produce",
+    "target": "blueprint_sheet",
+    "value": 1000
+   }
+  },
+  {
+   "id": "crucible_keeper",
+   "name": "Crucible Keeper",
+   "desc": "Cast 5,000 steel ingots.",
+   "condition": {
+    "type": "produce",
+    "target": "steel_ingot",
+    "value": 5000
+   }
+  },
+  {
+   "id": "poured_foundations",
+   "name": "Poured Foundations",
+   "desc": "Pour 5,000 concrete slabs.",
+   "condition": {
+    "type": "produce",
+    "target": "concrete",
+    "value": 5000
+   }
+  },
+  {
+   "id": "clear_view",
+   "name": "Clear View",
+   "desc": "Melt 2,000 glass panes.",
+   "condition": {
+    "type": "produce",
+    "target": "glass_pane",
+    "value": 2000
+   }
+  },
+  {
+   "id": "waste_not",
+   "name": "Waste Not",
+   "desc": "Generate 2,000 scrap metal for the remelt line.",
+   "condition": {
+    "type": "produce",
+    "target": "scrap_metal",
+    "value": 2000
+   }
+  },
+  {
+   "id": "board_certified",
+   "name": "Board Certified",
+   "desc": "Solder 1,000 circuit boards.",
+   "condition": {
+    "type": "produce",
+    "target": "circuit_board",
+    "value": 1000
+   }
+  },
+  {
+   "id": "spin_cycle",
+   "name": "Spin Cycle",
+   "desc": "Wind 1,000 electric motors.",
+   "condition": {
+    "type": "produce",
+    "target": "electric_motor",
+    "value": 1000
+   }
+  },
+  {
+   "id": "schematic_archive",
+   "name": "Schematic Archive",
+   "desc": "Produce 2,000 Circuit Schematics.",
+   "condition": {
+    "type": "produce",
+    "target": "circuit_schematic",
+    "value": 2000
+   }
+  },
+  {
+   "id": "dispatches",
+   "name": "Dispatches",
+   "desc": "Compile 1,000 Field Reports.",
+   "condition": {
+    "type": "produce",
+    "target": "field_report",
+    "value": 1000
+   }
+  },
+  {
+   "id": "polymer_age",
+   "name": "Polymer Age",
+   "desc": "Extrude 10,000 plastic sheets.",
+   "condition": {
+    "type": "produce",
+    "target": "plastic_sheet",
+    "value": 10000
+   }
+  },
+  {
+   "id": "acid_test",
+   "name": "Acid Test",
+   "desc": "Brew 100,000 units of sulfuric acid.",
+   "condition": {
+    "type": "produce",
+    "target": "sulfuric_acid",
+    "value": 100000
+   }
+  },
+  {
+   "id": "under_control",
+   "name": "Under Control",
+   "desc": "Build 1,000 control boards.",
+   "condition": {
+    "type": "produce",
+    "target": "control_board",
+    "value": 1000
+   }
+  },
+  {
+   "id": "wet_lab",
+   "name": "Wet Lab",
+   "desc": "Produce 5,000 Chemical Assays.",
+   "condition": {
+    "type": "produce",
+    "target": "chemical_assay",
+    "value": 5000
+   }
+  },
+  {
+   "id": "green_thumb",
+   "name": "Green Thumb",
+   "desc": "Harvest 5,000 algae paste.",
+   "condition": {
+    "type": "produce",
+    "target": "algae_paste",
+    "value": 5000
+   }
+  },
+  {
+   "id": "lightweight_champion",
+   "name": "Lightweight Champion",
+   "desc": "Smelt 5,000 aluminum ingots.",
+   "condition": {
+    "type": "produce",
+    "target": "aluminum_ingot",
+    "value": 5000
+   }
+  },
+  {
+   "id": "titanic_effort",
+   "name": "Titanic Effort",
+   "desc": "Win 2,000 titanium ingots.",
+   "condition": {
+    "type": "produce",
+    "target": "titanium_ingot",
+    "value": 2000
+   }
+  },
+  {
+   "id": "coupon_collector",
+   "name": "Coupon Collector",
+   "desc": "Produce 10,000 Alloy Specimens.",
+   "condition": {
+    "type": "produce",
+    "target": "alloy_specimen",
+    "value": 10000
+   }
+  },
+  {
+   "id": "wafer_thin_margins",
+   "name": "Wafer-Thin Margins",
+   "desc": "Fabricate 10,000 microchips.",
+   "condition": {
+    "type": "produce",
+    "target": "microchip",
+    "value": 10000
+   }
+  },
+  {
+   "id": "layered_thinking",
+   "name": "Layered Thinking",
+   "desc": "Cure 1,000 composite panels.",
+   "condition": {
+    "type": "produce",
+    "target": "composite_panel",
+    "value": 1000
+   }
+  },
+  {
+   "id": "helping_hands",
+   "name": "Helping Hands",
+   "desc": "Assemble 500 robotic arms.",
+   "condition": {
+    "type": "produce",
+    "target": "robotic_arm",
+    "value": 500
+   }
+  },
+  {
+   "id": "black_box",
+   "name": "Black Box",
+   "desc": "Recover 20,000 Flight Telemetry recorders.",
+   "condition": {
+    "type": "produce",
+    "target": "flight_telemetry",
+    "value": 20000
+   }
+  },
+  {
+   "id": "ignition_sequence",
+   "name": "Ignition Sequence",
+   "desc": "Build 50 rocket engines.",
+   "condition": {
+    "type": "produce",
+    "target": "rocket_engine",
+    "value": 50
+   }
+  },
+  {
+   "id": "fertile_ground",
+   "name": "Fertile Ground",
+   "desc": "Fabricate 200 thorium fuel rods.",
+   "condition": {
+    "type": "produce",
+    "target": "thorium_fuel_rod",
+    "value": 200
+   }
+  },
+  {
+   "id": "zero_resistance",
+   "name": "Zero Resistance",
+   "desc": "Deposit 2,000 superconductor tapes.",
+   "condition": {
+    "type": "produce",
+    "target": "superconductor_tape",
+    "value": 2000
+   }
+  },
+  {
+   "id": "superposition",
+   "name": "Superposition",
+   "desc": "Package 100 quantum processors.",
+   "condition": {
+    "type": "produce",
+    "target": "quantum_processor",
+    "value": 100
+   }
+  },
+  {
+   "id": "datacore_vault",
+   "name": "Datacore Vault",
+   "desc": "Produce 50,000 Quantum Datacores.",
+   "condition": {
+    "type": "produce",
+    "target": "quantum_datacore",
+    "value": 50000
+   }
+  },
+  {
+   "id": "bottled_star",
+   "name": "Bottled Star",
+   "desc": "Press 1,000 fusion fuel pellets.",
+   "condition": {
+    "type": "produce",
+    "target": "fusion_pellet",
+    "value": 1000
+   }
+  },
+  {
+   "id": "heavy_lifter",
+   "name": "Heavy Lifter",
+   "desc": "Stack 5 heavy launch vehicles.",
+   "condition": {
+    "type": "produce",
+    "target": "heavy_launch_vehicle",
+    "value": 5
+   }
+  },
+  {
+   "id": "age_of_steel",
+   "name": "Age of Steel",
+   "desc": "Research Steelmaking.",
+   "condition": {
+    "type": "research",
+    "target": "steelmaking",
+    "value": 1
+   }
+  },
+  {
+   "id": "logic_gate",
+   "name": "Logic Gate",
+   "desc": "Research Circuit Theory.",
+   "condition": {
+    "type": "research",
+    "target": "circuit_theory",
+    "value": 1
+   }
+  },
+  {
+   "id": "reagent_grade",
+   "name": "Reagent Grade",
+   "desc": "Research Chemical Assays.",
+   "condition": {
+    "type": "research",
+    "target": "chemical_assays",
+    "value": 1
+   }
+  },
+  {
+   "id": "stress_test",
+   "name": "Stress Test",
+   "desc": "Research Materials Testing.",
+   "condition": {
+    "type": "research",
+    "target": "materials_testing",
+    "value": 1
+   }
+  },
+  {
+   "id": "liftoff",
+   "name": "Liftoff",
+   "desc": "Research Flight Testing.",
+   "condition": {
+    "type": "research",
+    "target": "flight_testing",
+    "value": 1
+   }
+  },
+  {
+   "id": "critical_mass",
+   "name": "Critical Mass",
+   "desc": "Research Thorium Reactors.",
+   "condition": {
+    "type": "research",
+    "target": "thorium_reactors",
+    "value": 1
+   }
+  },
+  {
+   "id": "entangled",
+   "name": "Entangled",
+   "desc": "Research Quantum Datacores.",
+   "condition": {
+    "type": "research",
+    "target": "quantum_datacores",
+    "value": 1
+   }
+  },
+  {
+   "id": "star_tamer",
+   "name": "Star Tamer",
+   "desc": "Research Fusion Power.",
+   "condition": {
+    "type": "research",
+    "target": "fusion_power",
+    "value": 1
+   }
+  },
+  {
+   "id": "curious_mind",
+   "name": "Curious Mind",
+   "desc": "Complete 10 technologies.",
+   "condition": {
+    "type": "research_count",
+    "target": null,
+    "value": 10
+   }
+  },
+  {
+   "id": "research_program",
+   "name": "Research Program",
+   "desc": "Complete 50 technologies.",
+   "condition": {
+    "type": "research_count",
+    "target": null,
+    "value": 50
+   }
+  },
+  {
+   "id": "think_tank",
+   "name": "Think Tank",
+   "desc": "Complete 150 technologies.",
+   "condition": {
+    "type": "research_count",
+    "target": null,
+    "value": 150
+   }
+  },
+  {
+   "id": "grand_library",
+   "name": "Grand Library",
+   "desc": "Complete 300 technologies.",
+   "condition": {
+    "type": "research_count",
+    "target": null,
+    "value": 300
+   }
+  },
+  {
+   "id": "drill_team",
+   "name": "Drill Team",
+   "desc": "Run 20 electric drills at once.",
+   "condition": {
+    "type": "build",
+    "target": "electric_drill",
+    "value": 20
+   }
+  },
+  {
+   "id": "line_up",
+   "name": "Line Up",
+   "desc": "Run 25 assembly lines at once.",
+   "condition": {
+    "type": "build",
+    "target": "assembly_line",
+    "value": 25
+   }
+  },
+  {
+   "id": "refined_taste",
+   "name": "Refined Taste",
+   "desc": "Run 5 distillation columns.",
+   "condition": {
+    "type": "build",
+    "target": "distillation_column",
+    "value": 5
+   }
+  },
+  {
+   "id": "sun_farm",
+   "name": "Sun Farm",
+   "desc": "Build 100 solar arrays.",
+   "condition": {
+    "type": "build",
+    "target": "solar_array",
+    "value": 100
+   }
+  },
+  {
+   "id": "turbine_hall",
+   "name": "Turbine Hall",
+   "desc": "Run 10 steam turbines.",
+   "condition": {
+    "type": "build",
+    "target": "steam_turbine",
+    "value": 10
+   }
+  },
+  {
+   "id": "lights_out_factory",
+   "name": "Lights-Out Factory",
+   "desc": "Run 50 robotic workcells.",
+   "condition": {
+    "type": "build",
+    "target": "robotic_workcell",
+    "value": 50
+   }
+  },
+  {
+   "id": "reactor_row",
+   "name": "Reactor Row",
+   "desc": "Run 4 thorium reactors.",
+   "condition": {
+    "type": "build",
+    "target": "thorium_reactor",
+    "value": 4
+   }
+  },
+  {
+   "id": "pad_zero",
+   "name": "Pad Zero",
+   "desc": "Build a launch complex.",
+   "condition": {
+    "type": "build",
+    "target": "launch_complex",
+    "value": 1
+   }
+  },
+  {
+   "id": "twin_suns",
+   "name": "Twin Suns",
+   "desc": "Run 2 tokamaks.",
+   "condition": {
+    "type": "build",
+    "target": "tokamak",
+    "value": 2
+   }
+  },
+  {
+   "id": "grid_online",
+   "name": "Grid Online",
+   "desc": "Generate 1 MW.",
+   "condition": {
+    "type": "power",
+    "target": null,
+    "value": 1000
+   }
+  },
+  {
+   "id": "tens_of_megawatts",
+   "name": "Tens of Megawatts",
+   "desc": "Generate 10 MW.",
+   "condition": {
+    "type": "power",
+    "target": null,
+    "value": 10000
+   }
+  },
+  {
+   "id": "utility_scale",
+   "name": "Utility Scale",
+   "desc": "Generate 100 MW.",
+   "condition": {
+    "type": "power",
+    "target": null,
+    "value": 100000
+   }
+  },
+  {
+   "id": "gigawatt_grid",
+   "name": "Gigawatt Grid",
+   "desc": "Generate 1 GW.",
+   "condition": {
+    "type": "power",
+    "target": null,
+    "value": 1000000
+   }
+  },
+  {
+   "id": "petty_cash",
+   "name": "Petty Cash",
+   "desc": "Earn 10,000 credits in total.",
+   "condition": {
+    "type": "credits",
+    "target": null,
+    "value": 10000
+   }
+  },
+  {
+   "id": "foundry_fortune",
+   "name": "Foundry Fortune",
+   "desc": "Earn 1,000,000 credits in total.",
+   "condition": {
+    "type": "credits",
+    "target": null,
+    "value": 1000000
+   }
+  },
+  {
+   "id": "industrial_empire",
+   "name": "Industrial Empire",
+   "desc": "Earn 100,000,000 credits in total.",
+   "condition": {
+    "type": "credits",
+    "target": null,
+    "value": 100000000
+   }
+  },
+  {
+   "id": "planetary_ledger",
+   "name": "Planetary Ledger",
+   "desc": "Earn 10,000,000,000 credits in total.",
+   "condition": {
+    "type": "credits",
+    "target": null,
+    "value": 10000000000
+   }
+  },
+  {
+   "id": "beyond_the_fence",
+   "name": "Beyond the Fence",
+   "desc": "Claim a second sector.",
+   "condition": {
+    "type": "sectors",
+    "target": null,
+    "value": 2
+   }
+  },
+  {
+   "id": "frontier_baron",
+   "name": "Frontier Baron",
+   "desc": "Hold 6 sectors.",
+   "condition": {
+    "type": "sectors",
+    "target": null,
+    "value": 6
+   }
+  },
+  {
+   "id": "map_filler",
+   "name": "Map Filler",
+   "desc": "Hold 12 sectors.",
+   "condition": {
+    "type": "sectors",
+    "target": null,
+    "value": 12
+   }
+  },
+  {
+   "id": "every_corner",
+   "name": "Every Corner",
+   "desc": "Hold every frontier sector.",
+   "condition": {
+    "type": "sectors",
+    "target": null,
+    "value": 19
+   }
+  },
+  {
+   "id": "first_order",
+   "name": "First Order",
+   "desc": "Complete a contract.",
+   "condition": {
+    "type": "contracts",
+    "target": null,
+    "value": 1
+   }
+  },
+  {
+   "id": "reliable_supplier",
+   "name": "Reliable Supplier",
+   "desc": "Complete 25 contracts.",
+   "condition": {
+    "type": "contracts",
+    "target": null,
+    "value": 25
+   }
+  },
+  {
+   "id": "preferred_vendor",
+   "name": "Preferred Vendor",
+   "desc": "Complete 100 contracts.",
+   "condition": {
+    "type": "contracts",
+    "target": null,
+    "value": 100
+   }
+  },
+  {
+   "id": "hold_the_line",
+   "name": "Hold the Line",
+   "desc": "Reach a defense rating of 100.",
+   "condition": {
+    "type": "defense",
+    "target": null,
+    "value": 100
+   }
+  },
+  {
+   "id": "fortress_works",
+   "name": "Fortress Works",
+   "desc": "Reach a defense rating of 1,000.",
+   "condition": {
+    "type": "defense",
+    "target": null,
+    "value": 1000
+   }
+  },
+  {
+   "id": "unbreakable",
+   "name": "Unbreakable",
+   "desc": "Reach a defense rating of 10,000.",
+   "condition": {
+    "type": "defense",
+    "target": null,
+    "value": 10000
+   }
+  },
+  {
+   "id": "bottom_of_the_well",
+   "name": "Bottom of the Well",
+   "desc": "Complete the Deep Crust Borehole.",
+   "condition": {
+    "type": "megaproject",
+    "target": "deep_crust_borehole",
+    "value": 3
+   }
+  },
+  {
+   "id": "mapped_world",
+   "name": "Mapped World",
+   "desc": "Complete the Planetary Survey Array.",
+   "condition": {
+    "type": "megaproject",
+    "target": "planetary_survey_array",
+    "value": 3
+   }
+  },
+  {
+   "id": "rail_to_the_sky",
+   "name": "Rail to the Sky",
+   "desc": "Complete the Equatorial Mass Driver.",
+   "condition": {
+    "type": "megaproject",
+    "target": "equatorial_mass_driver",
+    "value": 4
+   }
+  },
+  {
+   "id": "keel_laid",
+   "name": "Keel Laid",
+   "desc": "Finish the first stage of the Orbital Ark.",
+   "condition": {
+    "type": "megaproject",
+    "target": "orbital_ark",
+    "value": 1
+   }
+  },
+  {
+   "id": "exodus",
+   "name": "Exodus",
+   "desc": "Launch the Orbital Ark.",
+   "condition": {
+    "type": "megaproject",
+    "target": "orbital_ark",
+    "value": 7
+   }
+  },
+  {
+   "id": "legacy",
+   "name": "Legacy",
+   "desc": "Prestige for the first time.",
+   "condition": {
+    "type": "prestige",
+    "target": null,
+    "value": 1
+   }
+  },
+  {
+   "id": "dynasty",
+   "name": "Dynasty",
+   "desc": "Prestige five times.",
+   "condition": {
+    "type": "prestige",
+    "target": null,
+    "value": 5
+   }
+  }
+ ],
+ "megaprojects": [
+  {
+   "id": "deep_crust_borehole",
+   "name": "Deep Crust Borehole",
+   "desc": "A superdeep bore that maps the frontier's hidden ore bodies.",
+   "tier": 4,
+   "requires_building": null,
+   "stages": [
+    {
+     "name": "Drill Pad",
+     "requires": {
+      "concrete": 2000,
+      "steel_frame": 200,
+      "hydraulic_ram": 100
+     }
+    },
+    {
+     "name": "Bore String",
+     "requires": {
+      "titanium_alloy": 200,
+      "electric_motor": 300,
+      "turbine_blade": 100
+     }
+    },
+    {
+     "name": "Heat Probe",
+     "requires": {
+      "embedded_controller": 100,
+      "heat_sink": 300,
+      "composite_panel": 100
+     }
+    }
+   ],
+   "reward": {
+    "effects": [
+     {
+      "type": "mining_productivity",
+      "target": null,
+      "value": 0.1
+     },
+     {
+      "type": "extraction_slots",
+      "target": "solid",
+      "value": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "planetary_survey_array",
+   "name": "Planetary Survey Array",
+   "desc": "Ground stations and sub-orbital probes that chart every deposit on the planet.",
+   "tier": 5,
+   "requires_building": "launch_complex",
+   "stages": [
+    {
+     "name": "Ground Station",
+     "requires": {
+      "antenna_array": 200,
+      "concrete": 3000,
+      "embedded_controller": 200
+     }
+    },
+    {
+     "name": "Probe Fleet",
+     "requires": {
+      "survey_probe": 40
+     }
+    },
+    {
+     "name": "Deep Uplink",
+     "requires": {
+      "flight_computer": 100,
+      "fiber_optic_cable": 1000,
+      "lithium_cell": 400
+     }
+    }
+   ],
+   "reward": {
+    "effects": [
+     {
+      "type": "extraction_slots",
+      "target": "fluid",
+      "value": 1
+     },
+     {
+      "type": "extraction_slots",
+      "target": "solid",
+      "value": 1
+     },
+     {
+      "type": "mining_productivity",
+      "target": null,
+      "value": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "equatorial_mass_driver",
+   "name": "Equatorial Mass Driver",
+   "desc": "A superconducting rail that flings cargo to orbit, cheapening every launch.",
+   "tier": 6,
+   "requires_building": null,
+   "stages": [
+    {
+     "name": "Foundation Trench",
+     "requires": {
+      "concrete": 20000,
+      "steel_beam": 4000
+     }
+    },
+    {
+     "name": "Accelerator Rail",
+     "requires": {
+      "coil_accelerator_segment": 100
+     }
+    },
+    {
+     "name": "Capacitor Halls",
+     "requires": {
+      "lithium_cell": 2000,
+      "superconductor_tape": 1000
+     }
+    },
+    {
+     "name": "Guidance Bunker",
+     "requires": {
+      "quantum_processor": 20,
+      "antenna_array": 200
+     }
+    }
+   ],
+   "reward": {
+    "effects": [
+     {
+      "type": "market_price",
+      "target": null,
+      "value": 0.1
+     },
+     {
+      "type": "craft_speed",
+      "target": "orbital",
+      "value": 0.25
+     }
+    ]
+   }
+  },
+  {
+   "id": "orbital_ark",
+   "name": "Orbital Ark",
+   "desc": "A generation ship assembled in orbit: the frontier's last and greatest work.",
+   "tier": 7,
+   "requires_building": "launch_complex",
+   "stages": [
+    {
+     "name": "Keel and Spine",
+     "requires": {
+      "ark_hull_segment": 10,
+      "heavy_launch_vehicle": 5
+     }
+    },
+    {
+     "name": "Drive Section",
+     "requires": {
+      "ark_drive_nacelle": 4,
+      "heavy_launch_vehicle": 4
+     }
+    },
+    {
+     "name": "Fusion Core",
+     "requires": {
+      "ark_fusion_core": 1,
+      "heavy_launch_vehicle": 2
+     }
+    },
+    {
+     "name": "Habitat Ring",
+     "requires": {
+      "ark_habitat_module": 12,
+      "heavy_launch_vehicle": 6
+     }
+    },
+    {
+     "name": "Life Support and Seed Vault",
+     "requires": {
+      "ark_life_support": 4,
+      "seed_vault": 2,
+      "heavy_launch_vehicle": 3
+     }
+    },
+    {
+     "name": "Navigation and Command",
+     "requires": {
+      "ark_navigation_core": 1,
+      "heavy_launch_vehicle": 1
+     }
+    },
+    {
+     "name": "Crew Stasis and Departure",
+     "requires": {
+      "cryostasis_pod": 200,
+      "heavy_launch_vehicle": 6
+     }
+    }
+   ],
+   "reward": {
+    "prestige": true,
+    "effects": []
+   }
+  }
+ ]
+}

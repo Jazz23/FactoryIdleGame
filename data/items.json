@@ -1,0 +1,5590 @@
+{
+ "items": [
+  {
+   "id": "assembly_station",
+   "name": "Assembly Station",
+   "desc": "Jig-fed station for routine assemblies.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 189.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "assembly_station"
+    }
+   }
+  },
+  {
+   "id": "burner_boiler",
+   "name": "Burner Boiler",
+   "desc": "Fire-tube boiler: 40 steam/s, enough for two engines.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 0,
+   "value": 126.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "burner_boiler"
+    }
+   }
+  },
+  {
+   "id": "burner_drill",
+   "name": "Burner Drill",
+   "desc": "Coal-fired percussion drill for shallow ore.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 77.5,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "burner_drill"
+    }
+   }
+  },
+  {
+   "id": "coal",
+   "name": "Coal",
+   "desc": "Bituminous coal that burns in any furnace or boiler.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 1.2,
+   "fuel_kj": 4000.0,
+   "fuel_class": "chemical",
+   "pollution_mult": 1.0,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "coal"
+   }
+  },
+  {
+   "id": "copper_ingot",
+   "name": "Copper Ingot",
+   "desc": "Fire-refined copper ready for drawing and pressing.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 0,
+   "value": 5.64,
+   "visual": {
+    "archetype": "ingot",
+    "material": "copper"
+   }
+  },
+  {
+   "id": "copper_ore",
+   "name": "Copper Ore",
+   "desc": "Green-stained rock veined with copper sulfides.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 1.6,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "copper_ore"
+   }
+  },
+  {
+   "id": "copper_sheet",
+   "name": "Copper Sheet",
+   "desc": "Thin rolled copper for contacts and heat spreaders.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 3.83,
+   "visual": {
+    "archetype": "plate",
+    "material": "copper"
+   }
+  },
+  {
+   "id": "copper_wire",
+   "name": "Copper Wire",
+   "desc": "Drawn copper wire on a wooden spool.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 2.46,
+   "visual": {
+    "archetype": "wire_spool",
+    "material": "copper"
+   }
+  },
+  {
+   "id": "drafting_office",
+   "name": "Drafting Office",
+   "desc": "Drawing tables and test rigs that study Blueprint Sheets.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 146.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "drafting_office"
+    }
+   }
+  },
+  {
+   "id": "fasteners",
+   "name": "Fasteners",
+   "desc": "Bolts, nuts and washers by the bucket.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 1.21,
+   "visual": {
+    "archetype": "bolts",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "fitting_bench",
+   "name": "Fitting Bench",
+   "desc": "Powered workbench with vise, punch and drill press.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 119.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "fitting_bench"
+    }
+   }
+  },
+  {
+   "id": "iron_gear",
+   "name": "Iron Gear",
+   "desc": "Cut spur gear for drives and mechanisms.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 7.24,
+   "visual": {
+    "archetype": "gear",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "iron_ingot",
+   "name": "Iron Ingot",
+   "desc": "Rough-cast pig iron, the root of most metalwork.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 0,
+   "value": 5.4,
+   "visual": {
+    "archetype": "ingot",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "iron_ore",
+   "name": "Iron Ore",
+   "desc": "Rust-red hematite broken from shallow seams.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 1.5,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "iron_ore"
+   }
+  },
+  {
+   "id": "iron_pipe",
+   "name": "Iron Pipe",
+   "desc": "Rolled and seamed pipe section for fluids and steam.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 9.76,
+   "visual": {
+    "archetype": "pipe",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "iron_plate",
+   "name": "Iron Plate",
+   "desc": "Pressed iron plate used in nearly everything.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 3.69,
+   "visual": {
+    "archetype": "plate",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "iron_rod",
+   "name": "Iron Rod",
+   "desc": "Drawn iron bar stock for shafts and fasteners.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 3.54,
+   "visual": {
+    "archetype": "rod",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "shore_intake",
+   "name": "Shore Intake",
+   "desc": "Gravity sluice and screen feeding water to the works.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 113.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "shore_intake"
+    }
+   }
+  },
+  {
+   "id": "steam",
+   "name": "Steam",
+   "desc": "Low-pressure steam that drives piston engines.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 0,
+   "value": 0.135,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.88,
+     0.9,
+     0.92
+    ]
+   }
+  },
+  {
+   "id": "steam_engine",
+   "name": "Steam Engine",
+   "desc": "Piston engine: 20 steam/s for 900 kW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 0,
+   "value": 250.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "steam_engine"
+    }
+   }
+  },
+  {
+   "id": "stone",
+   "name": "Stone",
+   "desc": "Fieldstone and rubble for bricks and aggregate.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 1.0,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "stone"
+   }
+  },
+  {
+   "id": "stone_brick",
+   "name": "Stone Brick",
+   "desc": "Kiln-fired block for furnaces and footings.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 0,
+   "value": 3.0,
+   "visual": {
+    "archetype": "brick",
+    "material": "stone"
+   }
+  },
+  {
+   "id": "stone_furnace",
+   "name": "Stone Furnace",
+   "desc": "Coal-fed fieldstone furnace for ore and bricks.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 13.8,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "stone_furnace"
+    }
+   }
+  },
+  {
+   "id": "storage_shed",
+   "name": "Storage Shed",
+   "desc": "Racked shed: +400 per item type.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 0,
+   "value": 205.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "storage_shed"
+    }
+   }
+  },
+  {
+   "id": "supply_crate",
+   "name": "Supply Crate",
+   "desc": "Bolted crate: +100 per item type.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 0,
+   "value": 54.8,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "supply_crate"
+    }
+   }
+  },
+  {
+   "id": "water",
+   "name": "Water",
+   "desc": "Raw intake water, the base of every boiler and reactor.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 0,
+   "value": 0.1,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.25,
+     0.45,
+     0.75
+    ]
+   }
+  },
+  {
+   "id": "batch_mixer",
+   "name": "Batch Mixer",
+   "desc": "Drum mixer for concrete and powders.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 189.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "batch_mixer"
+    }
+   }
+  },
+  {
+   "id": "blast_furnace",
+   "name": "Blast Furnace",
+   "desc": "Hot-blast stack that doubles smelting throughput.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 324.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "blast_furnace"
+    }
+   }
+  },
+  {
+   "id": "blueprint_sheet",
+   "name": "Blueprint Sheets",
+   "desc": "Etched copper drafting plates of machine designs.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 1,
+   "value": 17.5,
+   "visual": {
+    "archetype": "plate_stack",
+    "material": "paint",
+    "color": [
+     0.15,
+     0.3,
+     0.7
+    ]
+   }
+  },
+  {
+   "id": "cement",
+   "name": "Cement",
+   "desc": "Ground clinker powder in paper sacks.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 5.6,
+   "visual": {
+    "archetype": "bag",
+    "material": "concrete"
+   }
+  },
+  {
+   "id": "circuit_fab",
+   "name": "Circuit Fab",
+   "desc": "Solder-reflow line for boards and components.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 604.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "circuit_fab"
+    }
+   }
+  },
+  {
+   "id": "coil_spring",
+   "name": "Coil Spring",
+   "desc": "Tempered spring for valves and recoil systems.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 1,
+   "value": 2.6,
+   "visual": {
+    "archetype": "spring",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "coke",
+   "name": "Coke",
+   "desc": "Baked coal: hot-burning fuel and steelmaking reductant.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 4.56,
+   "fuel_kj": 5000.0,
+   "fuel_class": "chemical",
+   "pollution_mult": 0.8,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "graphite"
+   }
+  },
+  {
+   "id": "concrete",
+   "name": "Concrete Slab",
+   "desc": "Precast slab for foundations, walls and pads.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 8.69,
+   "visual": {
+    "archetype": "block",
+    "material": "concrete"
+   }
+  },
+  {
+   "id": "concrete_barrier",
+   "name": "Concrete Barrier",
+   "desc": "Precast barrier block (+10 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 1,
+   "value": 155.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "concrete_barrier"
+    }
+   }
+  },
+  {
+   "id": "conveyor_hub",
+   "name": "Conveyor Hub",
+   "desc": "Roller-conveyor junction: +10 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 1,
+   "value": 174.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "conveyor_hub"
+    }
+   }
+  },
+  {
+   "id": "electric_drill",
+   "name": "Electric Drill",
+   "desc": "Motorized rotary drill for any solid deposit.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 179.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "electric_drill"
+    }
+   }
+  },
+  {
+   "id": "fluid_tank",
+   "name": "Fluid Tank",
+   "desc": "Riveted tank: +2,500 per fluid.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 1,
+   "value": 293.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "fluid_tank"
+    }
+   }
+  },
+  {
+   "id": "gearbox",
+   "name": "Gearbox",
+   "desc": "Enclosed reduction gearing for heavy drives.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 1,
+   "value": 56.1,
+   "visual": {
+    "archetype": "gear",
+    "material": "cast_iron",
+    "params": {
+     "params": {
+      "variant": "housing"
+     }
+    }
+   }
+  },
+  {
+   "id": "glass_pane",
+   "name": "Glass Pane",
+   "desc": "Soda-lime glass for windows, gauges and cells.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 11.0,
+   "visual": {
+    "archetype": "glass_pane",
+    "material": "glass"
+   }
+  },
+  {
+   "id": "gravel",
+   "name": "Gravel",
+   "desc": "Crushed aggregate for concrete and roadbeds.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 1.44,
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "stone"
+   }
+  },
+  {
+   "id": "jaw_crusher",
+   "name": "Jaw Crusher",
+   "desc": "Toggle-jaw crusher for rock and clinker.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 184.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "jaw_crusher"
+    }
+   }
+  },
+  {
+   "id": "limestone",
+   "name": "Limestone",
+   "desc": "Pale sedimentary rock burned for lime and cement.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 1,
+   "value": 1.3,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "limestone"
+   }
+  },
+  {
+   "id": "munitions_works",
+   "name": "Munitions Works",
+   "desc": "Press-and-fill line for rounds and shells.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 285.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "munitions_works"
+    }
+   }
+  },
+  {
+   "id": "palisade_wall",
+   "name": "Palisade Wall",
+   "desc": "Rod-and-brick barricade (+4 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 1,
+   "value": 74.8,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "palisade_wall"
+    }
+   }
+  },
+  {
+   "id": "producer_gas_generator",
+   "name": "Producer-Gas Generator",
+   "desc": "Gasifier engine burning solid fuel directly at 60%.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 1,
+   "value": 456.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "producer_gas_generator"
+    }
+   }
+  },
+  {
+   "id": "quartz_sand",
+   "name": "Quartz Sand",
+   "desc": "Clean silica sand for glass and ceramics.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 1,
+   "value": 1.4,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "sand"
+   }
+  },
+  {
+   "id": "quicklime",
+   "name": "Quicklime",
+   "desc": "Calcined lime for cement, glass and flux.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 7.92,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "limestone"
+   }
+  },
+  {
+   "id": "scrap_metal",
+   "name": "Scrap Metal",
+   "desc": "Offcuts and trimmings from heavy rolling.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 5.66,
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "scrap_recycler",
+   "name": "Scrap Recycler",
+   "desc": "Shear-and-sort line returning scrap to the melt.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 262.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "scrap_recycler"
+    }
+   }
+  },
+  {
+   "id": "scrap_shot",
+   "name": "Scrap Shot",
+   "desc": "Crude canister shot packed with rolling-mill scrap.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 1,
+   "value": 8.48,
+   "ammo": {
+    "class": "ballistic",
+    "mult": 0.6
+   },
+   "visual": {
+    "archetype": "ammo_box",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "sentry_gun",
+   "name": "Sentry Gun",
+   "desc": "Spring-fed autogun firing ballistic rounds.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 1,
+   "value": 181.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "sentry_gun"
+    }
+   }
+  },
+  {
+   "id": "slag",
+   "name": "Slag",
+   "desc": "Glassy furnace residue; reground into aggregate or cement.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 3.26,
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "stone",
+    "color": [
+     0.3,
+     0.28,
+     0.27
+    ]
+   }
+  },
+  {
+   "id": "stamping_press",
+   "name": "Stamping Press",
+   "desc": "Flywheel press for plate, rod and wire.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 1,
+   "value": 184.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "stamping_press"
+    }
+   }
+  },
+  {
+   "id": "steel_beam",
+   "name": "Steel Beam",
+   "desc": "Rolled I-beam for heavy structures.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 1,
+   "value": 51.0,
+   "visual": {
+    "archetype": "beam",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "steel_core_rounds",
+   "name": "Steel-Core Rounds",
+   "desc": "Standard belted rounds for sentry guns.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 1,
+   "value": 10.3,
+   "ammo": {
+    "class": "ballistic",
+    "mult": 1.0
+   },
+   "visual": {
+    "archetype": "ammo_box",
+    "material": "brass"
+   }
+  },
+  {
+   "id": "steel_frame",
+   "name": "Steel Frame",
+   "desc": "Bolted structural frame for machines and towers.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 1,
+   "value": 136.0,
+   "visual": {
+    "archetype": "frame",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "steel_ingot",
+   "name": "Steel Ingot",
+   "desc": "Carbon steel cast from iron and coke.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 1,
+   "value": 14.7,
+   "visual": {
+    "archetype": "ingot",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "steel_plate",
+   "name": "Steel Plate",
+   "desc": "Hot-rolled plate for frames, tanks and armor.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 1,
+   "value": 9.76,
+   "visual": {
+    "archetype": "plate",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "valve",
+   "name": "Valve",
+   "desc": "Spring-loaded gate valve for pipework.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 1,
+   "value": 32.3,
+   "visual": {
+    "archetype": "nozzle",
+    "material": "cast_iron",
+    "params": {
+     "params": {
+      "variant": "valve"
+     }
+    }
+   }
+  },
+  {
+   "id": "ap_rounds",
+   "name": "Armor-Piercing Rounds",
+   "desc": "Hardened-tip rounds that punch through salvaged plating.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 2,
+   "value": 20.8,
+   "ammo": {
+    "class": "ballistic",
+    "mult": 1.6
+   },
+   "visual": {
+    "archetype": "ammo_box",
+    "material": "bronze",
+    "color": [
+     0.6,
+     0.2,
+     0.15
+    ]
+   }
+  },
+  {
+   "id": "assembly_line",
+   "name": "Assembly Line",
+   "desc": "Motorized line with powered fixtures.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 1200.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "assembly_line"
+    }
+   }
+  },
+  {
+   "id": "bearing",
+   "name": "Bearing",
+   "desc": "Bronze-caged steel bearing for rotating shafts.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 2,
+   "value": 14.3,
+   "visual": {
+    "archetype": "bearing",
+    "material": "bronze"
+   }
+  },
+  {
+   "id": "bronze_ingot",
+   "name": "Bronze Ingot",
+   "desc": "Hard-wearing tin bronze for bushings.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 2,
+   "value": 10.3,
+   "visual": {
+    "archetype": "ingot",
+    "material": "bronze"
+   }
+  },
+  {
+   "id": "bulk_silo",
+   "name": "Bulk Silo",
+   "desc": "Tall silo for loose solids: +3,000 per item type.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 2,
+   "value": 975.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "bulk_silo"
+    }
+   }
+  },
+  {
+   "id": "capacitor",
+   "name": "Capacitor",
+   "desc": "Ceramic-layered capacitor that smooths power.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 2,
+   "value": 3.91,
+   "visual": {
+    "archetype": "cell",
+    "material": "tin"
+   }
+  },
+  {
+   "id": "cassiterite",
+   "name": "Cassiterite",
+   "desc": "Heavy black tin-oxide gravel from river deltas.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 2,
+   "value": 2.4,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "stone",
+    "color": [
+     0.22,
+     0.18,
+     0.15
+    ]
+   }
+  },
+  {
+   "id": "ceramic_substrate",
+   "name": "Ceramic Substrate",
+   "desc": "Fired insulating wafer that carries circuitry.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 2,
+   "value": 5.35,
+   "visual": {
+    "archetype": "plate",
+    "material": "ceramic"
+   }
+  },
+  {
+   "id": "chemical_reactor",
+   "name": "Chemical Reactor",
+   "desc": "Jacketed stirred reactor for liquid-phase chemistry.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 770.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "chemical_reactor"
+    }
+   }
+  },
+  {
+   "id": "circuit_board",
+   "name": "Circuit Board",
+   "desc": "Soldered board with discrete logic on ceramic.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 21.3,
+   "visual": {
+    "archetype": "circuit_board",
+    "material": "pcb_green"
+   }
+  },
+  {
+   "id": "circuit_schematic",
+   "name": "Circuit Schematics",
+   "desc": "Annotated test boards tracing new logic.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 2,
+   "value": 72.0,
+   "visual": {
+    "archetype": "circuit_board",
+    "material": "pcb_blue",
+    "params": {
+     "params": {
+      "variant": "annotated"
+     }
+    }
+   }
+  },
+  {
+   "id": "distillation_column",
+   "name": "Distillation Column",
+   "desc": "Atmospheric column splitting crude into cuts.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 1580.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "distillation_column"
+    }
+   }
+  },
+  {
+   "id": "economizer_card_1",
+   "name": "Economizer Card Mk I",
+   "desc": "Trims idle draw and tunes motors for lower power use.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 190.0,
+   "module": {
+    "speed": 0.0,
+    "energy": -0.2,
+    "productivity": 0.0,
+    "pollution": -0.02
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_green",
+    "color": [
+     0.25,
+     0.8,
+     0.35
+    ],
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "electric_motor",
+   "name": "Electric Motor",
+   "desc": "Squirrel-cage induction motor for drives and pumps.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 119.0,
+   "visual": {
+    "archetype": "motor",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "electromagnet",
+   "name": "Electromagnet",
+   "desc": "Copper-wound iron core.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 2,
+   "value": 26.5,
+   "visual": {
+    "archetype": "magnet",
+    "material": "copper"
+   }
+  },
+  {
+   "id": "emission_filter_1",
+   "name": "Emission Filter Mk I",
+   "desc": "Inline catalytic filter that cuts a machine's emissions.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 189.0,
+   "module": {
+    "speed": 0.0,
+    "energy": 0.1,
+    "productivity": 0.0,
+    "pollution": -0.15
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_green",
+    "color": [
+     0.85,
+     0.92,
+     0.9
+    ],
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "field_report",
+   "name": "Field Reports",
+   "desc": "After-action dispatches from the frontier patrols.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 2,
+   "value": 74.3,
+   "visual": {
+    "archetype": "bag",
+    "material": "paint",
+    "color": [
+     0.4,
+     0.42,
+     0.25
+    ]
+   }
+  },
+  {
+   "id": "flywheel_store",
+   "name": "Flywheel Store",
+   "desc": "Steel rotor in vacuum: 20 MJ at up to 300 kW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 2,
+   "value": 892.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "flywheel_store"
+    }
+   }
+  },
+  {
+   "id": "high_pressure_boiler",
+   "name": "High-Pressure Boiler",
+   "desc": "Water-tube boiler: 100 steam/s for five engines.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 2,
+   "value": 692.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "high_pressure_boiler"
+    }
+   }
+  },
+  {
+   "id": "optical_sensor",
+   "name": "Optical Sensor",
+   "desc": "Photocell eye for counting, aiming and sorting.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 52.3,
+   "visual": {
+    "archetype": "lens",
+    "material": "glass",
+    "color": [
+     0.6,
+     0.3,
+     0.3
+    ]
+   }
+  },
+  {
+   "id": "overclock_card_1",
+   "name": "Overclock Card Mk I",
+   "desc": "Pushes machines past their rated speed at a steep power cost.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 309.0,
+   "module": {
+    "speed": 0.15,
+    "energy": 0.4,
+    "productivity": 0.0,
+    "pollution": 0.05
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_green",
+    "color": [
+     0.2,
+     0.45,
+     0.95
+    ],
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "pollution_scrubber",
+   "name": "Pollution Scrubber",
+   "desc": "Wet scrubber that removes 20 pollution/min.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 641.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pollution_scrubber"
+    }
+   }
+  },
+  {
+   "id": "pump_station",
+   "name": "Pump Station",
+   "desc": "Electric pump lifting water or brine from wells.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 803.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pump_station"
+    }
+   }
+  },
+  {
+   "id": "pump_unit",
+   "name": "Pump Unit",
+   "desc": "Motor-driven centrifugal pump.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 251.0,
+   "visual": {
+    "archetype": "motor",
+    "material": "cast_iron",
+    "params": {
+     "params": {
+      "variant": "pump"
+     }
+    }
+   }
+  },
+  {
+   "id": "pumpjack",
+   "name": "Pumpjack",
+   "desc": "Nodding beam pump lifting crude from the reservoir.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 1500.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pumpjack"
+    }
+   }
+  },
+  {
+   "id": "pv_cell",
+   "name": "Photovoltaic Cell",
+   "desc": "Copper-oxide junction cell behind glass.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 46.8,
+   "visual": {
+    "archetype": "solar_cell",
+    "material": "glass",
+    "color": [
+     0.15,
+     0.2,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "radar_station",
+   "name": "Radar Station",
+   "desc": "Rotating radar giving early warning (+8 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 2,
+   "value": 1100.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "radar_station"
+    }
+   }
+  },
+  {
+   "id": "research_laboratory",
+   "name": "Research Laboratory",
+   "desc": "Instrumented lab with fume hoods and benches.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 1010.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "research_laboratory"
+    }
+   }
+  },
+  {
+   "id": "rolling_mill",
+   "name": "Rolling Mill",
+   "desc": "Four-high mill for plate, sheet and sections.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 1480.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "rolling_mill"
+    }
+   }
+  },
+  {
+   "id": "solar_array",
+   "name": "Solar Array",
+   "desc": "Tilted cell panels: 90 kW at noon, nothing at night.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 2,
+   "value": 1040.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "solar_array"
+    }
+   }
+  },
+  {
+   "id": "solder",
+   "name": "Solder",
+   "desc": "Tin-copper solder wire for joining circuits.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 2,
+   "value": 12.7,
+   "visual": {
+    "archetype": "wire_spool",
+    "material": "tin"
+   }
+  },
+  {
+   "id": "sorting_hub",
+   "name": "Sorting Hub",
+   "desc": "Sensor-gated diverter hub: +30 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 2,
+   "value": 1250.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "sorting_hub"
+    }
+   }
+  },
+  {
+   "id": "substation",
+   "name": "Substation",
+   "desc": "Transformer yard that cuts line losses in its bay.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 2,
+   "value": 511.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "substation"
+    }
+   }
+  },
+  {
+   "id": "tin_ingot",
+   "name": "Tin Ingot",
+   "desc": "Soft white tin reduced from cassiterite.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 2,
+   "value": 10.9,
+   "visual": {
+    "archetype": "ingot",
+    "material": "tin"
+   }
+  },
+  {
+   "id": "warehouse",
+   "name": "Warehouse",
+   "desc": "Steel-framed warehouse: +1,500 per item type.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 2,
+   "value": 1890.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "warehouse"
+    }
+   }
+  },
+  {
+   "id": "wind_turbine",
+   "name": "Wind Turbine",
+   "desc": "Three-blade turbine averaging 300 kW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 2,
+   "value": 838.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "wind_turbine"
+    }
+   }
+  },
+  {
+   "id": "wire_drawer",
+   "name": "Wire Drawing Bench",
+   "desc": "Multi-die drawing bench for rod and wire.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 2,
+   "value": 478.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "wire_drawer"
+    }
+   }
+  },
+  {
+   "id": "yield_optimizer_1",
+   "name": "Yield Optimizer Mk I",
+   "desc": "Recovers waste in-process for bonus output, slowing the line.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 2,
+   "value": 301.0,
+   "module": {
+    "speed": -0.05,
+    "energy": 0.4,
+    "productivity": 0.03,
+    "pollution": 0.05
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_green",
+    "color": [
+     0.95,
+     0.65,
+     0.15
+    ],
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "algae_bioreactor",
+   "name": "Algae Bioreactor",
+   "desc": "Sunlit tube photobioreactor that also eats smog.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 1730.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "algae_bioreactor"
+    }
+   }
+  },
+  {
+   "id": "algae_paste",
+   "name": "Algae Paste",
+   "desc": "Harvested microalgae concentrate.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 9.56,
+   "visual": {
+    "archetype": "flask",
+    "material": "glass",
+    "color": [
+     0.25,
+     0.5,
+     0.15
+    ]
+   }
+  },
+  {
+   "id": "arc_furnace",
+   "name": "Electric Arc Furnace",
+   "desc": "Graphite-electrode furnace for reductions and refractory work.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 2240.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "arc_furnace"
+    }
+   }
+  },
+  {
+   "id": "battery_bank",
+   "name": "Battery Bank",
+   "desc": "Sodium-sulfur racks: 100 MJ at up to 1 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 3,
+   "value": 1690.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "battery_bank"
+    }
+   }
+  },
+  {
+   "id": "battery_cell",
+   "name": "Sodium-Sulfur Cell",
+   "desc": "Hot-running grid battery cell.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 47.1,
+   "visual": {
+    "archetype": "battery",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "bio_oil",
+   "name": "Bio-Oil",
+   "desc": "Pressed algal lipids; a renewable feedstock.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 2.32,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.35,
+     0.45,
+     0.12
+    ]
+   }
+  },
+  {
+   "id": "biofuel_pellet",
+   "name": "Biofuel Pellet",
+   "desc": "Dried algae pellets that burn with little smoke.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 30.3,
+   "fuel_kj": 6000.0,
+   "fuel_class": "chemical",
+   "pollution_mult": 0.3,
+   "visual": {
+    "archetype": "pellets",
+    "material": "wood",
+    "color": [
+     0.45,
+     0.5,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "blasting_powder",
+   "name": "Blasting Powder",
+   "desc": "Potash-sulfur powder for shells and quarrying.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 12.0,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "graphite",
+    "color": [
+     0.2,
+     0.2,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "brine",
+   "name": "Brine",
+   "desc": "Mineral-laden salt water pumped from aquifers.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.15,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.55,
+     0.7,
+     0.72
+    ]
+   }
+  },
+  {
+   "id": "casting_foundry",
+   "name": "Casting Foundry",
+   "desc": "Ladle-and-mold line for alloys and cast parts.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 3120.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "casting_foundry"
+    }
+   }
+  },
+  {
+   "id": "caustic_soda",
+   "name": "Caustic Soda",
+   "desc": "Sodium hydroxide flakes for alumina and batteries.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 3.87,
+   "visual": {
+    "archetype": "pellets",
+    "material": "salt"
+   }
+  },
+  {
+   "id": "chemical_assay",
+   "name": "Chemical Assays",
+   "desc": "Sealed reagent kits with logged reaction results.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 3,
+   "value": 104.0,
+   "visual": {
+    "archetype": "flask",
+    "material": "glass",
+    "color": [
+     0.3,
+     0.75,
+     0.4
+    ]
+   }
+  },
+  {
+   "id": "chlorine",
+   "name": "Chlorine",
+   "desc": "Toxic green gas for resins, acids and titanium refining.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.387,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.65,
+     0.85,
+     0.3
+    ]
+   }
+  },
+  {
+   "id": "cone_crusher",
+   "name": "Cone Crusher",
+   "desc": "Gyratory cone crusher with fine product.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 1480.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "cone_crusher"
+    }
+   }
+  },
+  {
+   "id": "control_board",
+   "name": "Control Board",
+   "desc": "Multilayer laminate board running machine logic.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 147.0,
+   "visual": {
+    "archetype": "circuit_board",
+    "material": "pcb_blue"
+   }
+  },
+  {
+   "id": "crude_oil",
+   "name": "Crude Oil",
+   "desc": "Black, sour crude pumped from deep reservoirs.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.3,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.08,
+     0.07,
+     0.06
+    ]
+   }
+  },
+  {
+   "id": "deep_well_pump",
+   "name": "Deep-Well Pump",
+   "desc": "Submersible pump string for deep aquifers.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 1360.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "deep_well_pump"
+    }
+   }
+  },
+  {
+   "id": "economizer_card_2",
+   "name": "Economizer Card Mk II",
+   "desc": "Trims idle draw and tunes motors for lower power use.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 624.0,
+   "module": {
+    "speed": 0.0,
+    "energy": -0.3,
+    "productivity": 0.0,
+    "pollution": -0.03
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_blue",
+    "color": [
+     0.25,
+     0.8,
+     0.35
+    ],
+    "params": {
+     "tier": 2
+    }
+   }
+  },
+  {
+   "id": "electrolytic_cell",
+   "name": "Electrolytic Cell",
+   "desc": "Diaphragm cell bank for electrowinning.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 932.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "electrolytic_cell"
+    }
+   }
+  },
+  {
+   "id": "electrostatic_precipitator",
+   "name": "Electrostatic Precipitator",
+   "desc": "Charged-plate precipitator removing 60 pollution/min.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 1140.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "electrostatic_precipitator"
+    }
+   }
+  },
+  {
+   "id": "emission_filter_2",
+   "name": "Emission Filter Mk II",
+   "desc": "Inline catalytic filter that cuts a machine's emissions.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 709.0,
+   "module": {
+    "speed": 0.0,
+    "energy": 0.1,
+    "productivity": 0.0,
+    "pollution": -0.25
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_blue",
+    "color": [
+     0.85,
+     0.92,
+     0.9
+    ],
+    "params": {
+     "tier": 2
+    }
+   }
+  },
+  {
+   "id": "epoxy_resin",
+   "name": "Epoxy Resin",
+   "desc": "Two-part resin for laminates and composites.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 9.19,
+   "visual": {
+    "archetype": "canister",
+    "material": "plastic_color",
+    "color": [
+     0.85,
+     0.6,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "fiberglass_panel",
+   "name": "Fiberglass Laminate",
+   "desc": "Glass-epoxy laminate board.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 3,
+   "value": 26.9,
+   "visual": {
+    "archetype": "plate",
+    "material": "plastic_color",
+    "color": [
+     0.75,
+     0.8,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "filter_cartridge",
+   "name": "Filter Cartridge",
+   "desc": "Activated-carbon cartridge for scrubbers and life support.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 59.0,
+   "visual": {
+    "archetype": "filter",
+    "material": "plastic_white"
+   }
+  },
+  {
+   "id": "flame_projector",
+   "name": "Flame Projector",
+   "desc": "Pressurized projector spraying burning gel.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 3,
+   "value": 991.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "flame_projector"
+    }
+   }
+  },
+  {
+   "id": "frag_shell",
+   "name": "Fragmentation Shell",
+   "desc": "Notched-casing mortar shell that shreds swarms.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 3,
+   "value": 67.0,
+   "ammo": {
+    "class": "explosive",
+    "mult": 1.0
+   },
+   "visual": {
+    "archetype": "shell",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "fuel_briquette",
+   "name": "Fuel Briquette",
+   "desc": "Pressed coke and pitch; a long, clean burn.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 12.1,
+   "fuel_kj": 9000.0,
+   "fuel_class": "chemical",
+   "pollution_mult": 0.7,
+   "visual": {
+    "archetype": "block",
+    "material": "coal"
+   }
+  },
+  {
+   "id": "fuel_gas",
+   "name": "Fuel Gas",
+   "desc": "Light hydrocarbon gas burned in turbines and crackers.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.398,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.55,
+     0.6,
+     0.62
+    ]
+   }
+  },
+  {
+   "id": "gas_turbine",
+   "name": "Gas Turbine",
+   "desc": "Open-cycle turbine: 10 fuel gas/s for 3 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 3,
+   "value": 1740.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "gas_turbine"
+    }
+   }
+  },
+  {
+   "id": "glass_fiber",
+   "name": "Glass Fiber",
+   "desc": "Spun glass filament for laminates and optics.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 6.85,
+   "visual": {
+    "archetype": "cable_coil",
+    "material": "glass"
+   }
+  },
+  {
+   "id": "heavy_autocannon",
+   "name": "Heavy Autocannon",
+   "desc": "Belt-fed twin cannon on a powered mount.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 3,
+   "value": 1610.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "heavy_autocannon"
+    }
+   }
+  },
+  {
+   "id": "heavy_bore_drill",
+   "name": "Heavy Bore Drill",
+   "desc": "Hydraulic-fed bore with a lubricated cutting head.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 2630.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "heavy_bore_drill"
+    }
+   }
+  },
+  {
+   "id": "heavy_oil",
+   "name": "Heavy Oil",
+   "desc": "Thick distillation bottoms for lubricants and anodes.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.483,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.25,
+     0.14,
+     0.06
+    ]
+   }
+  },
+  {
+   "id": "hydraulic_ram",
+   "name": "Hydraulic Ram",
+   "desc": "Oil-filled cylinder for presses and booms.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 85.3,
+   "visual": {
+    "archetype": "rod",
+    "material": "stainless",
+    "params": {
+     "params": {
+      "variant": "cylinder"
+     }
+    }
+   }
+  },
+  {
+   "id": "hydrogen",
+   "name": "Hydrogen",
+   "desc": "Light reducing gas from electrolysis.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.258,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.85,
+     0.2,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "incendiary_canister",
+   "name": "Incendiary Canister",
+   "desc": "Gelled naphtha charge for flame projectors.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 3,
+   "value": 47.9,
+   "ammo": {
+    "class": "incendiary",
+    "mult": 1.0
+   },
+   "visual": {
+    "archetype": "canister",
+    "material": "paint",
+    "color": [
+     0.75,
+     0.2,
+     0.1
+    ]
+   }
+  },
+  {
+   "id": "induction_furnace",
+   "name": "Induction Furnace",
+   "desc": "Clean electric furnace with induction coils.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 773.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "induction_furnace"
+    }
+   }
+  },
+  {
+   "id": "industrial_blender",
+   "name": "Industrial Blender",
+   "desc": "Twin-shaft blender with metered dosing.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 1270.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "industrial_blender"
+    }
+   }
+  },
+  {
+   "id": "insulated_cable",
+   "name": "Insulated Cable",
+   "desc": "Rubber-jacketed copper power cable.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 3,
+   "value": 13.9,
+   "visual": {
+    "archetype": "cable_coil",
+    "material": "rubber"
+   }
+  },
+  {
+   "id": "lubricant",
+   "name": "Lubricant",
+   "desc": "Blended base oil that keeps heavy machinery turning.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 1.1,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.32,
+     0.55,
+     0.22
+    ]
+   }
+  },
+  {
+   "id": "mortar_battery",
+   "name": "Mortar Battery",
+   "desc": "Indirect-fire tubes for massed swarms.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 3,
+   "value": 758.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "mortar_battery"
+    }
+   }
+  },
+  {
+   "id": "naphtha",
+   "name": "Naphtha",
+   "desc": "Light distillate feeding polymers, rubber and solvents.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.531,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.85,
+     0.62,
+     0.22
+    ]
+   }
+  },
+  {
+   "id": "native_sulfur",
+   "name": "Native Sulfur",
+   "desc": "Yellow sulfur crusts scraped from volcanic vents.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 3,
+   "value": 2.0,
+   "visual": {
+    "archetype": "crystal_cluster",
+    "material": "sulfur"
+   }
+  },
+  {
+   "id": "natural_gas",
+   "name": "Natural Gas",
+   "desc": "Sour methane-rich gas from drilled wells.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.25,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.9,
+     0.75,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "overclock_card_2",
+   "name": "Overclock Card Mk II",
+   "desc": "Pushes machines past their rated speed at a steep power cost.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 634.0,
+   "module": {
+    "speed": 0.25,
+    "energy": 0.5,
+    "productivity": 0.0,
+    "pollution": 0.06
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_blue",
+    "color": [
+     0.2,
+     0.45,
+     0.95
+    ],
+    "params": {
+     "tier": 2
+    }
+   }
+  },
+  {
+   "id": "pipeline_station",
+   "name": "Pipeline Pumping Station",
+   "desc": "Booster station: +2,000 fluid/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 3,
+   "value": 2010.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pipeline_station"
+    }
+   }
+  },
+  {
+   "id": "plastic_pellets",
+   "name": "Plastic Pellets",
+   "desc": "Polyethylene nurdles for molding and extrusion.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 11.2,
+   "visual": {
+    "archetype": "pellets",
+    "material": "plastic_white"
+   }
+  },
+  {
+   "id": "plastic_sheet",
+   "name": "Plastic Sheet",
+   "desc": "Extruded polymer sheet for housings and film.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 3,
+   "value": 31.8,
+   "visual": {
+    "archetype": "sheet_coil",
+    "material": "plastic_white"
+   }
+  },
+  {
+   "id": "pneumatic_hub",
+   "name": "Pneumatic Tube Hub",
+   "desc": "Capsule tube exchange: +80 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 3,
+   "value": 4170.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pneumatic_hub"
+    }
+   }
+  },
+  {
+   "id": "potash",
+   "name": "Potash",
+   "desc": "Potassium salts for fertilizer and blasting powder.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 13.3,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "salt",
+    "color": [
+     0.85,
+     0.55,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "rail_depot",
+   "name": "Rail Depot",
+   "desc": "Freight sidings and gantry crane: +250 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 3,
+   "value": 4660.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "rail_depot"
+    }
+   }
+  },
+  {
+   "id": "rubber",
+   "name": "Rubber",
+   "desc": "Sulfur-vulcanized synthetic rubber.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 9.26,
+   "visual": {
+    "archetype": "block",
+    "material": "rubber"
+   }
+  },
+  {
+   "id": "salt",
+   "name": "Salt",
+   "desc": "Evaporated sodium chloride crystals.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 4.45,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "salt"
+   }
+  },
+  {
+   "id": "signal_relay",
+   "name": "Signal Relay",
+   "desc": "Timing relay that speeds up machines in its bay.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 1190.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "signal_relay"
+    }
+   }
+  },
+  {
+   "id": "sulfur",
+   "name": "Sulfur",
+   "desc": "Bright yellow sulfur for acid, rubber and powder.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 3,
+   "value": 3.98,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "sulfur"
+   }
+  },
+  {
+   "id": "sulfuric_acid",
+   "name": "Sulfuric Acid",
+   "desc": "Oily, corrosive acid used across heavy chemistry.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 3,
+   "value": 0.482,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.9,
+     0.85,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "surface_mount_line",
+   "name": "Surface-Mount Line",
+   "desc": "Pick-and-place line for dense boards.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 2490.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "surface_mount_line"
+    }
+   }
+  },
+  {
+   "id": "wellhead_compressor",
+   "name": "Wellhead Compressor",
+   "desc": "Compressed-lift wellhead for gas and light crude.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 3,
+   "value": 2400.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "wellhead_compressor"
+    }
+   }
+  },
+  {
+   "id": "yield_optimizer_2",
+   "name": "Yield Optimizer Mk II",
+   "desc": "Recovers waste in-process for bonus output, slowing the line.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 3,
+   "value": 720.0,
+   "module": {
+    "speed": -0.08,
+    "energy": 0.5,
+    "productivity": 0.05,
+    "pollution": 0.06
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_blue",
+    "color": [
+     0.95,
+     0.65,
+     0.15
+    ],
+    "params": {
+     "tier": 2
+    }
+   }
+  },
+  {
+   "id": "acrylic_fiber",
+   "name": "Acrylic Fiber",
+   "desc": "Spun polyacrylonitrile, the carbon fiber precursor.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 13.2,
+   "visual": {
+    "archetype": "cable_coil",
+    "material": "plastic_white"
+   }
+  },
+  {
+   "id": "air_separation_unit",
+   "name": "Air Separation Unit",
+   "desc": "Cold box that fractionates liquefied air.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 4160.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "air_separation_unit"
+    }
+   }
+  },
+  {
+   "id": "airframe_panel",
+   "name": "Airframe Panel",
+   "desc": "Riveted duralumin-composite skin section.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 869.0,
+   "visual": {
+    "archetype": "frame",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "alloy_specimen",
+   "name": "Alloy Specimens",
+   "desc": "Stress-tested coupons of experimental alloys.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 4,
+   "value": 284.0,
+   "visual": {
+    "archetype": "capsule",
+    "material": "titanium",
+    "color": [
+     0.7,
+     0.72,
+     0.78
+    ]
+   }
+  },
+  {
+   "id": "alumina",
+   "name": "Alumina",
+   "desc": "White aluminum oxide from the Bayer process.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 13.1,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "ceramic"
+   }
+  },
+  {
+   "id": "aluminum_ingot",
+   "name": "Aluminum Ingot",
+   "desc": "Electrolytic aluminum, light and corrosion-proof.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 69.3,
+   "visual": {
+    "archetype": "ingot",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "aluminum_powder",
+   "name": "Aluminum Powder",
+   "desc": "Fine flake powder for thermite and propellants.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 31.6,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "aluminum_sheet",
+   "name": "Aluminum Sheet",
+   "desc": "Cold-rolled aluminum coil.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 4,
+   "value": 45.5,
+   "visual": {
+    "archetype": "sheet_coil",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "ammonia",
+   "name": "Ammonia",
+   "desc": "Pungent synthesis gas for nitrates, fibers and cultures.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 4,
+   "value": 0.925,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.6,
+     0.35,
+     0.8
+    ]
+   }
+  },
+  {
+   "id": "antenna_array",
+   "name": "Phased Antenna Array",
+   "desc": "Electronically steered antenna panel.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 558.0,
+   "visual": {
+    "archetype": "antenna",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "armored_bulwark",
+   "name": "Armored Bulwark",
+   "desc": "Titanium-faced wall (+40 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 4,
+   "value": 1270.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "armored_bulwark"
+    }
+   }
+  },
+  {
+   "id": "automated_arsenal",
+   "name": "Automated Arsenal",
+   "desc": "Robotic ordnance line with blast cells.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 6180.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "automated_arsenal"
+    }
+   }
+  },
+  {
+   "id": "automated_warehouse",
+   "name": "Automated Warehouse",
+   "desc": "Robot-picked high bay: +8,000 per item type.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 4,
+   "value": 12500.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "automated_warehouse"
+    }
+   }
+  },
+  {
+   "id": "bauxite",
+   "name": "Bauxite",
+   "desc": "Rusty-orange laterite, the ore of aluminum.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 4,
+   "value": 2.2,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "bauxite"
+   }
+  },
+  {
+   "id": "capacitor_pack",
+   "name": "Capacitor Pack",
+   "desc": "Fast-discharge pack that fires pulse lasers.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 4,
+   "value": 172.0,
+   "ammo": {
+    "class": "energy",
+    "mult": 1.0
+   },
+   "visual": {
+    "archetype": "cell",
+    "material": "steel",
+    "color": [
+     0.2,
+     0.6,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "carbon_anode",
+   "name": "Carbon Anode",
+   "desc": "Baked pitch-coke anode consumed in smelting pots.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 4,
+   "value": 43.4,
+   "visual": {
+    "archetype": "block",
+    "material": "graphite"
+   }
+  },
+  {
+   "id": "carbon_fiber",
+   "name": "Carbon Fiber",
+   "desc": "Carbonized filament tow, stiff and light.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 71.1,
+   "visual": {
+    "archetype": "sheet_coil",
+    "material": "carbon_fiber"
+   }
+  },
+  {
+   "id": "cargo_drone",
+   "name": "Cargo Drone",
+   "desc": "Quad-rotor freight drone for depot logistics.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 1870.0,
+   "visual": {
+    "archetype": "drone",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "catalytic_reactor",
+   "name": "Catalytic Reactor",
+   "desc": "Fixed-bed catalytic reactor with titanium internals.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 2920.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "catalytic_reactor"
+    }
+   }
+  },
+  {
+   "id": "clean_room_assembler",
+   "name": "Clean-Room Assembler",
+   "desc": "Filtered-air bay for tight-tolerance assembly.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 3320.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "clean_room_assembler"
+    }
+   }
+  },
+  {
+   "id": "composite_panel",
+   "name": "Composite Panel",
+   "desc": "Cured carbon-epoxy panel.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 212.0,
+   "visual": {
+    "archetype": "plate",
+    "material": "carbon_fiber"
+   }
+  },
+  {
+   "id": "drone_port",
+   "name": "Drone Port",
+   "desc": "Charging pads and a cargo-drone flight: +400 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 4,
+   "value": 15600.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "drone_port"
+    }
+   }
+  },
+  {
+   "id": "duralumin_ingot",
+   "name": "Duralumin Billet",
+   "desc": "Age-hardened aluminum-copper alloy.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 85.6,
+   "visual": {
+    "archetype": "ingot",
+    "material": "aluminum",
+    "color": [
+     0.8,
+     0.82,
+     0.86
+    ]
+   }
+  },
+  {
+   "id": "economizer_card_3",
+   "name": "Economizer Card Mk III",
+   "desc": "Trims idle draw and tunes motors for lower power use.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 1440.0,
+   "module": {
+    "speed": 0.0,
+    "energy": -0.4,
+    "productivity": 0.0,
+    "pollution": -0.04
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.25,
+     0.8,
+     0.35
+    ],
+    "params": {
+     "tier": 3
+    }
+   }
+  },
+  {
+   "id": "embedded_controller",
+   "name": "Embedded Controller",
+   "desc": "Board-level computer with on-chip memory.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 467.0,
+   "visual": {
+    "archetype": "circuit_board",
+    "material": "pcb_black"
+   }
+  },
+  {
+   "id": "emission_filter_3",
+   "name": "Emission Filter Mk III",
+   "desc": "Inline catalytic filter that cuts a machine's emissions.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 1260.0,
+   "module": {
+    "speed": 0.0,
+    "energy": 0.15,
+    "productivity": 0.0,
+    "pollution": -0.35
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.85,
+     0.92,
+     0.9
+    ],
+    "params": {
+     "tier": 3
+    }
+   }
+  },
+  {
+   "id": "fiber_optic_cable",
+   "name": "Fiber-Optic Cable",
+   "desc": "Jacketed glass fiber for data links.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 4,
+   "value": 41.5,
+   "visual": {
+    "archetype": "cable_coil",
+    "material": "plastic_color",
+    "color": [
+     0.95,
+     0.5,
+     0.1
+    ]
+   }
+  },
+  {
+   "id": "fired_superheater",
+   "name": "Fired Superheater",
+   "desc": "Radiant superheater lifting steam to turbine grade.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 4,
+   "value": 2010.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "fired_superheater"
+    }
+   }
+  },
+  {
+   "id": "freight_yard",
+   "name": "Freight Yard",
+   "desc": "Hump yard with automated couplers: +800 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 4,
+   "value": 16300.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "freight_yard"
+    }
+   }
+  },
+  {
+   "id": "harmonic_drive",
+   "name": "Harmonic Drive",
+   "desc": "Zero-backlash strain-wave reduction gear.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 201.0,
+   "visual": {
+    "archetype": "gear",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "he_shell",
+   "name": "High-Explosive Shell",
+   "desc": "Thin-walled shell with a nitrated burster.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 4,
+   "value": 154.0,
+   "ammo": {
+    "class": "explosive",
+    "mult": 1.8
+   },
+   "visual": {
+    "archetype": "shell",
+    "material": "steel",
+    "color": [
+     0.55,
+     0.55,
+     0.3
+    ]
+   }
+  },
+  {
+   "id": "heat_sink",
+   "name": "Heat Sink",
+   "desc": "Finned aluminum-copper heat spreader.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 4,
+   "value": 126.0,
+   "visual": {
+    "archetype": "heat_sink",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "high_explosive",
+   "name": "High Explosive",
+   "desc": "Stable nitrated charge for shells.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 39.4,
+   "visual": {
+    "archetype": "block",
+    "material": "plastic_color",
+    "color": [
+     0.75,
+     0.68,
+     0.5
+    ]
+   }
+  },
+  {
+   "id": "hydraulic_forge_press",
+   "name": "Hydraulic Forge Press",
+   "desc": "Multi-thousand-tonne press for any forming job.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 3890.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "hydraulic_forge_press"
+    }
+   }
+  },
+  {
+   "id": "hydrochloric_acid",
+   "name": "Hydrochloric Acid",
+   "desc": "Strong acid for refining silicon and rare earths.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 4,
+   "value": 0.485,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.75,
+     0.9,
+     0.6
+    ]
+   }
+  },
+  {
+   "id": "hydrocracker",
+   "name": "Hydrocracker",
+   "desc": "High-pressure hydrogen cracking unit.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 5180.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "hydrocracker"
+    }
+   }
+  },
+  {
+   "id": "ilmenite",
+   "name": "Ilmenite",
+   "desc": "Black beach sand rich in iron-titanium oxide.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 4,
+   "value": 2.8,
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "ilmenite"
+   }
+  },
+  {
+   "id": "lithium_carbonate",
+   "name": "Lithium Carbonate",
+   "desc": "Battery-grade lithium salt from brine.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 58.8,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "lithium"
+   }
+  },
+  {
+   "id": "lithium_cell",
+   "name": "Lithium-Ion Cell",
+   "desc": "Dense rechargeable cell in an aluminum can.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 200.0,
+   "visual": {
+    "archetype": "cell",
+    "material": "lithium"
+   }
+  },
+  {
+   "id": "lithography_fab",
+   "name": "Lithography Fab",
+   "desc": "Photolithography cleanroom for dies and controllers.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 4690.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "lithography_fab"
+    }
+   }
+  },
+  {
+   "id": "magnesium_ingot",
+   "name": "Magnesium Ingot",
+   "desc": "Light reactive metal won from brine.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 54.4,
+   "visual": {
+    "archetype": "ingot",
+    "material": "silver"
+   }
+  },
+  {
+   "id": "materials_test_lab",
+   "name": "Materials Test Lab",
+   "desc": "Load frames, spectrometers and climate chambers.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 4380.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "materials_test_lab"
+    }
+   }
+  },
+  {
+   "id": "microchip",
+   "name": "Microchip",
+   "desc": "Lithographed logic die in a plastic package.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 41.8,
+   "visual": {
+    "archetype": "chip",
+    "material": "pcb_black"
+   }
+  },
+  {
+   "id": "nitric_acid",
+   "name": "Nitric Acid",
+   "desc": "Oxidizing acid for high explosives.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 4,
+   "value": 2.03,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.95,
+     0.55,
+     0.15
+    ]
+   }
+  },
+  {
+   "id": "nitrogen",
+   "name": "Nitrogen",
+   "desc": "Separated nitrogen for ammonia synthesis.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 4,
+   "value": 0.113,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.35,
+     0.35,
+     0.4
+    ]
+   }
+  },
+  {
+   "id": "optical_lens",
+   "name": "Optical Lens",
+   "desc": "Ground and coated precision lens.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 59.2,
+   "visual": {
+    "archetype": "lens",
+    "material": "glass"
+   }
+  },
+  {
+   "id": "overclock_card_3",
+   "name": "Overclock Card Mk III",
+   "desc": "Pushes machines past their rated speed at a steep power cost.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 1500.0,
+   "module": {
+    "speed": 0.35,
+    "energy": 0.6,
+    "productivity": 0.0,
+    "pollution": 0.07
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.2,
+     0.45,
+     0.95
+    ],
+    "params": {
+     "tier": 3
+    }
+   }
+  },
+  {
+   "id": "oxygen",
+   "name": "Oxygen",
+   "desc": "Separated oxygen for oxidizers and acids.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 4,
+   "value": 0.227,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.2,
+     0.45,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "polysilicon",
+   "name": "Polysilicon",
+   "desc": "Hyper-pure silicon rods for crystal growth.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 121.0,
+   "visual": {
+    "archetype": "crystal_cluster",
+    "material": "silicon"
+   }
+  },
+  {
+   "id": "pressurized_tank_farm",
+   "name": "Pressurized Tank Farm",
+   "desc": "Sphere tanks: +25,000 per fluid.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 4,
+   "value": 3140.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pressurized_tank_farm"
+    }
+   }
+  },
+  {
+   "id": "pulse_laser_turret",
+   "name": "Pulse Laser Turret",
+   "desc": "Capacitor-fed laser that never jams.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 4,
+   "value": 2230.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "pulse_laser_turret"
+    }
+   }
+  },
+  {
+   "id": "reclamation_plant",
+   "name": "Reclamation Plant",
+   "desc": "Magnetic and flotation recovery of process residues.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 2700.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "reclamation_plant"
+    }
+   }
+  },
+  {
+   "id": "red_mud",
+   "name": "Red Mud",
+   "desc": "Iron-rich digestion residue; worth reclaiming.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 4.37,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "bauxite",
+    "color": [
+     0.55,
+     0.2,
+     0.1
+    ]
+   }
+  },
+  {
+   "id": "robotic_arm",
+   "name": "Robotic Arm",
+   "desc": "Six-axis manipulator for automated cells.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 1680.0,
+   "visual": {
+    "archetype": "servo_arm",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "robotic_workcell",
+   "name": "Robotic Workcell",
+   "desc": "Robot-tended cell building anything that fits.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 4,
+   "value": 5540.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "robotic_workcell"
+    }
+   }
+  },
+  {
+   "id": "servo_motor",
+   "name": "Servo Motor",
+   "desc": "Closed-loop motor with encoder feedback.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 301.0,
+   "visual": {
+    "archetype": "motor",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "silicon",
+   "name": "Metallurgical Silicon",
+   "desc": "Arc-reduced silicon lumps.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 35.6,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "silicon"
+   }
+  },
+  {
+   "id": "silicon_offcuts",
+   "name": "Silicon Offcuts",
+   "desc": "Ingot ends and broken wafers.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 32.9,
+   "visual": {
+    "archetype": "gravel_pile",
+    "material": "silicon"
+   }
+  },
+  {
+   "id": "silicon_wafer",
+   "name": "Silicon Wafer",
+   "desc": "Polished single-crystal wafer.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 4,
+   "value": 98.7,
+   "visual": {
+    "archetype": "plate",
+    "material": "silicon"
+   }
+  },
+  {
+   "id": "soda_ash",
+   "name": "Soda Ash",
+   "desc": "Sodium carbonate for float glass and lithium salts.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 16.8,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "salt",
+    "color": [
+     0.95,
+     0.95,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "steam_turbine",
+   "name": "Steam Turbine",
+   "desc": "Multi-stage turbine: 40 superheated steam/s for 4 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 4,
+   "value": 5920.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "steam_turbine"
+    }
+   }
+  },
+  {
+   "id": "thermite_charge",
+   "name": "Thermite Charge",
+   "desc": "Aluminum-oxide charge that burns through armor.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 4,
+   "value": 141.0,
+   "ammo": {
+    "class": "incendiary",
+    "mult": 1.8
+   },
+   "visual": {
+    "archetype": "canister",
+    "material": "aluminum",
+    "color": [
+     0.7,
+     0.35,
+     0.25
+    ]
+   }
+  },
+  {
+   "id": "thin_film_solar_field",
+   "name": "Thin-Film Solar Field",
+   "desc": "Silicon thin-film field: 400 kW peak.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 4,
+   "value": 3560.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "thin_film_solar_field"
+    }
+   }
+  },
+  {
+   "id": "tidal_generator",
+   "name": "Tidal Barrage Turbine",
+   "desc": "Bulb turbine in a sea wall averaging 1.5 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 4,
+   "value": 3900.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "tidal_generator"
+    }
+   }
+  },
+  {
+   "id": "titanium_alloy",
+   "name": "Titanium Alloy Bar",
+   "desc": "Titanium-aluminum alloy bar for airframes and rotors.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 236.0,
+   "visual": {
+    "archetype": "rod",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "titanium_ingot",
+   "name": "Titanium Ingot",
+   "desc": "Sponge-melted titanium, strong and light.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 4,
+   "value": 165.0,
+   "visual": {
+    "archetype": "ingot",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "titanium_plate",
+   "name": "Titanium Plate",
+   "desc": "Rolled titanium for hot and corrosive duty.",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 4,
+   "value": 105.0,
+   "visual": {
+    "archetype": "plate",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "titanium_tetrachloride",
+   "name": "Titanium Tetrachloride",
+   "desc": "Fuming chloride intermediate of titanium.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 4,
+   "value": 1.64,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.85,
+     0.85,
+     0.75
+    ]
+   }
+  },
+  {
+   "id": "turbine_blade",
+   "name": "Turbine Blade",
+   "desc": "Cast titanium-alloy blade with cooling channels.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 161.0,
+   "visual": {
+    "archetype": "turbine_blade",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "yield_optimizer_3",
+   "name": "Yield Optimizer Mk III",
+   "desc": "Recovers waste in-process for bonus output, slowing the line.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 4,
+   "value": 1500.0,
+   "module": {
+    "speed": -0.1,
+    "energy": 0.6,
+    "productivity": 0.07,
+    "pollution": 0.07
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.95,
+     0.65,
+     0.15
+    ],
+    "params": {
+     "tier": 3
+    }
+   }
+  },
+  {
+   "id": "avionics_suite",
+   "name": "Avionics Suite",
+   "desc": "Racked navigation, guidance and comms.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 3790.0,
+   "visual": {
+    "archetype": "crate",
+    "material": "aluminum",
+    "params": {
+     "params": {
+      "variant": "avionics"
+     }
+    }
+   }
+  },
+  {
+   "id": "ball_mill",
+   "name": "Ball Mill",
+   "desc": "Rotating drum mill grinding to powder.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 3570.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "ball_mill"
+    }
+   }
+  },
+  {
+   "id": "brushless_motor",
+   "name": "Brushless Motor",
+   "desc": "High-torque permanent-magnet motor.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 283.0,
+   "visual": {
+    "archetype": "motor",
+    "material": "aluminum",
+    "color": [
+     0.3,
+     0.32,
+     0.36
+    ]
+   }
+  },
+  {
+   "id": "catalytic_scrubber",
+   "name": "Catalytic Scrubber",
+   "desc": "Rare-earth catalyst bed removing 180 pollution/min.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 1890.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "catalytic_scrubber"
+    }
+   }
+  },
+  {
+   "id": "centrifuge_cascade",
+   "name": "Centrifuge Cascade",
+   "desc": "Carbon-rotor centrifuges in series.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 4870.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "centrifuge_cascade"
+    }
+   }
+  },
+  {
+   "id": "combined_cycle_turbine",
+   "name": "Combined-Cycle Turbine",
+   "desc": "Gas turbine with heat-recovery steam stage: 20 gas/s for 9 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 5,
+   "value": 12200.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "combined_cycle_turbine"
+    }
+   }
+  },
+  {
+   "id": "cooling_tower",
+   "name": "Cooling Tower",
+   "desc": "Hyperbolic tower: +10% output for generators in its bay.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 5,
+   "value": 4120.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "cooling_tower"
+    }
+   }
+  },
+  {
+   "id": "cryo_liquefier",
+   "name": "Cryogenic Liquefier",
+   "desc": "Turbo-expander liquefaction train.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 6200.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "cryo_liquefier"
+    }
+   }
+  },
+  {
+   "id": "cryogenic_tank",
+   "name": "Cryogenic Tank",
+   "desc": "Vacuum-jacketed dewar: +80,000 per fluid.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 5,
+   "value": 6750.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "cryogenic_tank"
+    }
+   }
+  },
+  {
+   "id": "deep_core_drill",
+   "name": "Deep Core Drill",
+   "desc": "Carbide-bit drill reaching the deep seams.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 4920.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "deep_core_drill"
+    }
+   }
+  },
+  {
+   "id": "economizer_card_4",
+   "name": "Economizer Card Mk IV",
+   "desc": "Trims idle draw and tunes motors for lower power use.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 2910.0,
+   "module": {
+    "speed": 0.0,
+    "energy": -0.5,
+    "productivity": 0.0,
+    "pollution": -0.05
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_red",
+    "color": [
+     0.25,
+     0.8,
+     0.35
+    ],
+    "params": {
+     "tier": 4
+    }
+   }
+  },
+  {
+   "id": "emission_filter_4",
+   "name": "Emission Filter Mk IV",
+   "desc": "Inline catalytic filter that cuts a machine's emissions.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 2860.0,
+   "module": {
+    "speed": 0.0,
+    "energy": 0.15,
+    "productivity": 0.0,
+    "pollution": -0.45
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_red",
+    "color": [
+     0.85,
+     0.92,
+     0.9
+    ],
+    "params": {
+     "tier": 4
+    }
+   }
+  },
+  {
+   "id": "enzyme_culture",
+   "name": "Enzyme Culture",
+   "desc": "Engineered microbes that bind metals and digest feedstock.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 54.2,
+   "visual": {
+    "archetype": "flask",
+    "material": "glass",
+    "color": [
+     0.85,
+     0.75,
+     0.3
+    ]
+   }
+  },
+  {
+   "id": "fermentation_vat",
+   "name": "Fermentation Vat",
+   "desc": "Sterile titanium vat for engineered cultures.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 3550.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "fermentation_vat"
+    }
+   }
+  },
+  {
+   "id": "fissile_seed",
+   "name": "Fissile Seed",
+   "desc": "Enriched fissile pellets that kindle the thorium cycle.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 382.0,
+   "visual": {
+    "archetype": "pellets",
+    "material": "uranium_glass"
+   }
+  },
+  {
+   "id": "flight_computer",
+   "name": "Flight Computer",
+   "desc": "Radiation-tolerant triple-redundant computer.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 1740.0,
+   "visual": {
+    "archetype": "processor",
+    "material": "pcb_black"
+   }
+  },
+  {
+   "id": "flight_telemetry",
+   "name": "Flight Telemetry",
+   "desc": "Data recorders recovered from test flights.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 5,
+   "value": 634.0,
+   "visual": {
+    "archetype": "canister",
+    "material": "paint",
+    "color": [
+     1.0,
+     0.45,
+     0.05
+    ]
+   }
+  },
+  {
+   "id": "fractionation_tower",
+   "name": "Fractionation Tower",
+   "desc": "Tall vacuum fractionator with fine cuts.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 6560.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "fractionation_tower"
+    }
+   }
+  },
+  {
+   "id": "geothermal_plant",
+   "name": "Geothermal Plant",
+   "desc": "Deep-well flash plant: steady 6 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 5,
+   "value": 10800.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "geothermal_plant"
+    }
+   }
+  },
+  {
+   "id": "gyroscope",
+   "name": "Ring-Laser Gyroscope",
+   "desc": "Laser loop that senses rotation without moving parts.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 392.0,
+   "visual": {
+    "archetype": "capsule",
+    "material": "aluminum"
+   }
+  },
+  {
+   "id": "heat_shield_tile",
+   "name": "Heat Shield Tile",
+   "desc": "Silica-alumina tile that shrugs off re-entry heat.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 42.8,
+   "visual": {
+    "archetype": "brick",
+    "material": "ceramic",
+    "color": [
+     0.15,
+     0.15,
+     0.15
+    ]
+   }
+  },
+  {
+   "id": "heavy_drone_port",
+   "name": "Heavy Drone Port",
+   "desc": "Heavy-lift drone wing: +1,500 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 5,
+   "value": 29200.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "heavy_drone_port"
+    }
+   }
+  },
+  {
+   "id": "heavy_wind_turbine",
+   "name": "Heavy Wind Turbine",
+   "desc": "Direct-drive magnet turbine averaging 1.8 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 5,
+   "value": 7510.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "heavy_wind_turbine"
+    }
+   }
+  },
+  {
+   "id": "howitzer_emplacement",
+   "name": "Howitzer Emplacement",
+   "desc": "Long-range gun with a computed fire solution.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 4480.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "howitzer_emplacement"
+    }
+   }
+  },
+  {
+   "id": "launch_complex",
+   "name": "Launch Complex",
+   "desc": "Pad, tower and flame trench where megaproject stages are delivered.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 5,
+   "value": 22500.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "launch_complex"
+    }
+   }
+  },
+  {
+   "id": "liquid_hydrogen",
+   "name": "Liquid Hydrogen",
+   "desc": "Deep-cryogenic upper-stage fuel.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 5,
+   "value": 1.72,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.85,
+     0.9,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "liquid_oxygen",
+   "name": "Liquid Oxygen",
+   "desc": "Pale blue cryogenic oxidizer.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 5,
+   "value": 1.17,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.55,
+     0.8,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "lithium_charge_pack",
+   "name": "Lithium Charge Pack",
+   "desc": "Dense rechargeable pack for beam weapons.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 682.0,
+   "ammo": {
+    "class": "energy",
+    "mult": 1.8
+   },
+   "visual": {
+    "archetype": "cell",
+    "material": "lithium",
+    "color": [
+     0.3,
+     0.8,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "lithium_storage_array",
+   "name": "Lithium Storage Array",
+   "desc": "Containerized lithium racks: 800 MJ at 5 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 5,
+   "value": 13000.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "lithium_storage_array"
+    }
+   }
+  },
+  {
+   "id": "membrane_electrolyzer",
+   "name": "Membrane Electrolyzer",
+   "desc": "Ion-membrane stack with titanium electrodes.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 5970.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "membrane_electrolyzer"
+    }
+   }
+  },
+  {
+   "id": "monazite_sand",
+   "name": "Monazite Sand",
+   "desc": "Mildly radioactive sand carrying thorium and rare earths.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 5,
+   "value": 3.0,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "monazite"
+   }
+  },
+  {
+   "id": "nanofabricator",
+   "name": "Nanofabricator",
+   "desc": "Deposition chamber assembling films atom by atom.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 14300.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "nanofabricator"
+    }
+   }
+  },
+  {
+   "id": "offshore_rig",
+   "name": "Offshore Rig",
+   "desc": "Jack-up platform drilling the shelf reservoirs.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 9230.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "offshore_rig"
+    }
+   }
+  },
+  {
+   "id": "overclock_card_4",
+   "name": "Overclock Card Mk IV",
+   "desc": "Pushes machines past their rated speed at a steep power cost.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 3140.0,
+   "module": {
+    "speed": 0.45,
+    "energy": 0.7,
+    "productivity": 0.0,
+    "pollution": 0.08
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_red",
+    "color": [
+     0.2,
+     0.45,
+     0.95
+    ],
+    "params": {
+     "tier": 4
+    }
+   }
+  },
+  {
+   "id": "overclock_relay",
+   "name": "Overclock Relay",
+   "desc": "Fiber-linked relay with a stronger bay-wide boost.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 5,
+   "value": 5190.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "overclock_relay"
+    }
+   }
+  },
+  {
+   "id": "pyro_gel_cell",
+   "name": "Pyrophoric Gel Cell",
+   "desc": "Self-igniting kerosene gel for thermal lances.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 295.0,
+   "ammo": {
+    "class": "incendiary",
+    "mult": 2.8
+   },
+   "visual": {
+    "archetype": "canister",
+    "material": "titanium",
+    "color": [
+     0.9,
+     0.5,
+     0.1
+    ]
+   }
+  },
+  {
+   "id": "radar_array",
+   "name": "Early-Warning Radar Array",
+   "desc": "Phased-array radar fusing frontier tracks (+40 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 4580.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "radar_array"
+    }
+   }
+  },
+  {
+   "id": "rare_earth_magnet",
+   "name": "Rare-Earth Magnet",
+   "desc": "Sintered neodymium-iron magnet.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 45.9,
+   "visual": {
+    "archetype": "magnet",
+    "material": "chrome"
+   }
+  },
+  {
+   "id": "rare_earth_oxide",
+   "name": "Rare-Earth Oxide",
+   "desc": "Mixed lanthanide oxides for magnets and catalysts.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 11.9,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "crystal",
+    "color": [
+     0.75,
+     0.6,
+     0.65
+    ]
+   }
+  },
+  {
+   "id": "rocket_engine",
+   "name": "Rocket Engine",
+   "desc": "Liquid-fuel engine for heavy lift.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 3590.0,
+   "visual": {
+    "archetype": "rocket_part",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "rocket_kerosene",
+   "name": "Rocket Kerosene",
+   "desc": "Refined, sulfur-free kerosene for first stages.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 5,
+   "value": 1.79,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.8,
+     0.7,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "shield_projector",
+   "name": "Shield Projector",
+   "desc": "Magnetic deflector dome (+200 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 8930.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "shield_projector"
+    }
+   }
+  },
+  {
+   "id": "smart_shell",
+   "name": "Guided Shell",
+   "desc": "Course-correcting shell with a strapdown seeker.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 1280.0,
+   "ammo": {
+    "class": "explosive",
+    "mult": 3.0
+   },
+   "visual": {
+    "archetype": "shell",
+    "material": "titanium",
+    "color": [
+     0.5,
+     0.55,
+     0.6
+    ]
+   }
+  },
+  {
+   "id": "spent_fuel_rod",
+   "name": "Spent Fuel Rod",
+   "desc": "Hot, depleted rod awaiting reprocessing.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 204.0,
+   "visual": {
+    "archetype": "fuel_rod",
+    "material": "lead"
+   }
+  },
+  {
+   "id": "superheated_steam",
+   "name": "Superheated Steam",
+   "desc": "High-pressure dry steam for turbines.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 5,
+   "value": 0.319,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.95,
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "survey_probe",
+   "name": "Survey Probe",
+   "desc": "Sub-orbital probe that maps deep deposits.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 12100.0,
+   "visual": {
+    "archetype": "rocket_part",
+    "material": "aluminum",
+    "color": [
+     0.9,
+     0.9,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "thermal_lance",
+   "name": "Thermal Lance Tower",
+   "desc": "Focused pyrophoric jet that melts armor.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 3440.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "thermal_lance"
+    }
+   }
+  },
+  {
+   "id": "thorium_fuel_rod",
+   "name": "Thorium Fuel Rod",
+   "desc": "Clad thoria rod seeded with fissile pellets.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 1170.0,
+   "fuel_kj": 480000.0,
+   "fuel_class": "nuclear",
+   "visual": {
+    "archetype": "fuel_rod",
+    "material": "thorium"
+   }
+  },
+  {
+   "id": "thorium_oxide",
+   "name": "Thorium Oxide",
+   "desc": "Fertile thoria powder for fuel fabrication.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 53.6,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "thorium"
+   }
+  },
+  {
+   "id": "thorium_reactor",
+   "name": "Thorium Reactor",
+   "desc": "Pressurized thorium reactor: 160 superheated steam/s.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 5,
+   "value": 11700.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "thorium_reactor"
+    }
+   }
+  },
+  {
+   "id": "thrust_nozzle",
+   "name": "Thrust Nozzle",
+   "desc": "Regeneratively cooled bell nozzle.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 829.0,
+   "visual": {
+    "archetype": "nozzle",
+    "material": "tungsten"
+   }
+  },
+  {
+   "id": "tungsten_carbide",
+   "name": "Tungsten Carbide",
+   "desc": "Sintered carbide for bits, nozzles and penetrators.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 78.0,
+   "visual": {
+    "archetype": "block",
+    "material": "tungsten"
+   }
+  },
+  {
+   "id": "tungsten_ingot",
+   "name": "Tungsten Ingot",
+   "desc": "Hydrogen-reduced tungsten, densest of the workshop metals.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 5,
+   "value": 83.5,
+   "visual": {
+    "archetype": "ingot",
+    "material": "tungsten"
+   }
+  },
+  {
+   "id": "tungsten_rounds",
+   "name": "Tungsten Penetrators",
+   "desc": "Carbide-cored rounds for heavy autocannons.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 5,
+   "value": 73.8,
+   "ammo": {
+    "class": "ballistic",
+    "mult": 2.5
+   },
+   "visual": {
+    "archetype": "ammo_box",
+    "material": "tungsten"
+   }
+  },
+  {
+   "id": "turbopump",
+   "name": "Turbopump",
+   "desc": "Propellant pump spun by a hot-gas turbine.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 934.0,
+   "visual": {
+    "archetype": "motor",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "wolframite",
+   "name": "Wolframite",
+   "desc": "Dense black tungstate crystals from ridge veins.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 5,
+   "value": 3.0,
+   "visual": {
+    "archetype": "crystal_cluster",
+    "material": "graphite",
+    "color": [
+     0.18,
+     0.18,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "yield_optimizer_4",
+   "name": "Yield Optimizer Mk IV",
+   "desc": "Recovers waste in-process for bonus output, slowing the line.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 5,
+   "value": 3270.0,
+   "module": {
+    "speed": -0.12,
+    "energy": 0.7,
+    "productivity": 0.1,
+    "pollution": 0.08
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_red",
+    "color": [
+     0.95,
+     0.65,
+     0.15
+    ],
+    "params": {
+     "tier": 4
+    }
+   }
+  },
+  {
+   "id": "aegis_field_array",
+   "name": "Aegis Field Array",
+   "desc": "Plasma-backed field dome (+900 defense).",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 6,
+   "value": 24700.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "aegis_field_array"
+    }
+   }
+  },
+  {
+   "id": "autonomous_fabricator",
+   "name": "Autonomous Fabricator",
+   "desc": "Self-scheduling fabricator for general and precision work.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 18800.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "autonomous_fabricator"
+    }
+   }
+  },
+  {
+   "id": "breeder_reactor",
+   "name": "Breeder Reactor",
+   "desc": "Fast-spectrum reactor that breeds fissile seed.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 6,
+   "value": 25200.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "breeder_reactor"
+    }
+   }
+  },
+  {
+   "id": "carbon_capture_tower",
+   "name": "Carbon Capture Tower",
+   "desc": "Nanotube sorbent tower removing 500 pollution/min.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 5950.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "carbon_capture_tower"
+    }
+   }
+  },
+  {
+   "id": "carbon_nanotube",
+   "name": "Carbon Nanotube Yarn",
+   "desc": "Spun nanotube yarn, stronger than steel cable.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 6,
+   "value": 33.1,
+   "visual": {
+    "archetype": "cable_coil",
+    "material": "carbon_fiber"
+   }
+  },
+  {
+   "id": "coil_accelerator_segment",
+   "name": "Coil Accelerator Segment",
+   "desc": "One stage of a superconducting launch rail.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 6,
+   "value": 3540.0,
+   "visual": {
+    "archetype": "tank_part",
+    "material": "copper",
+    "color": [
+     0.5,
+     0.35,
+     0.2
+    ]
+   }
+  },
+  {
+   "id": "cryocooler",
+   "name": "Cryocooler",
+   "desc": "Closed-cycle refrigerator holding millikelvin stages.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 916.0,
+   "visual": {
+    "archetype": "tank_part",
+    "material": "stainless"
+   }
+  },
+  {
+   "id": "deuterium",
+   "name": "Deuterium",
+   "desc": "Heavy hydrogen isotope for fusion fuel.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 6,
+   "value": 18.0,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.3,
+     0.8,
+     0.95
+    ]
+   }
+  },
+  {
+   "id": "dilution_refrigerator",
+   "name": "Dilution Refrigerator",
+   "desc": "Helium-mixture refrigerator reaching millikelvin.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 8050.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "dilution_refrigerator"
+    }
+   }
+  },
+  {
+   "id": "economizer_card_5",
+   "name": "Economizer Card Mk V",
+   "desc": "Trims idle draw and tunes motors for lower power use.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 5810.0,
+   "module": {
+    "speed": 0.0,
+    "energy": -0.6,
+    "productivity": 0.0,
+    "pollution": -0.06
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.25,
+     0.8,
+     0.35
+    ],
+    "params": {
+     "tier": 5
+    }
+   }
+  },
+  {
+   "id": "emission_filter_5",
+   "name": "Emission Filter Mk V",
+   "desc": "Inline catalytic filter that cuts a machine's emissions.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 5790.0,
+   "module": {
+    "speed": 0.0,
+    "energy": 0.2,
+    "productivity": 0.0,
+    "pollution": -0.6
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.85,
+     0.92,
+     0.9
+    ],
+    "params": {
+     "tier": 5
+    }
+   }
+  },
+  {
+   "id": "flow_reactor",
+   "name": "Continuous-Flow Reactor",
+   "desc": "Microchannel reactor with graphene heat exchange.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 10200.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "flow_reactor"
+    }
+   }
+  },
+  {
+   "id": "fusion_pellet",
+   "name": "Fusion Fuel Pellet",
+   "desc": "Deuterium-lithium target pellet.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 289.0,
+   "fuel_kj": 1800000.0,
+   "fuel_class": "fusion",
+   "visual": {
+    "archetype": "pellets",
+    "material": "glow",
+    "color": [
+     0.4,
+     0.9,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "graphene",
+   "name": "Graphene Film",
+   "desc": "Single-atom carbon film grown on copper foil.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 6,
+   "value": 42.1,
+   "visual": {
+    "archetype": "plate",
+    "material": "graphite",
+    "color": [
+     0.1,
+     0.1,
+     0.12
+    ]
+   }
+  },
+  {
+   "id": "helium_gas",
+   "name": "Helium Gas",
+   "desc": "Inert gas tapped from deep radiogenic pockets.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 6,
+   "value": 0.5,
+   "visual": {
+    "archetype": "gas_canister",
+    "material": "paint",
+    "color": [
+     0.85,
+     0.5,
+     0.75
+    ]
+   }
+  },
+  {
+   "id": "hypervelocity_slug",
+   "name": "Hypervelocity Slug",
+   "desc": "Nanotube-sabot carbide slug for interceptors and rails.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 6,
+   "value": 102.0,
+   "ammo": {
+    "class": "ballistic",
+    "mult": 4.0
+   },
+   "visual": {
+    "archetype": "ammo_box",
+    "material": "tungsten",
+    "color": [
+     0.3,
+     0.3,
+     0.4
+    ]
+   }
+  },
+  {
+   "id": "interceptor_drone_nest",
+   "name": "Interceptor Drone Nest",
+   "desc": "Armed drone wing that hunts raiders.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 6,
+   "value": 25800.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "interceptor_drone_nest"
+    }
+   }
+  },
+  {
+   "id": "isotope_separator",
+   "name": "Isotope Separator",
+   "desc": "Magnetic-levitation rotor bank.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 15500.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "isotope_separator"
+    }
+   }
+  },
+  {
+   "id": "liquid_helium",
+   "name": "Liquid Helium",
+   "desc": "Near-absolute-zero coolant for superconductors.",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 6,
+   "value": 6.43,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.75,
+     0.95,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "maglev_terminal",
+   "name": "Maglev Freight Terminal",
+   "desc": "Superconducting freight line: +5,000 items/s.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 6,
+   "value": 13100.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "maglev_terminal"
+    }
+   }
+  },
+  {
+   "id": "metamaterial_lattice",
+   "name": "Metamaterial Lattice",
+   "desc": "Engineered nano-lattice with tuned stiffness and optics.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 705.0,
+   "visual": {
+    "archetype": "frame",
+    "material": "crystal",
+    "color": [
+     0.4,
+     0.75,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "micro_precision_cell",
+   "name": "Micro-Precision Cell",
+   "desc": "Vibration-isolated cell working at nanometer tolerance.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 11800.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "micro_precision_cell"
+    }
+   }
+  },
+  {
+   "id": "molecular_assembler",
+   "name": "Molecular Assembler",
+   "desc": "Directed self-assembly reactor.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 26300.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "molecular_assembler"
+    }
+   }
+  },
+  {
+   "id": "nano_coating",
+   "name": "Nano-Ceramic Coating",
+   "desc": "Self-healing ceramic coating for hulls and armor.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 6,
+   "value": 91.4,
+   "visual": {
+    "archetype": "canister",
+    "material": "ceramic",
+    "color": [
+     0.85,
+     0.88,
+     0.95
+    ]
+   }
+  },
+  {
+   "id": "nutrient_paste",
+   "name": "Nutrient Paste",
+   "desc": "Complete synthetic food for long voyages.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 6,
+   "value": 72.1,
+   "visual": {
+    "archetype": "flask",
+    "material": "plastic_white",
+    "color": [
+     0.8,
+     0.7,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "orbital_gantry",
+   "name": "Orbital Assembly Gantry",
+   "desc": "Towering gantry that stacks launch vehicles and Ark modules.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 49300.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "orbital_gantry"
+    }
+   }
+  },
+  {
+   "id": "overclock_card_5",
+   "name": "Overclock Card Mk V",
+   "desc": "Pushes machines past their rated speed at a steep power cost.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 5970.0,
+   "module": {
+    "speed": 0.6,
+    "energy": 0.8,
+    "productivity": 0.0,
+    "pollution": 0.1
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.2,
+     0.45,
+     0.95
+    ],
+    "params": {
+     "tier": 5
+    }
+   }
+  },
+  {
+   "id": "plasma_arc_furnace",
+   "name": "Plasma Arc Furnace",
+   "desc": "Plasma-torch furnace for any melt or reduction.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 5750.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "plasma_arc_furnace"
+    }
+   }
+  },
+  {
+   "id": "plasma_bore",
+   "name": "Plasma Bore",
+   "desc": "Plasma-spalling borer that vaporizes host rock.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 13700.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "plasma_bore"
+    }
+   }
+  },
+  {
+   "id": "plasma_coil",
+   "name": "Plasma Containment Coil",
+   "desc": "Superconducting field coil for plasma confinement.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 1410.0,
+   "visual": {
+    "archetype": "magnet",
+    "material": "glow",
+    "color": [
+     0.6,
+     0.3,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "quantum_datacore",
+   "name": "Quantum Datacores",
+   "desc": "Cryo-sealed qubit stores of experimental results.",
+   "kind": "solid",
+   "group": "research",
+   "tier": 6,
+   "value": 1280.0,
+   "visual": {
+    "archetype": "crystal_cluster",
+    "material": "crystal",
+    "color": [
+     0.3,
+     0.9,
+     0.95
+    ]
+   }
+  },
+  {
+   "id": "quantum_processor",
+   "name": "Quantum Processor",
+   "desc": "Cryo-packaged qubit processor with classical control.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 4510.0,
+   "visual": {
+    "archetype": "processor",
+    "material": "gold",
+    "color": [
+     1.0,
+     0.85,
+     0.5
+    ]
+   }
+  },
+  {
+   "id": "quantum_research_center",
+   "name": "Quantum Research Center",
+   "desc": "Cryogenic computing hall that simulates experiments.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 18500.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "quantum_research_center"
+    }
+   }
+  },
+  {
+   "id": "quantum_sync_relay",
+   "name": "Quantum Sync Relay",
+   "desc": "Quantum-clocked relay synchronizing a whole bay.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 7980.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "quantum_sync_relay"
+    }
+   }
+  },
+  {
+   "id": "qubit_array",
+   "name": "Qubit Array",
+   "desc": "Superconducting qubit lattice on a sapphire die.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 848.0,
+   "visual": {
+    "archetype": "chip",
+    "material": "gold"
+   }
+  },
+  {
+   "id": "railgun_battery",
+   "name": "Railgun Battery",
+   "desc": "Supercapacitor rail launcher of hypersonic slugs.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 6,
+   "value": 6740.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "railgun_battery"
+    }
+   }
+  },
+  {
+   "id": "rare_earth_ore",
+   "name": "Rare-Earth Ore",
+   "desc": "Pinkish carbonatite ore laced with lanthanides and yttrium.",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 6,
+   "value": 3.0,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "stone",
+    "color": [
+     0.62,
+     0.42,
+     0.4
+    ]
+   }
+  },
+  {
+   "id": "smes_ring",
+   "name": "Superconducting Storage Ring",
+   "desc": "Magnetic energy ring: 5 GJ at 25 MW.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 6,
+   "value": 14500.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "smes_ring"
+    }
+   }
+  },
+  {
+   "id": "supercap_cell",
+   "name": "Graphene Supercapacitor",
+   "desc": "Graphene-electrode cell that dumps megajoules instantly.",
+   "kind": "solid",
+   "group": "defense",
+   "tier": 6,
+   "value": 571.0,
+   "ammo": {
+    "class": "energy",
+    "mult": 3.0
+   },
+   "visual": {
+    "archetype": "cell",
+    "material": "graphite",
+    "color": [
+     0.4,
+     0.9,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "superconductor_tape",
+   "name": "Superconductor Tape",
+   "desc": "Yttrium-copper-oxide film on metal tape.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 108.0,
+   "visual": {
+    "archetype": "sheet_coil",
+    "material": "copper",
+    "color": [
+     0.3,
+     0.3,
+     0.35
+    ]
+   }
+  },
+  {
+   "id": "tokamak",
+   "name": "Tokamak Fusion Reactor",
+   "desc": "Superconducting tokamak: 600 superheated steam/s.",
+   "kind": "solid",
+   "group": "power",
+   "tier": 6,
+   "value": 47000.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "tokamak"
+    }
+   }
+  },
+  {
+   "id": "vacuum_foundry",
+   "name": "Vacuum Foundry",
+   "desc": "Vacuum induction casting for flawless alloys.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 6,
+   "value": 11100.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "vacuum_foundry"
+    }
+   }
+  },
+  {
+   "id": "vault_complex",
+   "name": "Vault Complex",
+   "desc": "Underground vaults: +40,000 per item type.",
+   "kind": "solid",
+   "group": "logistics",
+   "tier": 6,
+   "value": 22600.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "vault_complex"
+    }
+   }
+  },
+  {
+   "id": "yield_optimizer_5",
+   "name": "Yield Optimizer Mk V",
+   "desc": "Recovers waste in-process for bonus output, slowing the line.",
+   "kind": "solid",
+   "group": "components",
+   "tier": 6,
+   "value": 6550.0,
+   "module": {
+    "speed": -0.15,
+    "energy": 0.8,
+    "productivity": 0.14,
+    "pollution": 0.1
+   },
+   "visual": {
+    "archetype": "module_card",
+    "material": "pcb_black",
+    "color": [
+     0.95,
+     0.65,
+     0.15
+    ],
+    "params": {
+     "tier": 5
+    }
+   }
+  },
+  {
+   "id": "yttrium_oxide",
+   "name": "Yttrium Oxide",
+   "desc": "Pure yttria for superconducting ceramics.",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 6,
+   "value": 61.2,
+   "visual": {
+    "archetype": "powder_pile",
+    "material": "crystal",
+    "color": [
+     0.95,
+     0.95,
+     0.98
+    ]
+   }
+  },
+  {
+   "id": "ark_drive_nacelle",
+   "name": "Plasma Drive Nacelle",
+   "desc": "Magnetic nozzle drive for the long voyage.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 18000.0,
+   "visual": {
+    "archetype": "rocket_part",
+    "material": "tungsten",
+    "color": [
+     0.6,
+     0.4,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "ark_fusion_core",
+   "name": "Ark Fusion Core",
+   "desc": "Compact tokamak heart of the Ark.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 44000.0,
+   "visual": {
+    "archetype": "capsule",
+    "material": "glow",
+    "color": [
+     0.5,
+     0.9,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "ark_habitat_module",
+   "name": "Habitat Ring Module",
+   "desc": "Spun habitat ring section with living decks.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 11800.0,
+   "visual": {
+    "archetype": "tank_part",
+    "material": "aluminum",
+    "color": [
+     0.9,
+     0.9,
+     0.88
+    ]
+   }
+  },
+  {
+   "id": "ark_hull_segment",
+   "name": "Ark Hull Segment",
+   "desc": "Pressure hull section with lattice armor.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 13000.0,
+   "visual": {
+    "archetype": "tank_part",
+    "material": "titanium"
+   }
+  },
+  {
+   "id": "ark_life_support",
+   "name": "Closed-Loop Life Support",
+   "desc": "Algae-scrubbed air and water loop.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 8110.0,
+   "visual": {
+    "archetype": "tank_part",
+    "material": "stainless",
+    "color": [
+     0.5,
+     0.8,
+     0.5
+    ]
+   }
+  },
+  {
+   "id": "ark_navigation_core",
+   "name": "Deep-Space Navigation Core",
+   "desc": "Quantum navigator for interstellar dead reckoning.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 45000.0,
+   "visual": {
+    "archetype": "processor",
+    "material": "glow",
+    "color": [
+     1.0,
+     0.75,
+     0.3
+    ]
+   }
+  },
+  {
+   "id": "cryostasis_pod",
+   "name": "Cryostasis Pod",
+   "desc": "Sleeper berth for the colonists.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 5840.0,
+   "visual": {
+    "archetype": "capsule",
+    "material": "glass",
+    "color": [
+     0.7,
+     0.9,
+     1.0
+    ]
+   }
+  },
+  {
+   "id": "heavy_launch_vehicle",
+   "name": "Heavy Launch Vehicle",
+   "desc": "Fully fuelled heavy-lift stack ready for the pad.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 77100.0,
+   "visual": {
+    "archetype": "rocket_part",
+    "material": "paint",
+    "color": [
+     0.92,
+     0.92,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "heavy_orbital_gantry",
+   "name": "Heavy Orbital Gantry",
+   "desc": "Twin-crane gantry with lattice cradles.",
+   "kind": "solid",
+   "group": "production",
+   "tier": 7,
+   "value": 114000.0,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "wood",
+    "params": {
+     "building": "heavy_orbital_gantry"
+    }
+   }
+  },
+  {
+   "id": "seed_vault",
+   "name": "Seed Vault Capsule",
+   "desc": "Cold archive of crops, cultures and soil biota.",
+   "kind": "solid",
+   "group": "megaproject",
+   "tier": 7,
+   "value": 5940.0,
+   "visual": {
+    "archetype": "capsule",
+    "material": "titanium",
+    "color": [
+     0.45,
+     0.7,
+     0.4
+    ]
+   }
+  }
+ ]
+}

@@ -28,6 +28,7 @@ var panels: Dictionary = {}
 var current := ""
 var current_panel: BasePanel
 var nav_buttons: Dictionary = {}
+var tree: TechTree
 var _refresh_t := 0.0
 # top bar widgets
 var l_credits: Label
@@ -48,9 +49,13 @@ func _ready() -> void:
 	_build_top()
 	_build_nav()
 	_build_host()
+	var adv := Advisor.new()
+	adv.hud = self
+	adv.position = Vector2(10, 560)
+	add_child(adv)
 	toasts = UI.vbox(6)
 	toasts.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
-	toasts.position = Vector2(200, -40)
+	toasts.position = Vector2(330, -40)
 	toasts.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	toasts.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(toasts)
@@ -110,7 +115,7 @@ func _build_top() -> void:
 	l_threat = UI.label("", 14, UI.TEXT)
 	t.add_child(l_poll)
 	t.add_child(l_threat)
-	t.custom_minimum_size.x = 260
+	t.custom_minimum_size.x = 340
 	h.add_child(t)
 	h.add_child(UI.spacer())
 	l_day = UI.label("", 14, UI.DIM)
@@ -209,6 +214,21 @@ func open(key: String, arg = null) -> void:
 		nav_buttons[k].add_theme_color_override("font_color", UI.ACCENT if k == key else UI.TEXT)
 
 
+func open_tree() -> void:
+	if tree == null:
+		tree = TechTree.new()
+		tree.hud = self
+		add_child(tree)
+		tree.offset_top = 66
+		tree.open()
+		return
+	if tree.visible:
+		tree.visible = false
+	else:
+		move_child(tree, get_child_count() - 1)
+		tree.open()
+
+
 func toggle(key: String) -> void:
 	if current == key and host.visible:
 		close_panel()
@@ -255,7 +275,9 @@ func _update_top() -> void:
 	else:
 		b_research.value = 0
 		l_research.text = "No research selected"
-	l_poll.text = "Pollution  %s" % Fmt.num(Game.pollution)
+	var tp: Dictionary = Game.throughput
+	l_poll.text = "Pollution %s   ·   Logistics %s/%s per s" % [Fmt.num(Game.pollution), Fmt.num(tp.solid_flow), Fmt.num(tp.solid_cap)]
+	l_poll.add_theme_color_override("font_color", UI.BAD if float(tp.solid_sat) < 0.99 else UI.TEXT)
 	var siege := Game.siege
 	l_threat.text = "Threat %s   Defense %s%s" % [Fmt.num(Game.threat), Fmt.num(Game.defense), ("   SIEGE %s" % Fmt.pct(siege)) if siege > 0.01 else ""]
 	l_threat.add_theme_color_override("font_color", UI.BAD if siege > 0.01 else UI.TEXT)
@@ -311,5 +333,12 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			toggle(n[0])
 			get_viewport().set_input_as_handled()
 			return
+	if k.keycode == KEY_G:
+		open_tree()
+		get_viewport().set_input_as_handled()
+		return
 	if k.keycode == KEY_ESCAPE:
-		close_panel()
+		if tree and tree.visible:
+			tree.visible = false
+		else:
+			close_panel()

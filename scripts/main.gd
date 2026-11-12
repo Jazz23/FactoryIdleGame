@@ -44,8 +44,13 @@ func _handle_cli() -> void:
 			view._cam_target_zoom = float(a.substr(7))
 		elif a.begins_with("--line="):
 			hud.open("line", Game.lines[int(a.substr(7))].uid)
+		elif a == "--tree":
+			hud.open_tree()
 		elif a == "--fresh":
 			Game.new_game(false)
+			for c in hud.get_children():
+				if c is AcceptDialog:
+					c.queue_free()
 	if shot != "":
 		for i in frames:
 			await get_tree().process_frame

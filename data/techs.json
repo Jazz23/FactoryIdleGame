@@ -1,0 +1,8374 @@
+{
+ "techs": [
+  {
+   "id": "assembly_stations",
+   "name": "Assembly Stations",
+   "desc": "Jig-fed stations that out-build the fitting bench.",
+   "branch": "manufacturing",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 15,
+   "unlocks": [
+    "assembly_station"
+   ],
+   "effects": [],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "coking",
+   "name": "Coking",
+   "desc": "Bake coal into coke for hotter fires and steel.",
+   "branch": "metallurgy",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 10,
+   "unlocks": [
+    "coke"
+   ],
+   "effects": [],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "electric_mining",
+   "name": "Electric Mining",
+   "desc": "Motorized drills that run on the grid instead of coal.",
+   "branch": "mining",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 15,
+   "unlocks": [
+    "electric_drill"
+   ],
+   "effects": [],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_1",
+   "name": "Lab Automation I",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 12,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "stamping_presses",
+   "name": "Stamping Presses",
+   "desc": "Dedicated flywheel presses for plate, rod and wire.",
+   "branch": "metallurgy",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 15,
+   "unlocks": [
+    "stamping_press"
+   ],
+   "effects": [],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "storage_sheds",
+   "name": "Storage Sheds",
+   "desc": "Racked sheds for the growing stockpile.",
+   "branch": "logistics",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 10,
+   "unlocks": [
+    "storage_shed"
+   ],
+   "effects": [],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "warehouse_racking_1",
+   "name": "Warehouse Racking I",
+   "desc": "Taller racks and tighter packing: +15% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "storage_sheds"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 5.0,
+   "units": 12,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.15
+    }
+   ],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "assembly_tooling_1",
+   "name": "Assembly Tooling I",
+   "desc": "Quick-change jigs and torque tools: +10% assembling speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "blast_furnaces",
+   "name": "Blast Furnaces",
+   "desc": "Hot-blast stacks with double throughput.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "steelmaking"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 50,
+   "unlocks": [
+    "blast_furnace"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "boiler_efficiency_1",
+   "name": "Boiler Efficiency I",
+   "desc": "Economizers and lagged steam lines: +10% output from steam generators.",
+   "branch": "power",
+   "prereqs": [
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "steam",
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "cement_works",
+   "name": "Cement Works",
+   "desc": "Grind clinker and pour concrete slabs.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "quarrying"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [
+    "batch_mixer",
+    "cement",
+    "concrete",
+    "slag_cement"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "circuit_theory",
+   "name": "Circuit Theory",
+   "desc": "Ceramic boards, soldered logic and the Circuit Schematics that teach it.",
+   "branch": "electronics",
+   "prereqs": [
+    "tin_smelting",
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 75,
+   "unlocks": [
+    "ceramic_substrate",
+    "circuit_board",
+    "circuit_fab",
+    "circuit_schematic"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "concrete_barriers",
+   "name": "Concrete Barriers",
+   "desc": "Precast barriers for the perimeter.",
+   "branch": "defense",
+   "prereqs": [
+    "fortifications",
+    "cement_works"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [
+    "concrete_barrier"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "conveyor_hubs",
+   "name": "Conveyor Hubs",
+   "desc": "Roller junctions that raise factory throughput.",
+   "branch": "logistics",
+   "prereqs": [
+    "assembly_stations"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 30,
+   "unlocks": [
+    "conveyor_hub"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "crusher_liners_1",
+   "name": "Crusher Liners I",
+   "desc": "Manganese-steel liners: +10% crushing speed.",
+   "branch": "mining",
+   "prereqs": [
+    "quarrying"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "crushing",
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "drill_bit_metallurgy_1",
+   "name": "Drill Bit Metallurgy I",
+   "desc": "Harder bit alloys and better flushing: +10% bonus output from all extractors.",
+   "branch": "mining",
+   "prereqs": [
+    "electric_mining"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "mining_productivity",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "feedwater_heating_1",
+   "name": "Feedwater Heating I",
+   "desc": "Preheated feedwater: +10% boiling speed.",
+   "branch": "power",
+   "prereqs": [
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "boiling",
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "fluid_storage",
+   "name": "Fluid Storage",
+   "desc": "Riveted tanks for water, steam and oils.",
+   "branch": "logistics",
+   "prereqs": [
+    "storage_sheds",
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [
+    "fluid_tank"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "fortifications",
+   "name": "Fortifications",
+   "desc": "Palisades against scavengers and scrap swarms.",
+   "branch": "defense",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 20,
+   "unlocks": [
+    "palisade_wall"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "furnace_draft_1",
+   "name": "Furnace Draft I",
+   "desc": "Forced-draft fans and better refractories: +10% smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "blast_furnaces"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting",
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "gasifier_power",
+   "name": "Gasifier Power",
+   "desc": "Burn solid fuel in a gas engine without boilers.",
+   "branch": "power",
+   "prereqs": [
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 50,
+   "unlocks": [
+    "producer_gas_generator"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "glassmaking",
+   "name": "Glassmaking",
+   "desc": "Dredge quartz sand and melt soda-lime glass.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "quarrying"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [
+    "glass_pane",
+    "mine_quartz_sand"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_2",
+   "name": "Lab Automation II",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_1"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "market_analytics_1",
+   "name": "Market Analytics I",
+   "desc": "Price tracking and timed sales: +5% market sell prices.",
+   "branch": "logistics",
+   "prereqs": [
+    "conveyor_hubs"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "market_price",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "mechanical_engineering",
+   "name": "Mechanical Engineering",
+   "desc": "Gearboxes, springs and valves for real machinery.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "assembly_stations",
+    "steelmaking"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 50,
+   "unlocks": [
+    "coil_spring",
+    "gearbox",
+    "valve"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "munitions",
+   "name": "Munitions",
+   "desc": "Sentry guns and a works to load their rounds.",
+   "branch": "defense",
+   "prereqs": [
+    "fortifications",
+    "mechanical_engineering"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 50,
+   "unlocks": [
+    "munitions_works",
+    "scrap_shot",
+    "sentry_gun",
+    "steel_core_rounds"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "night_shift_1",
+   "name": "Night Shift Protocols I",
+   "desc": "Unattended operation procedures: +10% offline production efficiency.",
+   "branch": "logistics",
+   "prereqs": [
+    "conveyor_hubs"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "offline_efficiency",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "press_hydraulics_1",
+   "name": "Press Hydraulics I",
+   "desc": "Faster ram cycles: +10% pressing speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "stamping_presses"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "pressing",
+     "value": 0.1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "quarrying",
+   "name": "Quarrying",
+   "desc": "Open limestone faces, crushers and lime kilns.",
+   "branch": "mining",
+   "prereqs": [
+    "electric_mining"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 30,
+   "unlocks": [
+    "gravel",
+    "jaw_crusher",
+    "mine_limestone",
+    "quicklime"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "scrap_reclamation",
+   "name": "Scrap Reclamation",
+   "desc": "Remelt rolling scrap and regrind slag.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "steelmaking"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 50,
+   "unlocks": [
+    "regrind_slag",
+    "remelt_scrap",
+    "scrap_recycler"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "steelmaking",
+   "name": "Steelmaking",
+   "desc": "Alloy iron with coke for plate and structural beams.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "coking"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [
+    "steel_beam",
+    "steel_ingot",
+    "steel_plate"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "structural_steel",
+   "name": "Structural Steel",
+   "desc": "Bolted steel frames for heavy equipment.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "steelmaking"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [
+    "steel_frame"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "survey_claims_1",
+   "name": "Survey Claims I",
+   "desc": "Registered survey rights on claimed land: +1 extractor slot on every claimed solid deposit.",
+   "branch": "mining",
+   "prereqs": [
+    "quarrying"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "extraction_slots",
+     "target": "solid",
+     "value": 1
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "tin_smelting",
+   "name": "Tin Smelting",
+   "desc": "Reduce cassiterite to tin for solder and bronze.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "glassmaking",
+    "coking"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 50,
+   "unlocks": [
+    "bronze_ingot",
+    "mine_cassiterite",
+    "solder",
+    "tin_ingot"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "warehouse_racking_2",
+   "name": "Warehouse Racking II",
+   "desc": "Taller racks and tighter packing: +15% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "warehouse_racking_1"
+   ],
+   "cost": {
+    "blueprint_sheet": 1
+   },
+   "time": 10.0,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.15
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "air_scrubbing",
+   "name": "Air Scrubbing",
+   "desc": "Wet scrubbers that pull smog out of the air.",
+   "branch": "chemistry",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "pollution_scrubber"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "armor_piercing_rounds",
+   "name": "Armor-Piercing Rounds",
+   "desc": "Hardened rounds for armored salvagers.",
+   "branch": "defense",
+   "prereqs": [
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "ap_rounds"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "assembly_lines",
+   "name": "Assembly Lines",
+   "desc": "Motorized assembly lines.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "assembly_line"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "assembly_tooling_2",
+   "name": "Assembly Tooling II",
+   "desc": "Quick-change jigs and torque tools: +10% assembling speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "assembly_tooling_1",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "ballistic_calibration_1",
+   "name": "Ballistic Calibration I",
+   "desc": "Ranging tables and better barrels: +15% ballistic defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "armor_piercing_rounds",
+    "circuit_theory",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "ballistic",
+     "value": 0.15
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "blade_aerodynamics_1",
+   "name": "Blade Aerodynamics I",
+   "desc": "Twisted, tapered blade profiles: +10% output from wind generators.",
+   "branch": "power",
+   "prereqs": [
+    "wind_power",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "wind",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "boiler_efficiency_2",
+   "name": "Boiler Efficiency II",
+   "desc": "Economizers and lagged steam lines: +10% output from steam generators.",
+   "branch": "power",
+   "prereqs": [
+    "boiler_efficiency_1",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "steam",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "chemical_assays",
+   "name": "Chemical Assays",
+   "desc": "Sealed reagent kits that unlock chemical-era research.",
+   "branch": "research",
+   "prereqs": [
+    "synthetic_rubber",
+    "research_laboratories"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 200,
+   "unlocks": [
+    "chemical_assay"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "circuit_yield_1",
+   "name": "Circuit Yield I",
+   "desc": "Better reflow profiles and fewer rejects: +10% electronics speed.",
+   "branch": "electronics",
+   "prereqs": [
+    "passive_components",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electronics",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "drill_bit_metallurgy_2",
+   "name": "Drill Bit Metallurgy II",
+   "desc": "Harder bit alloys and better flushing: +10% bonus output from all extractors.",
+   "branch": "mining",
+   "prereqs": [
+    "drill_bit_metallurgy_1",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "mining_productivity",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "electromagnetism",
+   "name": "Electromagnetism",
+   "desc": "Wound magnets, bearings and induction motors.",
+   "branch": "electronics",
+   "prereqs": [
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 100,
+   "unlocks": [
+    "bearing",
+    "electric_motor",
+    "electromagnet"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "emission_controls_1",
+   "name": "Emission Controls I",
+   "desc": "Sealed processes and flare recovery: -8% pollution from all buildings.",
+   "branch": "chemistry",
+   "prereqs": [
+    "air_scrubbing",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "pollution_reduction",
+     "target": null,
+     "value": 0.08
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "field_reporting",
+   "name": "Field Reporting",
+   "desc": "Compile patrol data into Field Reports for defense research.",
+   "branch": "defense",
+   "prereqs": [
+    "radar",
+    "concrete_barriers"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 100,
+   "unlocks": [
+    "field_report"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "flywheel_storage",
+   "name": "Flywheel Storage",
+   "desc": "Spin up rotors to buffer the grid.",
+   "branch": "power",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "flywheel_store"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "fortification_doctrine_1",
+   "name": "Fortification Doctrine I",
+   "desc": "Layered perimeters and kill zones: +10% defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "field_reporting",
+    "circuit_theory"
+   ],
+   "cost": {
+    "field_report": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "furnace_draft_2",
+   "name": "Furnace Draft II",
+   "desc": "Forced-draft fans and better refractories: +10% smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "furnace_draft_1",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "high_pressure_steam",
+   "name": "High-Pressure Steam",
+   "desc": "Water-tube boilers feeding five engines each.",
+   "branch": "power",
+   "prereqs": [
+    "hydraulics"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "high_pressure_boiler"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "hydraulics",
+   "name": "Hydraulics",
+   "desc": "Motor-driven pumps and pump stations.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "pump_station",
+    "pump_unit"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_3",
+   "name": "Lab Automation III",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_2",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "market_analytics_2",
+   "name": "Market Analytics II",
+   "desc": "Price tracking and timed sales: +5% market sell prices.",
+   "branch": "logistics",
+   "prereqs": [
+    "market_analytics_1",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "market_price",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "mixer_impellers_1",
+   "name": "Mixer Impellers I",
+   "desc": "High-shear impellers: +10% mixing speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "cement_works",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "mixing",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "module_engineering",
+   "name": "Module Engineering",
+   "desc": "Plug-in Mk I module cards for any bay.",
+   "branch": "electronics",
+   "prereqs": [
+    "passive_components",
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "economizer_card_1",
+    "emission_filter_1",
+    "overclock_card_1",
+    "yield_optimizer_1"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "munitions_lines_1",
+   "name": "Munitions Lines I",
+   "desc": "Faster press-and-fill lines: +10% munitions speed.",
+   "branch": "defense",
+   "prereqs": [
+    "field_reporting",
+    "circuit_theory"
+   ],
+   "cost": {
+    "field_report": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "munitions",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "oil_extraction",
+   "name": "Oil Extraction",
+   "desc": "Pumpjacks on the crude reservoirs.",
+   "branch": "chemistry",
+   "prereqs": [
+    "hydraulics"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "drill_crude_oil",
+    "pumpjack"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "oil_refining",
+   "name": "Oil Refining",
+   "desc": "Distill crude into heavy oil, naphtha and fuel gas.",
+   "branch": "chemistry",
+   "prereqs": [
+    "oil_extraction"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 175,
+   "unlocks": [
+    "crude_distillation",
+    "distillation_column",
+    "thermal_cracking"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "passive_components",
+   "name": "Passive Components",
+   "desc": "Capacitors and optical sensors.",
+   "branch": "electronics",
+   "prereqs": [
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 100,
+   "unlocks": [
+    "capacitor",
+    "optical_sensor"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "peer_review_1",
+   "name": "Peer Review I",
+   "desc": "Shared results and fewer repeated trials: +5% free research per unit.",
+   "branch": "research",
+   "prereqs": [
+    "research_laboratories",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_productivity",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "photovoltaic_efficiency_1",
+   "name": "Photovoltaic Efficiency I",
+   "desc": "Anti-reflective coatings and trackers: +10% output from solar generators.",
+   "branch": "power",
+   "prereqs": [
+    "photovoltaics",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "solar",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "photovoltaics",
+   "name": "Photovoltaics",
+   "desc": "Copper-oxide cells and the first solar arrays.",
+   "branch": "power",
+   "prereqs": [
+    "passive_components"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "pv_cell",
+    "solar_array"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "polymer_chemistry",
+   "name": "Polymer Chemistry",
+   "desc": "Chemical reactors, plastic pellets and sheet.",
+   "branch": "chemistry",
+   "prereqs": [
+    "oil_refining"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 175,
+   "unlocks": [
+    "chemical_reactor",
+    "plastic_pellets",
+    "plastic_sheet"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "power_distribution",
+   "name": "Power Distribution",
+   "desc": "Substations that trim a bay's power draw.",
+   "branch": "power",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 100,
+   "unlocks": [
+    "substation"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "pump_impellers_1",
+   "name": "Pump Impellers I",
+   "desc": "Cavitation-free impellers: +10% pumping speed.",
+   "branch": "mining",
+   "prereqs": [
+    "hydraulics",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "pumping",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "radar",
+   "name": "Radar",
+   "desc": "Rotating radar for early warning.",
+   "branch": "defense",
+   "prereqs": [
+    "passive_components",
+    "munitions",
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "radar_station"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "research_laboratories",
+   "name": "Research Laboratories",
+   "desc": "Instrumented labs that research twice as fast.",
+   "branch": "research",
+   "prereqs": [
+    "passive_components",
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "research_laboratory"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "rolling_mills",
+   "name": "Rolling Mills",
+   "desc": "Rolling mills and drawing benches.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "rolling_mill",
+    "wire_drawer"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "sorting_hubs",
+   "name": "Sorting Hubs",
+   "desc": "Sensor-gated sorting for more throughput.",
+   "branch": "logistics",
+   "prereqs": [
+    "conveyor_hubs",
+    "passive_components",
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "sorting_hub"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "sorting_optics_1",
+   "name": "Sorting Optics I",
+   "desc": "Optical sorting on the scrap line: +10% recycling speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "scrap_reclamation",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "recycling",
+     "value": 0.1
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "sulfur_processing",
+   "name": "Sulfur Processing",
+   "desc": "Mine native sulfur and make sulfuric acid.",
+   "branch": "chemistry",
+   "prereqs": [
+    "polymer_chemistry"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 150,
+   "unlocks": [
+    "mine_native_sulfur",
+    "sulfur",
+    "sulfuric_acid"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "synthetic_rubber",
+   "name": "Synthetic Rubber",
+   "desc": "Vulcanized rubber and insulated cable.",
+   "branch": "chemistry",
+   "prereqs": [
+    "sulfur_processing"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 175,
+   "unlocks": [
+    "insulated_cable",
+    "rubber"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "warehouse_racking_3",
+   "name": "Warehouse Racking III",
+   "desc": "Taller racks and tighter packing: +15% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "warehouse_racking_2",
+    "circuit_theory"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.15
+    }
+   ],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "warehousing",
+   "name": "Warehousing",
+   "desc": "Warehouses and bulk silos.",
+   "branch": "logistics",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 100,
+   "unlocks": [
+    "bulk_silo",
+    "warehouse"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "wind_power",
+   "name": "Wind Power",
+   "desc": "Free, gusty power from the frontier winds.",
+   "branch": "power",
+   "prereqs": [
+    "electromagnetism"
+   ],
+   "cost": {
+    "blueprint_sheet": 1,
+    "circuit_schematic": 1
+   },
+   "time": 15.0,
+   "units": 120,
+   "unlocks": [
+    "wind_turbine"
+   ],
+   "effects": [],
+   "tier": 2,
+   "repeatable": false
+  },
+  {
+   "id": "aerospace_alloys",
+   "name": "Aerospace Alloys",
+   "desc": "Casting foundries, duralumin and titanium alloy.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "titanium_metallurgy",
+    "aluminum_electrolysis"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 400,
+   "unlocks": [
+    "casting_foundry",
+    "duralumin_ingot",
+    "titanium_alloy"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "algae_cultivation",
+   "name": "Algae Cultivation",
+   "desc": "Photobioreactors for algae, bio-oil and biofuel.",
+   "branch": "biotech",
+   "prereqs": [
+    "brine_evaporation"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "algae_bioreactor",
+    "algae_paste",
+    "bio_lubricant",
+    "bio_oil",
+    "biofuel_pellet"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "aluminum_electrolysis",
+   "name": "Aluminum Electrolysis",
+   "desc": "Carbon anodes and electrolytic aluminum.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "bayer_process"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "aluminum_ingot",
+    "aluminum_sheet",
+    "carbon_anode"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "arc_furnaces",
+   "name": "Arc Furnaces",
+   "desc": "Arc furnaces and metallurgical silicon.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "induction_furnaces",
+    "control_systems"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "arc_furnace",
+    "silicon"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "assembly_tooling_3",
+   "name": "Assembly Tooling III",
+   "desc": "Quick-change jigs and torque tools: +10% assembling speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "assembly_tooling_2",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "ballistic_calibration_2",
+   "name": "Ballistic Calibration II",
+   "desc": "Ranging tables and better barrels: +15% ballistic defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "ballistic_calibration_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "ballistic",
+     "value": 0.15
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "bayer_process",
+   "name": "Bayer Process",
+   "desc": "Mine bauxite and digest it to alumina.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "chlor_alkali"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "bayer_digestion",
+    "mine_bauxite"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "blasting_compounds",
+   "name": "Blasting Compounds",
+   "desc": "Blasting powder, fragmentation shells and mortars.",
+   "branch": "defense",
+   "prereqs": [
+    "brine_evaporation",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "blasting_powder",
+    "frag_shell",
+    "mortar_battery"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "boiler_efficiency_3",
+   "name": "Boiler Efficiency III",
+   "desc": "Economizers and lagged steam lines: +10% output from steam generators.",
+   "branch": "power",
+   "prereqs": [
+    "boiler_efficiency_2",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "steam",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "brine_evaporation",
+   "name": "Brine Evaporation",
+   "desc": "Evaporate brine for salt and potash.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chlor_alkali"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "brine_evaporation"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "chlor_alkali",
+   "name": "Chlor-Alkali Process",
+   "desc": "Pump brine and split it into chlorine, hydrogen and caustic soda.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "brine_electrolysis",
+    "deep_well_pump",
+    "electrolytic_cell",
+    "pump_brine"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "circuit_yield_2",
+   "name": "Circuit Yield II",
+   "desc": "Better reflow profiles and fewer rejects: +10% electronics speed.",
+   "branch": "electronics",
+   "prereqs": [
+    "circuit_yield_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electronics",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "combustion_tuning_1",
+   "name": "Combustion Tuning I",
+   "desc": "Lean-burn combustors: +10% output from fuel gas generators.",
+   "branch": "power",
+   "prereqs": [
+    "gas_turbines",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "fuel_gas",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "cone_crushers",
+   "name": "Cone Crushers",
+   "desc": "Gyratory crushers with double throughput.",
+   "branch": "mining",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "cone_crusher"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "control_systems",
+   "name": "Control Systems",
+   "desc": "Multilayer control boards for smarter machines.",
+   "branch": "electronics",
+   "prereqs": [
+    "epoxy_resins"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "control_board"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "cracking_catalysts_1",
+   "name": "Cracking Catalysts I",
+   "desc": "Zeolite catalysts in every column: +10% refining speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "refining",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "crusher_liners_2",
+   "name": "Crusher Liners II",
+   "desc": "Manganese-steel liners: +10% crushing speed.",
+   "branch": "mining",
+   "prereqs": [
+    "crusher_liners_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "crushing",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "drill_bit_metallurgy_3",
+   "name": "Drill Bit Metallurgy III",
+   "desc": "Harder bit alloys and better flushing: +10% bonus output from all extractors.",
+   "branch": "mining",
+   "prereqs": [
+    "drill_bit_metallurgy_2",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "mining_productivity",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "electrode_coatings_1",
+   "name": "Electrode Coatings I",
+   "desc": "Low-overpotential electrode coatings: +10% electrolysis speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chlor_alkali",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electrolysis",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "emission_controls_2",
+   "name": "Emission Controls II",
+   "desc": "Sealed processes and flare recovery: -8% pollution from all buildings.",
+   "branch": "chemistry",
+   "prereqs": [
+    "emission_controls_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "pollution_reduction",
+     "target": null,
+     "value": 0.08
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "epoxy_resins",
+   "name": "Epoxy Resins",
+   "desc": "Epoxy, glass fiber and fiberglass laminate.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chlor_alkali"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "epoxy_resin",
+    "fiberglass_panel",
+    "glass_fiber"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "explosive_yield_1",
+   "name": "Explosive Yield I",
+   "desc": "Shaped bursters and better fuzes: +15% explosive defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "blasting_compounds",
+    "chemical_assays",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "explosive",
+     "value": 0.15
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "feedwater_heating_2",
+   "name": "Feedwater Heating II",
+   "desc": "Preheated feedwater: +10% boiling speed.",
+   "branch": "power",
+   "prereqs": [
+    "feedwater_heating_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "boiling",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "fortification_doctrine_2",
+   "name": "Fortification Doctrine II",
+   "desc": "Layered perimeters and kill zones: +10% defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "fortification_doctrine_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "fuel_briquettes",
+   "name": "Fuel Briquettes",
+   "desc": "Press coke and pitch into long-burning briquettes.",
+   "branch": "power",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 150,
+   "unlocks": [
+    "fuel_briquette"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "furnace_draft_3",
+   "name": "Furnace Draft III",
+   "desc": "Forced-draft fans and better refractories: +10% smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "furnace_draft_2",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "gas_processing",
+   "name": "Gas Processing",
+   "desc": "Tap gas wells and sweeten sour gas into fuel gas.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "drill_natural_gas",
+    "gas_sweetening",
+    "wellhead_compressor"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "gas_turbines",
+   "name": "Gas Turbines",
+   "desc": "Open-cycle turbines burning fuel gas.",
+   "branch": "power",
+   "prereqs": [
+    "gas_processing"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "gas_turbine"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "heavy_autocannons",
+   "name": "Heavy Autocannons",
+   "desc": "Powered twin-cannon mounts.",
+   "branch": "defense",
+   "prereqs": [
+    "armor_piercing_rounds",
+    "chemical_assays"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "heavy_autocannon"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "heavy_drilling",
+   "name": "Heavy Drilling",
+   "desc": "Hydraulic bore drills with twice the bite.",
+   "branch": "mining",
+   "prereqs": [
+    "lubricants"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "heavy_bore_drill"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "incendiaries",
+   "name": "Incendiaries",
+   "desc": "Gelled-fuel canisters and flame projectors.",
+   "branch": "defense",
+   "prereqs": [
+    "field_reporting",
+    "chemical_assays"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "flame_projector",
+    "incendiary_canister"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "incendiary_compounds_1",
+   "name": "Incendiary Compounds I",
+   "desc": "Stickier, hotter gels: +15% incendiary defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "incendiaries",
+    "chemical_assays",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "incendiary",
+     "value": 0.15
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "induction_furnaces",
+   "name": "Induction Furnaces",
+   "desc": "Clean, fast electric smelting.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "induction_furnace"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "industrial_mixers",
+   "name": "Industrial Mixers",
+   "desc": "Twin-shaft blenders with metered dosing.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "industrial_blender"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_4",
+   "name": "Lab Automation IV",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_3",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "lubricants",
+   "name": "Lubricants",
+   "desc": "Base-oil blending and hydraulic rams.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "hydraulic_ram",
+    "lubricant"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "magnesium_extraction",
+   "name": "Magnesium Extraction",
+   "desc": "Win magnesium metal from brine.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "chlor_alkali"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "magnesium_ingot"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "market_analytics_3",
+   "name": "Market Analytics III",
+   "desc": "Price tracking and timed sales: +5% market sell prices.",
+   "branch": "logistics",
+   "prereqs": [
+    "market_analytics_2",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "market_price",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "materials_testing",
+   "name": "Materials Testing",
+   "desc": "Alloy Specimens that open advanced-materials research.",
+   "branch": "research",
+   "prereqs": [
+    "aerospace_alloys",
+    "epoxy_resins"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 400,
+   "unlocks": [
+    "alloy_specimen"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "module_bays_1",
+   "name": "Module Bay Expansion I",
+   "desc": "Extra card cages in every bay: +1 module slot in every bay.",
+   "branch": "electronics",
+   "prereqs": [
+    "module_engineering_2",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "module_slots",
+     "target": null,
+     "value": 1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "module_engineering_2",
+   "name": "Module Engineering II",
+   "desc": "Mk II module cards on control boards.",
+   "branch": "electronics",
+   "prereqs": [
+    "control_systems",
+    "module_engineering",
+    "precipitators",
+    "sodium_sulfur_batteries"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "economizer_card_2",
+    "emission_filter_2",
+    "overclock_card_2",
+    "yield_optimizer_2"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "night_shift_2",
+   "name": "Night Shift Protocols II",
+   "desc": "Unattended operation procedures: +10% offline production efficiency.",
+   "branch": "logistics",
+   "prereqs": [
+    "night_shift_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "offline_efficiency",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "photovoltaic_efficiency_2",
+   "name": "Photovoltaic Efficiency II",
+   "desc": "Anti-reflective coatings and trackers: +10% output from solar generators.",
+   "branch": "power",
+   "prereqs": [
+    "photovoltaic_efficiency_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "solar",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "pipelines",
+   "name": "Pipelines",
+   "desc": "Booster stations for long fluid lines.",
+   "branch": "logistics",
+   "prereqs": [
+    "chemical_assays",
+    "fluid_storage"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 200,
+   "unlocks": [
+    "pipeline_station"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "pneumatic_tubes",
+   "name": "Pneumatic Tubes",
+   "desc": "Capsule tubes linking every bay.",
+   "branch": "logistics",
+   "prereqs": [
+    "sorting_hubs",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "pneumatic_hub"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "precipitators",
+   "name": "Electrostatic Precipitators",
+   "desc": "Filter cartridges and charged-plate precipitators.",
+   "branch": "chemistry",
+   "prereqs": [
+    "air_scrubbing",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "electrostatic_precipitator",
+    "filter_cartridge"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "press_hydraulics_2",
+   "name": "Press Hydraulics II",
+   "desc": "Faster ram cycles: +10% pressing speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "press_hydraulics_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "pressing",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "rail_logistics",
+   "name": "Rail Logistics",
+   "desc": "Rail depots for bulk freight.",
+   "branch": "logistics",
+   "prereqs": [
+    "pneumatic_tubes",
+    "control_systems"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "rail_depot"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "reaction_kinetics_1",
+   "name": "Reaction Kinetics I",
+   "desc": "Tuned temperatures and stirring: +10% chemistry speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "chemistry",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "signal_relays",
+   "name": "Signal Relays",
+   "desc": "Bay-wide timing relays that speed up machines.",
+   "branch": "electronics",
+   "prereqs": [
+    "control_systems"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "signal_relay"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "sodium_sulfur_batteries",
+   "name": "Sodium-Sulfur Batteries",
+   "desc": "Hot sodium-sulfur cells and grid battery banks.",
+   "branch": "power",
+   "prereqs": [
+    "chlor_alkali"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [
+    "battery_bank",
+    "battery_cell"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "surface_mount",
+   "name": "Surface-Mount Assembly",
+   "desc": "Pick-and-place electronics lines.",
+   "branch": "electronics",
+   "prereqs": [
+    "control_systems"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 300,
+   "unlocks": [
+    "surface_mount_line"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "survey_claims_2",
+   "name": "Survey Claims II",
+   "desc": "Registered survey rights on claimed land: +1 extractor slot on every claimed solid deposit.",
+   "branch": "mining",
+   "prereqs": [
+    "survey_claims_1",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "extraction_slots",
+     "target": "solid",
+     "value": 1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "titanium_metallurgy",
+   "name": "Titanium Metallurgy",
+   "desc": "Chloride-process titanium from ilmenite sand.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "arc_furnaces",
+    "magnesium_extraction"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 350,
+   "unlocks": [
+    "mine_ilmenite",
+    "titanium_ingot",
+    "titanium_plate",
+    "titanium_tetrachloride"
+   ],
+   "effects": [],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "warehouse_racking_4",
+   "name": "Warehouse Racking IV",
+   "desc": "Taller racks and tighter packing: +15% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "warehouse_racking_3",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.15
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "well_permits_1",
+   "name": "Well Permits I",
+   "desc": "Extra drilling and pumping permits: +1 extractor slot on every claimed fluid deposit.",
+   "branch": "mining",
+   "prereqs": [
+    "gas_processing",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "extraction_slots",
+     "target": "fluid",
+     "value": 1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "wellbore_stimulation_1",
+   "name": "Wellbore Stimulation I",
+   "desc": "Acidized and fractured wellbores: +10% well speed.",
+   "branch": "mining",
+   "prereqs": [
+    "oil_extraction",
+    "chemical_assays"
+   ],
+   "cost": {
+    "circuit_schematic": 1,
+    "chemical_assay": 1
+   },
+   "time": 20.0,
+   "units": 250,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "oil_extraction",
+     "value": 0.1
+    }
+   ],
+   "tier": 3,
+   "repeatable": false
+  },
+  {
+   "id": "air_separation",
+   "name": "Air Separation",
+   "desc": "Cold boxes that split air into oxygen and nitrogen.",
+   "branch": "chemistry",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "air_separation",
+    "air_separation_unit"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "airframes",
+   "name": "Airframes",
+   "desc": "Duralumin-composite airframe panels.",
+   "branch": "aerospace",
+   "prereqs": [
+    "carbon_fiber",
+    "precision_engineering",
+    "aerospace_alloys"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "airframe_panel"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "arc_metallurgy_1",
+   "name": "Arc Metallurgy I",
+   "desc": "Higher-current electrodes: +10% advanced smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "arc_furnaces",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting_advanced",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "armored_bulwarks",
+   "name": "Armored Bulwarks",
+   "desc": "Titanium-faced perimeter walls.",
+   "branch": "defense",
+   "prereqs": [
+    "materials_testing",
+    "concrete_barriers",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "armored_bulwark"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "assembly_tooling_4",
+   "name": "Assembly Tooling IV",
+   "desc": "Quick-change jigs and torque tools: +10% assembling speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "assembly_tooling_3",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "automated_arsenals",
+   "name": "Automated Arsenals",
+   "desc": "Robotic ordnance lines.",
+   "branch": "defense",
+   "prereqs": [
+    "robotics",
+    "munitions",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 600,
+   "unlocks": [
+    "automated_arsenal"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "automated_storage",
+   "name": "Automated Storage",
+   "desc": "Robot-picked high-bay warehouses.",
+   "branch": "logistics",
+   "prereqs": [
+    "robotics",
+    "warehousing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 550,
+   "unlocks": [
+    "automated_warehouse"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "ballistic_calibration_3",
+   "name": "Ballistic Calibration III",
+   "desc": "Ranging tables and better barrels: +15% ballistic defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "ballistic_calibration_2",
+    "materials_testing"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "ballistic",
+     "value": 0.15
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "beam_focusing_1",
+   "name": "Beam Focusing I",
+   "desc": "Adaptive optics on every emitter: +15% energy defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "laser_weapons",
+    "materials_testing",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "energy",
+     "value": 0.15
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "bioleaching",
+   "name": "Bioleaching",
+   "desc": "Microbes that leach copper at high yield.",
+   "branch": "biotech",
+   "prereqs": [
+    "algae_cultivation",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "bioleached_copper"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "bioplastics",
+   "name": "Bioplastics",
+   "desc": "Plastic pellets from algae and bio-oil.",
+   "branch": "biotech",
+   "prereqs": [
+    "bioleaching"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "bioplastic"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "blade_aerodynamics_2",
+   "name": "Blade Aerodynamics II",
+   "desc": "Twisted, tapered blade profiles: +10% output from wind generators.",
+   "branch": "power",
+   "prereqs": [
+    "blade_aerodynamics_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "wind",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "carbon_fiber",
+   "name": "Carbon Fiber",
+   "desc": "Acrylic precursor, carbon fiber and composite panels.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "nitrogen_chemistry"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "acrylic_fiber",
+    "carbon_fiber",
+    "composite_panel"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "catalytic_reactors",
+   "name": "Catalytic Reactors",
+   "desc": "Faster fixed-bed chemical reactors.",
+   "branch": "chemistry",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 450,
+   "unlocks": [
+    "catalytic_reactor"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "circuit_yield_3",
+   "name": "Circuit Yield III",
+   "desc": "Better reflow profiles and fewer rejects: +10% electronics speed.",
+   "branch": "electronics",
+   "prereqs": [
+    "circuit_yield_2",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electronics",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "combustion_tuning_2",
+   "name": "Combustion Tuning II",
+   "desc": "Lean-burn combustors: +10% output from fuel gas generators.",
+   "branch": "power",
+   "prereqs": [
+    "combustion_tuning_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "fuel_gas",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "contact_process",
+   "name": "Contact Process",
+   "desc": "Oxygen-fed sulfuric acid at double yield.",
+   "branch": "chemistry",
+   "prereqs": [
+    "air_separation"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 350,
+   "unlocks": [
+    "contact_process"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "cracking_catalysts_2",
+   "name": "Cracking Catalysts II",
+   "desc": "Zeolite catalysts in every column: +10% refining speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "cracking_catalysts_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "refining",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "cryogenic_insulation_1",
+   "name": "Cryogenic Insulation I",
+   "desc": "Multilayer vacuum insulation: +10% cryogenics speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "air_separation",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "cryogenics",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "drill_bit_metallurgy_4",
+   "name": "Drill Bit Metallurgy IV",
+   "desc": "Harder bit alloys and better flushing: +10% bonus output from all extractors.",
+   "branch": "mining",
+   "prereqs": [
+    "drill_bit_metallurgy_3",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "mining_productivity",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "drone_logistics",
+   "name": "Drone Logistics",
+   "desc": "Cargo drones and drone ports.",
+   "branch": "logistics",
+   "prereqs": [
+    "robotics",
+    "lithium_extraction"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 600,
+   "unlocks": [
+    "cargo_drone",
+    "drone_port"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "electrode_coatings_2",
+   "name": "Electrode Coatings II",
+   "desc": "Low-overpotential electrode coatings: +10% electrolysis speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "electrode_coatings_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electrolysis",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "embedded_systems",
+   "name": "Embedded Systems",
+   "desc": "Board-level computers for every machine.",
+   "branch": "electronics",
+   "prereqs": [
+    "microelectronics",
+    "fiber_optics"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 550,
+   "unlocks": [
+    "embedded_controller"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "emission_controls_3",
+   "name": "Emission Controls III",
+   "desc": "Sealed processes and flare recovery: -8% pollution from all buildings.",
+   "branch": "chemistry",
+   "prereqs": [
+    "emission_controls_2",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "pollution_reduction",
+     "target": null,
+     "value": 0.08
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "explosive_yield_2",
+   "name": "Explosive Yield II",
+   "desc": "Shaped bursters and better fuzes: +15% explosive defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "explosive_yield_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "explosive",
+     "value": 0.15
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "fiber_optics",
+   "name": "Fiber Optics",
+   "desc": "Jacketed glass fiber for data links.",
+   "branch": "electronics",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "fiber_optic_cable"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "flight_testing",
+   "name": "Flight Testing",
+   "desc": "Fly instrumented test articles and recover their telemetry.",
+   "branch": "aerospace",
+   "prereqs": [
+    "rocket_propellants",
+    "airframes",
+    "phased_arrays"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 800,
+   "unlocks": [
+    "flight_telemetry"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "float_glass",
+   "name": "Float Glass",
+   "desc": "Soda-ash glass at twice the yield.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "nitrogen_chemistry"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 350,
+   "unlocks": [
+    "float_glass"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "fortification_doctrine_3",
+   "name": "Fortification Doctrine III",
+   "desc": "Layered perimeters and kill zones: +10% defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "fortification_doctrine_2",
+    "materials_testing"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "foundry_practice_1",
+   "name": "Foundry Practice I",
+   "desc": "Faster pours and quicker mold turnover: +10% foundry speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "aerospace_alloys",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "foundry",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "freight_yards",
+   "name": "Freight Yards",
+   "desc": "Hump yards with automatic couplers.",
+   "branch": "logistics",
+   "prereqs": [
+    "rail_logistics",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "freight_yard"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "furnace_draft_4",
+   "name": "Furnace Draft IV",
+   "desc": "Forced-draft fans and better refractories: +10% smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "furnace_draft_3",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "harmonic_drives",
+   "name": "Harmonic Drives",
+   "desc": "Zero-backlash strain-wave gearing.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "precision_engineering"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 450,
+   "unlocks": [
+    "harmonic_drive"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "high_explosives",
+   "name": "High Explosives",
+   "desc": "Nitrated explosives and HE shells.",
+   "branch": "defense",
+   "prereqs": [
+    "nitrogen_chemistry",
+    "blasting_compounds"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "he_shell",
+    "high_explosive"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "hydraulic_presses",
+   "name": "Hydraulic Presses",
+   "desc": "Forge presses three times faster than a mill.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "materials_testing",
+    "lubricants",
+    "control_systems"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 450,
+   "unlocks": [
+    "hydraulic_forge_press"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "hydrocracking",
+   "name": "Hydrocracking",
+   "desc": "Crack heavy oil to naphtha with hydrogen.",
+   "branch": "chemistry",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "hydrocracker",
+    "hydrocracking"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "incendiary_compounds_2",
+   "name": "Incendiary Compounds II",
+   "desc": "Stickier, hotter gels: +15% incendiary defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "incendiary_compounds_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "incendiary",
+     "value": 0.15
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_5",
+   "name": "Lab Automation V",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_4",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "laser_weapons",
+   "name": "Laser Weapons",
+   "desc": "Capacitor packs and pulse laser turrets.",
+   "branch": "defense",
+   "prereqs": [
+    "precision_engineering",
+    "embedded_systems",
+    "field_reporting",
+    "sodium_sulfur_batteries"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 600,
+   "unlocks": [
+    "capacitor_pack",
+    "pulse_laser_turret"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "lithium_extraction",
+   "name": "Lithium Extraction",
+   "desc": "Lithium carbonate from brine and lithium-ion cells.",
+   "branch": "chemistry",
+   "prereqs": [
+    "nitrogen_chemistry"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "lithium_carbonate",
+    "lithium_cell"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "market_analytics_4",
+   "name": "Market Analytics IV",
+   "desc": "Price tracking and timed sales: +5% market sell prices.",
+   "branch": "logistics",
+   "prereqs": [
+    "market_analytics_3",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "market_price",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "materials_labs",
+   "name": "Materials Labs",
+   "desc": "Materials test labs at triple research speed.",
+   "branch": "research",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "materials_test_lab"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "microelectronics",
+   "name": "Microelectronics",
+   "desc": "Lithography fabs and microchips.",
+   "branch": "electronics",
+   "prereqs": [
+    "semiconductor_refining"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "lithography_fab",
+    "microchip"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "mixer_impellers_2",
+   "name": "Mixer Impellers II",
+   "desc": "High-shear impellers: +10% mixing speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "mixer_impellers_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "mixing",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "module_engineering_3",
+   "name": "Module Engineering III",
+   "desc": "Mk III module cards on embedded controllers.",
+   "branch": "electronics",
+   "prereqs": [
+    "embedded_systems",
+    "module_engineering_2",
+    "precision_engineering",
+    "lithium_extraction"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 600,
+   "unlocks": [
+    "economizer_card_3",
+    "emission_filter_3",
+    "overclock_card_3",
+    "yield_optimizer_3"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "munitions_lines_2",
+   "name": "Munitions Lines II",
+   "desc": "Faster press-and-fill lines: +10% munitions speed.",
+   "branch": "defense",
+   "prereqs": [
+    "munitions_lines_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "munitions",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "nitrogen_chemistry",
+   "name": "Nitrogen Chemistry",
+   "desc": "Ammonia, nitric acid and soda ash.",
+   "branch": "chemistry",
+   "prereqs": [
+    "air_separation"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 450,
+   "unlocks": [
+    "ammonia",
+    "nitric_acid",
+    "soda_ash"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "peer_review_2",
+   "name": "Peer Review II",
+   "desc": "Shared results and fewer repeated trials: +5% free research per unit.",
+   "branch": "research",
+   "prereqs": [
+    "peer_review_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_productivity",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "phased_arrays",
+   "name": "Phased Arrays",
+   "desc": "Electronically steered antenna panels.",
+   "branch": "aerospace",
+   "prereqs": [
+    "embedded_systems"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "antenna_array"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "photovoltaic_efficiency_3",
+   "name": "Photovoltaic Efficiency III",
+   "desc": "Anti-reflective coatings and trackers: +10% output from solar generators.",
+   "branch": "power",
+   "prereqs": [
+    "photovoltaic_efficiency_2",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "solar",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "precision_engineering",
+   "name": "Precision Engineering",
+   "desc": "Clean-room assembly, servos, lenses and heat sinks.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "microelectronics"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "clean_room_assembler",
+    "heat_sink",
+    "optical_lens",
+    "servo_motor"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "precision_tolerances_1",
+   "name": "Precision Tolerances I",
+   "desc": "Metrology-driven assembly: +10% precision assembly speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "precision_engineering",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "precision_assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "press_hydraulics_3",
+   "name": "Press Hydraulics III",
+   "desc": "Faster ram cycles: +10% pressing speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "press_hydraulics_2",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "pressing",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "pressurized_tanks",
+   "name": "Pressurized Tanks",
+   "desc": "Sphere tank farms for fluids.",
+   "branch": "logistics",
+   "prereqs": [
+    "materials_testing",
+    "pipelines"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "pressurized_tank_farm"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "pump_impellers_2",
+   "name": "Pump Impellers II",
+   "desc": "Cavitation-free impellers: +10% pumping speed.",
+   "branch": "mining",
+   "prereqs": [
+    "pump_impellers_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "pumping",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "reaction_kinetics_2",
+   "name": "Reaction Kinetics II",
+   "desc": "Tuned temperatures and stirring: +10% chemistry speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "reaction_kinetics_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "chemistry",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "red_mud_recovery",
+   "name": "Red Mud Recovery",
+   "desc": "Reclamation plants that win iron back from residue.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "materials_testing",
+    "precipitators"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 350,
+   "unlocks": [
+    "reclaim_red_mud",
+    "reclamation_plant"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "robotics",
+   "name": "Robotics",
+   "desc": "Six-axis arms and robotic workcells.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "harmonic_drives",
+    "embedded_systems"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 600,
+   "unlocks": [
+    "robotic_arm",
+    "robotic_workcell"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "rocket_propellants",
+   "name": "Rocket Propellants",
+   "desc": "Rocket kerosene and liquid oxygen.",
+   "branch": "aerospace",
+   "prereqs": [
+    "air_separation",
+    "hydrocracking"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "liquid_oxygen",
+    "rocket_kerosene"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "semiconductor_refining",
+   "name": "Semiconductor Refining",
+   "desc": "Hydrochloric acid, polysilicon and single-crystal wafers.",
+   "branch": "electronics",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "hydrochloric_acid",
+    "polysilicon",
+    "recycle_silicon_offcuts",
+    "silicon_wafer"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "sorting_optics_2",
+   "name": "Sorting Optics II",
+   "desc": "Optical sorting on the scrap line: +10% recycling speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "sorting_optics_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "recycling",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "steam_turbines",
+   "name": "Steam Turbines",
+   "desc": "Superheaters and multi-stage steam turbines.",
+   "branch": "power",
+   "prereqs": [
+    "turbine_engineering",
+    "high_pressure_steam"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "fired_superheater",
+    "steam_turbine",
+    "superheat_steam"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "strain_optimization_1",
+   "name": "Strain Optimization I",
+   "desc": "Selected high-yield strains: +10% bioprocess speed.",
+   "branch": "biotech",
+   "prereqs": [
+    "algae_cultivation",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "bioprocessing",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "thermite",
+   "name": "Thermite",
+   "desc": "Aluminum powder and thermite charges.",
+   "branch": "defense",
+   "prereqs": [
+    "materials_testing",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 400,
+   "unlocks": [
+    "aluminum_powder",
+    "thermite_charge"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "thin_film_solar",
+   "name": "Thin-Film Solar",
+   "desc": "Silicon thin-film solar fields.",
+   "branch": "power",
+   "prereqs": [
+    "semiconductor_refining",
+    "photovoltaics"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [
+    "thin_film_solar_field"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "tidal_power",
+   "name": "Tidal Power",
+   "desc": "Bulb turbines in a tidal barrage.",
+   "branch": "power",
+   "prereqs": [
+    "turbine_engineering"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 450,
+   "unlocks": [
+    "tidal_generator"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "turbine_engineering",
+   "name": "Turbine Engineering",
+   "desc": "Cast titanium turbine blades.",
+   "branch": "power",
+   "prereqs": [
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 450,
+   "unlocks": [
+    "turbine_blade"
+   ],
+   "effects": [],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "turbine_superalloys_1",
+   "name": "Turbine Superalloys I",
+   "desc": "Hotter inlet temperatures: +5% output from superheated steam generators.",
+   "branch": "power",
+   "prereqs": [
+    "steam_turbines",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "superheated_steam",
+     "value": 0.05
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "warehouse_racking_5",
+   "name": "Warehouse Racking V",
+   "desc": "Taller racks and tighter packing: +15% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "warehouse_racking_4",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.15
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "well_permits_2",
+   "name": "Well Permits II",
+   "desc": "Extra drilling and pumping permits: +1 extractor slot on every claimed fluid deposit.",
+   "branch": "mining",
+   "prereqs": [
+    "well_permits_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "extraction_slots",
+     "target": "fluid",
+     "value": 1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "wellbore_stimulation_2",
+   "name": "Wellbore Stimulation II",
+   "desc": "Acidized and fractured wellbores: +10% well speed.",
+   "branch": "mining",
+   "prereqs": [
+    "wellbore_stimulation_1",
+    "materials_testing"
+   ],
+   "cost": {
+    "chemical_assay": 1,
+    "alloy_specimen": 1
+   },
+   "time": 30.0,
+   "units": 500,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "oil_extraction",
+     "value": 0.1
+    }
+   ],
+   "tier": 4,
+   "repeatable": false
+  },
+  {
+   "id": "arc_metallurgy_2",
+   "name": "Arc Metallurgy II",
+   "desc": "Higher-current electrodes: +10% advanced smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "arc_metallurgy_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting_advanced",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "assembly_tooling_5",
+   "name": "Assembly Tooling V",
+   "desc": "Quick-change jigs and torque tools: +10% assembling speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "assembly_tooling_4",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "avionics",
+   "name": "Avionics",
+   "desc": "Flight computers, laser gyros and avionics suites.",
+   "branch": "aerospace",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "avionics_suite",
+    "flight_computer",
+    "gyroscope"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "ball_mills",
+   "name": "Ball Mills",
+   "desc": "Carbide-lined grinding mills.",
+   "branch": "mining",
+   "prereqs": [
+    "tungsten_metallurgy"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 800,
+   "unlocks": [
+    "ball_mill"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "ballistic_calibration_4",
+   "name": "Ballistic Calibration IV",
+   "desc": "Ranging tables and better barrels: +15% ballistic defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "ballistic_calibration_3",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "ballistic",
+     "value": 0.15
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "beam_focusing_2",
+   "name": "Beam Focusing II",
+   "desc": "Adaptive optics on every emitter: +15% energy defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "beam_focusing_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "energy",
+     "value": 0.15
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "blade_aerodynamics_3",
+   "name": "Blade Aerodynamics III",
+   "desc": "Twisted, tapered blade profiles: +10% output from wind generators.",
+   "branch": "power",
+   "prereqs": [
+    "blade_aerodynamics_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "wind",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "catalytic_scrubbers",
+   "name": "Catalytic Scrubbers",
+   "desc": "Rare-earth catalyst scrubbers.",
+   "branch": "chemistry",
+   "prereqs": [
+    "monazite_processing",
+    "precipitators"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "catalytic_scrubber"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "circuit_yield_4",
+   "name": "Circuit Yield IV",
+   "desc": "Better reflow profiles and fewer rejects: +10% electronics speed.",
+   "branch": "electronics",
+   "prereqs": [
+    "circuit_yield_3",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electronics",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "combined_cycle",
+   "name": "Combined Cycle",
+   "desc": "Gas turbines with a steam bottoming stage.",
+   "branch": "power",
+   "prereqs": [
+    "flight_testing",
+    "turbine_engineering"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "combined_cycle_turbine"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "combustion_tuning_3",
+   "name": "Combustion Tuning III",
+   "desc": "Lean-burn combustors: +10% output from fuel gas generators.",
+   "branch": "power",
+   "prereqs": [
+    "combustion_tuning_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "fuel_gas",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "cracking_catalysts_3",
+   "name": "Cracking Catalysts III",
+   "desc": "Zeolite catalysts in every column: +10% refining speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "cracking_catalysts_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "refining",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "crusher_liners_3",
+   "name": "Crusher Liners III",
+   "desc": "Manganese-steel liners: +10% crushing speed.",
+   "branch": "mining",
+   "prereqs": [
+    "crusher_liners_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "crushing",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "cryocoolers",
+   "name": "Cryocoolers",
+   "desc": "Closed-cycle millikelvin refrigerators.",
+   "branch": "quantum",
+   "prereqs": [
+    "helium_recovery",
+    "rare_earth_magnets"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1100,
+   "unlocks": [
+    "cryocooler"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "cryogenic_insulation_2",
+   "name": "Cryogenic Insulation II",
+   "desc": "Multilayer vacuum insulation: +10% cryogenics speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "cryogenic_insulation_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "cryogenics",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "cryogenic_liquefaction",
+   "name": "Cryogenic Liquefaction",
+   "desc": "Turbo-expanders and liquid hydrogen.",
+   "branch": "chemistry",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 800,
+   "unlocks": [
+    "cryo_liquefier",
+    "liquid_hydrogen"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "cryogenic_storage",
+   "name": "Cryogenic Storage",
+   "desc": "Vacuum-jacketed dewars.",
+   "branch": "logistics",
+   "prereqs": [
+    "cryogenic_liquefaction",
+    "pressurized_tanks"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "cryogenic_tank"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "deep_core_drilling",
+   "name": "Deep Core Drilling",
+   "desc": "Carbide-bit drills for the deep seams.",
+   "branch": "mining",
+   "prereqs": [
+    "tungsten_metallurgy"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "deep_core_drill"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "drill_bit_metallurgy_5",
+   "name": "Drill Bit Metallurgy V",
+   "desc": "Harder bit alloys and better flushing: +10% bonus output from all extractors.",
+   "branch": "mining",
+   "prereqs": [
+    "drill_bit_metallurgy_4",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "mining_productivity",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "early_warning",
+   "name": "Early Warning",
+   "desc": "Phased-array radar networks.",
+   "branch": "defense",
+   "prereqs": [
+    "phased_arrays",
+    "radar",
+    "flight_testing",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "radar_array"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "electrode_coatings_3",
+   "name": "Electrode Coatings III",
+   "desc": "Low-overpotential electrode coatings: +10% electrolysis speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "electrode_coatings_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "electrolysis",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "emission_controls_4",
+   "name": "Emission Controls IV",
+   "desc": "Sealed processes and flare recovery: -8% pollution from all buildings.",
+   "branch": "chemistry",
+   "prereqs": [
+    "emission_controls_3",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "pollution_reduction",
+     "target": null,
+     "value": 0.08
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "explosive_yield_3",
+   "name": "Explosive Yield III",
+   "desc": "Shaped bursters and better fuzes: +15% explosive defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "explosive_yield_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "explosive",
+     "value": 0.15
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "fermentation",
+   "name": "Fermentation",
+   "desc": "Sterile vats and engineered enzyme cultures.",
+   "branch": "biotech",
+   "prereqs": [
+    "flight_testing",
+    "bioplastics"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "enzyme_culture",
+    "fermentation_vat"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "fortification_doctrine_4",
+   "name": "Fortification Doctrine IV",
+   "desc": "Layered perimeters and kill zones: +10% defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "fortification_doctrine_3",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "foundry_practice_2",
+   "name": "Foundry Practice II",
+   "desc": "Faster pours and quicker mold turnover: +10% foundry speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "foundry_practice_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "foundry",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "fractionation",
+   "name": "Fractionation",
+   "desc": "Vacuum fractionation towers.",
+   "branch": "chemistry",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "fractionation_tower"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "fuel_reprocessing",
+   "name": "Fuel Reprocessing",
+   "desc": "Recover fissile seed and thoria from spent rods.",
+   "branch": "power",
+   "prereqs": [
+    "thorium_reactors"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "fuel_reprocessing"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "geothermal_power",
+   "name": "Geothermal Power",
+   "desc": "Flash plants on deep hot wells.",
+   "branch": "power",
+   "prereqs": [
+    "deep_core_drilling",
+    "steam_turbines"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1100,
+   "unlocks": [
+    "geothermal_plant"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "grid_lithium_storage",
+   "name": "Grid Lithium Storage",
+   "desc": "Containerized lithium storage arrays.",
+   "branch": "power",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "lithium_storage_array"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "guided_munitions",
+   "name": "Guided Munitions",
+   "desc": "Guided shells and howitzers.",
+   "branch": "defense",
+   "prereqs": [
+    "avionics",
+    "high_explosives"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1200,
+   "unlocks": [
+    "howitzer_emplacement",
+    "smart_shell"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "heat_shielding",
+   "name": "Heat Shielding",
+   "desc": "Ceramic heat shield tiles.",
+   "branch": "aerospace",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 800,
+   "unlocks": [
+    "heat_shield_tile"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "heavy_drones",
+   "name": "Heavy Drones",
+   "desc": "Heavy-lift drone ports.",
+   "branch": "logistics",
+   "prereqs": [
+    "rare_earth_magnets",
+    "drone_logistics"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1100,
+   "unlocks": [
+    "heavy_drone_port"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "heavy_wind_turbines",
+   "name": "Heavy Wind Turbines",
+   "desc": "Direct-drive magnet turbines.",
+   "branch": "power",
+   "prereqs": [
+    "rare_earth_magnets"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "heavy_wind_turbine"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "helium_recovery",
+   "name": "Helium Recovery",
+   "desc": "Tap helium wells and liquefy the gas.",
+   "branch": "quantum",
+   "prereqs": [
+    "cryogenic_liquefaction"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "drill_helium_gas",
+    "liquid_helium"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "incendiary_compounds_3",
+   "name": "Incendiary Compounds III",
+   "desc": "Stickier, hotter gels: +15% incendiary defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "incendiary_compounds_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "incendiary",
+     "value": 0.15
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "isotope_centrifuges",
+   "name": "Isotope Centrifuges",
+   "desc": "Centrifuge cascades that enrich fissile seed.",
+   "branch": "power",
+   "prereqs": [
+    "monazite_processing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "centrifuge_cascade",
+    "seed_enrichment"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_6",
+   "name": "Lab Automation VI",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_5",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "launch_complex",
+   "name": "Launch Complex",
+   "desc": "A launch pad and survey probes for the first megaprojects.",
+   "branch": "aerospace",
+   "prereqs": [
+    "rocket_engines",
+    "avionics",
+    "heat_shielding"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1500,
+   "unlocks": [
+    "launch_complex",
+    "survey_probe"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "lithium_charge_packs",
+   "name": "Lithium Charge Packs",
+   "desc": "Dense packs for beam weapons.",
+   "branch": "defense",
+   "prereqs": [
+    "laser_weapons",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "lithium_charge_pack"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "market_analytics_5",
+   "name": "Market Analytics V",
+   "desc": "Price tracking and timed sales: +5% market sell prices.",
+   "branch": "logistics",
+   "prereqs": [
+    "market_analytics_4",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "market_price",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "membrane_electrolysis",
+   "name": "Membrane Electrolysis",
+   "desc": "Ion-membrane electrolyzer stacks.",
+   "branch": "chemistry",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "membrane_electrolyzer"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "module_bays_2",
+   "name": "Module Bay Expansion II",
+   "desc": "Extra card cages in every bay: +1 module slot in every bay.",
+   "branch": "electronics",
+   "prereqs": [
+    "module_bays_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "module_slots",
+     "target": null,
+     "value": 1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "module_engineering_4",
+   "name": "Module Engineering IV",
+   "desc": "Mk IV module cards with flight-grade computers.",
+   "branch": "electronics",
+   "prereqs": [
+    "module_engineering_3",
+    "avionics",
+    "rare_earth_magnets"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1200,
+   "unlocks": [
+    "economizer_card_4",
+    "emission_filter_4",
+    "overclock_card_4",
+    "yield_optimizer_4"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "monazite_processing",
+   "name": "Monazite Processing",
+   "desc": "Digest monazite into thoria and rare earths.",
+   "branch": "power",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 800,
+   "unlocks": [
+    "mine_monazite_sand",
+    "monazite_digestion"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "neutron_economy_1",
+   "name": "Neutron Economy I",
+   "desc": "Better moderators and reflectors: +10% fission speed.",
+   "branch": "power",
+   "prereqs": [
+    "thorium_reactors",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "fission",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "night_shift_3",
+   "name": "Night Shift Protocols III",
+   "desc": "Unattended operation procedures: +10% offline production efficiency.",
+   "branch": "logistics",
+   "prereqs": [
+    "night_shift_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "offline_efficiency",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "offshore_drilling",
+   "name": "Offshore Drilling",
+   "desc": "Jack-up rigs on the shelf reservoirs.",
+   "branch": "mining",
+   "prereqs": [
+    "deep_core_drilling"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "offshore_rig"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "overclock_relays",
+   "name": "Overclock Relays",
+   "desc": "Stronger bay-wide speed relays.",
+   "branch": "electronics",
+   "prereqs": [
+    "flight_testing",
+    "signal_relays"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "overclock_relay"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "photovoltaic_efficiency_4",
+   "name": "Photovoltaic Efficiency IV",
+   "desc": "Anti-reflective coatings and trackers: +10% output from solar generators.",
+   "branch": "power",
+   "prereqs": [
+    "photovoltaic_efficiency_3",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "solar",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "precision_tolerances_2",
+   "name": "Precision Tolerances II",
+   "desc": "Metrology-driven assembly: +10% precision assembly speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "precision_tolerances_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "precision_assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "pyrophorics",
+   "name": "Pyrophorics",
+   "desc": "Pyrophoric gel and thermal lances.",
+   "branch": "defense",
+   "prereqs": [
+    "thermite",
+    "incendiaries",
+    "flight_testing"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "pyro_gel_cell",
+    "thermal_lance"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "quantum_datacores",
+   "name": "Quantum Datacores",
+   "desc": "Cryo-sealed datacores that open quantum-era research.",
+   "branch": "research",
+   "prereqs": [
+    "qubit_fabrication"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1500,
+   "unlocks": [
+    "quantum_datacore"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "qubit_fabrication",
+   "name": "Qubit Fabrication",
+   "desc": "Superconducting qubit arrays.",
+   "branch": "quantum",
+   "prereqs": [
+    "superconductors",
+    "cryocoolers"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1400,
+   "unlocks": [
+    "qubit_array"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "rare_earth_magnets",
+   "name": "Rare-Earth Magnets",
+   "desc": "Sintered magnets and brushless motors.",
+   "branch": "electronics",
+   "prereqs": [
+    "monazite_processing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 900,
+   "unlocks": [
+    "brushless_motor",
+    "rare_earth_magnet"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "rare_earth_separation",
+   "name": "Rare-Earth Separation",
+   "desc": "Mine rare-earth ore and separate yttrium by solvent extraction.",
+   "branch": "quantum",
+   "prereqs": [
+    "monazite_processing",
+    "semiconductor_refining"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "mine_rare_earth_ore",
+    "solvent_extraction"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "reaction_kinetics_3",
+   "name": "Reaction Kinetics III",
+   "desc": "Tuned temperatures and stirring: +10% chemistry speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "reaction_kinetics_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "chemistry",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "rocket_engines",
+   "name": "Rocket Engines",
+   "desc": "Nozzles, turbopumps and liquid-fuel engines.",
+   "branch": "aerospace",
+   "prereqs": [
+    "tungsten_metallurgy",
+    "rare_earth_magnets",
+    "turbine_engineering"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1200,
+   "unlocks": [
+    "rocket_engine",
+    "thrust_nozzle",
+    "turbopump"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "rotor_balancing_1",
+   "name": "Rotor Balancing I",
+   "desc": "Precision-balanced rotors: +10% centrifuging speed.",
+   "branch": "power",
+   "prereqs": [
+    "isotope_centrifuges",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "centrifuging",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "shield_projectors",
+   "name": "Shield Projectors",
+   "desc": "Magnetic deflector domes.",
+   "branch": "defense",
+   "prereqs": [
+    "rare_earth_magnets",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1300,
+   "unlocks": [
+    "shield_projector"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "strain_optimization_2",
+   "name": "Strain Optimization II",
+   "desc": "Selected high-yield strains: +10% bioprocess speed.",
+   "branch": "biotech",
+   "prereqs": [
+    "strain_optimization_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "bioprocessing",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "superconductors",
+   "name": "Superconductors",
+   "desc": "Nanofabricators and superconducting tape.",
+   "branch": "quantum",
+   "prereqs": [
+    "rare_earth_separation",
+    "robotics",
+    "air_separation"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1200,
+   "unlocks": [
+    "nanofabricator",
+    "superconductor_tape"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "survey_claims_3",
+   "name": "Survey Claims III",
+   "desc": "Registered survey rights on claimed land: +1 extractor slot on every claimed solid deposit.",
+   "branch": "mining",
+   "prereqs": [
+    "survey_claims_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "extraction_slots",
+     "target": "solid",
+     "value": 1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "thorium_fuel",
+   "name": "Thorium Fuel",
+   "desc": "Fabricate seeded thorium fuel rods.",
+   "branch": "power",
+   "prereqs": [
+    "isotope_centrifuges"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "thorium_fuel_rod"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "thorium_reactors",
+   "name": "Thorium Reactors",
+   "desc": "Reactors, fission and cooling towers.",
+   "branch": "power",
+   "prereqs": [
+    "thorium_fuel",
+    "steam_turbines"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1200,
+   "unlocks": [
+    "cooling_tower",
+    "thorium_fission",
+    "thorium_reactor"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "tungsten_metallurgy",
+   "name": "Tungsten Metallurgy",
+   "desc": "Mine wolframite and sinter tungsten carbide.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 800,
+   "unlocks": [
+    "mine_wolframite",
+    "tungsten_carbide",
+    "tungsten_ingot"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "tungsten_penetrators",
+   "name": "Tungsten Penetrators",
+   "desc": "Carbide-cored rounds.",
+   "branch": "defense",
+   "prereqs": [
+    "tungsten_metallurgy",
+    "heavy_autocannons"
+   ],
+   "cost": {
+    "field_report": 2,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [
+    "tungsten_rounds"
+   ],
+   "effects": [],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "turbine_superalloys_2",
+   "name": "Turbine Superalloys II",
+   "desc": "Hotter inlet temperatures: +5% output from superheated steam generators.",
+   "branch": "power",
+   "prereqs": [
+    "turbine_superalloys_1",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "superheated_steam",
+     "value": 0.05
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "warehouse_racking_6",
+   "name": "Warehouse Racking VI",
+   "desc": "Taller racks and tighter packing: +15% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "warehouse_racking_5",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.15
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "wellbore_stimulation_3",
+   "name": "Wellbore Stimulation III",
+   "desc": "Acidized and fractured wellbores: +10% well speed.",
+   "branch": "mining",
+   "prereqs": [
+    "wellbore_stimulation_2",
+    "flight_testing"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1
+   },
+   "time": 40.0,
+   "units": 1000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "oil_extraction",
+     "value": 0.1
+    }
+   ],
+   "tier": 5,
+   "repeatable": false
+  },
+  {
+   "id": "aegis_fields",
+   "name": "Aegis Fields",
+   "desc": "Plasma-backed field domes.",
+   "branch": "defense",
+   "prereqs": [
+    "plasma_confinement",
+    "quantum_computing",
+    "shield_projectors"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 3000,
+   "unlocks": [
+    "aegis_field_array"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "arc_metallurgy_3",
+   "name": "Arc Metallurgy III",
+   "desc": "Higher-current electrodes: +10% advanced smelting speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "arc_metallurgy_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting_advanced",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "autonomous_fabrication",
+   "name": "Autonomous Fabrication",
+   "desc": "Self-scheduling general fabricators.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "quantum_computing"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "autonomous_fabricator"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "beam_focusing_3",
+   "name": "Beam Focusing III",
+   "desc": "Adaptive optics on every emitter: +15% energy defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "beam_focusing_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": "energy",
+     "value": 0.15
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "biosorption",
+   "name": "Biosorption",
+   "desc": "Enzyme cultures that sort rare earths.",
+   "branch": "biotech",
+   "prereqs": [
+    "quantum_datacores",
+    "fermentation"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1500,
+   "unlocks": [
+    "biosorption"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "breeder_reactors",
+   "name": "Breeder Reactors",
+   "desc": "Fast reactors that breed fissile seed.",
+   "branch": "power",
+   "prereqs": [
+    "quantum_datacores",
+    "fuel_reprocessing"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2200,
+   "unlocks": [
+    "breeder_reactor",
+    "thorium_breeding"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "carbon_capture",
+   "name": "Carbon Capture",
+   "desc": "Nanotube sorbent capture towers.",
+   "branch": "chemistry",
+   "prereqs": [
+    "carbon_nanotubes"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "carbon_capture_tower"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "carbon_nanotubes",
+   "name": "Carbon Nanotubes",
+   "desc": "Spin nanotube yarn.",
+   "branch": "quantum",
+   "prereqs": [
+    "graphene_synthesis"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1800,
+   "unlocks": [
+    "carbon_nanotube"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "cryogenic_insulation_3",
+   "name": "Cryogenic Insulation III",
+   "desc": "Multilayer vacuum insulation: +10% cryogenics speed.",
+   "branch": "chemistry",
+   "prereqs": [
+    "cryogenic_insulation_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "cryogenics",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "deuterium_separation",
+   "name": "Deuterium Separation",
+   "desc": "Isotopic electrolysis for heavy hydrogen.",
+   "branch": "power",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1500,
+   "unlocks": [
+    "isotopic_electrolysis"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "dilution_refrigeration",
+   "name": "Dilution Refrigeration",
+   "desc": "Millikelvin cryogenic plants.",
+   "branch": "quantum",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "dilution_refrigerator"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "emission_controls_5",
+   "name": "Emission Controls V",
+   "desc": "Sealed processes and flare recovery: -8% pollution from all buildings.",
+   "branch": "chemistry",
+   "prereqs": [
+    "emission_controls_4",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "pollution_reduction",
+     "target": null,
+     "value": 0.08
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "flow_chemistry",
+   "name": "Flow Chemistry",
+   "desc": "Continuous microchannel reactors.",
+   "branch": "chemistry",
+   "prereqs": [
+    "graphene_synthesis"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "flow_reactor"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "fortification_doctrine_5",
+   "name": "Fortification Doctrine V",
+   "desc": "Layered perimeters and kill zones: +10% defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "fortification_doctrine_4",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "foundry_practice_3",
+   "name": "Foundry Practice III",
+   "desc": "Faster pours and quicker mold turnover: +10% foundry speed.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "foundry_practice_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "foundry",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "fusion_fuel",
+   "name": "Fusion Fuel",
+   "desc": "Deuterium-lithium target pellets.",
+   "branch": "power",
+   "prereqs": [
+    "deuterium_separation",
+    "graphene_synthesis",
+    "lithium_extraction"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "fusion_pellet"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "fusion_power",
+   "name": "Fusion Power",
+   "desc": "Tokamak reactors.",
+   "branch": "power",
+   "prereqs": [
+    "fusion_fuel",
+    "plasma_confinement",
+    "quantum_computing"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 3000,
+   "unlocks": [
+    "dt_fusion",
+    "tokamak"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "graphene_synthesis",
+   "name": "Graphene Synthesis",
+   "desc": "Grow graphene film on copper foil.",
+   "branch": "quantum",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1500,
+   "unlocks": [
+    "graphene"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "interceptor_drones",
+   "name": "Interceptor Drones",
+   "desc": "Armed drone nests and hypervelocity slugs.",
+   "branch": "defense",
+   "prereqs": [
+    "carbon_nanotubes",
+    "heavy_drones",
+    "avionics",
+    "tungsten_penetrators"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "hypervelocity_slug",
+    "interceptor_drone_nest"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "isotope_separators",
+   "name": "Isotope Separators",
+   "desc": "Maglev rotor isotope separators.",
+   "branch": "power",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "isotope_separator"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "lab_automation_7",
+   "name": "Lab Automation VII",
+   "desc": "Automated sample handling: +10% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_6",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "maglev_freight",
+   "name": "Maglev Freight",
+   "desc": "Superconducting freight terminals.",
+   "branch": "logistics",
+   "prereqs": [
+    "quantum_datacores",
+    "rare_earth_magnets"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2200,
+   "unlocks": [
+    "maglev_terminal"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "mass_driver_engineering",
+   "name": "Mass Driver Engineering",
+   "desc": "Superconducting accelerator segments.",
+   "branch": "aerospace",
+   "prereqs": [
+    "quantum_datacores",
+    "lithium_extraction"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "coil_accelerator_segment"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "metamaterials",
+   "name": "Metamaterials",
+   "desc": "Engineered nano-lattices.",
+   "branch": "quantum",
+   "prereqs": [
+    "carbon_nanotubes"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2200,
+   "unlocks": [
+    "metamaterial_lattice"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "micro_precision",
+   "name": "Micro-Precision Assembly",
+   "desc": "Nanometer-tolerance assembly cells.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "micro_precision_cell"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "module_engineering_5",
+   "name": "Module Engineering V",
+   "desc": "Mk V module cards on quantum processors.",
+   "branch": "electronics",
+   "prereqs": [
+    "quantum_computing",
+    "metamaterials",
+    "module_engineering_4"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 3000,
+   "unlocks": [
+    "economizer_card_5",
+    "emission_filter_5",
+    "overclock_card_5",
+    "yield_optimizer_5"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "molecular_assembly",
+   "name": "Molecular Assembly",
+   "desc": "Directed self-assembly reactors.",
+   "branch": "quantum",
+   "prereqs": [
+    "metamaterials",
+    "quantum_computing"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 3000,
+   "unlocks": [
+    "molecular_assembler"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "munitions_lines_3",
+   "name": "Munitions Lines III",
+   "desc": "Faster press-and-fill lines: +10% munitions speed.",
+   "branch": "defense",
+   "prereqs": [
+    "munitions_lines_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "munitions",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "nano_coatings",
+   "name": "Nano Coatings",
+   "desc": "Self-healing nano-ceramic coatings.",
+   "branch": "quantum",
+   "prereqs": [
+    "carbon_nanotubes"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1800,
+   "unlocks": [
+    "nano_coating"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "nanofab_precision_1",
+   "name": "Nanofab Precision I",
+   "desc": "Faster deposition with fewer defects: +10% nanofab speed.",
+   "branch": "quantum",
+   "prereqs": [
+    "graphene_synthesis",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "nanofab",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "nanofab_precision_2",
+   "name": "Nanofab Precision II",
+   "desc": "Faster deposition with fewer defects: +10% nanofab speed.",
+   "branch": "quantum",
+   "prereqs": [
+    "nanofab_precision_1",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2600,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "nanofab",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "neutron_economy_2",
+   "name": "Neutron Economy II",
+   "desc": "Better moderators and reflectors: +10% fission speed.",
+   "branch": "power",
+   "prereqs": [
+    "neutron_economy_1",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "fission",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "night_shift_4",
+   "name": "Night Shift Protocols IV",
+   "desc": "Unattended operation procedures: +10% offline production efficiency.",
+   "branch": "logistics",
+   "prereqs": [
+    "night_shift_3",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "offline_efficiency",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "nutrient_synthesis",
+   "name": "Nutrient Synthesis",
+   "desc": "Complete synthetic food paste.",
+   "branch": "biotech",
+   "prereqs": [
+    "quantum_datacores",
+    "fermentation"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1500,
+   "unlocks": [
+    "nutrient_paste"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "orbital_assembly",
+   "name": "Orbital Assembly",
+   "desc": "Orbital gantries and heavy launch vehicles.",
+   "branch": "aerospace",
+   "prereqs": [
+    "launch_complex",
+    "metamaterials",
+    "quantum_computing",
+    "cryogenic_liquefaction"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 4000,
+   "unlocks": [
+    "heavy_launch_vehicle",
+    "orbital_gantry"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "peer_review_3",
+   "name": "Peer Review III",
+   "desc": "Shared results and fewer repeated trials: +5% free research per unit.",
+   "branch": "research",
+   "prereqs": [
+    "peer_review_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_productivity",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "plasma_boring",
+   "name": "Plasma Boring",
+   "desc": "Plasma-spalling bores.",
+   "branch": "mining",
+   "prereqs": [
+    "plasma_confinement",
+    "deep_core_drilling"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "plasma_bore"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "plasma_confinement",
+   "name": "Plasma Confinement",
+   "desc": "Superconducting containment coils.",
+   "branch": "power",
+   "prereqs": [
+    "quantum_datacores",
+    "rare_earth_magnets"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2200,
+   "unlocks": [
+    "plasma_coil"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "plasma_furnaces",
+   "name": "Plasma Furnaces",
+   "desc": "Plasma-torch arc furnaces.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1800,
+   "unlocks": [
+    "plasma_arc_furnace"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "plasma_stability_1",
+   "name": "Plasma Stability I",
+   "desc": "Real-time instability suppression: +10% fusion speed.",
+   "branch": "power",
+   "prereqs": [
+    "fusion_power",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "fusion",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "precision_tolerances_3",
+   "name": "Precision Tolerances III",
+   "desc": "Metrology-driven assembly: +10% precision assembly speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "precision_tolerances_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "precision_assembling",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "quantum_computing",
+   "name": "Quantum Computing",
+   "desc": "Packaged quantum processors.",
+   "branch": "quantum",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "quantum_processor"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "quantum_research",
+   "name": "Quantum Research",
+   "desc": "Quantum research centers.",
+   "branch": "research",
+   "prereqs": [
+    "quantum_computing"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "quantum_research_center"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "quantum_sync",
+   "name": "Quantum Synchronization",
+   "desc": "Quantum-clocked bay relays.",
+   "branch": "electronics",
+   "prereqs": [
+    "quantum_computing",
+    "overclock_relays"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "quantum_sync_relay"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "railguns",
+   "name": "Railguns",
+   "desc": "Railgun batteries.",
+   "branch": "defense",
+   "prereqs": [
+    "graphene_synthesis",
+    "field_reporting"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2500,
+   "unlocks": [
+    "railgun_battery"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "rotor_balancing_2",
+   "name": "Rotor Balancing II",
+   "desc": "Precision-balanced rotors: +10% centrifuging speed.",
+   "branch": "power",
+   "prereqs": [
+    "rotor_balancing_1",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "centrifuging",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "smes",
+   "name": "Superconducting Storage",
+   "desc": "Magnetic energy storage rings.",
+   "branch": "power",
+   "prereqs": [
+    "plasma_confinement"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "smes_ring"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "strain_optimization_3",
+   "name": "Strain Optimization III",
+   "desc": "Selected high-yield strains: +10% bioprocess speed.",
+   "branch": "biotech",
+   "prereqs": [
+    "strain_optimization_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "bioprocessing",
+     "value": 0.1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "supercapacitors",
+   "name": "Supercapacitors",
+   "desc": "Graphene supercapacitor cells.",
+   "branch": "defense",
+   "prereqs": [
+    "graphene_synthesis",
+    "lithium_charge_packs"
+   ],
+   "cost": {
+    "field_report": 2,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "supercap_cell"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "turbine_superalloys_3",
+   "name": "Turbine Superalloys III",
+   "desc": "Hotter inlet temperatures: +5% output from superheated steam generators.",
+   "branch": "power",
+   "prereqs": [
+    "turbine_superalloys_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": "superheated_steam",
+     "value": 0.05
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "vacuum_casting",
+   "name": "Vacuum Casting",
+   "desc": "Vacuum induction foundries.",
+   "branch": "metallurgy",
+   "prereqs": [
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 1800,
+   "unlocks": [
+    "vacuum_foundry"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "vault_complexes",
+   "name": "Vault Complexes",
+   "desc": "Underground vault storage.",
+   "branch": "logistics",
+   "prereqs": [
+    "nano_coatings",
+    "robotics"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [
+    "vault_complex"
+   ],
+   "effects": [],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "well_permits_3",
+   "name": "Well Permits III",
+   "desc": "Extra drilling and pumping permits: +1 extractor slot on every claimed fluid deposit.",
+   "branch": "mining",
+   "prereqs": [
+    "well_permits_2",
+    "quantum_datacores"
+   ],
+   "cost": {
+    "flight_telemetry": 1,
+    "quantum_datacore": 1
+   },
+   "time": 50.0,
+   "units": 2000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "extraction_slots",
+     "target": "fluid",
+     "value": 1
+    }
+   ],
+   "tier": 6,
+   "repeatable": false
+  },
+  {
+   "id": "ark_fusion_core",
+   "name": "Ark Fusion Core",
+   "desc": "The Ark's compact tokamak heart.",
+   "branch": "aerospace",
+   "prereqs": [
+    "ark_propulsion",
+    "fusion_power"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 5000,
+   "unlocks": [
+    "ark_fusion_core"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "ark_habitation",
+   "name": "Ark Habitation",
+   "desc": "Habitat rings and cryostasis pods.",
+   "branch": "aerospace",
+   "prereqs": [
+    "ark_structures",
+    "cryocoolers"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [
+    "ark_habitat_module",
+    "cryostasis_pod"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "ark_life_support",
+   "name": "Ark Life Support",
+   "desc": "Closed-loop life support and seed vaults.",
+   "branch": "biotech",
+   "prereqs": [
+    "ark_habitation",
+    "nutrient_synthesis"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [
+    "ark_life_support",
+    "seed_vault"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "ark_navigation",
+   "name": "Ark Navigation",
+   "desc": "Quantum deep-space navigation.",
+   "branch": "aerospace",
+   "prereqs": [
+    "ark_structures",
+    "quantum_computing",
+    "avionics"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 5000,
+   "unlocks": [
+    "ark_navigation_core"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "ark_propulsion",
+   "name": "Ark Propulsion",
+   "desc": "Plasma drive nacelles.",
+   "branch": "aerospace",
+   "prereqs": [
+    "ark_structures",
+    "plasma_confinement"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [
+    "ark_drive_nacelle"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "ark_structures",
+   "name": "Ark Structures",
+   "desc": "Lattice-armored hull segments.",
+   "branch": "aerospace",
+   "prereqs": [
+    "orbital_assembly",
+    "nano_coatings"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [
+    "ark_hull_segment"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "atmospheric_restoration",
+   "name": "Atmospheric Restoration",
+   "desc": "Repeatable: -2% pollution from all buildings.",
+   "branch": "chemistry",
+   "prereqs": [
+    "emission_controls_5",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "pollution_reduction",
+     "target": null,
+     "value": 0.02
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "autonomous_operations",
+   "name": "Autonomous Operations",
+   "desc": "Repeatable: +2% offline production efficiency.",
+   "branch": "logistics",
+   "prereqs": [
+    "night_shift_4",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "offline_efficiency",
+     "target": null,
+     "value": 0.02
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "deep_mining_survey",
+   "name": "Deep Mining Survey",
+   "desc": "Repeatable: +5% bonus output from all extractors.",
+   "branch": "mining",
+   "prereqs": [
+    "drill_bit_metallurgy_5",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "mining_productivity",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "grid_optimization",
+   "name": "Grid Optimization",
+   "desc": "Repeatable: +3% output from all generators.",
+   "branch": "power",
+   "prereqs": [
+    "turbine_superalloys_3",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "power_output",
+     "target": null,
+     "value": 0.03
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "lean_manufacturing",
+   "name": "Lean Manufacturing",
+   "desc": "Repeatable: +5% assembling speed. +5% precision assembly speed. +5% electronics speed.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "assembly_tooling_5",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "assembling",
+     "value": 0.05
+    },
+    {
+     "type": "craft_speed",
+     "target": "precision_assembling",
+     "value": 0.05
+    },
+    {
+     "type": "craft_speed",
+     "target": "electronics",
+     "value": 0.05
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "logistics_optimization",
+   "name": "Logistics Optimization",
+   "desc": "Repeatable: +10% storage capacity.",
+   "branch": "logistics",
+   "prereqs": [
+    "warehouse_racking_6",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "storage_capacity",
+     "target": null,
+     "value": 0.1
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "market_dominance",
+   "name": "Market Dominance",
+   "desc": "Repeatable: +2% market sell prices.",
+   "branch": "logistics",
+   "prereqs": [
+    "market_analytics_5",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "market_price",
+     "target": null,
+     "value": 0.02
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "nanofab_precision_3",
+   "name": "Nanofab Precision III",
+   "desc": "Faster deposition with fewer defects: +10% nanofab speed.",
+   "branch": "quantum",
+   "prereqs": [
+    "nanofab_precision_2",
+    "orbital_assembly"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "nanofab",
+     "value": 0.1
+    }
+   ],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "nanofab_throughput",
+   "name": "Nanofab Throughput",
+   "desc": "Repeatable: +5% nanofab speed.",
+   "branch": "quantum",
+   "prereqs": [
+    "nanofab_precision_3"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "nanofab",
+     "value": 0.05
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "orbital_cadence",
+   "name": "Orbital Cadence",
+   "desc": "Repeatable: +5% orbital speed.",
+   "branch": "aerospace",
+   "prereqs": [
+    "orbital_logistics_3"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "orbital",
+     "value": 0.05
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "orbital_logistics_1",
+   "name": "Orbital Logistics I",
+   "desc": "Tighter launch and assembly cadence: +10% orbital speed.",
+   "branch": "aerospace",
+   "prereqs": [
+    "ark_structures",
+    "orbital_assembly"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "orbital",
+     "value": 0.1
+    }
+   ],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "orbital_logistics_2",
+   "name": "Orbital Logistics II",
+   "desc": "Tighter launch and assembly cadence: +10% orbital speed.",
+   "branch": "aerospace",
+   "prereqs": [
+    "orbital_logistics_1",
+    "orbital_assembly"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 5200,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "orbital",
+     "value": 0.1
+    }
+   ],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "orbital_logistics_3",
+   "name": "Orbital Logistics III",
+   "desc": "Tighter launch and assembly cadence: +10% orbital speed.",
+   "branch": "aerospace",
+   "prereqs": [
+    "orbital_logistics_2",
+    "orbital_assembly"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 6400,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "orbital",
+     "value": 0.1
+    }
+   ],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "planetary_defense_grid",
+   "name": "Planetary Defense Grid",
+   "desc": "Repeatable: +5% defense rating.",
+   "branch": "defense",
+   "prereqs": [
+    "fortification_doctrine_5",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "defense",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "plasma_stability_2",
+   "name": "Plasma Stability II",
+   "desc": "Real-time instability suppression: +10% fusion speed.",
+   "branch": "power",
+   "prereqs": [
+    "plasma_stability_1",
+    "orbital_assembly"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "fusion",
+     "value": 0.1
+    }
+   ],
+   "tier": 7,
+   "repeatable": false
+  },
+  {
+   "id": "research_throughput",
+   "name": "Research Throughput",
+   "desc": "Repeatable: +5% lab research speed.",
+   "branch": "research",
+   "prereqs": [
+    "lab_automation_7",
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 3000,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "lab_speed",
+     "target": null,
+     "value": 0.05
+    }
+   ],
+   "tier": 7,
+   "repeatable": true
+  },
+  {
+   "id": "zero_g_assembly",
+   "name": "Zero-G Assembly",
+   "desc": "Heavy orbital gantries.",
+   "branch": "manufacturing",
+   "prereqs": [
+    "ark_structures"
+   ],
+   "cost": {
+    "alloy_specimen": 1,
+    "flight_telemetry": 1,
+    "quantum_datacore": 2
+   },
+   "time": 60.0,
+   "units": 4000,
+   "unlocks": [
+    "heavy_orbital_gantry"
+   ],
+   "effects": [],
+   "tier": 7,
+   "repeatable": false
+  }
+ ]
+}

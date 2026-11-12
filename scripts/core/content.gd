@@ -98,6 +98,7 @@ func load_all() -> void:
 	for dep in world.get("deposits", []):
 		deposits[dep.id] = dep
 	sectors = world.get("sectors", [])
+	sectors.sort_custom(func(a, b): return int(a.get("order", 0)) < int(b.get("order", 0)))
 	sector_by_id.clear()
 	for s in sectors:
 		sector_by_id[s.id] = s

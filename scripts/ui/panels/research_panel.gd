@@ -50,6 +50,7 @@ func build() -> void:
 		if filter == f[0]:
 			b.add_theme_color_override("font_color", UI.ACCENT)
 		tabs.add_child(b)
+	tabs.add_child(UI.button("Tech tree [G]", func(): hud.open_tree()))
 	tabs.add_child(UI.spacer())
 	var se := LineEdit.new()
 	se.placeholder_text = "Search…"

@@ -1,0 +1,5266 @@
+{
+ "buildings": [
+  {
+   "id": "assembly_station",
+   "name": "Assembly Station",
+   "desc": "Jig-fed station for routine assemblies.",
+   "role": "producer",
+   "categories": [
+    "assembling"
+   ],
+   "speed": 0.75,
+   "power_kw": 75.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 3.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 0,
+   "unlocked_by": "assembly_stations",
+   "visual": {
+    "archetype": "assembler",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "burner_boiler",
+   "name": "Burner Boiler",
+   "desc": "Fire-tube boiler: 40 steam/s, enough for two engines.",
+   "role": "producer",
+   "categories": [
+    "boiling"
+   ],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": true,
+   "fuel_kw": 2400.0,
+   "module_slots": 0,
+   "pollution": 30.0,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "boiler",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": true
+    }
+   }
+  },
+  {
+   "id": "burner_drill",
+   "name": "Burner Drill",
+   "desc": "Coal-fired percussion drill for shallow ore.",
+   "role": "producer",
+   "categories": [
+    "mining"
+   ],
+   "speed": 0.5,
+   "power_kw": 0.0,
+   "burner": true,
+   "fuel_kw": 150.0,
+   "module_slots": 0,
+   "pollution": 10.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "drill",
+    "material": "cast_iron",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": true,
+     "variant": "burner"
+    }
+   }
+  },
+  {
+   "id": "drafting_office",
+   "name": "Drafting Office",
+   "desc": "Drawing tables and test rigs that study Blueprint Sheets.",
+   "role": "research",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 60.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "lab",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "fitting_bench",
+   "name": "Fitting Bench",
+   "desc": "Powered workbench with vise, punch and drill press.",
+   "role": "producer",
+   "categories": [
+    "assembling",
+    "pressing"
+   ],
+   "speed": 0.5,
+   "power_kw": 40.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 2.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "assembler",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false,
+     "variant": "bench"
+    }
+   }
+  },
+  {
+   "id": "shore_intake",
+   "name": "Shore Intake",
+   "desc": "Gravity sluice and screen feeding water to the works.",
+   "role": "producer",
+   "categories": [
+    "pumping"
+   ],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    1,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "water_pump",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false,
+     "variant": "intake"
+    }
+   }
+  },
+  {
+   "id": "steam_engine",
+   "name": "Steam Engine",
+   "desc": "Piston engine: 20 steam/s for 900 kW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 900.0,
+   "generator": {
+    "fluid": "steam",
+    "rate": 20
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "steam_engine",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "stone_furnace",
+   "name": "Stone Furnace",
+   "desc": "Coal-fed fieldstone furnace for ore and bricks.",
+   "role": "producer",
+   "categories": [
+    "smelting"
+   ],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": true,
+   "fuel_kw": 90.0,
+   "module_slots": 0,
+   "pollution": 2.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "burner_furnace",
+    "material": "stone",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": true
+    }
+   }
+  },
+  {
+   "id": "storage_shed",
+   "name": "Storage Shed",
+   "desc": "Racked shed: +400 per item type.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 400,
+   "storage_kind": "solid",
+   "size": [
+    3,
+    3
+   ],
+   "tier": 0,
+   "unlocked_by": "storage_sheds",
+   "visual": {
+    "archetype": "warehouse",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false,
+     "variant": "shed"
+    }
+   }
+  },
+  {
+   "id": "supply_crate",
+   "name": "Supply Crate",
+   "desc": "Bolted crate: +100 per item type.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 100,
+   "storage_kind": "solid",
+   "size": [
+    1,
+    1
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "warehouse",
+    "material": "iron",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.45,
+      0.38,
+      0.3
+     ],
+     "accent": [
+      0.7,
+      0.5,
+      0.2
+     ],
+     "smoke": false,
+     "variant": "crate"
+    }
+   }
+  },
+  {
+   "id": "batch_mixer",
+   "name": "Batch Mixer",
+   "desc": "Drum mixer for concrete and powders.",
+   "role": "producer",
+   "categories": [
+    "mixing"
+   ],
+   "speed": 1.0,
+   "power_kw": 60.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 2.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 1,
+   "unlocked_by": "cement_works",
+   "visual": {
+    "archetype": "mixer",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "blast_furnace",
+   "name": "Blast Furnace",
+   "desc": "Hot-blast stack that doubles smelting throughput.",
+   "role": "producer",
+   "categories": [
+    "smelting"
+   ],
+   "speed": 2.0,
+   "power_kw": 0.0,
+   "burner": true,
+   "fuel_kw": 300.0,
+   "module_slots": 0,
+   "pollution": 6.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 1,
+   "unlocked_by": "blast_furnaces",
+   "visual": {
+    "archetype": "burner_furnace",
+    "material": "brick_clay",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": true,
+     "variant": "blast"
+    }
+   }
+  },
+  {
+   "id": "circuit_fab",
+   "name": "Circuit Fab",
+   "desc": "Solder-reflow line for boards and components.",
+   "role": "producer",
+   "categories": [
+    "electronics"
+   ],
+   "speed": 1.0,
+   "power_kw": 200.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 1,
+   "pollution": 2.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 1,
+   "unlocked_by": "circuit_theory",
+   "visual": {
+    "archetype": "electronics_fab",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "concrete_barrier",
+   "name": "Concrete Barrier",
+   "desc": "Precast barrier block (+10 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 10.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    2,
+    1
+   ],
+   "tier": 1,
+   "unlocked_by": "concrete_barriers",
+   "visual": {
+    "archetype": "wall_segment",
+    "material": "concrete",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false,
+     "variant": "concrete"
+    }
+   }
+  },
+  {
+   "id": "conveyor_hub",
+   "name": "Conveyor Hub",
+   "desc": "Roller-conveyor junction: +10 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 30.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 10.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 1,
+   "unlocked_by": "conveyor_hubs",
+   "visual": {
+    "archetype": "conveyor_hub",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "electric_drill",
+   "name": "Electric Drill",
+   "desc": "Motorized rotary drill for any solid deposit.",
+   "role": "producer",
+   "categories": [
+    "mining"
+   ],
+   "speed": 1.0,
+   "power_kw": 90.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 8.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 1,
+   "unlocked_by": "electric_mining",
+   "visual": {
+    "archetype": "drill",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "fluid_tank",
+   "name": "Fluid Tank",
+   "desc": "Riveted tank: +2,500 per fluid.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 2500,
+   "storage_kind": "fluid",
+   "size": [
+    3,
+    3
+   ],
+   "tier": 1,
+   "unlocked_by": "fluid_storage",
+   "visual": {
+    "archetype": "storage_tank",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "jaw_crusher",
+   "name": "Jaw Crusher",
+   "desc": "Toggle-jaw crusher for rock and clinker.",
+   "role": "producer",
+   "categories": [
+    "crushing"
+   ],
+   "speed": 1.0,
+   "power_kw": 75.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 5.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 1,
+   "unlocked_by": "quarrying",
+   "visual": {
+    "archetype": "crusher",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "munitions_works",
+   "name": "Munitions Works",
+   "desc": "Press-and-fill line for rounds and shells.",
+   "role": "producer",
+   "categories": [
+    "munitions"
+   ],
+   "speed": 1.0,
+   "power_kw": 80.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 5.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 1,
+   "unlocked_by": "munitions",
+   "visual": {
+    "archetype": "munitions_plant",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "palisade_wall",
+   "name": "Palisade Wall",
+   "desc": "Rod-and-brick barricade (+4 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 4.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    2,
+    1
+   ],
+   "tier": 1,
+   "unlocked_by": "fortifications",
+   "visual": {
+    "archetype": "wall_segment",
+    "material": "iron",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "producer_gas_generator",
+   "name": "Producer-Gas Generator",
+   "desc": "Gasifier engine burning solid fuel directly at 60%.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 480.0,
+   "generator": {
+    "fuel_class": "chemical",
+    "fuel_kw": 800
+   },
+   "module_slots": 0,
+   "pollution": 12.0,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 1,
+   "unlocked_by": "gasifier_power",
+   "visual": {
+    "archetype": "gas_turbine",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": true,
+     "variant": "gasifier"
+    }
+   }
+  },
+  {
+   "id": "scrap_recycler",
+   "name": "Scrap Recycler",
+   "desc": "Shear-and-sort line returning scrap to the melt.",
+   "role": "producer",
+   "categories": [
+    "recycling"
+   ],
+   "speed": 1.0,
+   "power_kw": 90.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 4.0,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 1,
+   "unlocked_by": "scrap_reclamation",
+   "visual": {
+    "archetype": "crusher",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false,
+     "variant": "recycler"
+    }
+   }
+  },
+  {
+   "id": "sentry_gun",
+   "name": "Sentry Gun",
+   "desc": "Spring-fed autogun firing ballistic rounds.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 15.0,
+   "ammo": "ballistic",
+   "ammo_per_min": 6.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 1,
+   "unlocked_by": "munitions",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "stamping_press",
+   "name": "Stamping Press",
+   "desc": "Flywheel press for plate, rod and wire.",
+   "role": "producer",
+   "categories": [
+    "pressing"
+   ],
+   "speed": 1.0,
+   "power_kw": 100.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 3.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 1,
+   "unlocked_by": "stamping_presses",
+   "visual": {
+    "archetype": "press",
+    "material": "steel",
+    "params": {
+     "tier": 1,
+     "paint": [
+      0.35,
+      0.42,
+      0.3
+     ],
+     "accent": [
+      0.85,
+      0.65,
+      0.15
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "assembly_line",
+   "name": "Assembly Line",
+   "desc": "Motorized line with powered fixtures.",
+   "role": "producer",
+   "categories": [
+    "assembling"
+   ],
+   "speed": 1.25,
+   "power_kw": 150.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 2.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "assembly_lines",
+   "visual": {
+    "archetype": "assembler",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "bulk_silo",
+   "name": "Bulk Silo",
+   "desc": "Tall silo for loose solids: +3,000 per item type.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 3000,
+   "storage_kind": "solid",
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "warehousing",
+   "visual": {
+    "archetype": "silo",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "chemical_reactor",
+   "name": "Chemical Reactor",
+   "desc": "Jacketed stirred reactor for liquid-phase chemistry.",
+   "role": "producer",
+   "categories": [
+    "chemistry"
+   ],
+   "speed": 1.0,
+   "power_kw": 210.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 4.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "polymer_chemistry",
+   "visual": {
+    "archetype": "chemical_plant",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "distillation_column",
+   "name": "Distillation Column",
+   "desc": "Atmospheric column splitting crude into cuts.",
+   "role": "producer",
+   "categories": [
+    "refining"
+   ],
+   "speed": 1.0,
+   "power_kw": 420.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 6.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 2,
+   "unlocked_by": "oil_refining",
+   "visual": {
+    "archetype": "refinery",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": true
+    }
+   }
+  },
+  {
+   "id": "flywheel_store",
+   "name": "Flywheel Store",
+   "desc": "Steel rotor in vacuum: 20 MJ at up to 300 kW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 300.0,
+   "generator": {
+    "source": "accumulator"
+   },
+   "capacity_kj": 20000.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "flywheel_storage",
+   "visual": {
+    "archetype": "accumulator",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "flywheel"
+    }
+   }
+  },
+  {
+   "id": "high_pressure_boiler",
+   "name": "High-Pressure Boiler",
+   "desc": "Water-tube boiler: 100 steam/s for five engines.",
+   "role": "producer",
+   "categories": [
+    "boiling"
+   ],
+   "speed": 2.5,
+   "power_kw": 0.0,
+   "burner": true,
+   "fuel_kw": 6000.0,
+   "module_slots": 0,
+   "pollution": 55.0,
+   "size": [
+    4,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "high_pressure_steam",
+   "visual": {
+    "archetype": "boiler",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": true,
+     "variant": "water_tube"
+    }
+   }
+  },
+  {
+   "id": "pollution_scrubber",
+   "name": "Pollution Scrubber",
+   "desc": "Wet scrubber that removes 20 pollution/min.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 80.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": -20.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "air_scrubbing",
+   "visual": {
+    "archetype": "scrubber",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "pump_station",
+   "name": "Pump Station",
+   "desc": "Electric pump lifting water or brine from wells.",
+   "role": "producer",
+   "categories": [
+    "pumping"
+   ],
+   "speed": 2.0,
+   "power_kw": 60.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 1,
+   "pollution": 0.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "hydraulics",
+   "visual": {
+    "archetype": "water_pump",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "pumpjack",
+   "name": "Pumpjack",
+   "desc": "Nodding beam pump lifting crude from the reservoir.",
+   "role": "producer",
+   "categories": [
+    "oil_extraction"
+   ],
+   "speed": 1.0,
+   "power_kw": 90.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 1,
+   "pollution": 10.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "oil_extraction",
+   "visual": {
+    "archetype": "pumpjack",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "radar_station",
+   "name": "Radar Station",
+   "desc": "Rotating radar giving early warning (+8 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 150.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 8.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "radar",
+   "visual": {
+    "archetype": "radar",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "research_laboratory",
+   "name": "Research Laboratory",
+   "desc": "Instrumented lab with fume hoods and benches.",
+   "role": "research",
+   "categories": [],
+   "speed": 2.0,
+   "power_kw": 250.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "research_laboratories",
+   "visual": {
+    "archetype": "lab",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "rolling_mill",
+   "name": "Rolling Mill",
+   "desc": "Four-high mill for plate, sheet and sections.",
+   "role": "producer",
+   "categories": [
+    "pressing"
+   ],
+   "speed": 2.0,
+   "power_kw": 300.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 1,
+   "pollution": 4.0,
+   "size": [
+    4,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "rolling_mills",
+   "visual": {
+    "archetype": "rolling_mill",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "solar_array",
+   "name": "Solar Array",
+   "desc": "Tilted cell panels: 90 kW at noon, nothing at night.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 90.0,
+   "generator": {
+    "source": "solar"
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "photovoltaics",
+   "visual": {
+    "archetype": "solar_array",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "sorting_hub",
+   "name": "Sorting Hub",
+   "desc": "Sensor-gated diverter hub: +30 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 90.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 30.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 2,
+   "unlocked_by": "sorting_hubs",
+   "visual": {
+    "archetype": "conveyor_hub",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "sorting"
+    }
+   }
+  },
+  {
+   "id": "substation",
+   "name": "Substation",
+   "desc": "Transformer yard that cuts line losses in its bay.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "support": {
+    "energy_bonus": -0.1,
+    "range": "bay"
+   },
+   "size": [
+    2,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "power_distribution",
+   "visual": {
+    "archetype": "substation",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "warehouse",
+   "name": "Warehouse",
+   "desc": "Steel-framed warehouse: +1,500 per item type.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 1500,
+   "storage_kind": "solid",
+   "size": [
+    5,
+    4
+   ],
+   "tier": 2,
+   "unlocked_by": "warehousing",
+   "visual": {
+    "archetype": "warehouse",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "wind_turbine",
+   "name": "Wind Turbine",
+   "desc": "Three-blade turbine averaging 300 kW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 300.0,
+   "generator": {
+    "source": "wind"
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "wind_power",
+   "visual": {
+    "archetype": "wind_turbine",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "wire_drawer",
+   "name": "Wire Drawing Bench",
+   "desc": "Multi-die drawing bench for rod and wire.",
+   "role": "producer",
+   "categories": [
+    "pressing"
+   ],
+   "speed": 1.5,
+   "power_kw": 120.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 1,
+   "pollution": 2.0,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 2,
+   "unlocked_by": "rolling_mills",
+   "visual": {
+    "archetype": "wire_drawer",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.2,
+      0.45,
+      0.55
+     ],
+     "accent": [
+      0.9,
+      0.7,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "algae_bioreactor",
+   "name": "Algae Bioreactor",
+   "desc": "Sunlit tube photobioreactor that also eats smog.",
+   "role": "producer",
+   "categories": [
+    "bioprocessing"
+   ],
+   "speed": 1.0,
+   "power_kw": 150.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": -3.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 3,
+   "unlocked_by": "algae_cultivation",
+   "visual": {
+    "archetype": "bioreactor",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "arc_furnace",
+   "name": "Electric Arc Furnace",
+   "desc": "Graphite-electrode furnace for reductions and refractory work.",
+   "role": "producer",
+   "categories": [
+    "smelting",
+    "smelting_advanced"
+   ],
+   "speed": 2.0,
+   "power_kw": 1000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 5.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 3,
+   "unlocked_by": "arc_furnaces",
+   "visual": {
+    "archetype": "arc_furnace",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "battery_bank",
+   "name": "Battery Bank",
+   "desc": "Sodium-sulfur racks: 100 MJ at up to 1 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 1000.0,
+   "generator": {
+    "source": "accumulator"
+   },
+   "capacity_kj": 100000.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 3,
+   "unlocked_by": "sodium_sulfur_batteries",
+   "visual": {
+    "archetype": "accumulator",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "casting_foundry",
+   "name": "Casting Foundry",
+   "desc": "Ladle-and-mold line for alloys and cast parts.",
+   "role": "producer",
+   "categories": [
+    "foundry"
+   ],
+   "speed": 1.0,
+   "power_kw": 800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 6.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 3,
+   "unlocked_by": "aerospace_alloys",
+   "visual": {
+    "archetype": "foundry",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": true
+    }
+   }
+  },
+  {
+   "id": "cone_crusher",
+   "name": "Cone Crusher",
+   "desc": "Gyratory cone crusher with fine product.",
+   "role": "producer",
+   "categories": [
+    "crushing"
+   ],
+   "speed": 2.0,
+   "power_kw": 250.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 6.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "cone_crushers",
+   "visual": {
+    "archetype": "crusher",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "cone"
+    }
+   }
+  },
+  {
+   "id": "deep_well_pump",
+   "name": "Deep-Well Pump",
+   "desc": "Submersible pump string for deep aquifers.",
+   "role": "producer",
+   "categories": [
+    "pumping"
+   ],
+   "speed": 3.0,
+   "power_kw": 200.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 0.0,
+   "size": [
+    2,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "chlor_alkali",
+   "visual": {
+    "archetype": "gas_well",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "pump"
+    }
+   }
+  },
+  {
+   "id": "electrolytic_cell",
+   "name": "Electrolytic Cell",
+   "desc": "Diaphragm cell bank for electrowinning.",
+   "role": "producer",
+   "categories": [
+    "electrolysis"
+   ],
+   "speed": 1.0,
+   "power_kw": 1000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 2.0,
+   "size": [
+    4,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "chlor_alkali",
+   "visual": {
+    "archetype": "electrolyzer",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "electrostatic_precipitator",
+   "name": "Electrostatic Precipitator",
+   "desc": "Charged-plate precipitator removing 60 pollution/min.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 250.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": -60.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "precipitators",
+   "visual": {
+    "archetype": "scrubber",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "precipitator"
+    }
+   }
+  },
+  {
+   "id": "flame_projector",
+   "name": "Flame Projector",
+   "desc": "Pressurized projector spraying burning gel.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 20.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 40.0,
+   "ammo": "incendiary",
+   "ammo_per_min": 6.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 3,
+   "unlocked_by": "incendiaries",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "flame"
+    }
+   }
+  },
+  {
+   "id": "gas_turbine",
+   "name": "Gas Turbine",
+   "desc": "Open-cycle turbine: 10 fuel gas/s for 3 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 3000.0,
+   "generator": {
+    "fluid": "fuel_gas",
+    "rate": 10
+   },
+   "module_slots": 0,
+   "pollution": 15.0,
+   "size": [
+    4,
+    2
+   ],
+   "tier": 3,
+   "unlocked_by": "gas_turbines",
+   "visual": {
+    "archetype": "gas_turbine",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "heavy_autocannon",
+   "name": "Heavy Autocannon",
+   "desc": "Belt-fed twin cannon on a powered mount.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 30.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 45.0,
+   "ammo": "ballistic",
+   "ammo_per_min": 10.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "heavy_autocannons",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "autocannon"
+    }
+   }
+  },
+  {
+   "id": "heavy_bore_drill",
+   "name": "Heavy Bore Drill",
+   "desc": "Hydraulic-fed bore with a lubricated cutting head.",
+   "role": "producer",
+   "categories": [
+    "mining"
+   ],
+   "speed": 2.0,
+   "power_kw": 360.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 14.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 3,
+   "unlocked_by": "heavy_drilling",
+   "visual": {
+    "archetype": "drill",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "heavy"
+    }
+   }
+  },
+  {
+   "id": "induction_furnace",
+   "name": "Induction Furnace",
+   "desc": "Clean electric furnace with induction coils.",
+   "role": "producer",
+   "categories": [
+    "smelting"
+   ],
+   "speed": 2.0,
+   "power_kw": 180.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 1.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "induction_furnaces",
+   "visual": {
+    "archetype": "electric_furnace",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "industrial_blender",
+   "name": "Industrial Blender",
+   "desc": "Twin-shaft blender with metered dosing.",
+   "role": "producer",
+   "categories": [
+    "mixing"
+   ],
+   "speed": 2.0,
+   "power_kw": 220.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 2.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "industrial_mixers",
+   "visual": {
+    "archetype": "mixer",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "blender"
+    }
+   }
+  },
+  {
+   "id": "mortar_battery",
+   "name": "Mortar Battery",
+   "desc": "Indirect-fire tubes for massed swarms.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 70.0,
+   "ammo": "explosive",
+   "ammo_per_min": 4.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "blasting_compounds",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "mortar"
+    }
+   }
+  },
+  {
+   "id": "pipeline_station",
+   "name": "Pipeline Pumping Station",
+   "desc": "Booster station: +2,000 fluid/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 250.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "fluid_throughput": 2000.0,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 3,
+   "unlocked_by": "pipelines",
+   "visual": {
+    "archetype": "water_pump",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "booster"
+    }
+   }
+  },
+  {
+   "id": "pneumatic_hub",
+   "name": "Pneumatic Tube Hub",
+   "desc": "Capsule tube exchange: +80 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 200.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 80.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "pneumatic_tubes",
+   "visual": {
+    "archetype": "conveyor_hub",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "pneumatic"
+    }
+   }
+  },
+  {
+   "id": "rail_depot",
+   "name": "Rail Depot",
+   "desc": "Freight sidings and gantry crane: +250 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 300.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 250.0,
+   "size": [
+    6,
+    4
+   ],
+   "tier": 3,
+   "unlocked_by": "rail_logistics",
+   "visual": {
+    "archetype": "rail_depot",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "signal_relay",
+   "name": "Signal Relay",
+   "desc": "Timing relay that speeds up machines in its bay.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 300.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "support": {
+    "speed_bonus": 0.1,
+    "range": "bay"
+   },
+   "size": [
+    2,
+    2
+   ],
+   "tier": 3,
+   "unlocked_by": "signal_relays",
+   "visual": {
+    "archetype": "beacon",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "surface_mount_line",
+   "name": "Surface-Mount Line",
+   "desc": "Pick-and-place line for dense boards.",
+   "role": "producer",
+   "categories": [
+    "electronics"
+   ],
+   "speed": 2.0,
+   "power_kw": 450.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 1.0,
+   "size": [
+    4,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "surface_mount",
+   "visual": {
+    "archetype": "electronics_fab",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "smt"
+    }
+   }
+  },
+  {
+   "id": "wellhead_compressor",
+   "name": "Wellhead Compressor",
+   "desc": "Compressed-lift wellhead for gas and light crude.",
+   "role": "producer",
+   "categories": [
+    "oil_extraction"
+   ],
+   "speed": 1.5,
+   "power_kw": 250.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 8.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 3,
+   "unlocked_by": "gas_processing",
+   "visual": {
+    "archetype": "gas_well",
+    "material": "steel",
+    "params": {
+     "tier": 2,
+     "paint": [
+      0.25,
+      0.35,
+      0.6
+     ],
+     "accent": [
+      0.95,
+      0.55,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "air_separation_unit",
+   "name": "Air Separation Unit",
+   "desc": "Cold box that fractionates liquefied air.",
+   "role": "producer",
+   "categories": [
+    "cryogenics"
+   ],
+   "speed": 1.0,
+   "power_kw": 800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 4,
+   "unlocked_by": "air_separation",
+   "visual": {
+    "archetype": "cryo_plant",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "armored_bulwark",
+   "name": "Armored Bulwark",
+   "desc": "Titanium-faced wall (+40 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 40.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    2,
+    1
+   ],
+   "tier": 4,
+   "unlocked_by": "armored_bulwarks",
+   "visual": {
+    "archetype": "wall_segment",
+    "material": "titanium",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "armored"
+    }
+   }
+  },
+  {
+   "id": "automated_arsenal",
+   "name": "Automated Arsenal",
+   "desc": "Robotic ordnance line with blast cells.",
+   "role": "producer",
+   "categories": [
+    "munitions"
+   ],
+   "speed": 2.5,
+   "power_kw": 600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 3.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 4,
+   "unlocked_by": "automated_arsenals",
+   "visual": {
+    "archetype": "munitions_plant",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "arsenal"
+    }
+   }
+  },
+  {
+   "id": "automated_warehouse",
+   "name": "Automated Warehouse",
+   "desc": "Robot-picked high bay: +8,000 per item type.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 8000,
+   "storage_kind": "solid",
+   "size": [
+    6,
+    5
+   ],
+   "tier": 4,
+   "unlocked_by": "automated_storage",
+   "visual": {
+    "archetype": "warehouse",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "automated"
+    }
+   }
+  },
+  {
+   "id": "catalytic_reactor",
+   "name": "Catalytic Reactor",
+   "desc": "Fixed-bed catalytic reactor with titanium internals.",
+   "role": "producer",
+   "categories": [
+    "chemistry"
+   ],
+   "speed": 2.0,
+   "power_kw": 600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 3.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 4,
+   "unlocked_by": "catalytic_reactors",
+   "visual": {
+    "archetype": "chemical_plant",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "catalytic"
+    }
+   }
+  },
+  {
+   "id": "clean_room_assembler",
+   "name": "Clean-Room Assembler",
+   "desc": "Filtered-air bay for tight-tolerance assembly.",
+   "role": "producer",
+   "categories": [
+    "precision_assembling"
+   ],
+   "speed": 1.0,
+   "power_kw": 500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 1.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 4,
+   "unlocked_by": "precision_engineering",
+   "visual": {
+    "archetype": "precision_assembler",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "drone_port",
+   "name": "Drone Port",
+   "desc": "Charging pads and a cargo-drone flight: +400 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 400.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 4,
+   "unlocked_by": "drone_logistics",
+   "visual": {
+    "archetype": "drone_port",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "fired_superheater",
+   "name": "Fired Superheater",
+   "desc": "Radiant superheater lifting steam to turbine grade.",
+   "role": "producer",
+   "categories": [
+    "boiling"
+   ],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": true,
+   "fuel_kw": 2400.0,
+   "module_slots": 0,
+   "pollution": 20.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 4,
+   "unlocked_by": "steam_turbines",
+   "visual": {
+    "archetype": "heat_exchanger",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": true
+    }
+   }
+  },
+  {
+   "id": "freight_yard",
+   "name": "Freight Yard",
+   "desc": "Hump yard with automated couplers: +800 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 800.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 4,
+   "unlocked_by": "freight_yards",
+   "visual": {
+    "archetype": "rail_depot",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "yard"
+    }
+   }
+  },
+  {
+   "id": "hydraulic_forge_press",
+   "name": "Hydraulic Forge Press",
+   "desc": "Multi-thousand-tonne press for any forming job.",
+   "role": "producer",
+   "categories": [
+    "pressing"
+   ],
+   "speed": 3.0,
+   "power_kw": 1200.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 4.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 4,
+   "unlocked_by": "hydraulic_presses",
+   "visual": {
+    "archetype": "press",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "hydraulic"
+    }
+   }
+  },
+  {
+   "id": "hydrocracker",
+   "name": "Hydrocracker",
+   "desc": "High-pressure hydrogen cracking unit.",
+   "role": "producer",
+   "categories": [
+    "refining"
+   ],
+   "speed": 2.0,
+   "power_kw": 1000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 5.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 4,
+   "unlocked_by": "hydrocracking",
+   "visual": {
+    "archetype": "refinery",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "cracker"
+    }
+   }
+  },
+  {
+   "id": "lithography_fab",
+   "name": "Lithography Fab",
+   "desc": "Photolithography cleanroom for dies and controllers.",
+   "role": "producer",
+   "categories": [
+    "electronics"
+   ],
+   "speed": 3.0,
+   "power_kw": 2000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 1.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 4,
+   "unlocked_by": "microelectronics",
+   "visual": {
+    "archetype": "electronics_fab",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "litho"
+    }
+   }
+  },
+  {
+   "id": "materials_test_lab",
+   "name": "Materials Test Lab",
+   "desc": "Load frames, spectrometers and climate chambers.",
+   "role": "research",
+   "categories": [],
+   "speed": 3.0,
+   "power_kw": 800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 4,
+   "unlocked_by": "materials_labs",
+   "visual": {
+    "archetype": "lab",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "pressurized_tank_farm",
+   "name": "Pressurized Tank Farm",
+   "desc": "Sphere tanks: +25,000 per fluid.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 25000,
+   "storage_kind": "fluid",
+   "size": [
+    5,
+    5
+   ],
+   "tier": 4,
+   "unlocked_by": "pressurized_tanks",
+   "visual": {
+    "archetype": "storage_tank",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "sphere"
+    }
+   }
+  },
+  {
+   "id": "pulse_laser_turret",
+   "name": "Pulse Laser Turret",
+   "desc": "Capacitor-fed laser that never jams.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 90.0,
+   "ammo": "energy",
+   "ammo_per_min": 3.0,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 4,
+   "unlocked_by": "laser_weapons",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "glow": [
+      0.9,
+      0.2,
+      0.2
+     ],
+     "smoke": false,
+     "variant": "laser"
+    }
+   }
+  },
+  {
+   "id": "reclamation_plant",
+   "name": "Reclamation Plant",
+   "desc": "Magnetic and flotation recovery of process residues.",
+   "role": "producer",
+   "categories": [
+    "recycling"
+   ],
+   "speed": 2.5,
+   "power_kw": 600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 3.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 4,
+   "unlocked_by": "red_mud_recovery",
+   "visual": {
+    "archetype": "crusher",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "reclaimer"
+    }
+   }
+  },
+  {
+   "id": "robotic_workcell",
+   "name": "Robotic Workcell",
+   "desc": "Robot-tended cell building anything that fits.",
+   "role": "producer",
+   "categories": [
+    "assembling"
+   ],
+   "speed": 2.0,
+   "power_kw": 450.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 1.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 4,
+   "unlocked_by": "robotics",
+   "visual": {
+    "archetype": "assembler",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "robotic"
+    }
+   }
+  },
+  {
+   "id": "steam_turbine",
+   "name": "Steam Turbine",
+   "desc": "Multi-stage turbine: 40 superheated steam/s for 4 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 4000.0,
+   "generator": {
+    "fluid": "superheated_steam",
+    "rate": 40
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    5,
+    3
+   ],
+   "tier": 4,
+   "unlocked_by": "steam_turbines",
+   "visual": {
+    "archetype": "steam_turbine",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "thin_film_solar_field",
+   "name": "Thin-Film Solar Field",
+   "desc": "Silicon thin-film field: 400 kW peak.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 400.0,
+   "generator": {
+    "source": "solar"
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 4,
+   "unlocked_by": "thin_film_solar",
+   "visual": {
+    "archetype": "solar_array",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "thin_film"
+    }
+   }
+  },
+  {
+   "id": "tidal_generator",
+   "name": "Tidal Barrage Turbine",
+   "desc": "Bulb turbine in a sea wall averaging 1.5 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 1500.0,
+   "generator": {
+    "source": "tidal"
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    4,
+    3
+   ],
+   "tier": 4,
+   "unlocked_by": "tidal_power",
+   "visual": {
+    "archetype": "water_pump",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.82,
+      0.82,
+      0.8
+     ],
+     "accent": [
+      0.95,
+      0.45,
+      0.1
+     ],
+     "smoke": false,
+     "variant": "tidal"
+    }
+   }
+  },
+  {
+   "id": "ball_mill",
+   "name": "Ball Mill",
+   "desc": "Rotating drum mill grinding to powder.",
+   "role": "producer",
+   "categories": [
+    "crushing"
+   ],
+   "speed": 3.5,
+   "power_kw": 900.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 6.0,
+   "size": [
+    4,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "ball_mills",
+   "visual": {
+    "archetype": "crusher",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "mill"
+    }
+   }
+  },
+  {
+   "id": "catalytic_scrubber",
+   "name": "Catalytic Scrubber",
+   "desc": "Rare-earth catalyst bed removing 180 pollution/min.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 700.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": -180.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "catalytic_scrubbers",
+   "visual": {
+    "archetype": "scrubber",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "catalytic"
+    }
+   }
+  },
+  {
+   "id": "centrifuge_cascade",
+   "name": "Centrifuge Cascade",
+   "desc": "Carbon-rotor centrifuges in series.",
+   "role": "producer",
+   "categories": [
+    "centrifuging"
+   ],
+   "speed": 1.0,
+   "power_kw": 600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "isotope_centrifuges",
+   "visual": {
+    "archetype": "centrifuge",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "combined_cycle_turbine",
+   "name": "Combined-Cycle Turbine",
+   "desc": "Gas turbine with heat-recovery steam stage: 20 gas/s for 9 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 9000.0,
+   "generator": {
+    "fluid": "fuel_gas",
+    "rate": 20
+   },
+   "module_slots": 0,
+   "pollution": 18.0,
+   "size": [
+    5,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "combined_cycle",
+   "visual": {
+    "archetype": "gas_turbine",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "combined"
+    }
+   }
+  },
+  {
+   "id": "cooling_tower",
+   "name": "Cooling Tower",
+   "desc": "Hyperbolic tower: +10% output for generators in its bay.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 50.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "support": {
+    "power_bonus": 0.1,
+    "range": "bay"
+   },
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "thorium_reactors",
+   "visual": {
+    "archetype": "cooling_tower",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "cryo_liquefier",
+   "name": "Cryogenic Liquefier",
+   "desc": "Turbo-expander liquefaction train.",
+   "role": "producer",
+   "categories": [
+    "cryogenics"
+   ],
+   "speed": 2.0,
+   "power_kw": 1800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "cryogenic_liquefaction",
+   "visual": {
+    "archetype": "cryo_plant",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "liquefier"
+    }
+   }
+  },
+  {
+   "id": "cryogenic_tank",
+   "name": "Cryogenic Tank",
+   "desc": "Vacuum-jacketed dewar: +80,000 per fluid.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 80000,
+   "storage_kind": "fluid",
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "cryogenic_storage",
+   "visual": {
+    "archetype": "storage_tank",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "cryo"
+    }
+   }
+  },
+  {
+   "id": "deep_core_drill",
+   "name": "Deep Core Drill",
+   "desc": "Carbide-bit drill reaching the deep seams.",
+   "role": "producer",
+   "categories": [
+    "mining"
+   ],
+   "speed": 3.0,
+   "power_kw": 1200.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 20.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 5,
+   "unlocked_by": "deep_core_drilling",
+   "visual": {
+    "archetype": "drill",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "deep"
+    }
+   }
+  },
+  {
+   "id": "fermentation_vat",
+   "name": "Fermentation Vat",
+   "desc": "Sterile titanium vat for engineered cultures.",
+   "role": "producer",
+   "categories": [
+    "bioprocessing"
+   ],
+   "speed": 2.0,
+   "power_kw": 500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": -5.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "fermentation",
+   "visual": {
+    "archetype": "bioreactor",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "vat"
+    }
+   }
+  },
+  {
+   "id": "fractionation_tower",
+   "name": "Fractionation Tower",
+   "desc": "Tall vacuum fractionator with fine cuts.",
+   "role": "producer",
+   "categories": [
+    "refining"
+   ],
+   "speed": 3.0,
+   "power_kw": 2500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 4.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 5,
+   "unlocked_by": "fractionation",
+   "visual": {
+    "archetype": "refinery",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "tower"
+    }
+   }
+  },
+  {
+   "id": "geothermal_plant",
+   "name": "Geothermal Plant",
+   "desc": "Deep-well flash plant: steady 6 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 6000.0,
+   "generator": {
+    "source": "geothermal"
+   },
+   "module_slots": 0,
+   "pollution": 2.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 5,
+   "unlocked_by": "geothermal_power",
+   "visual": {
+    "archetype": "geothermal_plant",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "heavy_drone_port",
+   "name": "Heavy Drone Port",
+   "desc": "Heavy-lift drone wing: +1,500 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 1500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 1500.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "heavy_drones",
+   "visual": {
+    "archetype": "drone_port",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "heavy"
+    }
+   }
+  },
+  {
+   "id": "heavy_wind_turbine",
+   "name": "Heavy Wind Turbine",
+   "desc": "Direct-drive magnet turbine averaging 1.8 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 1800.0,
+   "generator": {
+    "source": "wind"
+   },
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "heavy_wind_turbines",
+   "visual": {
+    "archetype": "wind_turbine",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "heavy"
+    }
+   }
+  },
+  {
+   "id": "howitzer_emplacement",
+   "name": "Howitzer Emplacement",
+   "desc": "Long-range gun with a computed fire solution.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 100.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 260.0,
+   "ammo": "explosive",
+   "ammo_per_min": 3.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "guided_munitions",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "howitzer"
+    }
+   }
+  },
+  {
+   "id": "launch_complex",
+   "name": "Launch Complex",
+   "desc": "Pad, tower and flame trench where megaproject stages are delivered.",
+   "role": "megaproject",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 2000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 5,
+   "unlocked_by": "launch_complex",
+   "visual": {
+    "archetype": "launch_pad",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "lithium_storage_array",
+   "name": "Lithium Storage Array",
+   "desc": "Containerized lithium racks: 800 MJ at 5 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 5000.0,
+   "generator": {
+    "source": "accumulator"
+   },
+   "capacity_kj": 800000.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    4,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "grid_lithium_storage",
+   "visual": {
+    "archetype": "accumulator",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "lithium"
+    }
+   }
+  },
+  {
+   "id": "membrane_electrolyzer",
+   "name": "Membrane Electrolyzer",
+   "desc": "Ion-membrane stack with titanium electrodes.",
+   "role": "producer",
+   "categories": [
+    "electrolysis"
+   ],
+   "speed": 2.5,
+   "power_kw": 3000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 1.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "membrane_electrolysis",
+   "visual": {
+    "archetype": "electrolyzer",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "membrane"
+    }
+   }
+  },
+  {
+   "id": "nanofabricator",
+   "name": "Nanofabricator",
+   "desc": "Deposition chamber assembling films atom by atom.",
+   "role": "producer",
+   "categories": [
+    "nanofab"
+   ],
+   "speed": 1.0,
+   "power_kw": 2500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "superconductors",
+   "visual": {
+    "archetype": "nanofab",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "offshore_rig",
+   "name": "Offshore Rig",
+   "desc": "Jack-up platform drilling the shelf reservoirs.",
+   "role": "producer",
+   "categories": [
+    "oil_extraction"
+   ],
+   "speed": 3.0,
+   "power_kw": 1500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 3,
+   "pollution": 15.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 5,
+   "unlocked_by": "offshore_drilling",
+   "visual": {
+    "archetype": "pumpjack",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "offshore"
+    }
+   }
+  },
+  {
+   "id": "overclock_relay",
+   "name": "Overclock Relay",
+   "desc": "Fiber-linked relay with a stronger bay-wide boost.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 900.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "support": {
+    "speed_bonus": 0.2,
+    "range": "bay"
+   },
+   "size": [
+    2,
+    2
+   ],
+   "tier": 5,
+   "unlocked_by": "overclock_relays",
+   "visual": {
+    "archetype": "beacon",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "overclock"
+    }
+   }
+  },
+  {
+   "id": "radar_array",
+   "name": "Early-Warning Radar Array",
+   "desc": "Phased-array radar fusing frontier tracks (+40 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 1000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 40.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "early_warning",
+   "visual": {
+    "archetype": "radar",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "phased"
+    }
+   }
+  },
+  {
+   "id": "shield_projector",
+   "name": "Shield Projector",
+   "desc": "Magnetic deflector dome (+200 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 2500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 200.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 5,
+   "unlocked_by": "shield_projectors",
+   "visual": {
+    "archetype": "shield_generator",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "thermal_lance",
+   "name": "Thermal Lance Tower",
+   "desc": "Focused pyrophoric jet that melts armor.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 400.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 180.0,
+   "ammo": "incendiary",
+   "ammo_per_min": 4.0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 5,
+   "unlocked_by": "pyrophorics",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false,
+     "variant": "lance"
+    }
+   }
+  },
+  {
+   "id": "thorium_reactor",
+   "name": "Thorium Reactor",
+   "desc": "Pressurized thorium reactor: 160 superheated steam/s.",
+   "role": "producer",
+   "categories": [
+    "fission"
+   ],
+   "speed": 1.0,
+   "power_kw": 400.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 5,
+   "unlocked_by": "thorium_reactors",
+   "visual": {
+    "archetype": "reactor",
+    "material": "steel",
+    "params": {
+     "tier": 3,
+     "paint": [
+      0.9,
+      0.9,
+      0.88
+     ],
+     "accent": [
+      0.2,
+      0.35,
+      0.7
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "aegis_field_array",
+   "name": "Aegis Field Array",
+   "desc": "Plasma-backed field dome (+900 defense).",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 12000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 900.0,
+   "ammo": null,
+   "ammo_per_min": 0.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "aegis_fields",
+   "visual": {
+    "archetype": "shield_generator",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "aegis"
+    }
+   }
+  },
+  {
+   "id": "autonomous_fabricator",
+   "name": "Autonomous Fabricator",
+   "desc": "Self-scheduling fabricator for general and precision work.",
+   "role": "producer",
+   "categories": [
+    "assembling",
+    "precision_assembling"
+   ],
+   "speed": 3.5,
+   "power_kw": 1500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 1.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "autonomous_fabrication",
+   "visual": {
+    "archetype": "assembler",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "autonomous"
+    }
+   }
+  },
+  {
+   "id": "breeder_reactor",
+   "name": "Breeder Reactor",
+   "desc": "Fast-spectrum reactor that breeds fissile seed.",
+   "role": "producer",
+   "categories": [
+    "fission"
+   ],
+   "speed": 2.0,
+   "power_kw": 900.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "breeder_reactors",
+   "visual": {
+    "archetype": "reactor",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "breeder"
+    }
+   }
+  },
+  {
+   "id": "carbon_capture_tower",
+   "name": "Carbon Capture Tower",
+   "desc": "Nanotube sorbent tower removing 500 pollution/min.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 2000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": -500.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "carbon_capture",
+   "visual": {
+    "archetype": "scrubber",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "tower"
+    }
+   }
+  },
+  {
+   "id": "dilution_refrigerator",
+   "name": "Dilution Refrigerator",
+   "desc": "Helium-mixture refrigerator reaching millikelvin.",
+   "role": "producer",
+   "categories": [
+    "cryogenics"
+   ],
+   "speed": 3.5,
+   "power_kw": 3000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "dilution_refrigeration",
+   "visual": {
+    "archetype": "cryo_plant",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "dilution"
+    }
+   }
+  },
+  {
+   "id": "flow_reactor",
+   "name": "Continuous-Flow Reactor",
+   "desc": "Microchannel reactor with graphene heat exchange.",
+   "role": "producer",
+   "categories": [
+    "chemistry"
+   ],
+   "speed": 3.5,
+   "power_kw": 1800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 2.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "flow_chemistry",
+   "visual": {
+    "archetype": "chemical_plant",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "flow"
+    }
+   }
+  },
+  {
+   "id": "interceptor_drone_nest",
+   "name": "Interceptor Drone Nest",
+   "desc": "Armed drone wing that hunts raiders.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 1500.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 400.0,
+   "ammo": "ballistic",
+   "ammo_per_min": 8.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "interceptor_drones",
+   "visual": {
+    "archetype": "drone_port",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "interceptor"
+    }
+   }
+  },
+  {
+   "id": "isotope_separator",
+   "name": "Isotope Separator",
+   "desc": "Magnetic-levitation rotor bank.",
+   "role": "producer",
+   "categories": [
+    "centrifuging"
+   ],
+   "speed": 2.5,
+   "power_kw": 2200.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "isotope_separators",
+   "visual": {
+    "archetype": "centrifuge",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "maglev"
+    }
+   }
+  },
+  {
+   "id": "maglev_terminal",
+   "name": "Maglev Freight Terminal",
+   "desc": "Superconducting freight line: +5,000 items/s.",
+   "role": "logistics",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 4000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "throughput": 5000.0,
+   "fluid_throughput": 20000.0,
+   "size": [
+    6,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "maglev_freight",
+   "visual": {
+    "archetype": "rail_depot",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "maglev"
+    }
+   }
+  },
+  {
+   "id": "micro_precision_cell",
+   "name": "Micro-Precision Cell",
+   "desc": "Vibration-isolated cell working at nanometer tolerance.",
+   "role": "producer",
+   "categories": [
+    "precision_assembling"
+   ],
+   "speed": 2.5,
+   "power_kw": 1800.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "micro_precision",
+   "visual": {
+    "archetype": "precision_assembler",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "micro"
+    }
+   }
+  },
+  {
+   "id": "molecular_assembler",
+   "name": "Molecular Assembler",
+   "desc": "Directed self-assembly reactor.",
+   "role": "producer",
+   "categories": [
+    "nanofab"
+   ],
+   "speed": 2.5,
+   "power_kw": 6000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 0.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "molecular_assembly",
+   "visual": {
+    "archetype": "nanofab",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "molecular"
+    }
+   }
+  },
+  {
+   "id": "orbital_gantry",
+   "name": "Orbital Assembly Gantry",
+   "desc": "Towering gantry that stacks launch vehicles and Ark modules.",
+   "role": "producer",
+   "categories": [
+    "orbital"
+   ],
+   "speed": 1.0,
+   "power_kw": 10000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 2,
+   "pollution": 0.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 6,
+   "unlocked_by": "orbital_assembly",
+   "visual": {
+    "archetype": "orbital_assembler",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "plasma_arc_furnace",
+   "name": "Plasma Arc Furnace",
+   "desc": "Plasma-torch furnace for any melt or reduction.",
+   "role": "producer",
+   "categories": [
+    "smelting",
+    "smelting_advanced"
+   ],
+   "speed": 4.0,
+   "power_kw": 4000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 2.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "plasma_furnaces",
+   "visual": {
+    "archetype": "arc_furnace",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "plasma"
+    }
+   }
+  },
+  {
+   "id": "plasma_bore",
+   "name": "Plasma Bore",
+   "desc": "Plasma-spalling borer that vaporizes host rock.",
+   "role": "producer",
+   "categories": [
+    "mining"
+   ],
+   "speed": 4.0,
+   "power_kw": 3600.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 18.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 6,
+   "unlocked_by": "plasma_boring",
+   "visual": {
+    "archetype": "drill",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "plasma"
+    }
+   }
+  },
+  {
+   "id": "quantum_research_center",
+   "name": "Quantum Research Center",
+   "desc": "Cryogenic computing hall that simulates experiments.",
+   "role": "research",
+   "categories": [],
+   "speed": 4.0,
+   "power_kw": 3000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 0.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "quantum_research",
+   "visual": {
+    "archetype": "lab",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "quantum_sync_relay",
+   "name": "Quantum Sync Relay",
+   "desc": "Quantum-clocked relay synchronizing a whole bay.",
+   "role": "support",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 2400.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "support": {
+    "speed_bonus": 0.35,
+    "range": "bay"
+   },
+   "size": [
+    2,
+    2
+   ],
+   "tier": 6,
+   "unlocked_by": "quantum_sync",
+   "visual": {
+    "archetype": "beacon",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "quantum"
+    }
+   }
+  },
+  {
+   "id": "railgun_battery",
+   "name": "Railgun Battery",
+   "desc": "Supercapacitor rail launcher of hypersonic slugs.",
+   "role": "defense",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 8000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "defense": 600.0,
+   "ammo": "energy",
+   "ammo_per_min": 2.0,
+   "size": [
+    4,
+    4
+   ],
+   "tier": 6,
+   "unlocked_by": "railguns",
+   "visual": {
+    "archetype": "turret",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.33,
+      0.36,
+      0.3
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.4,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "railgun"
+    }
+   }
+  },
+  {
+   "id": "smes_ring",
+   "name": "Superconducting Storage Ring",
+   "desc": "Magnetic energy ring: 5 GJ at 25 MW.",
+   "role": "generator",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "power_out_kw": 25000.0,
+   "generator": {
+    "source": "accumulator"
+   },
+   "capacity_kj": 5000000.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "smes",
+   "visual": {
+    "archetype": "accumulator",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "smes"
+    }
+   }
+  },
+  {
+   "id": "tokamak",
+   "name": "Tokamak Fusion Reactor",
+   "desc": "Superconducting tokamak: 600 superheated steam/s.",
+   "role": "producer",
+   "categories": [
+    "fusion"
+   ],
+   "speed": 1.0,
+   "power_kw": 6000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 6,
+   "unlocked_by": "fusion_power",
+   "visual": {
+    "archetype": "fusion_reactor",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false
+    }
+   }
+  },
+  {
+   "id": "vacuum_foundry",
+   "name": "Vacuum Foundry",
+   "desc": "Vacuum induction casting for flawless alloys.",
+   "role": "producer",
+   "categories": [
+    "foundry"
+   ],
+   "speed": 2.5,
+   "power_kw": 3000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 2.0,
+   "size": [
+    5,
+    5
+   ],
+   "tier": 6,
+   "unlocked_by": "vacuum_casting",
+   "visual": {
+    "archetype": "foundry",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "vacuum"
+    }
+   }
+  },
+  {
+   "id": "vault_complex",
+   "name": "Vault Complex",
+   "desc": "Underground vaults: +40,000 per item type.",
+   "role": "storage",
+   "categories": [],
+   "speed": 1.0,
+   "power_kw": 0.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 0,
+   "pollution": 0.0,
+   "storage_slots": 40000,
+   "storage_kind": "solid",
+   "size": [
+    6,
+    6
+   ],
+   "tier": 6,
+   "unlocked_by": "vault_complexes",
+   "visual": {
+    "archetype": "warehouse",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.2,
+      0.21,
+      0.24
+     ],
+     "accent": [
+      0.3,
+      0.8,
+      0.95
+     ],
+     "glow": [
+      0.3,
+      0.8,
+      1.0
+     ],
+     "smoke": false,
+     "variant": "vault"
+    }
+   }
+  },
+  {
+   "id": "heavy_orbital_gantry",
+   "name": "Heavy Orbital Gantry",
+   "desc": "Twin-crane gantry with lattice cradles.",
+   "role": "producer",
+   "categories": [
+    "orbital"
+   ],
+   "speed": 2.0,
+   "power_kw": 20000.0,
+   "burner": false,
+   "fuel_kw": 0.0,
+   "module_slots": 4,
+   "pollution": 0.0,
+   "size": [
+    6,
+    6
+   ],
+   "tier": 7,
+   "unlocked_by": "zero_g_assembly",
+   "visual": {
+    "archetype": "orbital_assembler",
+    "material": "steel",
+    "params": {
+     "tier": 4,
+     "paint": [
+      0.92,
+      0.92,
+      0.95
+     ],
+     "accent": [
+      0.95,
+      0.75,
+      0.3
+     ],
+     "glow": [
+      1.0,
+      0.8,
+      0.4
+     ],
+     "smoke": false,
+     "variant": "heavy"
+    }
+   }
+  }
+ ]
+}

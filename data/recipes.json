@@ -1,0 +1,5133 @@
+{
+ "recipes": [
+  {
+   "id": "assembly_station",
+   "name": "Assembly Station",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_gear": 10,
+    "iron_plate": 12,
+    "copper_wire": 10,
+    "fasteners": 12
+   },
+   "outputs": {
+    "assembly_station": 1
+   },
+   "unlocked_by": "assembly_stations"
+  },
+  {
+   "id": "bioleached_copper",
+   "name": "Bioleached Copper",
+   "category": "bioprocessing",
+   "time": 8.0,
+   "inputs": {
+    "copper_ore": 8,
+    "sulfuric_acid": 10
+   },
+   "outputs": {
+    "copper_ingot": 5
+   },
+   "unlocked_by": "bioleaching"
+  },
+  {
+   "id": "burner_boiler",
+   "name": "Burner Boiler",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "stone_brick": 10,
+    "iron_pipe": 6,
+    "iron_plate": 4
+   },
+   "outputs": {
+    "burner_boiler": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "burner_drill",
+   "name": "Burner Drill",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_gear": 4,
+    "iron_plate": 6,
+    "stone_brick": 4
+   },
+   "outputs": {
+    "burner_drill": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "copper_ingot",
+   "name": "Copper Ingot",
+   "category": "smelting",
+   "time": 3.0,
+   "inputs": {
+    "copper_ore": 2
+   },
+   "outputs": {
+    "copper_ingot": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "copper_sheet",
+   "name": "Copper Sheet",
+   "category": "pressing",
+   "time": 1.5,
+   "inputs": {
+    "copper_ingot": 1
+   },
+   "outputs": {
+    "copper_sheet": 2
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "copper_wire",
+   "name": "Copper Wire",
+   "category": "pressing",
+   "time": 1.0,
+   "inputs": {
+    "copper_ingot": 1
+   },
+   "outputs": {
+    "copper_wire": 3
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "drafting_office",
+   "name": "Drafting Office",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "copper_wire": 12,
+    "iron_gear": 6,
+    "iron_plate": 8,
+    "stone_brick": 6
+   },
+   "outputs": {
+    "drafting_office": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "fasteners",
+   "name": "Fasteners",
+   "category": "assembling",
+   "time": 1.0,
+   "inputs": {
+    "iron_rod": 1
+   },
+   "outputs": {
+    "fasteners": 4
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "fitting_bench",
+   "name": "Fitting Bench",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_plate": 8,
+    "iron_gear": 6,
+    "copper_wire": 6,
+    "fasteners": 8
+   },
+   "outputs": {
+    "fitting_bench": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "iron_gear",
+   "name": "Iron Gear",
+   "category": "assembling",
+   "time": 2.0,
+   "inputs": {
+    "iron_plate": 3
+   },
+   "outputs": {
+    "iron_gear": 2
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "iron_ingot",
+   "name": "Iron Ingot",
+   "category": "smelting",
+   "time": 3.0,
+   "inputs": {
+    "iron_ore": 2
+   },
+   "outputs": {
+    "iron_ingot": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "iron_pipe",
+   "name": "Iron Pipe",
+   "category": "assembling",
+   "time": 1.5,
+   "inputs": {
+    "iron_plate": 2
+   },
+   "outputs": {
+    "iron_pipe": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "iron_plate",
+   "name": "Iron Plate",
+   "category": "pressing",
+   "time": 1.5,
+   "inputs": {
+    "iron_ingot": 1
+   },
+   "outputs": {
+    "iron_plate": 2
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "iron_rod",
+   "name": "Iron Rod",
+   "category": "pressing",
+   "time": 1.0,
+   "inputs": {
+    "iron_ingot": 1
+   },
+   "outputs": {
+    "iron_rod": 2
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "mine_coal",
+   "name": "Mine Coal",
+   "category": "mining",
+   "time": 2.0,
+   "inputs": {},
+   "outputs": {
+    "coal": 1
+   },
+   "unlocked_by": null,
+   "deposit": "coal"
+  },
+  {
+   "id": "mine_copper_ore",
+   "name": "Mine Copper Ore",
+   "category": "mining",
+   "time": 2.0,
+   "inputs": {},
+   "outputs": {
+    "copper_ore": 1
+   },
+   "unlocked_by": null,
+   "deposit": "copper_ore"
+  },
+  {
+   "id": "mine_iron_ore",
+   "name": "Mine Iron Ore",
+   "category": "mining",
+   "time": 2.0,
+   "inputs": {},
+   "outputs": {
+    "iron_ore": 1
+   },
+   "unlocked_by": null,
+   "deposit": "iron_ore"
+  },
+  {
+   "id": "mine_stone",
+   "name": "Quarry Stone",
+   "category": "mining",
+   "time": 1.5,
+   "inputs": {},
+   "outputs": {
+    "stone": 1
+   },
+   "unlocked_by": null,
+   "deposit": "stone"
+  },
+  {
+   "id": "pump_water",
+   "name": "Pump Water",
+   "category": "pumping",
+   "time": 1.0,
+   "inputs": {},
+   "outputs": {
+    "water": 80
+   },
+   "unlocked_by": null,
+   "deposit": "water"
+  },
+  {
+   "id": "shore_intake",
+   "name": "Shore Intake",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_pipe": 6,
+    "iron_gear": 3,
+    "stone_brick": 4
+   },
+   "outputs": {
+    "shore_intake": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "steam",
+   "name": "Steam",
+   "category": "boiling",
+   "time": 1.0,
+   "inputs": {
+    "water": 40
+   },
+   "outputs": {
+    "steam": 40
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "steam_engine",
+   "name": "Steam Engine",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_gear": 10,
+    "iron_pipe": 8,
+    "iron_plate": 12,
+    "fasteners": 10
+   },
+   "outputs": {
+    "steam_engine": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "stone_brick",
+   "name": "Stone Brick",
+   "category": "smelting",
+   "time": 4.0,
+   "inputs": {
+    "stone": 3
+   },
+   "outputs": {
+    "stone_brick": 2
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "stone_furnace",
+   "name": "Stone Furnace",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "stone": 10
+   },
+   "outputs": {
+    "stone_furnace": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "storage_shed",
+   "name": "Storage Shed",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_plate": 20,
+    "iron_rod": 10,
+    "stone_brick": 20
+   },
+   "outputs": {
+    "storage_shed": 1
+   },
+   "unlocked_by": "storage_sheds"
+  },
+  {
+   "id": "supply_crate",
+   "name": "Supply Crate",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_plate": 10,
+    "fasteners": 6
+   },
+   "outputs": {
+    "supply_crate": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "batch_mixer",
+   "name": "Batch Mixer",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "iron_plate": 10,
+    "iron_gear": 6,
+    "iron_pipe": 6,
+    "copper_wire": 6
+   },
+   "outputs": {
+    "batch_mixer": 1
+   },
+   "unlocked_by": "cement_works"
+  },
+  {
+   "id": "blast_furnace",
+   "name": "Blast Furnace",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "stone_brick": 30,
+    "steel_plate": 10,
+    "iron_pipe": 8
+   },
+   "outputs": {
+    "blast_furnace": 1
+   },
+   "unlocked_by": "blast_furnaces"
+  },
+  {
+   "id": "blueprint_sheet",
+   "name": "Blueprint Sheets",
+   "category": "assembling",
+   "time": 6.0,
+   "inputs": {
+    "copper_sheet": 1,
+    "iron_rod": 1,
+    "fasteners": 2
+   },
+   "outputs": {
+    "blueprint_sheet": 1
+   },
+   "unlocked_by": null
+  },
+  {
+   "id": "cement",
+   "name": "Cement",
+   "category": "crushing",
+   "time": 4.0,
+   "inputs": {
+    "quicklime": 1,
+    "gravel": 2
+   },
+   "outputs": {
+    "cement": 3
+   },
+   "unlocked_by": "cement_works"
+  },
+  {
+   "id": "circuit_fab",
+   "name": "Circuit Fab",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_frame": 2,
+    "copper_wire": 20,
+    "glass_pane": 6,
+    "gearbox": 2
+   },
+   "outputs": {
+    "circuit_fab": 1
+   },
+   "unlocked_by": "circuit_theory"
+  },
+  {
+   "id": "coil_spring",
+   "name": "Coil Spring",
+   "category": "assembling",
+   "time": 1.0,
+   "inputs": {
+    "iron_rod": 1
+   },
+   "outputs": {
+    "coil_spring": 2
+   },
+   "unlocked_by": "mechanical_engineering"
+  },
+  {
+   "id": "coke",
+   "name": "Coke",
+   "category": "smelting",
+   "time": 5.0,
+   "inputs": {
+    "coal": 3
+   },
+   "outputs": {
+    "coke": 2
+   },
+   "unlocked_by": "coking"
+  },
+  {
+   "id": "concrete",
+   "name": "Concrete Slab",
+   "category": "mixing",
+   "time": 5.0,
+   "inputs": {
+    "cement": 1,
+    "gravel": 2,
+    "water": 20
+   },
+   "outputs": {
+    "concrete": 2
+   },
+   "unlocked_by": "cement_works"
+  },
+  {
+   "id": "concrete_barrier",
+   "name": "Concrete Barrier",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "concrete": 12,
+    "iron_rod": 6
+   },
+   "outputs": {
+    "concrete_barrier": 1
+   },
+   "unlocked_by": "concrete_barriers"
+  },
+  {
+   "id": "conveyor_hub",
+   "name": "Conveyor Hub",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "iron_gear": 10,
+    "iron_plate": 10,
+    "copper_wire": 8,
+    "fasteners": 10
+   },
+   "outputs": {
+    "conveyor_hub": 1
+   },
+   "unlocked_by": "conveyor_hubs"
+  },
+  {
+   "id": "electric_drill",
+   "name": "Electric Drill",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "iron_gear": 8,
+    "iron_plate": 10,
+    "copper_wire": 12,
+    "iron_rod": 6
+   },
+   "outputs": {
+    "electric_drill": 1
+   },
+   "unlocked_by": "electric_mining"
+  },
+  {
+   "id": "float_glass",
+   "name": "Float Glass",
+   "category": "smelting",
+   "time": 5.0,
+   "inputs": {
+    "quartz_sand": 4,
+    "soda_ash": 1
+   },
+   "outputs": {
+    "glass_pane": 4
+   },
+   "unlocked_by": "float_glass"
+  },
+  {
+   "id": "fluid_tank",
+   "name": "Fluid Tank",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_plate": 12,
+    "iron_pipe": 6,
+    "valve": 2
+   },
+   "outputs": {
+    "fluid_tank": 1
+   },
+   "unlocked_by": "fluid_storage"
+  },
+  {
+   "id": "gearbox",
+   "name": "Gearbox",
+   "category": "assembling",
+   "time": 4.0,
+   "inputs": {
+    "iron_gear": 4,
+    "steel_plate": 1,
+    "fasteners": 4
+   },
+   "outputs": {
+    "gearbox": 1
+   },
+   "unlocked_by": "mechanical_engineering"
+  },
+  {
+   "id": "glass_pane",
+   "name": "Glass Pane",
+   "category": "smelting",
+   "time": 6.0,
+   "inputs": {
+    "quartz_sand": 4,
+    "quicklime": 1
+   },
+   "outputs": {
+    "glass_pane": 2
+   },
+   "unlocked_by": "glassmaking"
+  },
+  {
+   "id": "gravel",
+   "name": "Gravel",
+   "category": "crushing",
+   "time": 2.0,
+   "inputs": {
+    "stone": 2
+   },
+   "outputs": {
+    "gravel": 3
+   },
+   "unlocked_by": "quarrying"
+  },
+  {
+   "id": "jaw_crusher",
+   "name": "Jaw Crusher",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "iron_plate": 12,
+    "iron_gear": 12,
+    "stone_brick": 6
+   },
+   "outputs": {
+    "jaw_crusher": 1
+   },
+   "unlocked_by": "quarrying"
+  },
+  {
+   "id": "mine_limestone",
+   "name": "Quarry Limestone",
+   "category": "mining",
+   "time": 2.0,
+   "inputs": {},
+   "outputs": {
+    "limestone": 1
+   },
+   "unlocked_by": "quarrying",
+   "deposit": "limestone"
+  },
+  {
+   "id": "mine_quartz_sand",
+   "name": "Dredge Quartz Sand",
+   "category": "mining",
+   "time": 2.0,
+   "inputs": {},
+   "outputs": {
+    "quartz_sand": 2
+   },
+   "unlocked_by": "glassmaking",
+   "deposit": "quartz_sand"
+  },
+  {
+   "id": "munitions_works",
+   "name": "Munitions Works",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_plate": 10,
+    "iron_gear": 10,
+    "copper_wire": 10,
+    "iron_pipe": 4
+   },
+   "outputs": {
+    "munitions_works": 1
+   },
+   "unlocked_by": "munitions"
+  },
+  {
+   "id": "palisade_wall",
+   "name": "Palisade Wall",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "iron_rod": 8,
+    "stone_brick": 10
+   },
+   "outputs": {
+    "palisade_wall": 1
+   },
+   "unlocked_by": "fortifications"
+  },
+  {
+   "id": "producer_gas_generator",
+   "name": "Producer-Gas Generator",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_plate": 12,
+    "iron_pipe": 10,
+    "gearbox": 2,
+    "copper_wire": 20
+   },
+   "outputs": {
+    "producer_gas_generator": 1
+   },
+   "unlocked_by": "gasifier_power"
+  },
+  {
+   "id": "quicklime",
+   "name": "Quicklime",
+   "category": "smelting",
+   "time": 5.0,
+   "inputs": {
+    "limestone": 2
+   },
+   "outputs": {
+    "quicklime": 1
+   },
+   "unlocked_by": "quarrying"
+  },
+  {
+   "id": "reclaim_red_mud",
+   "name": "Red Mud Reclamation",
+   "category": "recycling",
+   "time": 5.0,
+   "inputs": {
+    "red_mud": 5
+   },
+   "outputs": {
+    "iron_ingot": 2,
+    "gravel": 2
+   },
+   "unlocked_by": "red_mud_recovery"
+  },
+  {
+   "id": "regrind_slag",
+   "name": "Slag Regrinding",
+   "category": "recycling",
+   "time": 4.0,
+   "inputs": {
+    "slag": 4
+   },
+   "outputs": {
+    "gravel": 3,
+    "iron_ingot": 1
+   },
+   "unlocked_by": "scrap_reclamation"
+  },
+  {
+   "id": "remelt_scrap",
+   "name": "Scrap Remelt",
+   "category": "recycling",
+   "time": 6.0,
+   "inputs": {
+    "scrap_metal": 5
+   },
+   "outputs": {
+    "steel_ingot": 3
+   },
+   "unlocked_by": "scrap_reclamation"
+  },
+  {
+   "id": "scrap_recycler",
+   "name": "Scrap Recycler",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_plate": 12,
+    "iron_gear": 10,
+    "copper_wire": 10
+   },
+   "outputs": {
+    "scrap_recycler": 1
+   },
+   "unlocked_by": "scrap_reclamation"
+  },
+  {
+   "id": "scrap_shot",
+   "name": "Scrap Shot",
+   "category": "munitions",
+   "time": 2.0,
+   "inputs": {
+    "scrap_metal": 2,
+    "coal": 1
+   },
+   "outputs": {
+    "scrap_shot": 2
+   },
+   "unlocked_by": "munitions"
+  },
+  {
+   "id": "sentry_gun",
+   "name": "Sentry Gun",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_plate": 8,
+    "iron_gear": 6,
+    "coil_spring": 4,
+    "copper_wire": 6
+   },
+   "outputs": {
+    "sentry_gun": 1
+   },
+   "unlocked_by": "munitions"
+  },
+  {
+   "id": "slag_cement",
+   "name": "Slag Cement",
+   "category": "crushing",
+   "time": 4.0,
+   "inputs": {
+    "slag": 2,
+    "quicklime": 1
+   },
+   "outputs": {
+    "cement": 3
+   },
+   "unlocked_by": "cement_works"
+  },
+  {
+   "id": "stamping_press",
+   "name": "Stamping Press",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "iron_plate": 15,
+    "iron_gear": 8,
+    "iron_rod": 6,
+    "copper_wire": 6
+   },
+   "outputs": {
+    "stamping_press": 1
+   },
+   "unlocked_by": "stamping_presses"
+  },
+  {
+   "id": "steel_beam",
+   "name": "Steel Beam",
+   "category": "pressing",
+   "time": 4.0,
+   "inputs": {
+    "steel_ingot": 3
+   },
+   "outputs": {
+    "steel_beam": 1,
+    "scrap_metal": 1
+   },
+   "unlocked_by": "steelmaking"
+  },
+  {
+   "id": "steel_core_rounds",
+   "name": "Steel-Core Rounds",
+   "category": "munitions",
+   "time": 3.0,
+   "inputs": {
+    "steel_plate": 1,
+    "copper_sheet": 1,
+    "coal": 1
+   },
+   "outputs": {
+    "steel_core_rounds": 2
+   },
+   "unlocked_by": "munitions"
+  },
+  {
+   "id": "steel_frame",
+   "name": "Steel Frame",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "steel_beam": 2,
+    "fasteners": 6
+   },
+   "outputs": {
+    "steel_frame": 1
+   },
+   "unlocked_by": "structural_steel"
+  },
+  {
+   "id": "steel_ingot",
+   "name": "Steel Ingot",
+   "category": "smelting",
+   "time": 8.0,
+   "inputs": {
+    "iron_ingot": 3,
+    "coke": 1
+   },
+   "outputs": {
+    "steel_ingot": 2,
+    "slag": 1
+   },
+   "unlocked_by": "steelmaking"
+  },
+  {
+   "id": "steel_plate",
+   "name": "Steel Plate",
+   "category": "pressing",
+   "time": 2.0,
+   "inputs": {
+    "steel_ingot": 1
+   },
+   "outputs": {
+    "steel_plate": 2
+   },
+   "unlocked_by": "steelmaking"
+  },
+  {
+   "id": "valve",
+   "name": "Valve",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_pipe": 2,
+    "coil_spring": 1,
+    "fasteners": 2
+   },
+   "outputs": {
+    "valve": 1
+   },
+   "unlocked_by": "mechanical_engineering"
+  },
+  {
+   "id": "ap_rounds",
+   "name": "Armor-Piercing Rounds",
+   "category": "munitions",
+   "time": 4.0,
+   "inputs": {
+    "steel_ingot": 1,
+    "bronze_ingot": 1,
+    "coke": 1
+   },
+   "outputs": {
+    "ap_rounds": 2
+   },
+   "unlocked_by": "armor_piercing_rounds"
+  },
+  {
+   "id": "assembly_line",
+   "name": "Assembly Line",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_frame": 2,
+    "electric_motor": 4,
+    "circuit_board": 6,
+    "gearbox": 2
+   },
+   "outputs": {
+    "assembly_line": 1
+   },
+   "unlocked_by": "assembly_lines"
+  },
+  {
+   "id": "bearing",
+   "name": "Bearing",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "bronze_ingot": 1,
+    "steel_plate": 1
+   },
+   "outputs": {
+    "bearing": 2
+   },
+   "unlocked_by": "electromagnetism"
+  },
+  {
+   "id": "bronze_ingot",
+   "name": "Bronze Ingot",
+   "category": "smelting",
+   "time": 5.0,
+   "inputs": {
+    "copper_ingot": 3,
+    "tin_ingot": 1
+   },
+   "outputs": {
+    "bronze_ingot": 4
+   },
+   "unlocked_by": "tin_smelting"
+  },
+  {
+   "id": "bulk_silo",
+   "name": "Bulk Silo",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 40,
+    "concrete": 20,
+    "electric_motor": 2
+   },
+   "outputs": {
+    "bulk_silo": 1
+   },
+   "unlocked_by": "warehousing"
+  },
+  {
+   "id": "capacitor",
+   "name": "Capacitor",
+   "category": "electronics",
+   "time": 3.0,
+   "inputs": {
+    "copper_sheet": 1,
+    "ceramic_substrate": 1
+   },
+   "outputs": {
+    "capacitor": 4
+   },
+   "unlocked_by": "passive_components"
+  },
+  {
+   "id": "ceramic_substrate",
+   "name": "Ceramic Substrate",
+   "category": "smelting",
+   "time": 4.0,
+   "inputs": {
+    "stone": 1,
+    "quartz_sand": 2
+   },
+   "outputs": {
+    "ceramic_substrate": 2
+   },
+   "unlocked_by": "circuit_theory"
+  },
+  {
+   "id": "chemical_reactor",
+   "name": "Chemical Reactor",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 15,
+    "iron_pipe": 10,
+    "valve": 6,
+    "circuit_board": 6,
+    "glass_pane": 6
+   },
+   "outputs": {
+    "chemical_reactor": 1
+   },
+   "unlocked_by": "polymer_chemistry"
+  },
+  {
+   "id": "circuit_board",
+   "name": "Circuit Board",
+   "category": "electronics",
+   "time": 6.0,
+   "inputs": {
+    "ceramic_substrate": 1,
+    "copper_wire": 4,
+    "solder": 1
+   },
+   "outputs": {
+    "circuit_board": 2
+   },
+   "unlocked_by": "circuit_theory"
+  },
+  {
+   "id": "circuit_schematic",
+   "name": "Circuit Schematics",
+   "category": "electronics",
+   "time": 8.0,
+   "inputs": {
+    "circuit_board": 2,
+    "gearbox": 1,
+    "glass_pane": 1
+   },
+   "outputs": {
+    "circuit_schematic": 2
+   },
+   "unlocked_by": "circuit_theory"
+  },
+  {
+   "id": "distillation_column",
+   "name": "Distillation Column",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 40,
+    "iron_pipe": 30,
+    "valve": 10,
+    "circuit_board": 6,
+    "concrete": 20
+   },
+   "outputs": {
+    "distillation_column": 1
+   },
+   "unlocked_by": "oil_refining"
+  },
+  {
+   "id": "economizer_card_1",
+   "name": "Economizer Card Mk I",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "circuit_board": 5,
+    "capacitor": 5,
+    "copper_wire": 8
+   },
+   "outputs": {
+    "economizer_card_1": 1
+   },
+   "unlocked_by": "module_engineering"
+  },
+  {
+   "id": "electric_motor",
+   "name": "Electric Motor",
+   "category": "assembling",
+   "time": 6.0,
+   "inputs": {
+    "electromagnet": 2,
+    "bearing": 2,
+    "steel_plate": 1
+   },
+   "outputs": {
+    "electric_motor": 1
+   },
+   "unlocked_by": "electromagnetism"
+  },
+  {
+   "id": "electromagnet",
+   "name": "Electromagnet",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "iron_rod": 1,
+    "copper_wire": 6
+   },
+   "outputs": {
+    "electromagnet": 1
+   },
+   "unlocked_by": "electromagnetism"
+  },
+  {
+   "id": "emission_filter_1",
+   "name": "Emission Filter Mk I",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "circuit_board": 5,
+    "capacitor": 5,
+    "coke": 4
+   },
+   "outputs": {
+    "emission_filter_1": 1
+   },
+   "unlocked_by": "module_engineering"
+  },
+  {
+   "id": "field_report",
+   "name": "Field Reports",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_core_rounds": 4,
+    "optical_sensor": 1,
+    "concrete": 2
+   },
+   "outputs": {
+    "field_report": 2
+   },
+   "unlocked_by": "field_reporting"
+  },
+  {
+   "id": "flywheel_store",
+   "name": "Flywheel Store",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_ingot": 20,
+    "bearing": 8,
+    "electric_motor": 2,
+    "concrete": 10
+   },
+   "outputs": {
+    "flywheel_store": 1
+   },
+   "unlocked_by": "flywheel_storage"
+  },
+  {
+   "id": "high_pressure_boiler",
+   "name": "High-Pressure Boiler",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 20,
+    "iron_pipe": 12,
+    "valve": 6,
+    "stone_brick": 20
+   },
+   "outputs": {
+    "high_pressure_boiler": 1
+   },
+   "unlocked_by": "high_pressure_steam"
+  },
+  {
+   "id": "mine_cassiterite",
+   "name": "Mine Cassiterite",
+   "category": "mining",
+   "time": 3.0,
+   "inputs": {},
+   "outputs": {
+    "cassiterite": 1
+   },
+   "unlocked_by": "tin_smelting",
+   "deposit": "cassiterite"
+  },
+  {
+   "id": "optical_sensor",
+   "name": "Optical Sensor",
+   "category": "electronics",
+   "time": 5.0,
+   "inputs": {
+    "glass_pane": 1,
+    "circuit_board": 1,
+    "copper_wire": 2
+   },
+   "outputs": {
+    "optical_sensor": 1
+   },
+   "unlocked_by": "passive_components"
+  },
+  {
+   "id": "overclock_card_1",
+   "name": "Overclock Card Mk I",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "circuit_board": 5,
+    "capacitor": 5,
+    "electric_motor": 1
+   },
+   "outputs": {
+    "overclock_card_1": 1
+   },
+   "unlocked_by": "module_engineering"
+  },
+  {
+   "id": "pollution_scrubber",
+   "name": "Pollution Scrubber",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 10,
+    "electric_motor": 2,
+    "iron_pipe": 10,
+    "coke": 20
+   },
+   "outputs": {
+    "pollution_scrubber": 1
+   },
+   "unlocked_by": "air_scrubbing"
+  },
+  {
+   "id": "pump_station",
+   "name": "Pump Station",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "pump_unit": 2,
+    "iron_pipe": 10,
+    "steel_plate": 6
+   },
+   "outputs": {
+    "pump_station": 1
+   },
+   "unlocked_by": "hydraulics"
+  },
+  {
+   "id": "pump_unit",
+   "name": "Pump Unit",
+   "category": "assembling",
+   "time": 5.0,
+   "inputs": {
+    "electric_motor": 1,
+    "valve": 2,
+    "iron_pipe": 2
+   },
+   "outputs": {
+    "pump_unit": 1
+   },
+   "unlocked_by": "hydraulics"
+  },
+  {
+   "id": "pumpjack",
+   "name": "Pumpjack",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_frame": 2,
+    "pump_unit": 2,
+    "gearbox": 4,
+    "electric_motor": 2
+   },
+   "outputs": {
+    "pumpjack": 1
+   },
+   "unlocked_by": "oil_extraction"
+  },
+  {
+   "id": "pv_cell",
+   "name": "Photovoltaic Cell",
+   "category": "electronics",
+   "time": 6.0,
+   "inputs": {
+    "glass_pane": 1,
+    "copper_sheet": 2,
+    "solder": 1
+   },
+   "outputs": {
+    "pv_cell": 1
+   },
+   "unlocked_by": "photovoltaics"
+  },
+  {
+   "id": "radar_station",
+   "name": "Radar Station",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_frame": 3,
+    "circuit_board": 10,
+    "electric_motor": 2,
+    "copper_wire": 20
+   },
+   "outputs": {
+    "radar_station": 1
+   },
+   "unlocked_by": "radar"
+  },
+  {
+   "id": "research_laboratory",
+   "name": "Research Laboratory",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "circuit_board": 10,
+    "glass_pane": 10,
+    "steel_frame": 2,
+    "electric_motor": 2
+   },
+   "outputs": {
+    "research_laboratory": 1
+   },
+   "unlocked_by": "research_laboratories"
+  },
+  {
+   "id": "rolling_mill",
+   "name": "Rolling Mill",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_frame": 3,
+    "electric_motor": 4,
+    "gearbox": 4,
+    "bearing": 8
+   },
+   "outputs": {
+    "rolling_mill": 1
+   },
+   "unlocked_by": "rolling_mills"
+  },
+  {
+   "id": "solar_array",
+   "name": "Solar Array",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "pv_cell": 12,
+    "steel_frame": 2,
+    "copper_wire": 10
+   },
+   "outputs": {
+    "solar_array": 1
+   },
+   "unlocked_by": "photovoltaics"
+  },
+  {
+   "id": "solder",
+   "name": "Solder",
+   "category": "smelting",
+   "time": 3.0,
+   "inputs": {
+    "tin_ingot": 3,
+    "copper_ingot": 1
+   },
+   "outputs": {
+    "solder": 4
+   },
+   "unlocked_by": "tin_smelting"
+  },
+  {
+   "id": "sorting_hub",
+   "name": "Sorting Hub",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "conveyor_hub": 2,
+    "electric_motor": 4,
+    "optical_sensor": 4
+   },
+   "outputs": {
+    "sorting_hub": 1
+   },
+   "unlocked_by": "sorting_hubs"
+  },
+  {
+   "id": "substation",
+   "name": "Substation",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_beam": 4,
+    "copper_wire": 30,
+    "electromagnet": 4,
+    "ceramic_substrate": 6
+   },
+   "outputs": {
+    "substation": 1
+   },
+   "unlocked_by": "power_distribution"
+  },
+  {
+   "id": "tin_ingot",
+   "name": "Tin Ingot",
+   "category": "smelting",
+   "time": 5.0,
+   "inputs": {
+    "cassiterite": 3,
+    "coke": 1
+   },
+   "outputs": {
+    "tin_ingot": 2
+   },
+   "unlocked_by": "tin_smelting"
+  },
+  {
+   "id": "warehouse",
+   "name": "Warehouse",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_beam": 20,
+    "concrete": 40,
+    "steel_plate": 20
+   },
+   "outputs": {
+    "warehouse": 1
+   },
+   "unlocked_by": "warehousing"
+  },
+  {
+   "id": "wind_turbine",
+   "name": "Wind Turbine",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_beam": 6,
+    "electromagnet": 8,
+    "gearbox": 2,
+    "bearing": 4
+   },
+   "outputs": {
+    "wind_turbine": 1
+   },
+   "unlocked_by": "wind_power"
+  },
+  {
+   "id": "wire_drawer",
+   "name": "Wire Drawing Bench",
+   "category": "assembling",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 8,
+    "electric_motor": 2,
+    "iron_gear": 10
+   },
+   "outputs": {
+    "wire_drawer": 1
+   },
+   "unlocked_by": "rolling_mills"
+  },
+  {
+   "id": "yield_optimizer_1",
+   "name": "Yield Optimizer Mk I",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "circuit_board": 5,
+    "capacitor": 5,
+    "gearbox": 2
+   },
+   "outputs": {
+    "yield_optimizer_1": 1
+   },
+   "unlocked_by": "module_engineering"
+  },
+  {
+   "id": "algae_bioreactor",
+   "name": "Algae Bioreactor",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "glass_pane": 30,
+    "plastic_sheet": 10,
+    "pump_unit": 2,
+    "steel_frame": 2
+   },
+   "outputs": {
+    "algae_bioreactor": 1
+   },
+   "unlocked_by": "algae_cultivation"
+  },
+  {
+   "id": "algae_paste",
+   "name": "Algae Paste",
+   "category": "bioprocessing",
+   "time": 10.0,
+   "inputs": {
+    "water": 60,
+    "potash": 1
+   },
+   "outputs": {
+    "algae_paste": 5
+   },
+   "unlocked_by": "algae_cultivation"
+  },
+  {
+   "id": "arc_furnace",
+   "name": "Electric Arc Furnace",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 4,
+    "electromagnet": 10,
+    "insulated_cable": 20,
+    "concrete": 20,
+    "control_board": 4
+   },
+   "outputs": {
+    "arc_furnace": 1
+   },
+   "unlocked_by": "arc_furnaces"
+  },
+  {
+   "id": "battery_bank",
+   "name": "Battery Bank",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "battery_cell": 20,
+    "steel_frame": 2,
+    "circuit_board": 6,
+    "copper_wire": 20
+   },
+   "outputs": {
+    "battery_bank": 1
+   },
+   "unlocked_by": "sodium_sulfur_batteries"
+  },
+  {
+   "id": "battery_cell",
+   "name": "Sodium-Sulfur Cell",
+   "category": "chemistry",
+   "time": 6.0,
+   "inputs": {
+    "sulfur": 2,
+    "caustic_soda": 1,
+    "steel_plate": 1,
+    "ceramic_substrate": 1
+   },
+   "outputs": {
+    "battery_cell": 1
+   },
+   "unlocked_by": "sodium_sulfur_batteries"
+  },
+  {
+   "id": "bio_lubricant",
+   "name": "Bio-Lubricant",
+   "category": "chemistry",
+   "time": 3.0,
+   "inputs": {
+    "bio_oil": 20
+   },
+   "outputs": {
+    "lubricant": 20
+   },
+   "unlocked_by": "algae_cultivation"
+  },
+  {
+   "id": "bio_oil",
+   "name": "Bio-Oil",
+   "category": "bioprocessing",
+   "time": 5.0,
+   "inputs": {
+    "algae_paste": 5
+   },
+   "outputs": {
+    "bio_oil": 30
+   },
+   "unlocked_by": "algae_cultivation"
+  },
+  {
+   "id": "biofuel_pellet",
+   "name": "Biofuel Pellet",
+   "category": "bioprocessing",
+   "time": 6.0,
+   "inputs": {
+    "algae_paste": 4
+   },
+   "outputs": {
+    "biofuel_pellet": 2
+   },
+   "unlocked_by": "algae_cultivation"
+  },
+  {
+   "id": "bioplastic",
+   "name": "Bioplastic Pellets",
+   "category": "bioprocessing",
+   "time": 4.0,
+   "inputs": {
+    "algae_paste": 4,
+    "bio_oil": 10
+   },
+   "outputs": {
+    "plastic_pellets": 3
+   },
+   "unlocked_by": "bioplastics"
+  },
+  {
+   "id": "blasting_powder",
+   "name": "Blasting Powder",
+   "category": "mixing",
+   "time": 4.0,
+   "inputs": {
+    "sulfur": 1,
+    "coke": 1,
+    "potash": 1
+   },
+   "outputs": {
+    "blasting_powder": 3
+   },
+   "unlocked_by": "blasting_compounds"
+  },
+  {
+   "id": "brine_electrolysis",
+   "name": "Brine Electrolysis",
+   "category": "electrolysis",
+   "time": 4.0,
+   "inputs": {
+    "brine": 60
+   },
+   "outputs": {
+    "chlorine": 20,
+    "hydrogen": 20,
+    "caustic_soda": 2
+   },
+   "unlocked_by": "chlor_alkali"
+  },
+  {
+   "id": "brine_evaporation",
+   "name": "Brine Evaporation",
+   "category": "chemistry",
+   "time": 5.0,
+   "inputs": {
+    "brine": 80
+   },
+   "outputs": {
+    "salt": 3,
+    "potash": 1
+   },
+   "unlocked_by": "brine_evaporation"
+  },
+  {
+   "id": "casting_foundry",
+   "name": "Casting Foundry",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 6,
+    "stone_brick": 40,
+    "concrete": 30,
+    "control_board": 6,
+    "pump_unit": 2
+   },
+   "outputs": {
+    "casting_foundry": 1
+   },
+   "unlocked_by": "aerospace_alloys"
+  },
+  {
+   "id": "chemical_assay",
+   "name": "Chemical Assays",
+   "category": "chemistry",
+   "time": 10.0,
+   "inputs": {
+    "sulfuric_acid": 20,
+    "plastic_sheet": 2,
+    "optical_sensor": 1,
+    "insulated_cable": 2
+   },
+   "outputs": {
+    "chemical_assay": 2
+   },
+   "unlocked_by": "chemical_assays"
+  },
+  {
+   "id": "cone_crusher",
+   "name": "Cone Crusher",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 3,
+    "gearbox": 6,
+    "electric_motor": 3,
+    "bearing": 8
+   },
+   "outputs": {
+    "cone_crusher": 1
+   },
+   "unlocked_by": "cone_crushers"
+  },
+  {
+   "id": "contact_process",
+   "name": "Contact Process Acid",
+   "category": "chemistry",
+   "time": 2.0,
+   "inputs": {
+    "sulfur": 2,
+    "oxygen": 20,
+    "water": 40
+   },
+   "outputs": {
+    "sulfuric_acid": 80
+   },
+   "unlocked_by": "contact_process"
+  },
+  {
+   "id": "control_board",
+   "name": "Control Board",
+   "category": "electronics",
+   "time": 8.0,
+   "inputs": {
+    "circuit_board": 3,
+    "capacitor": 4,
+    "fiberglass_panel": 1
+   },
+   "outputs": {
+    "control_board": 1
+   },
+   "unlocked_by": "control_systems"
+  },
+  {
+   "id": "crude_distillation",
+   "name": "Crude Distillation",
+   "category": "refining",
+   "time": 5.0,
+   "inputs": {
+    "crude_oil": 100
+   },
+   "outputs": {
+    "heavy_oil": 20,
+    "naphtha": 50,
+    "fuel_gas": 30
+   },
+   "unlocked_by": "oil_refining"
+  },
+  {
+   "id": "deep_well_pump",
+   "name": "Deep-Well Pump",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "pump_unit": 3,
+    "steel_plate": 12,
+    "iron_pipe": 16,
+    "circuit_board": 4
+   },
+   "outputs": {
+    "deep_well_pump": 1
+   },
+   "unlocked_by": "chlor_alkali"
+  },
+  {
+   "id": "drill_crude_oil",
+   "name": "Pump Crude Oil",
+   "category": "oil_extraction",
+   "time": 1.0,
+   "inputs": {},
+   "outputs": {
+    "crude_oil": 10
+   },
+   "unlocked_by": "oil_extraction",
+   "deposit": "crude_oil"
+  },
+  {
+   "id": "drill_natural_gas",
+   "name": "Tap Natural Gas",
+   "category": "oil_extraction",
+   "time": 1.0,
+   "inputs": {},
+   "outputs": {
+    "natural_gas": 15
+   },
+   "unlocked_by": "gas_processing",
+   "deposit": "natural_gas"
+  },
+  {
+   "id": "economizer_card_2",
+   "name": "Economizer Card Mk II",
+   "category": "electronics",
+   "time": 15.0,
+   "inputs": {
+    "control_board": 3,
+    "battery_cell": 1
+   },
+   "outputs": {
+    "economizer_card_2": 1
+   },
+   "unlocked_by": "module_engineering_2"
+  },
+  {
+   "id": "electrolytic_cell",
+   "name": "Electrolytic Cell",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_plate": 20,
+    "copper_sheet": 30,
+    "plastic_sheet": 10,
+    "circuit_board": 6
+   },
+   "outputs": {
+    "electrolytic_cell": 1
+   },
+   "unlocked_by": "chlor_alkali"
+  },
+  {
+   "id": "electrostatic_precipitator",
+   "name": "Electrostatic Precipitator",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_plate": 20,
+    "insulated_cable": 10,
+    "filter_cartridge": 6,
+    "electric_motor": 2
+   },
+   "outputs": {
+    "electrostatic_precipitator": 1
+   },
+   "unlocked_by": "precipitators"
+  },
+  {
+   "id": "emission_filter_2",
+   "name": "Emission Filter Mk II",
+   "category": "electronics",
+   "time": 15.0,
+   "inputs": {
+    "control_board": 3,
+    "filter_cartridge": 2
+   },
+   "outputs": {
+    "emission_filter_2": 1
+   },
+   "unlocked_by": "module_engineering_2"
+  },
+  {
+   "id": "epoxy_resin",
+   "name": "Epoxy Resin",
+   "category": "chemistry",
+   "time": 3.0,
+   "inputs": {
+    "naphtha": 10,
+    "chlorine": 10
+   },
+   "outputs": {
+    "epoxy_resin": 2
+   },
+   "unlocked_by": "epoxy_resins"
+  },
+  {
+   "id": "fiberglass_panel",
+   "name": "Fiberglass Laminate",
+   "category": "pressing",
+   "time": 4.0,
+   "inputs": {
+    "glass_fiber": 4,
+    "epoxy_resin": 1
+   },
+   "outputs": {
+    "fiberglass_panel": 2
+   },
+   "unlocked_by": "epoxy_resins"
+  },
+  {
+   "id": "filter_cartridge",
+   "name": "Filter Cartridge",
+   "category": "assembling",
+   "time": 4.0,
+   "inputs": {
+    "coke": 2,
+    "plastic_sheet": 1
+   },
+   "outputs": {
+    "filter_cartridge": 1
+   },
+   "unlocked_by": "precipitators"
+  },
+  {
+   "id": "flame_projector",
+   "name": "Flame Projector",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_plate": 12,
+    "pump_unit": 2,
+    "valve": 4,
+    "rubber": 6
+   },
+   "outputs": {
+    "flame_projector": 1
+   },
+   "unlocked_by": "incendiaries"
+  },
+  {
+   "id": "frag_shell",
+   "name": "Fragmentation Shell",
+   "category": "munitions",
+   "time": 6.0,
+   "inputs": {
+    "steel_plate": 2,
+    "blasting_powder": 2
+   },
+   "outputs": {
+    "frag_shell": 1
+   },
+   "unlocked_by": "blasting_compounds"
+  },
+  {
+   "id": "fuel_briquette",
+   "name": "Fuel Briquette",
+   "category": "pressing",
+   "time": 3.0,
+   "inputs": {
+    "coke": 2,
+    "heavy_oil": 10
+   },
+   "outputs": {
+    "fuel_briquette": 2
+   },
+   "unlocked_by": "fuel_briquettes"
+  },
+  {
+   "id": "gas_sweetening",
+   "name": "Gas Sweetening",
+   "category": "refining",
+   "time": 4.0,
+   "inputs": {
+    "natural_gas": 100
+   },
+   "outputs": {
+    "fuel_gas": 90,
+    "sulfur": 1
+   },
+   "unlocked_by": "gas_processing"
+  },
+  {
+   "id": "gas_turbine",
+   "name": "Gas Turbine",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 4,
+    "gearbox": 6,
+    "bearing": 10,
+    "electric_motor": 2,
+    "circuit_board": 8
+   },
+   "outputs": {
+    "gas_turbine": 1
+   },
+   "unlocked_by": "gas_turbines"
+  },
+  {
+   "id": "glass_fiber",
+   "name": "Glass Fiber",
+   "category": "smelting",
+   "time": 3.0,
+   "inputs": {
+    "glass_pane": 1
+   },
+   "outputs": {
+    "glass_fiber": 3
+   },
+   "unlocked_by": "epoxy_resins"
+  },
+  {
+   "id": "heavy_autocannon",
+   "name": "Heavy Autocannon",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 3,
+    "electric_motor": 4,
+    "gearbox": 4,
+    "optical_sensor": 4
+   },
+   "outputs": {
+    "heavy_autocannon": 1
+   },
+   "unlocked_by": "heavy_autocannons"
+  },
+  {
+   "id": "heavy_bore_drill",
+   "name": "Heavy Bore Drill",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 4,
+    "electric_motor": 6,
+    "gearbox": 8,
+    "hydraulic_ram": 4,
+    "circuit_board": 6
+   },
+   "outputs": {
+    "heavy_bore_drill": 1
+   },
+   "unlocked_by": "heavy_drilling"
+  },
+  {
+   "id": "hydraulic_ram",
+   "name": "Hydraulic Ram",
+   "category": "assembling",
+   "time": 4.0,
+   "inputs": {
+    "steel_plate": 2,
+    "valve": 1,
+    "lubricant": 10
+   },
+   "outputs": {
+    "hydraulic_ram": 1
+   },
+   "unlocked_by": "lubricants"
+  },
+  {
+   "id": "hydrocracking",
+   "name": "Hydrocracking",
+   "category": "refining",
+   "time": 4.0,
+   "inputs": {
+    "heavy_oil": 40,
+    "hydrogen": 10
+   },
+   "outputs": {
+    "naphtha": 45
+   },
+   "unlocked_by": "hydrocracking"
+  },
+  {
+   "id": "incendiary_canister",
+   "name": "Incendiary Canister",
+   "category": "munitions",
+   "time": 5.0,
+   "inputs": {
+    "naphtha": 20,
+    "rubber": 1,
+    "steel_plate": 1
+   },
+   "outputs": {
+    "incendiary_canister": 1
+   },
+   "unlocked_by": "incendiaries"
+  },
+  {
+   "id": "induction_furnace",
+   "name": "Induction Furnace",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "electromagnet": 12,
+    "steel_plate": 12,
+    "stone_brick": 20,
+    "circuit_board": 6
+   },
+   "outputs": {
+    "induction_furnace": 1
+   },
+   "unlocked_by": "induction_furnaces"
+  },
+  {
+   "id": "industrial_blender",
+   "name": "Industrial Blender",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_plate": 15,
+    "electric_motor": 4,
+    "gearbox": 4,
+    "plastic_sheet": 6
+   },
+   "outputs": {
+    "industrial_blender": 1
+   },
+   "unlocked_by": "industrial_mixers"
+  },
+  {
+   "id": "insulated_cable",
+   "name": "Insulated Cable",
+   "category": "assembling",
+   "time": 2.0,
+   "inputs": {
+    "copper_wire": 4,
+    "rubber": 1
+   },
+   "outputs": {
+    "insulated_cable": 2
+   },
+   "unlocked_by": "synthetic_rubber"
+  },
+  {
+   "id": "lubricant",
+   "name": "Lubricant",
+   "category": "chemistry",
+   "time": 2.0,
+   "inputs": {
+    "heavy_oil": 20
+   },
+   "outputs": {
+    "lubricant": 15
+   },
+   "unlocked_by": "lubricants"
+  },
+  {
+   "id": "mine_native_sulfur",
+   "name": "Scrape Native Sulfur",
+   "category": "mining",
+   "time": 3.0,
+   "inputs": {},
+   "outputs": {
+    "native_sulfur": 1
+   },
+   "unlocked_by": "sulfur_processing",
+   "deposit": "native_sulfur"
+  },
+  {
+   "id": "mortar_battery",
+   "name": "Mortar Battery",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_plate": 20,
+    "gearbox": 4,
+    "optical_sensor": 2,
+    "concrete": 10
+   },
+   "outputs": {
+    "mortar_battery": 1
+   },
+   "unlocked_by": "blasting_compounds"
+  },
+  {
+   "id": "overclock_card_2",
+   "name": "Overclock Card Mk II",
+   "category": "electronics",
+   "time": 15.0,
+   "inputs": {
+    "control_board": 3,
+    "insulated_cable": 4
+   },
+   "outputs": {
+    "overclock_card_2": 1
+   },
+   "unlocked_by": "module_engineering_2"
+  },
+  {
+   "id": "pipeline_station",
+   "name": "Pipeline Pumping Station",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "pump_unit": 4,
+    "steel_plate": 20,
+    "valve": 10,
+    "circuit_board": 6
+   },
+   "outputs": {
+    "pipeline_station": 1
+   },
+   "unlocked_by": "pipelines"
+  },
+  {
+   "id": "plastic_pellets",
+   "name": "Plastic Pellets",
+   "category": "chemistry",
+   "time": 2.0,
+   "inputs": {
+    "naphtha": 20,
+    "fuel_gas": 10
+   },
+   "outputs": {
+    "plastic_pellets": 2
+   },
+   "unlocked_by": "polymer_chemistry"
+  },
+  {
+   "id": "plastic_sheet",
+   "name": "Plastic Sheet",
+   "category": "pressing",
+   "time": 2.0,
+   "inputs": {
+    "plastic_pellets": 2
+   },
+   "outputs": {
+    "plastic_sheet": 1
+   },
+   "unlocked_by": "polymer_chemistry"
+  },
+  {
+   "id": "pneumatic_hub",
+   "name": "Pneumatic Tube Hub",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "sorting_hub": 2,
+    "pump_unit": 2,
+    "plastic_sheet": 10,
+    "circuit_board": 6
+   },
+   "outputs": {
+    "pneumatic_hub": 1
+   },
+   "unlocked_by": "pneumatic_tubes"
+  },
+  {
+   "id": "pump_brine",
+   "name": "Pump Brine",
+   "category": "pumping",
+   "time": 1.0,
+   "inputs": {},
+   "outputs": {
+    "brine": 25
+   },
+   "unlocked_by": "chlor_alkali",
+   "deposit": "brine"
+  },
+  {
+   "id": "rail_depot",
+   "name": "Rail Depot",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_beam": 40,
+    "concrete": 60,
+    "electric_motor": 6,
+    "control_board": 4
+   },
+   "outputs": {
+    "rail_depot": 1
+   },
+   "unlocked_by": "rail_logistics"
+  },
+  {
+   "id": "rubber",
+   "name": "Rubber",
+   "category": "chemistry",
+   "time": 3.0,
+   "inputs": {
+    "naphtha": 10,
+    "sulfur": 1
+   },
+   "outputs": {
+    "rubber": 2
+   },
+   "unlocked_by": "synthetic_rubber"
+  },
+  {
+   "id": "signal_relay",
+   "name": "Signal Relay",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "control_board": 4,
+    "insulated_cable": 10,
+    "steel_frame": 1,
+    "optical_sensor": 2
+   },
+   "outputs": {
+    "signal_relay": 1
+   },
+   "unlocked_by": "signal_relays"
+  },
+  {
+   "id": "sulfur",
+   "name": "Sulfur",
+   "category": "crushing",
+   "time": 3.0,
+   "inputs": {
+    "native_sulfur": 1
+   },
+   "outputs": {
+    "sulfur": 2
+   },
+   "unlocked_by": "sulfur_processing"
+  },
+  {
+   "id": "sulfuric_acid",
+   "name": "Sulfuric Acid",
+   "category": "chemistry",
+   "time": 2.0,
+   "inputs": {
+    "sulfur": 2,
+    "water": 40
+   },
+   "outputs": {
+    "sulfuric_acid": 40
+   },
+   "unlocked_by": "sulfur_processing"
+  },
+  {
+   "id": "surface_mount_line",
+   "name": "Surface-Mount Line",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "control_board": 4,
+    "electric_motor": 6,
+    "steel_frame": 4,
+    "optical_sensor": 4
+   },
+   "outputs": {
+    "surface_mount_line": 1
+   },
+   "unlocked_by": "surface_mount"
+  },
+  {
+   "id": "thermal_cracking",
+   "name": "Thermal Cracking",
+   "category": "refining",
+   "time": 4.0,
+   "inputs": {
+    "heavy_oil": 40,
+    "steam": 20
+   },
+   "outputs": {
+    "naphtha": 30,
+    "fuel_gas": 10
+   },
+   "unlocked_by": "oil_refining"
+  },
+  {
+   "id": "wellhead_compressor",
+   "name": "Wellhead Compressor",
+   "category": "assembling",
+   "time": 10.0,
+   "inputs": {
+    "steel_frame": 4,
+    "pump_unit": 4,
+    "valve": 8,
+    "circuit_board": 8
+   },
+   "outputs": {
+    "wellhead_compressor": 1
+   },
+   "unlocked_by": "gas_processing"
+  },
+  {
+   "id": "yield_optimizer_2",
+   "name": "Yield Optimizer Mk II",
+   "category": "electronics",
+   "time": 15.0,
+   "inputs": {
+    "control_board": 3,
+    "plastic_sheet": 4
+   },
+   "outputs": {
+    "yield_optimizer_2": 1
+   },
+   "unlocked_by": "module_engineering_2"
+  },
+  {
+   "id": "acrylic_fiber",
+   "name": "Acrylic Fiber",
+   "category": "chemistry",
+   "time": 4.0,
+   "inputs": {
+    "naphtha": 20,
+    "ammonia": 10
+   },
+   "outputs": {
+    "acrylic_fiber": 3
+   },
+   "unlocked_by": "carbon_fiber"
+  },
+  {
+   "id": "air_separation",
+   "name": "Air Separation",
+   "category": "cryogenics",
+   "time": 4.0,
+   "inputs": {
+    "water": 20
+   },
+   "outputs": {
+    "oxygen": 40,
+    "nitrogen": 80
+   },
+   "unlocked_by": "air_separation"
+  },
+  {
+   "id": "air_separation_unit",
+   "name": "Air Separation Unit",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_plate": 30,
+    "pump_unit": 4,
+    "valve": 10,
+    "control_board": 6,
+    "aluminum_sheet": 20
+   },
+   "outputs": {
+    "air_separation_unit": 1
+   },
+   "unlocked_by": "air_separation"
+  },
+  {
+   "id": "airframe_panel",
+   "name": "Airframe Panel",
+   "category": "precision_assembling",
+   "time": 10.0,
+   "inputs": {
+    "duralumin_ingot": 3,
+    "composite_panel": 2,
+    "fasteners": 8
+   },
+   "outputs": {
+    "airframe_panel": 1
+   },
+   "unlocked_by": "airframes"
+  },
+  {
+   "id": "alloy_specimen",
+   "name": "Alloy Specimens",
+   "category": "foundry",
+   "time": 12.0,
+   "inputs": {
+    "titanium_alloy": 1,
+    "duralumin_ingot": 2,
+    "fiberglass_panel": 1
+   },
+   "outputs": {
+    "alloy_specimen": 2
+   },
+   "unlocked_by": "materials_testing"
+  },
+  {
+   "id": "aluminum_ingot",
+   "name": "Aluminum Ingot",
+   "category": "electrolysis",
+   "time": 6.0,
+   "inputs": {
+    "alumina": 4,
+    "carbon_anode": 1
+   },
+   "outputs": {
+    "aluminum_ingot": 2
+   },
+   "unlocked_by": "aluminum_electrolysis"
+  },
+  {
+   "id": "aluminum_powder",
+   "name": "Aluminum Powder",
+   "category": "crushing",
+   "time": 3.0,
+   "inputs": {
+    "aluminum_ingot": 1
+   },
+   "outputs": {
+    "aluminum_powder": 3
+   },
+   "unlocked_by": "thermite"
+  },
+  {
+   "id": "aluminum_sheet",
+   "name": "Aluminum Sheet",
+   "category": "pressing",
+   "time": 2.0,
+   "inputs": {
+    "aluminum_ingot": 1
+   },
+   "outputs": {
+    "aluminum_sheet": 2
+   },
+   "unlocked_by": "aluminum_electrolysis"
+  },
+  {
+   "id": "ammonia",
+   "name": "Ammonia",
+   "category": "chemistry",
+   "time": 2.0,
+   "inputs": {
+    "hydrogen": 30,
+    "nitrogen": 10
+   },
+   "outputs": {
+    "ammonia": 20
+   },
+   "unlocked_by": "nitrogen_chemistry"
+  },
+  {
+   "id": "antenna_array",
+   "name": "Phased Antenna Array",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "microchip": 4,
+    "aluminum_sheet": 4,
+    "fiber_optic_cable": 2
+   },
+   "outputs": {
+    "antenna_array": 1
+   },
+   "unlocked_by": "phased_arrays"
+  },
+  {
+   "id": "armored_bulwark",
+   "name": "Armored Bulwark",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "titanium_plate": 6,
+    "concrete": 20,
+    "steel_beam": 4
+   },
+   "outputs": {
+    "armored_bulwark": 1
+   },
+   "unlocked_by": "armored_bulwarks"
+  },
+  {
+   "id": "automated_arsenal",
+   "name": "Automated Arsenal",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "robotic_arm": 2,
+    "steel_frame": 4,
+    "embedded_controller": 2,
+    "concrete": 30
+   },
+   "outputs": {
+    "automated_arsenal": 1
+   },
+   "unlocked_by": "automated_arsenals"
+  },
+  {
+   "id": "automated_warehouse",
+   "name": "Automated Warehouse",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_beam": 40,
+    "concrete": 80,
+    "robotic_arm": 4,
+    "embedded_controller": 2
+   },
+   "outputs": {
+    "automated_warehouse": 1
+   },
+   "unlocked_by": "automated_storage"
+  },
+  {
+   "id": "bayer_digestion",
+   "name": "Bayer Digestion",
+   "category": "chemistry",
+   "time": 6.0,
+   "inputs": {
+    "bauxite": 4,
+    "caustic_soda": 1,
+    "steam": 30
+   },
+   "outputs": {
+    "alumina": 3,
+    "red_mud": 1
+   },
+   "unlocked_by": "bayer_process"
+  },
+  {
+   "id": "capacitor_pack",
+   "name": "Capacitor Pack",
+   "category": "electronics",
+   "time": 6.0,
+   "inputs": {
+    "capacitor": 8,
+    "battery_cell": 1,
+    "aluminum_sheet": 1
+   },
+   "outputs": {
+    "capacitor_pack": 1
+   },
+   "unlocked_by": "laser_weapons"
+  },
+  {
+   "id": "carbon_anode",
+   "name": "Carbon Anode",
+   "category": "pressing",
+   "time": 4.0,
+   "inputs": {
+    "coke": 4,
+    "heavy_oil": 10
+   },
+   "outputs": {
+    "carbon_anode": 1
+   },
+   "unlocked_by": "aluminum_electrolysis"
+  },
+  {
+   "id": "carbon_fiber",
+   "name": "Carbon Fiber",
+   "category": "smelting_advanced",
+   "time": 6.0,
+   "inputs": {
+    "acrylic_fiber": 3
+   },
+   "outputs": {
+    "carbon_fiber": 1
+   },
+   "unlocked_by": "carbon_fiber"
+  },
+  {
+   "id": "cargo_drone",
+   "name": "Cargo Drone",
+   "category": "precision_assembling",
+   "time": 10.0,
+   "inputs": {
+    "electric_motor": 4,
+    "aluminum_sheet": 4,
+    "lithium_cell": 2,
+    "embedded_controller": 1
+   },
+   "outputs": {
+    "cargo_drone": 1
+   },
+   "unlocked_by": "drone_logistics"
+  },
+  {
+   "id": "catalytic_reactor",
+   "name": "Catalytic Reactor",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_plate": 20,
+    "titanium_plate": 10,
+    "valve": 8,
+    "control_board": 6
+   },
+   "outputs": {
+    "catalytic_reactor": 1
+   },
+   "unlocked_by": "catalytic_reactors"
+  },
+  {
+   "id": "clean_room_assembler",
+   "name": "Clean-Room Assembler",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_frame": 4,
+    "microchip": 10,
+    "filter_cartridge": 10,
+    "electric_motor": 6,
+    "aluminum_sheet": 10
+   },
+   "outputs": {
+    "clean_room_assembler": 1
+   },
+   "unlocked_by": "precision_engineering"
+  },
+  {
+   "id": "composite_panel",
+   "name": "Composite Panel",
+   "category": "pressing",
+   "time": 5.0,
+   "inputs": {
+    "carbon_fiber": 2,
+    "epoxy_resin": 2
+   },
+   "outputs": {
+    "composite_panel": 1
+   },
+   "unlocked_by": "carbon_fiber"
+  },
+  {
+   "id": "drone_port",
+   "name": "Drone Port",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "cargo_drone": 6,
+    "steel_frame": 4,
+    "embedded_controller": 2,
+    "concrete": 30
+   },
+   "outputs": {
+    "drone_port": 1
+   },
+   "unlocked_by": "drone_logistics"
+  },
+  {
+   "id": "duralumin_ingot",
+   "name": "Duralumin Billet",
+   "category": "foundry",
+   "time": 6.0,
+   "inputs": {
+    "aluminum_ingot": 4,
+    "copper_ingot": 1,
+    "magnesium_ingot": 1
+   },
+   "outputs": {
+    "duralumin_ingot": 5
+   },
+   "unlocked_by": "aerospace_alloys"
+  },
+  {
+   "id": "economizer_card_3",
+   "name": "Economizer Card Mk III",
+   "category": "electronics",
+   "time": 20.0,
+   "inputs": {
+    "embedded_controller": 2,
+    "lithium_cell": 1
+   },
+   "outputs": {
+    "economizer_card_3": 1
+   },
+   "unlocked_by": "module_engineering_3"
+  },
+  {
+   "id": "embedded_controller",
+   "name": "Embedded Controller",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "control_board": 1,
+    "microchip": 4,
+    "fiber_optic_cable": 1
+   },
+   "outputs": {
+    "embedded_controller": 1
+   },
+   "unlocked_by": "embedded_systems"
+  },
+  {
+   "id": "emission_filter_3",
+   "name": "Emission Filter Mk III",
+   "category": "electronics",
+   "time": 20.0,
+   "inputs": {
+    "embedded_controller": 2,
+    "alumina": 4
+   },
+   "outputs": {
+    "emission_filter_3": 1
+   },
+   "unlocked_by": "module_engineering_3"
+  },
+  {
+   "id": "fiber_optic_cable",
+   "name": "Fiber-Optic Cable",
+   "category": "assembling",
+   "time": 3.0,
+   "inputs": {
+    "glass_fiber": 4,
+    "plastic_sheet": 1
+   },
+   "outputs": {
+    "fiber_optic_cable": 2
+   },
+   "unlocked_by": "fiber_optics"
+  },
+  {
+   "id": "fired_superheater",
+   "name": "Fired Superheater",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_plate": 30,
+    "iron_pipe": 30,
+    "valve": 10,
+    "stone_brick": 30,
+    "titanium_plate": 6
+   },
+   "outputs": {
+    "fired_superheater": 1
+   },
+   "unlocked_by": "steam_turbines"
+  },
+  {
+   "id": "freight_yard",
+   "name": "Freight Yard",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "rail_depot": 2,
+    "steel_beam": 40,
+    "control_board": 10,
+    "concrete": 80
+   },
+   "outputs": {
+    "freight_yard": 1
+   },
+   "unlocked_by": "freight_yards"
+  },
+  {
+   "id": "harmonic_drive",
+   "name": "Harmonic Drive",
+   "category": "precision_assembling",
+   "time": 6.0,
+   "inputs": {
+    "titanium_plate": 1,
+    "bearing": 2,
+    "iron_gear": 2
+   },
+   "outputs": {
+    "harmonic_drive": 1
+   },
+   "unlocked_by": "harmonic_drives"
+  },
+  {
+   "id": "he_shell",
+   "name": "High-Explosive Shell",
+   "category": "munitions",
+   "time": 8.0,
+   "inputs": {
+    "steel_plate": 2,
+    "high_explosive": 2,
+    "copper_sheet": 1
+   },
+   "outputs": {
+    "he_shell": 1
+   },
+   "unlocked_by": "high_explosives"
+  },
+  {
+   "id": "heat_sink",
+   "name": "Heat Sink",
+   "category": "pressing",
+   "time": 3.0,
+   "inputs": {
+    "aluminum_sheet": 2,
+    "copper_sheet": 1
+   },
+   "outputs": {
+    "heat_sink": 1
+   },
+   "unlocked_by": "precision_engineering"
+  },
+  {
+   "id": "high_explosive",
+   "name": "High Explosive",
+   "category": "chemistry",
+   "time": 6.0,
+   "inputs": {
+    "nitric_acid": 20,
+    "naphtha": 10
+   },
+   "outputs": {
+    "high_explosive": 2
+   },
+   "unlocked_by": "high_explosives"
+  },
+  {
+   "id": "hydraulic_forge_press",
+   "name": "Hydraulic Forge Press",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "hydraulic_ram": 8,
+    "steel_frame": 6,
+    "control_board": 4,
+    "electric_motor": 4,
+    "titanium_plate": 6
+   },
+   "outputs": {
+    "hydraulic_forge_press": 1
+   },
+   "unlocked_by": "hydraulic_presses"
+  },
+  {
+   "id": "hydrochloric_acid",
+   "name": "Hydrochloric Acid",
+   "category": "chemistry",
+   "time": 1.0,
+   "inputs": {
+    "hydrogen": 20,
+    "chlorine": 20
+   },
+   "outputs": {
+    "hydrochloric_acid": 40
+   },
+   "unlocked_by": "semiconductor_refining"
+  },
+  {
+   "id": "hydrocracker",
+   "name": "Hydrocracker",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_frame": 6,
+    "valve": 16,
+    "pump_unit": 4,
+    "control_board": 6,
+    "titanium_plate": 10
+   },
+   "outputs": {
+    "hydrocracker": 1
+   },
+   "unlocked_by": "hydrocracking"
+  },
+  {
+   "id": "lithium_carbonate",
+   "name": "Lithium Carbonate",
+   "category": "chemistry",
+   "time": 6.0,
+   "inputs": {
+    "brine": 120,
+    "soda_ash": 1
+   },
+   "outputs": {
+    "lithium_carbonate": 1,
+    "salt": 2
+   },
+   "unlocked_by": "lithium_extraction"
+  },
+  {
+   "id": "lithium_cell",
+   "name": "Lithium-Ion Cell",
+   "category": "electronics",
+   "time": 8.0,
+   "inputs": {
+    "lithium_carbonate": 1,
+    "aluminum_sheet": 1,
+    "coke": 1,
+    "plastic_sheet": 1
+   },
+   "outputs": {
+    "lithium_cell": 1
+   },
+   "unlocked_by": "lithium_extraction"
+  },
+  {
+   "id": "lithography_fab",
+   "name": "Lithography Fab",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "control_board": 10,
+    "glass_pane": 20,
+    "steel_frame": 4,
+    "electric_motor": 6,
+    "aluminum_sheet": 20
+   },
+   "outputs": {
+    "lithography_fab": 1
+   },
+   "unlocked_by": "microelectronics"
+  },
+  {
+   "id": "magnesium_ingot",
+   "name": "Magnesium Ingot",
+   "category": "electrolysis",
+   "time": 8.0,
+   "inputs": {
+    "brine": 150,
+    "quicklime": 1
+   },
+   "outputs": {
+    "magnesium_ingot": 1,
+    "chlorine": 20
+   },
+   "unlocked_by": "magnesium_extraction"
+  },
+  {
+   "id": "materials_test_lab",
+   "name": "Materials Test Lab",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_frame": 4,
+    "control_board": 10,
+    "optical_sensor": 6,
+    "glass_pane": 20,
+    "titanium_plate": 10
+   },
+   "outputs": {
+    "materials_test_lab": 1
+   },
+   "unlocked_by": "materials_labs"
+  },
+  {
+   "id": "microchip",
+   "name": "Microchip",
+   "category": "electronics",
+   "time": 6.0,
+   "inputs": {
+    "silicon_wafer": 1,
+    "copper_wire": 4,
+    "plastic_pellets": 1
+   },
+   "outputs": {
+    "microchip": 4
+   },
+   "unlocked_by": "microelectronics"
+  },
+  {
+   "id": "mine_bauxite",
+   "name": "Mine Bauxite",
+   "category": "mining",
+   "time": 2.5,
+   "inputs": {},
+   "outputs": {
+    "bauxite": 1
+   },
+   "unlocked_by": "bayer_process",
+   "deposit": "bauxite"
+  },
+  {
+   "id": "mine_ilmenite",
+   "name": "Dredge Ilmenite",
+   "category": "mining",
+   "time": 3.0,
+   "inputs": {},
+   "outputs": {
+    "ilmenite": 1
+   },
+   "unlocked_by": "titanium_metallurgy",
+   "deposit": "ilmenite"
+  },
+  {
+   "id": "nitric_acid",
+   "name": "Nitric Acid",
+   "category": "chemistry",
+   "time": 3.0,
+   "inputs": {
+    "ammonia": 20,
+    "oxygen": 20,
+    "water": 10
+   },
+   "outputs": {
+    "nitric_acid": 20
+   },
+   "unlocked_by": "nitrogen_chemistry"
+  },
+  {
+   "id": "optical_lens",
+   "name": "Optical Lens",
+   "category": "precision_assembling",
+   "time": 5.0,
+   "inputs": {
+    "glass_pane": 3
+   },
+   "outputs": {
+    "optical_lens": 1
+   },
+   "unlocked_by": "precision_engineering"
+  },
+  {
+   "id": "overclock_card_3",
+   "name": "Overclock Card Mk III",
+   "category": "electronics",
+   "time": 20.0,
+   "inputs": {
+    "embedded_controller": 2,
+    "heat_sink": 2
+   },
+   "outputs": {
+    "overclock_card_3": 1
+   },
+   "unlocked_by": "module_engineering_3"
+  },
+  {
+   "id": "polysilicon",
+   "name": "Polysilicon",
+   "category": "chemistry",
+   "time": 6.0,
+   "inputs": {
+    "silicon": 2,
+    "hydrochloric_acid": 20
+   },
+   "outputs": {
+    "polysilicon": 1
+   },
+   "unlocked_by": "semiconductor_refining"
+  },
+  {
+   "id": "pressurized_tank_farm",
+   "name": "Pressurized Tank Farm",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_plate": 80,
+    "titanium_plate": 10,
+    "valve": 12,
+    "concrete": 40
+   },
+   "outputs": {
+    "pressurized_tank_farm": 1
+   },
+   "unlocked_by": "pressurized_tanks"
+  },
+  {
+   "id": "pulse_laser_turret",
+   "name": "Pulse Laser Turret",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "optical_lens": 4,
+    "capacitor": 20,
+    "heat_sink": 6,
+    "steel_frame": 2,
+    "embedded_controller": 1
+   },
+   "outputs": {
+    "pulse_laser_turret": 1
+   },
+   "unlocked_by": "laser_weapons"
+  },
+  {
+   "id": "reclamation_plant",
+   "name": "Reclamation Plant",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "steel_frame": 4,
+    "electric_motor": 6,
+    "filter_cartridge": 6,
+    "control_board": 4
+   },
+   "outputs": {
+    "reclamation_plant": 1
+   },
+   "unlocked_by": "red_mud_recovery"
+  },
+  {
+   "id": "recycle_silicon_offcuts",
+   "name": "Offcut Remelting",
+   "category": "recycling",
+   "time": 4.0,
+   "inputs": {
+    "silicon_offcuts": 4
+   },
+   "outputs": {
+    "polysilicon": 1
+   },
+   "unlocked_by": "semiconductor_refining"
+  },
+  {
+   "id": "robotic_arm",
+   "name": "Robotic Arm",
+   "category": "precision_assembling",
+   "time": 12.0,
+   "inputs": {
+    "servo_motor": 2,
+    "harmonic_drive": 1,
+    "aluminum_sheet": 2,
+    "embedded_controller": 1
+   },
+   "outputs": {
+    "robotic_arm": 1
+   },
+   "unlocked_by": "robotics"
+  },
+  {
+   "id": "robotic_workcell",
+   "name": "Robotic Workcell",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "robotic_arm": 2,
+    "steel_frame": 2,
+    "embedded_controller": 2
+   },
+   "outputs": {
+    "robotic_workcell": 1
+   },
+   "unlocked_by": "robotics"
+  },
+  {
+   "id": "servo_motor",
+   "name": "Servo Motor",
+   "category": "precision_assembling",
+   "time": 6.0,
+   "inputs": {
+    "electric_motor": 1,
+    "microchip": 2,
+    "bearing": 2
+   },
+   "outputs": {
+    "servo_motor": 1
+   },
+   "unlocked_by": "precision_engineering"
+  },
+  {
+   "id": "silicon",
+   "name": "Metallurgical Silicon",
+   "category": "smelting_advanced",
+   "time": 6.0,
+   "inputs": {
+    "quartz_sand": 3,
+    "coke": 2
+   },
+   "outputs": {
+    "silicon": 1,
+    "slag": 1
+   },
+   "unlocked_by": "arc_furnaces"
+  },
+  {
+   "id": "silicon_wafer",
+   "name": "Silicon Wafer",
+   "category": "smelting_advanced",
+   "time": 10.0,
+   "inputs": {
+    "polysilicon": 2
+   },
+   "outputs": {
+    "silicon_wafer": 3,
+    "silicon_offcuts": 1
+   },
+   "unlocked_by": "semiconductor_refining"
+  },
+  {
+   "id": "soda_ash",
+   "name": "Soda Ash",
+   "category": "chemistry",
+   "time": 4.0,
+   "inputs": {
+    "salt": 2,
+    "limestone": 1,
+    "ammonia": 5
+   },
+   "outputs": {
+    "soda_ash": 2
+   },
+   "unlocked_by": "nitrogen_chemistry"
+  },
+  {
+   "id": "steam_turbine",
+   "name": "Steam Turbine",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "turbine_blade": 20,
+    "steel_frame": 6,
+    "bearing": 12,
+    "copper_wire": 40,
+    "control_board": 4
+   },
+   "outputs": {
+    "steam_turbine": 1
+   },
+   "unlocked_by": "steam_turbines"
+  },
+  {
+   "id": "thermite_charge",
+   "name": "Thermite Charge",
+   "category": "munitions",
+   "time": 6.0,
+   "inputs": {
+    "aluminum_powder": 2,
+    "iron_ore": 2,
+    "plastic_sheet": 1
+   },
+   "outputs": {
+    "thermite_charge": 1
+   },
+   "unlocked_by": "thermite"
+  },
+  {
+   "id": "thin_film_solar_field",
+   "name": "Thin-Film Solar Field",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "silicon_wafer": 20,
+    "glass_pane": 20,
+    "aluminum_sheet": 10,
+    "steel_frame": 2
+   },
+   "outputs": {
+    "thin_film_solar_field": 1
+   },
+   "unlocked_by": "thin_film_solar"
+  },
+  {
+   "id": "tidal_generator",
+   "name": "Tidal Barrage Turbine",
+   "category": "assembling",
+   "time": 15.0,
+   "inputs": {
+    "turbine_blade": 10,
+    "concrete": 60,
+    "electromagnet": 20,
+    "steel_frame": 4
+   },
+   "outputs": {
+    "tidal_generator": 1
+   },
+   "unlocked_by": "tidal_power"
+  },
+  {
+   "id": "titanium_alloy",
+   "name": "Titanium Alloy Bar",
+   "category": "foundry",
+   "time": 8.0,
+   "inputs": {
+    "titanium_ingot": 3,
+    "aluminum_ingot": 1
+   },
+   "outputs": {
+    "titanium_alloy": 3
+   },
+   "unlocked_by": "aerospace_alloys"
+  },
+  {
+   "id": "titanium_ingot",
+   "name": "Titanium Ingot",
+   "category": "smelting_advanced",
+   "time": 10.0,
+   "inputs": {
+    "titanium_tetrachloride": 40,
+    "magnesium_ingot": 1
+   },
+   "outputs": {
+    "titanium_ingot": 1,
+    "chlorine": 20
+   },
+   "unlocked_by": "titanium_metallurgy"
+  },
+  {
+   "id": "titanium_plate",
+   "name": "Titanium Plate",
+   "category": "pressing",
+   "time": 3.0,
+   "inputs": {
+    "titanium_ingot": 1
+   },
+   "outputs": {
+    "titanium_plate": 2
+   },
+   "unlocked_by": "titanium_metallurgy"
+  },
+  {
+   "id": "titanium_tetrachloride",
+   "name": "Titanium Tetrachloride",
+   "category": "chemistry",
+   "time": 5.0,
+   "inputs": {
+    "ilmenite": 3,
+    "coke": 1,
+    "chlorine": 30
+   },
+   "outputs": {
+    "titanium_tetrachloride": 30
+   },
+   "unlocked_by": "titanium_metallurgy"
+  },
+  {
+   "id": "turbine_blade",
+   "name": "Turbine Blade",
+   "category": "foundry",
+   "time": 8.0,
+   "inputs": {
+    "titanium_alloy": 1,
+    "ceramic_substrate": 1
+   },
+   "outputs": {
+    "turbine_blade": 2
+   },
+   "unlocked_by": "turbine_engineering"
+  },
+  {
+   "id": "yield_optimizer_3",
+   "name": "Yield Optimizer Mk III",
+   "category": "electronics",
+   "time": 20.0,
+   "inputs": {
+    "embedded_controller": 2,
+    "microchip": 6
+   },
+   "outputs": {
+    "yield_optimizer_3": 1
+   },
+   "unlocked_by": "module_engineering_3"
+  },
+  {
+   "id": "avionics_suite",
+   "name": "Avionics Suite",
+   "category": "precision_assembling",
+   "time": 15.0,
+   "inputs": {
+    "flight_computer": 1,
+    "gyroscope": 2,
+    "antenna_array": 1
+   },
+   "outputs": {
+    "avionics_suite": 1
+   },
+   "unlocked_by": "avionics"
+  },
+  {
+   "id": "ball_mill",
+   "name": "Ball Mill",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "steel_frame": 6,
+    "gearbox": 10,
+    "electric_motor": 6,
+    "tungsten_carbide": 10
+   },
+   "outputs": {
+    "ball_mill": 1
+   },
+   "unlocked_by": "ball_mills"
+  },
+  {
+   "id": "brushless_motor",
+   "name": "Brushless Motor",
+   "category": "precision_assembling",
+   "time": 8.0,
+   "inputs": {
+    "rare_earth_magnet": 2,
+    "insulated_cable": 2,
+    "bearing": 2,
+    "aluminum_sheet": 1
+   },
+   "outputs": {
+    "brushless_motor": 1
+   },
+   "unlocked_by": "rare_earth_magnets"
+  },
+  {
+   "id": "catalytic_scrubber",
+   "name": "Catalytic Scrubber",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "rare_earth_oxide": 20,
+    "steel_plate": 30,
+    "electric_motor": 4,
+    "embedded_controller": 1
+   },
+   "outputs": {
+    "catalytic_scrubber": 1
+   },
+   "unlocked_by": "catalytic_scrubbers"
+  },
+  {
+   "id": "centrifuge_cascade",
+   "name": "Centrifuge Cascade",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "electric_motor": 10,
+    "bearing": 20,
+    "composite_panel": 6,
+    "embedded_controller": 2,
+    "steel_frame": 2
+   },
+   "outputs": {
+    "centrifuge_cascade": 1
+   },
+   "unlocked_by": "isotope_centrifuges"
+  },
+  {
+   "id": "combined_cycle_turbine",
+   "name": "Combined-Cycle Turbine",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "turbine_blade": 40,
+    "steel_frame": 6,
+    "embedded_controller": 2,
+    "titanium_alloy": 8
+   },
+   "outputs": {
+    "combined_cycle_turbine": 1
+   },
+   "unlocked_by": "combined_cycle"
+  },
+  {
+   "id": "cooling_tower",
+   "name": "Cooling Tower",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "concrete": 150,
+    "steel_beam": 20,
+    "pump_unit": 4
+   },
+   "outputs": {
+    "cooling_tower": 1
+   },
+   "unlocked_by": "thorium_reactors"
+  },
+  {
+   "id": "cryo_liquefier",
+   "name": "Cryogenic Liquefier",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "pump_unit": 6,
+    "aluminum_sheet": 30,
+    "embedded_controller": 2,
+    "heat_sink": 10
+   },
+   "outputs": {
+    "cryo_liquefier": 1
+   },
+   "unlocked_by": "cryogenic_liquefaction"
+  },
+  {
+   "id": "cryogenic_tank",
+   "name": "Cryogenic Tank",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "aluminum_sheet": 60,
+    "composite_panel": 10,
+    "valve": 10,
+    "concrete": 40
+   },
+   "outputs": {
+    "cryogenic_tank": 1
+   },
+   "unlocked_by": "cryogenic_storage"
+  },
+  {
+   "id": "deep_core_drill",
+   "name": "Deep Core Drill",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "tungsten_carbide": 10,
+    "steel_frame": 6,
+    "electric_motor": 8,
+    "hydraulic_ram": 6,
+    "embedded_controller": 2
+   },
+   "outputs": {
+    "deep_core_drill": 1
+   },
+   "unlocked_by": "deep_core_drilling"
+  },
+  {
+   "id": "economizer_card_4",
+   "name": "Economizer Card Mk IV",
+   "category": "electronics",
+   "time": 25.0,
+   "inputs": {
+    "flight_computer": 1,
+    "embedded_controller": 1,
+    "rare_earth_magnet": 2
+   },
+   "outputs": {
+    "economizer_card_4": 1
+   },
+   "unlocked_by": "module_engineering_4"
+  },
+  {
+   "id": "emission_filter_4",
+   "name": "Emission Filter Mk IV",
+   "category": "electronics",
+   "time": 25.0,
+   "inputs": {
+    "flight_computer": 1,
+    "embedded_controller": 1,
+    "rare_earth_oxide": 4
+   },
+   "outputs": {
+    "emission_filter_4": 1
+   },
+   "unlocked_by": "module_engineering_4"
+  },
+  {
+   "id": "enzyme_culture",
+   "name": "Enzyme Culture",
+   "category": "bioprocessing",
+   "time": 10.0,
+   "inputs": {
+    "algae_paste": 3,
+    "ammonia": 10
+   },
+   "outputs": {
+    "enzyme_culture": 2
+   },
+   "unlocked_by": "fermentation"
+  },
+  {
+   "id": "fermentation_vat",
+   "name": "Fermentation Vat",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "titanium_plate": 10,
+    "glass_pane": 30,
+    "pump_unit": 4,
+    "embedded_controller": 1
+   },
+   "outputs": {
+    "fermentation_vat": 1
+   },
+   "unlocked_by": "fermentation"
+  },
+  {
+   "id": "flight_computer",
+   "name": "Flight Computer",
+   "category": "electronics",
+   "time": 12.0,
+   "inputs": {
+    "embedded_controller": 2,
+    "lithium_cell": 1,
+    "heat_sink": 2
+   },
+   "outputs": {
+    "flight_computer": 1
+   },
+   "unlocked_by": "avionics"
+  },
+  {
+   "id": "flight_telemetry",
+   "name": "Flight Telemetry",
+   "category": "precision_assembling",
+   "time": 20.0,
+   "inputs": {
+    "airframe_panel": 1,
+    "antenna_array": 1,
+    "rocket_kerosene": 30
+   },
+   "outputs": {
+    "flight_telemetry": 3
+   },
+   "unlocked_by": "flight_testing"
+  },
+  {
+   "id": "fractionation_tower",
+   "name": "Fractionation Tower",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "steel_frame": 10,
+    "valve": 30,
+    "titanium_plate": 20,
+    "embedded_controller": 2
+   },
+   "outputs": {
+    "fractionation_tower": 1
+   },
+   "unlocked_by": "fractionation"
+  },
+  {
+   "id": "fuel_reprocessing",
+   "name": "Fuel Reprocessing",
+   "category": "centrifuging",
+   "time": 40.0,
+   "inputs": {
+    "spent_fuel_rod": 2
+   },
+   "outputs": {
+    "fissile_seed": 2,
+    "thorium_oxide": 6,
+    "rare_earth_oxide": 1
+   },
+   "unlocked_by": "fuel_reprocessing"
+  },
+  {
+   "id": "geothermal_plant",
+   "name": "Geothermal Plant",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "turbine_blade": 30,
+    "tungsten_carbide": 10,
+    "steel_frame": 8,
+    "pump_unit": 6,
+    "concrete": 80
+   },
+   "outputs": {
+    "geothermal_plant": 1
+   },
+   "unlocked_by": "geothermal_power"
+  },
+  {
+   "id": "gyroscope",
+   "name": "Ring-Laser Gyroscope",
+   "category": "precision_assembling",
+   "time": 8.0,
+   "inputs": {
+    "optical_lens": 2,
+    "fiber_optic_cable": 2,
+    "microchip": 2
+   },
+   "outputs": {
+    "gyroscope": 1
+   },
+   "unlocked_by": "avionics"
+  },
+  {
+   "id": "heat_shield_tile",
+   "name": "Heat Shield Tile",
+   "category": "smelting_advanced",
+   "time": 6.0,
+   "inputs": {
+    "alumina": 2,
+    "glass_fiber": 2
+   },
+   "outputs": {
+    "heat_shield_tile": 2
+   },
+   "unlocked_by": "heat_shielding"
+  },
+  {
+   "id": "heavy_drone_port",
+   "name": "Heavy Drone Port",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "cargo_drone": 10,
+    "brushless_motor": 10,
+    "steel_frame": 6,
+    "embedded_controller": 4
+   },
+   "outputs": {
+    "heavy_drone_port": 1
+   },
+   "unlocked_by": "heavy_drones"
+  },
+  {
+   "id": "heavy_wind_turbine",
+   "name": "Heavy Wind Turbine",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "composite_panel": 20,
+    "rare_earth_magnet": 20,
+    "bearing": 12,
+    "steel_frame": 6
+   },
+   "outputs": {
+    "heavy_wind_turbine": 1
+   },
+   "unlocked_by": "heavy_wind_turbines"
+  },
+  {
+   "id": "howitzer_emplacement",
+   "name": "Howitzer Emplacement",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "steel_frame": 6,
+    "gearbox": 10,
+    "hydraulic_ram": 6,
+    "flight_computer": 1
+   },
+   "outputs": {
+    "howitzer_emplacement": 1
+   },
+   "unlocked_by": "guided_munitions"
+  },
+  {
+   "id": "launch_complex",
+   "name": "Launch Complex",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "concrete": 500,
+    "steel_frame": 40,
+    "heat_shield_tile": 40,
+    "embedded_controller": 10,
+    "pump_unit": 10
+   },
+   "outputs": {
+    "launch_complex": 1
+   },
+   "unlocked_by": "launch_complex"
+  },
+  {
+   "id": "liquid_hydrogen",
+   "name": "Liquid Hydrogen",
+   "category": "cryogenics",
+   "time": 3.0,
+   "inputs": {
+    "hydrogen": 50
+   },
+   "outputs": {
+    "liquid_hydrogen": 20
+   },
+   "unlocked_by": "cryogenic_liquefaction"
+  },
+  {
+   "id": "liquid_oxygen",
+   "name": "Liquid Oxygen",
+   "category": "cryogenics",
+   "time": 2.0,
+   "inputs": {
+    "oxygen": 40
+   },
+   "outputs": {
+    "liquid_oxygen": 20
+   },
+   "unlocked_by": "rocket_propellants"
+  },
+  {
+   "id": "lithium_charge_pack",
+   "name": "Lithium Charge Pack",
+   "category": "electronics",
+   "time": 8.0,
+   "inputs": {
+    "lithium_cell": 2,
+    "heat_sink": 1
+   },
+   "outputs": {
+    "lithium_charge_pack": 1
+   },
+   "unlocked_by": "lithium_charge_packs"
+  },
+  {
+   "id": "lithium_storage_array",
+   "name": "Lithium Storage Array",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "lithium_cell": 40,
+    "steel_frame": 4,
+    "embedded_controller": 2,
+    "heat_sink": 10
+   },
+   "outputs": {
+    "lithium_storage_array": 1
+   },
+   "unlocked_by": "grid_lithium_storage"
+  },
+  {
+   "id": "membrane_electrolyzer",
+   "name": "Membrane Electrolyzer",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "titanium_plate": 30,
+    "plastic_sheet": 20,
+    "embedded_controller": 2,
+    "copper_sheet": 40
+   },
+   "outputs": {
+    "membrane_electrolyzer": 1
+   },
+   "unlocked_by": "membrane_electrolysis"
+  },
+  {
+   "id": "mine_monazite_sand",
+   "name": "Dredge Monazite Sand",
+   "category": "mining",
+   "time": 4.0,
+   "inputs": {},
+   "outputs": {
+    "monazite_sand": 1
+   },
+   "unlocked_by": "monazite_processing",
+   "deposit": "monazite_sand"
+  },
+  {
+   "id": "mine_wolframite",
+   "name": "Mine Wolframite",
+   "category": "mining",
+   "time": 4.0,
+   "inputs": {},
+   "outputs": {
+    "wolframite": 1
+   },
+   "unlocked_by": "tungsten_metallurgy",
+   "deposit": "wolframite"
+  },
+  {
+   "id": "monazite_digestion",
+   "name": "Monazite Digestion",
+   "category": "chemistry",
+   "time": 8.0,
+   "inputs": {
+    "monazite_sand": 6,
+    "sulfuric_acid": 30
+   },
+   "outputs": {
+    "thorium_oxide": 1,
+    "rare_earth_oxide": 3
+   },
+   "unlocked_by": "monazite_processing"
+  },
+  {
+   "id": "nanofabricator",
+   "name": "Nanofabricator",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "composite_panel": 10,
+    "embedded_controller": 6,
+    "robotic_arm": 2,
+    "filter_cartridge": 20,
+    "titanium_alloy": 10
+   },
+   "outputs": {
+    "nanofabricator": 1
+   },
+   "unlocked_by": "superconductors"
+  },
+  {
+   "id": "offshore_rig",
+   "name": "Offshore Rig",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "steel_frame": 20,
+    "pump_unit": 8,
+    "tungsten_carbide": 6,
+    "embedded_controller": 4,
+    "concrete": 60
+   },
+   "outputs": {
+    "offshore_rig": 1
+   },
+   "unlocked_by": "offshore_drilling"
+  },
+  {
+   "id": "overclock_card_4",
+   "name": "Overclock Card Mk IV",
+   "category": "electronics",
+   "time": 25.0,
+   "inputs": {
+    "flight_computer": 1,
+    "embedded_controller": 1,
+    "brushless_motor": 1
+   },
+   "outputs": {
+    "overclock_card_4": 1
+   },
+   "unlocked_by": "module_engineering_4"
+  },
+  {
+   "id": "overclock_relay",
+   "name": "Overclock Relay",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "embedded_controller": 4,
+    "fiber_optic_cable": 20,
+    "heat_sink": 10,
+    "steel_frame": 2
+   },
+   "outputs": {
+    "overclock_relay": 1
+   },
+   "unlocked_by": "overclock_relays"
+  },
+  {
+   "id": "pyro_gel_cell",
+   "name": "Pyrophoric Gel Cell",
+   "category": "munitions",
+   "time": 8.0,
+   "inputs": {
+    "rocket_kerosene": 20,
+    "aluminum_powder": 2,
+    "titanium_plate": 1
+   },
+   "outputs": {
+    "pyro_gel_cell": 1
+   },
+   "unlocked_by": "pyrophorics"
+  },
+  {
+   "id": "radar_array",
+   "name": "Early-Warning Radar Array",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "antenna_array": 4,
+    "steel_frame": 4,
+    "embedded_controller": 2
+   },
+   "outputs": {
+    "radar_array": 1
+   },
+   "unlocked_by": "early_warning"
+  },
+  {
+   "id": "rare_earth_magnet",
+   "name": "Rare-Earth Magnet",
+   "category": "smelting_advanced",
+   "time": 8.0,
+   "inputs": {
+    "rare_earth_oxide": 2,
+    "iron_ingot": 2
+   },
+   "outputs": {
+    "rare_earth_magnet": 2
+   },
+   "unlocked_by": "rare_earth_magnets"
+  },
+  {
+   "id": "rocket_engine",
+   "name": "Rocket Engine",
+   "category": "precision_assembling",
+   "time": 20.0,
+   "inputs": {
+    "thrust_nozzle": 1,
+    "turbopump": 2,
+    "valve": 4,
+    "liquid_oxygen": 50
+   },
+   "outputs": {
+    "rocket_engine": 1
+   },
+   "unlocked_by": "rocket_engines"
+  },
+  {
+   "id": "rocket_kerosene",
+   "name": "Rocket Kerosene",
+   "category": "refining",
+   "time": 4.0,
+   "inputs": {
+    "naphtha": 40,
+    "hydrogen": 10
+   },
+   "outputs": {
+    "rocket_kerosene": 30
+   },
+   "unlocked_by": "rocket_propellants"
+  },
+  {
+   "id": "seed_enrichment",
+   "name": "Seed Enrichment",
+   "category": "centrifuging",
+   "time": 30.0,
+   "inputs": {
+    "thorium_oxide": 20
+   },
+   "outputs": {
+    "fissile_seed": 1,
+    "thorium_oxide": 17
+   },
+   "unlocked_by": "isotope_centrifuges"
+  },
+  {
+   "id": "shield_projector",
+   "name": "Shield Projector",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "rare_earth_magnet": 20,
+    "lithium_cell": 20,
+    "embedded_controller": 4,
+    "steel_frame": 4
+   },
+   "outputs": {
+    "shield_projector": 1
+   },
+   "unlocked_by": "shield_projectors"
+  },
+  {
+   "id": "smart_shell",
+   "name": "Guided Shell",
+   "category": "munitions",
+   "time": 10.0,
+   "inputs": {
+    "he_shell": 1,
+    "embedded_controller": 1,
+    "gyroscope": 1
+   },
+   "outputs": {
+    "smart_shell": 1
+   },
+   "unlocked_by": "guided_munitions"
+  },
+  {
+   "id": "superheat_steam",
+   "name": "Steam Superheating",
+   "category": "boiling",
+   "time": 1.0,
+   "inputs": {
+    "steam": 40
+   },
+   "outputs": {
+    "superheated_steam": 40
+   },
+   "unlocked_by": "steam_turbines"
+  },
+  {
+   "id": "survey_probe",
+   "name": "Survey Probe",
+   "category": "precision_assembling",
+   "time": 30.0,
+   "inputs": {
+    "avionics_suite": 1,
+    "rocket_engine": 1,
+    "airframe_panel": 2,
+    "lithium_cell": 4
+   },
+   "outputs": {
+    "survey_probe": 1
+   },
+   "unlocked_by": "launch_complex"
+  },
+  {
+   "id": "thermal_lance",
+   "name": "Thermal Lance Tower",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "titanium_plate": 10,
+    "pump_unit": 4,
+    "optical_lens": 4,
+    "embedded_controller": 1
+   },
+   "outputs": {
+    "thermal_lance": 1
+   },
+   "unlocked_by": "pyrophorics"
+  },
+  {
+   "id": "thorium_breeding",
+   "name": "Thorium Breeding Cycle",
+   "category": "fission",
+   "time": 25.0,
+   "inputs": {
+    "thorium_fuel_rod": 1,
+    "thorium_oxide": 10,
+    "water": 3000
+   },
+   "outputs": {
+    "superheated_steam": 3000,
+    "spent_fuel_rod": 1,
+    "fissile_seed": 1
+   },
+   "unlocked_by": "breeder_reactors"
+  },
+  {
+   "id": "thorium_fission",
+   "name": "Thorium Fission",
+   "category": "fission",
+   "time": 25.0,
+   "inputs": {
+    "thorium_fuel_rod": 1,
+    "water": 4000
+   },
+   "outputs": {
+    "superheated_steam": 4000,
+    "spent_fuel_rod": 1
+   },
+   "unlocked_by": "thorium_reactors"
+  },
+  {
+   "id": "thorium_fuel_rod",
+   "name": "Thorium Fuel Rod",
+   "category": "precision_assembling",
+   "time": 12.0,
+   "inputs": {
+    "thorium_oxide": 6,
+    "fissile_seed": 1,
+    "titanium_plate": 2
+   },
+   "outputs": {
+    "thorium_fuel_rod": 1
+   },
+   "unlocked_by": "thorium_fuel"
+  },
+  {
+   "id": "thorium_reactor",
+   "name": "Thorium Reactor",
+   "category": "assembling",
+   "time": 20.0,
+   "inputs": {
+    "concrete": 200,
+    "steel_frame": 10,
+    "titanium_plate": 30,
+    "embedded_controller": 4,
+    "pump_unit": 6
+   },
+   "outputs": {
+    "thorium_reactor": 1
+   },
+   "unlocked_by": "thorium_reactors"
+  },
+  {
+   "id": "thrust_nozzle",
+   "name": "Thrust Nozzle",
+   "category": "precision_assembling",
+   "time": 12.0,
+   "inputs": {
+    "tungsten_carbide": 2,
+    "titanium_alloy": 2
+   },
+   "outputs": {
+    "thrust_nozzle": 1
+   },
+   "unlocked_by": "rocket_engines"
+  },
+  {
+   "id": "tungsten_carbide",
+   "name": "Tungsten Carbide",
+   "category": "smelting_advanced",
+   "time": 8.0,
+   "inputs": {
+    "tungsten_ingot": 1,
+    "coke": 1
+   },
+   "outputs": {
+    "tungsten_carbide": 2
+   },
+   "unlocked_by": "tungsten_metallurgy"
+  },
+  {
+   "id": "tungsten_ingot",
+   "name": "Tungsten Ingot",
+   "category": "smelting_advanced",
+   "time": 10.0,
+   "inputs": {
+    "wolframite": 4,
+    "hydrogen": 20
+   },
+   "outputs": {
+    "tungsten_ingot": 1
+   },
+   "unlocked_by": "tungsten_metallurgy"
+  },
+  {
+   "id": "tungsten_rounds",
+   "name": "Tungsten Penetrators",
+   "category": "munitions",
+   "time": 6.0,
+   "inputs": {
+    "tungsten_carbide": 1,
+    "steel_plate": 1,
+    "copper_sheet": 1
+   },
+   "outputs": {
+    "tungsten_rounds": 2
+   },
+   "unlocked_by": "tungsten_penetrators"
+  },
+  {
+   "id": "turbopump",
+   "name": "Turbopump",
+   "category": "precision_assembling",
+   "time": 10.0,
+   "inputs": {
+    "brushless_motor": 1,
+    "turbine_blade": 2,
+    "bearing": 4,
+    "valve": 2
+   },
+   "outputs": {
+    "turbopump": 1
+   },
+   "unlocked_by": "rocket_engines"
+  },
+  {
+   "id": "yield_optimizer_4",
+   "name": "Yield Optimizer Mk IV",
+   "category": "electronics",
+   "time": 25.0,
+   "inputs": {
+    "flight_computer": 1,
+    "embedded_controller": 1,
+    "gyroscope": 1
+   },
+   "outputs": {
+    "yield_optimizer_4": 1
+   },
+   "unlocked_by": "module_engineering_4"
+  },
+  {
+   "id": "aegis_field_array",
+   "name": "Aegis Field Array",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "plasma_coil": 4,
+    "superconductor_tape": 20,
+    "quantum_processor": 1,
+    "lithium_cell": 40
+   },
+   "outputs": {
+    "aegis_field_array": 1
+   },
+   "unlocked_by": "aegis_fields"
+  },
+  {
+   "id": "autonomous_fabricator",
+   "name": "Autonomous Fabricator",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "robotic_arm": 6,
+    "quantum_processor": 1,
+    "steel_frame": 6
+   },
+   "outputs": {
+    "autonomous_fabricator": 1
+   },
+   "unlocked_by": "autonomous_fabrication"
+  },
+  {
+   "id": "biosorption",
+   "name": "Rare-Earth Biosorption",
+   "category": "bioprocessing",
+   "time": 10.0,
+   "inputs": {
+    "rare_earth_ore": 5,
+    "enzyme_culture": 1
+   },
+   "outputs": {
+    "rare_earth_oxide": 4,
+    "yttrium_oxide": 2
+   },
+   "unlocked_by": "biosorption"
+  },
+  {
+   "id": "breeder_reactor",
+   "name": "Breeder Reactor",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "thorium_reactor": 1,
+    "tungsten_carbide": 20,
+    "titanium_alloy": 20,
+    "embedded_controller": 6
+   },
+   "outputs": {
+    "breeder_reactor": 1
+   },
+   "unlocked_by": "breeder_reactors"
+  },
+  {
+   "id": "carbon_capture_tower",
+   "name": "Carbon Capture Tower",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "carbon_nanotube": 20,
+    "steel_frame": 10,
+    "pump_unit": 6,
+    "filter_cartridge": 20
+   },
+   "outputs": {
+    "carbon_capture_tower": 1
+   },
+   "unlocked_by": "carbon_capture"
+  },
+  {
+   "id": "carbon_nanotube",
+   "name": "Carbon Nanotube Yarn",
+   "category": "nanofab",
+   "time": 8.0,
+   "inputs": {
+    "fuel_gas": 30,
+    "iron_plate": 1
+   },
+   "outputs": {
+    "carbon_nanotube": 3
+   },
+   "unlocked_by": "carbon_nanotubes"
+  },
+  {
+   "id": "coil_accelerator_segment",
+   "name": "Coil Accelerator Segment",
+   "category": "precision_assembling",
+   "time": 30.0,
+   "inputs": {
+    "superconductor_tape": 8,
+    "steel_frame": 4,
+    "lithium_cell": 6,
+    "concrete": 10
+   },
+   "outputs": {
+    "coil_accelerator_segment": 1
+   },
+   "unlocked_by": "mass_driver_engineering"
+  },
+  {
+   "id": "cryocooler",
+   "name": "Cryocooler",
+   "category": "precision_assembling",
+   "time": 12.0,
+   "inputs": {
+    "liquid_helium": 20,
+    "brushless_motor": 1,
+    "heat_sink": 2
+   },
+   "outputs": {
+    "cryocooler": 1
+   },
+   "unlocked_by": "cryocoolers"
+  },
+  {
+   "id": "dilution_refrigerator",
+   "name": "Dilution Refrigerator",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "cryocooler": 4,
+    "titanium_alloy": 10,
+    "superconductor_tape": 4
+   },
+   "outputs": {
+    "dilution_refrigerator": 1
+   },
+   "unlocked_by": "dilution_refrigeration"
+  },
+  {
+   "id": "drill_helium_gas",
+   "name": "Tap Helium Gas",
+   "category": "oil_extraction",
+   "time": 2.0,
+   "inputs": {},
+   "outputs": {
+    "helium_gas": 5
+   },
+   "unlocked_by": "helium_recovery",
+   "deposit": "helium_gas"
+  },
+  {
+   "id": "dt_fusion",
+   "name": "Deuterium-Lithium Fusion",
+   "category": "fusion",
+   "time": 25.0,
+   "inputs": {
+    "fusion_pellet": 1,
+    "water": 15000
+   },
+   "outputs": {
+    "superheated_steam": 15000,
+    "helium_gas": 20
+   },
+   "unlocked_by": "fusion_power"
+  },
+  {
+   "id": "economizer_card_5",
+   "name": "Economizer Card Mk V",
+   "category": "electronics",
+   "time": 30.0,
+   "inputs": {
+    "quantum_processor": 1,
+    "graphene": 2
+   },
+   "outputs": {
+    "economizer_card_5": 1
+   },
+   "unlocked_by": "module_engineering_5"
+  },
+  {
+   "id": "emission_filter_5",
+   "name": "Emission Filter Mk V",
+   "category": "electronics",
+   "time": 30.0,
+   "inputs": {
+    "quantum_processor": 1,
+    "carbon_nanotube": 2
+   },
+   "outputs": {
+    "emission_filter_5": 1
+   },
+   "unlocked_by": "module_engineering_5"
+  },
+  {
+   "id": "flow_reactor",
+   "name": "Continuous-Flow Reactor",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "titanium_alloy": 20,
+    "pump_unit": 6,
+    "embedded_controller": 4,
+    "graphene": 4
+   },
+   "outputs": {
+    "flow_reactor": 1
+   },
+   "unlocked_by": "flow_chemistry"
+  },
+  {
+   "id": "fusion_pellet",
+   "name": "Fusion Fuel Pellet",
+   "category": "precision_assembling",
+   "time": 10.0,
+   "inputs": {
+    "deuterium": 40,
+    "lithium_carbonate": 2,
+    "graphene": 1
+   },
+   "outputs": {
+    "fusion_pellet": 4
+   },
+   "unlocked_by": "fusion_fuel"
+  },
+  {
+   "id": "graphene",
+   "name": "Graphene Film",
+   "category": "nanofab",
+   "time": 6.0,
+   "inputs": {
+    "fuel_gas": 40,
+    "copper_sheet": 1
+   },
+   "outputs": {
+    "graphene": 2
+   },
+   "unlocked_by": "graphene_synthesis"
+  },
+  {
+   "id": "hypervelocity_slug",
+   "name": "Hypervelocity Slug",
+   "category": "munitions",
+   "time": 8.0,
+   "inputs": {
+    "tungsten_carbide": 2,
+    "carbon_nanotube": 1
+   },
+   "outputs": {
+    "hypervelocity_slug": 3
+   },
+   "unlocked_by": "interceptor_drones"
+  },
+  {
+   "id": "interceptor_drone_nest",
+   "name": "Interceptor Drone Nest",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "cargo_drone": 8,
+    "brushless_motor": 8,
+    "flight_computer": 2,
+    "steel_frame": 4
+   },
+   "outputs": {
+    "interceptor_drone_nest": 1
+   },
+   "unlocked_by": "interceptor_drones"
+  },
+  {
+   "id": "isotope_separator",
+   "name": "Isotope Separator",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "centrifuge_cascade": 2,
+    "superconductor_tape": 10,
+    "embedded_controller": 4
+   },
+   "outputs": {
+    "isotope_separator": 1
+   },
+   "unlocked_by": "isotope_separators"
+  },
+  {
+   "id": "isotopic_electrolysis",
+   "name": "Isotopic Water Electrolysis",
+   "category": "electrolysis",
+   "time": 10.0,
+   "inputs": {
+    "water": 600
+   },
+   "outputs": {
+    "hydrogen": 400,
+    "oxygen": 180,
+    "deuterium": 6
+   },
+   "unlocked_by": "deuterium_separation"
+  },
+  {
+   "id": "liquid_helium",
+   "name": "Liquid Helium",
+   "category": "cryogenics",
+   "time": 4.0,
+   "inputs": {
+    "helium_gas": 40
+   },
+   "outputs": {
+    "liquid_helium": 10
+   },
+   "unlocked_by": "helium_recovery"
+  },
+  {
+   "id": "maglev_terminal",
+   "name": "Maglev Freight Terminal",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "superconductor_tape": 40,
+    "rare_earth_magnet": 40,
+    "concrete": 200,
+    "embedded_controller": 6
+   },
+   "outputs": {
+    "maglev_terminal": 1
+   },
+   "unlocked_by": "maglev_freight"
+  },
+  {
+   "id": "metamaterial_lattice",
+   "name": "Metamaterial Lattice",
+   "category": "nanofab",
+   "time": 20.0,
+   "inputs": {
+    "graphene": 2,
+    "titanium_alloy": 1,
+    "carbon_nanotube": 3
+   },
+   "outputs": {
+    "metamaterial_lattice": 1
+   },
+   "unlocked_by": "metamaterials"
+  },
+  {
+   "id": "micro_precision_cell",
+   "name": "Micro-Precision Cell",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "robotic_arm": 4,
+    "optical_lens": 10,
+    "embedded_controller": 4,
+    "superconductor_tape": 4
+   },
+   "outputs": {
+    "micro_precision_cell": 1
+   },
+   "unlocked_by": "micro_precision"
+  },
+  {
+   "id": "mine_rare_earth_ore",
+   "name": "Mine Rare-Earth Ore",
+   "category": "mining",
+   "time": 5.0,
+   "inputs": {},
+   "outputs": {
+    "rare_earth_ore": 1
+   },
+   "unlocked_by": "rare_earth_separation",
+   "deposit": "rare_earth_ore"
+  },
+  {
+   "id": "molecular_assembler",
+   "name": "Molecular Assembler",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "nanofabricator": 1,
+    "metamaterial_lattice": 4,
+    "quantum_processor": 1
+   },
+   "outputs": {
+    "molecular_assembler": 1
+   },
+   "unlocked_by": "molecular_assembly"
+  },
+  {
+   "id": "nano_coating",
+   "name": "Nano-Ceramic Coating",
+   "category": "nanofab",
+   "time": 10.0,
+   "inputs": {
+    "alumina": 2,
+    "carbon_nanotube": 1,
+    "epoxy_resin": 1
+   },
+   "outputs": {
+    "nano_coating": 2
+   },
+   "unlocked_by": "nano_coatings"
+  },
+  {
+   "id": "nutrient_paste",
+   "name": "Nutrient Paste",
+   "category": "bioprocessing",
+   "time": 10.0,
+   "inputs": {
+    "algae_paste": 4,
+    "enzyme_culture": 1,
+    "water": 40
+   },
+   "outputs": {
+    "nutrient_paste": 3
+   },
+   "unlocked_by": "nutrient_synthesis"
+  },
+  {
+   "id": "orbital_gantry",
+   "name": "Orbital Assembly Gantry",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "steel_frame": 60,
+    "robotic_arm": 12,
+    "quantum_processor": 2,
+    "concrete": 400
+   },
+   "outputs": {
+    "orbital_gantry": 1
+   },
+   "unlocked_by": "orbital_assembly"
+  },
+  {
+   "id": "overclock_card_5",
+   "name": "Overclock Card Mk V",
+   "category": "electronics",
+   "time": 30.0,
+   "inputs": {
+    "quantum_processor": 1,
+    "superconductor_tape": 2
+   },
+   "outputs": {
+    "overclock_card_5": 1
+   },
+   "unlocked_by": "module_engineering_5"
+  },
+  {
+   "id": "plasma_arc_furnace",
+   "name": "Plasma Arc Furnace",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "superconductor_tape": 10,
+    "tungsten_carbide": 10,
+    "steel_frame": 6,
+    "embedded_controller": 4
+   },
+   "outputs": {
+    "plasma_arc_furnace": 1
+   },
+   "unlocked_by": "plasma_furnaces"
+  },
+  {
+   "id": "plasma_bore",
+   "name": "Plasma Bore",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "deep_core_drill": 1,
+    "plasma_coil": 2,
+    "tungsten_carbide": 20,
+    "embedded_controller": 4
+   },
+   "outputs": {
+    "plasma_bore": 1
+   },
+   "unlocked_by": "plasma_boring"
+  },
+  {
+   "id": "plasma_coil",
+   "name": "Plasma Containment Coil",
+   "category": "precision_assembling",
+   "time": 20.0,
+   "inputs": {
+    "superconductor_tape": 6,
+    "rare_earth_magnet": 2,
+    "liquid_helium": 20,
+    "steel_frame": 1
+   },
+   "outputs": {
+    "plasma_coil": 1
+   },
+   "unlocked_by": "plasma_confinement"
+  },
+  {
+   "id": "quantum_datacore",
+   "name": "Quantum Datacores",
+   "category": "precision_assembling",
+   "time": 25.0,
+   "inputs": {
+    "qubit_array": 1,
+    "cryocooler": 1,
+    "fiber_optic_cable": 4
+   },
+   "outputs": {
+    "quantum_datacore": 2
+   },
+   "unlocked_by": "quantum_datacores"
+  },
+  {
+   "id": "quantum_processor",
+   "name": "Quantum Processor",
+   "category": "nanofab",
+   "time": 25.0,
+   "inputs": {
+    "qubit_array": 2,
+    "cryocooler": 1,
+    "embedded_controller": 2
+   },
+   "outputs": {
+    "quantum_processor": 1
+   },
+   "unlocked_by": "quantum_computing"
+  },
+  {
+   "id": "quantum_research_center",
+   "name": "Quantum Research Center",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "quantum_processor": 2,
+    "cryocooler": 4,
+    "steel_frame": 6,
+    "fiber_optic_cable": 40
+   },
+   "outputs": {
+    "quantum_research_center": 1
+   },
+   "unlocked_by": "quantum_research"
+  },
+  {
+   "id": "quantum_sync_relay",
+   "name": "Quantum Sync Relay",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "quantum_processor": 1,
+    "fiber_optic_cable": 30,
+    "superconductor_tape": 6
+   },
+   "outputs": {
+    "quantum_sync_relay": 1
+   },
+   "unlocked_by": "quantum_sync"
+  },
+  {
+   "id": "qubit_array",
+   "name": "Qubit Array",
+   "category": "nanofab",
+   "time": 15.0,
+   "inputs": {
+    "silicon_wafer": 2,
+    "superconductor_tape": 2,
+    "microchip": 4
+   },
+   "outputs": {
+    "qubit_array": 1
+   },
+   "unlocked_by": "qubit_fabrication"
+  },
+  {
+   "id": "railgun_battery",
+   "name": "Railgun Battery",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "superconductor_tape": 20,
+    "graphene": 6,
+    "steel_frame": 8,
+    "embedded_controller": 4
+   },
+   "outputs": {
+    "railgun_battery": 1
+   },
+   "unlocked_by": "railguns"
+  },
+  {
+   "id": "smes_ring",
+   "name": "Superconducting Storage Ring",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "superconductor_tape": 60,
+    "cryocooler": 4,
+    "concrete": 100,
+    "steel_frame": 6
+   },
+   "outputs": {
+    "smes_ring": 1
+   },
+   "unlocked_by": "smes"
+  },
+  {
+   "id": "solvent_extraction",
+   "name": "Rare-Earth Solvent Extraction",
+   "category": "chemistry",
+   "time": 8.0,
+   "inputs": {
+    "rare_earth_ore": 5,
+    "hydrochloric_acid": 30
+   },
+   "outputs": {
+    "rare_earth_oxide": 3,
+    "yttrium_oxide": 1
+   },
+   "unlocked_by": "rare_earth_separation"
+  },
+  {
+   "id": "supercap_cell",
+   "name": "Graphene Supercapacitor",
+   "category": "electronics",
+   "time": 10.0,
+   "inputs": {
+    "graphene": 2,
+    "lithium_cell": 1,
+    "superconductor_tape": 1
+   },
+   "outputs": {
+    "supercap_cell": 1
+   },
+   "unlocked_by": "supercapacitors"
+  },
+  {
+   "id": "superconductor_tape",
+   "name": "Superconductor Tape",
+   "category": "nanofab",
+   "time": 10.0,
+   "inputs": {
+    "yttrium_oxide": 1,
+    "copper_sheet": 4,
+    "titanium_plate": 1,
+    "oxygen": 20
+   },
+   "outputs": {
+    "superconductor_tape": 3
+   },
+   "unlocked_by": "superconductors"
+  },
+  {
+   "id": "tokamak",
+   "name": "Tokamak Fusion Reactor",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "plasma_coil": 12,
+    "cryocooler": 6,
+    "titanium_alloy": 40,
+    "quantum_processor": 1,
+    "concrete": 300
+   },
+   "outputs": {
+    "tokamak": 1
+   },
+   "unlocked_by": "fusion_power"
+  },
+  {
+   "id": "vacuum_foundry",
+   "name": "Vacuum Foundry",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "titanium_alloy": 20,
+    "pump_unit": 8,
+    "embedded_controller": 4,
+    "superconductor_tape": 4
+   },
+   "outputs": {
+    "vacuum_foundry": 1
+   },
+   "unlocked_by": "vacuum_casting"
+  },
+  {
+   "id": "vault_complex",
+   "name": "Vault Complex",
+   "category": "assembling",
+   "time": 30.0,
+   "inputs": {
+    "concrete": 400,
+    "steel_beam": 80,
+    "robotic_arm": 6,
+    "nano_coating": 10
+   },
+   "outputs": {
+    "vault_complex": 1
+   },
+   "unlocked_by": "vault_complexes"
+  },
+  {
+   "id": "yield_optimizer_5",
+   "name": "Yield Optimizer Mk V",
+   "category": "electronics",
+   "time": 30.0,
+   "inputs": {
+    "quantum_processor": 1,
+    "metamaterial_lattice": 1
+   },
+   "outputs": {
+    "yield_optimizer_5": 1
+   },
+   "unlocked_by": "module_engineering_5"
+  },
+  {
+   "id": "ark_drive_nacelle",
+   "name": "Plasma Drive Nacelle",
+   "category": "orbital",
+   "time": 60.0,
+   "inputs": {
+    "plasma_coil": 4,
+    "rocket_engine": 2,
+    "tungsten_carbide": 10,
+    "superconductor_tape": 6
+   },
+   "outputs": {
+    "ark_drive_nacelle": 1
+   },
+   "unlocked_by": "ark_propulsion"
+  },
+  {
+   "id": "ark_fusion_core",
+   "name": "Ark Fusion Core",
+   "category": "orbital",
+   "time": 90.0,
+   "inputs": {
+    "plasma_coil": 8,
+    "fusion_pellet": 40,
+    "quantum_processor": 2,
+    "cryocooler": 4
+   },
+   "outputs": {
+    "ark_fusion_core": 1
+   },
+   "unlocked_by": "ark_fusion_core"
+  },
+  {
+   "id": "ark_habitat_module",
+   "name": "Habitat Ring Module",
+   "category": "orbital",
+   "time": 60.0,
+   "inputs": {
+    "composite_panel": 20,
+    "glass_pane": 40,
+    "lithium_cell": 20,
+    "nano_coating": 4
+   },
+   "outputs": {
+    "ark_habitat_module": 1
+   },
+   "unlocked_by": "ark_habitation"
+  },
+  {
+   "id": "ark_hull_segment",
+   "name": "Ark Hull Segment",
+   "category": "orbital",
+   "time": 45.0,
+   "inputs": {
+    "metamaterial_lattice": 4,
+    "titanium_alloy": 20,
+    "composite_panel": 10,
+    "nano_coating": 6
+   },
+   "outputs": {
+    "ark_hull_segment": 1
+   },
+   "unlocked_by": "ark_structures"
+  },
+  {
+   "id": "ark_life_support",
+   "name": "Closed-Loop Life Support",
+   "category": "orbital",
+   "time": 60.0,
+   "inputs": {
+    "nutrient_paste": 40,
+    "algae_paste": 40,
+    "filter_cartridge": 20,
+    "pump_unit": 6
+   },
+   "outputs": {
+    "ark_life_support": 1
+   },
+   "unlocked_by": "ark_life_support"
+  },
+  {
+   "id": "ark_navigation_core",
+   "name": "Deep-Space Navigation Core",
+   "category": "orbital",
+   "time": 90.0,
+   "inputs": {
+    "quantum_processor": 4,
+    "avionics_suite": 4,
+    "gyroscope": 8
+   },
+   "outputs": {
+    "ark_navigation_core": 1
+   },
+   "unlocked_by": "ark_navigation"
+  },
+  {
+   "id": "cryostasis_pod",
+   "name": "Cryostasis Pod",
+   "category": "orbital",
+   "time": 30.0,
+   "inputs": {
+    "cryocooler": 2,
+    "composite_panel": 4,
+    "flight_computer": 1,
+    "glass_pane": 4
+   },
+   "outputs": {
+    "cryostasis_pod": 1
+   },
+   "unlocked_by": "ark_habitation"
+  },
+  {
+   "id": "heavy_launch_vehicle",
+   "name": "Heavy Launch Vehicle",
+   "category": "orbital",
+   "time": 60.0,
+   "inputs": {
+    "rocket_engine": 9,
+    "airframe_panel": 20,
+    "avionics_suite": 2,
+    "heat_shield_tile": 20,
+    "rocket_kerosene": 2000,
+    "liquid_hydrogen": 1000
+   },
+   "outputs": {
+    "heavy_launch_vehicle": 1
+   },
+   "unlocked_by": "orbital_assembly"
+  },
+  {
+   "id": "heavy_orbital_gantry",
+   "name": "Heavy Orbital Gantry",
+   "category": "assembling",
+   "time": 45.0,
+   "inputs": {
+    "orbital_gantry": 1,
+    "metamaterial_lattice": 10,
+    "quantum_processor": 4,
+    "robotic_arm": 12
+   },
+   "outputs": {
+    "heavy_orbital_gantry": 1
+   },
+   "unlocked_by": "zero_g_assembly"
+  },
+  {
+   "id": "seed_vault",
+   "name": "Seed Vault Capsule",
+   "category": "bioprocessing",
+   "time": 60.0,
+   "inputs": {
+    "enzyme_culture": 10,
+    "nutrient_paste": 10,
+    "cryocooler": 2,
+    "titanium_plate": 10
+   },
+   "outputs": {
+    "seed_vault": 1
+   },
+   "unlocked_by": "ark_life_support"
+  }
+ ]
+}

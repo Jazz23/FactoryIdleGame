@@ -228,6 +228,7 @@ static func status_text(status: String, item := "") -> String:
 		"no_power": return "Low power"
 		"no_fuel": return "No fuel"
 		"no_slots": return "No deposit slots"
+		"logistics": return "Logistics bottleneck"
 		"disabled": return "Paused"
 		"idle": return "Idle"
 	return status.capitalize()
@@ -237,5 +238,5 @@ static func status_color(status: String) -> Color:
 	match status:
 		"working": return GOOD
 		"no_input", "no_fuel": return WARN
-		"output_full", "no_power", "no_slots": return BAD
+		"output_full", "no_power", "no_slots", "logistics": return BAD
 	return DIM

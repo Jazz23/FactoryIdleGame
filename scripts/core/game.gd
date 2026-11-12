@@ -70,6 +70,11 @@ var _caps_dirty := true
 var _caps: Dictionary = {}
 var _storage_add := {"solid": 0.0, "fluid": 0.0}
 var _wind := 0.7
+const SUPPORT_COVER := 8.0
+var support: Dictionary = {"speed": 0.0, "energy": 0.0, "power": 0.0}
+var throughput: Dictionary = {"solid_cap": 6.0, "fluid_cap": 400.0, "solid_flow": 0.0, "fluid_flow": 0.0, "solid_sat": 1.0, "fluid_sat": 1.0}
+var _flow_solid := 0.0
+var _flow_fluid := 0.0
 var started := false
 var simulating_offline := false
 
@@ -104,6 +109,14 @@ func _notification(what: int) -> void:
 			save_game()
 
 
+func setting(key: String, default: float) -> float:
+	return float(Content.world.get("settings", {}).get(key, default))
+
+
+func day_length() -> float:
+	return setting("day_length_s", DAY_LENGTH)
+
+
 # ================================================================== setup
 func new_game(keep_legacy := false) -> void:
 	var leg := legacy
@@ -128,7 +141,8 @@ func new_game(keep_legacy := false) -> void:
 	stats_produced = {}
 	stats_consumed = {}
 	play_time = 0.0
-	game_time = DAY_LENGTH * 0.3
+	game_time = day_length() * 0.3
+	last_save_unix = Time.get_unix_time_from_system()
 	if keep_legacy:
 		legacy = leg
 		prestige_count = pc
@@ -152,12 +166,20 @@ func new_game(keep_legacy := false) -> void:
 		sectors_claimed[Content.sectors[0].id] = true
 	_caps_dirty = true
 	recompute_bonuses()
-	for bid in st.get("buildings", {}):
-		var n := int(st.buildings[bid])
-		var rid := default_recipe_for(bid)
-		var l := add_line(bid, rid, false)
-		if l:
-			l.count = n
+	if st.has("lines"):
+		for ld in st.lines:
+			var bid: String = ld.get("building", "")
+			var rid: String = ld.get("recipe", "")
+			var l: ProdLine = add_line(bid, rid, false)
+			if l:
+				l.count += int(ld.get("count", 1))
+	else:
+		for bid in st.get("buildings", {}):
+			var n := int(st.buildings[bid])
+			var rid := default_recipe_for(bid)
+			var l := add_line(bid, rid, false)
+			if l:
+				l.count = n
 	for bid in st.get("buildings_in_storage", {}):
 		inv[bid] = float(st.buildings_in_storage[bid])
 	_fill_contracts()
@@ -248,7 +270,7 @@ func _free_bay() -> Vector2i:
 
 
 func buy_price(item: String) -> float:
-	return Content.item_value(item) * MARKET_BUY_MULT / market_mult()
+	return Content.item_value(item) * setting("market_buy_mult", MARKET_BUY_MULT) / market_mult()
 
 
 func can_buy(item: String) -> bool:
@@ -349,7 +371,7 @@ func cap(item: String) -> float:
 	if _caps.has(item):
 		return _caps[item]
 	var fluid := Content.is_fluid(item)
-	var base := BASE_FLUID_CAP if fluid else BASE_SOLID_CAP
+	var base := setting("base_cap_fluid", BASE_FLUID_CAP) if fluid else setting("base_cap_solid", BASE_SOLID_CAP)
 	var add: float = _storage_add["fluid" if fluid else "solid"]
 	var c := (base + add) * (1.0 + float(bonuses.get("storage_capacity", 0.0)))
 	# buildings and research items get generous caps so they never block
@@ -418,20 +440,28 @@ func _count_cons(item: String, n: float) -> void:
 # ================================================================== bonuses
 func recompute_bonuses() -> void:
 	var b := {"craft_speed": {}, "mining_productivity": 0.0, "lab_speed": 0.0, "lab_productivity": 0.0,
-		"power_output": {}, "storage_capacity": 0.0, "market_price": 0.0, "defense": 0.0,
-		"pollution_reduction": 0.0, "offline_efficiency": 0.0, "module_slots": 0, "extraction_slots": 0.0,
+		"power_output": {}, "storage_capacity": 0.0, "market_price": 0.0, "defense": {},
+		"pollution_reduction": 0.0, "offline_efficiency": 0.0, "module_slots": 0, "extraction_slots": {},
 		"global_speed": legacy * 0.02}
 	var tier := 0
+	var sources: Array = []
 	for tid in researched:
 		var t: Dictionary = Content.techs.get(tid, {})
-		var lvl := int(researched[tid])
 		tier = maxi(tier, int(t.get("tier", 0)))
-		for e in t.get("effects", []):
+		sources.append([t.get("effects", []), int(researched[tid])])
+	for m in Content.megaprojects:
+		if megas_completed.has(m.id):
+			var rw = m.get("reward", {})
+			if rw is Dictionary:
+				sources.append([rw.get("effects", []), 1])
+	for src in sources:
+		var lvl: int = src[1]
+		for e in src[0]:
 			var v := float(e.get("value", 0.0)) * lvl
 			var typ: String = e.get("type", "")
 			var target = e.get("target")
 			match typ:
-				"craft_speed", "power_output":
+				"craft_speed", "power_output", "defense", "extraction_slots":
 					var key: String = str(target) if target != null else "*"
 					b[typ][key] = b[typ].get(key, 0.0) + v
 				"module_slots":
@@ -456,14 +486,16 @@ func market_mult() -> float:
 # ================================================================== deposits / sectors
 func deposit_slots(dep: String) -> int:
 	var total := 0.0
-	var first := true
+	var kind: String = Content.deposits.get(dep, {}).get("kind", "solid")
+	var es: Dictionary = bonuses.get("extraction_slots", {})
+	var extra := float(es.get(kind, 0.0)) + float(es.get("*", 0.0))
 	for s in Content.sectors:
 		if not sectors_claimed.has(s.id):
 			continue
 		var n := float(s.get("deposits", {}).get(dep, 0))
 		if n <= 0:
 			continue
-		n += float(bonuses.get("extraction_slots", 0.0))
+		n += extra
 		if not _is_start_sector(s.id):
 			n *= (1.0 - siege)
 		total += n
@@ -533,7 +565,7 @@ func tech_units(tid: String) -> float:
 	var t: Dictionary = Content.techs.get(tid, {})
 	var u := float(t.get("units", 1))
 	if t.get("repeatable", false):
-		u *= pow(1.5, tech_level(tid))
+		u *= pow(setting("repeatable_cost_mult", 1.5), tech_level(tid))
 	return u
 
 
@@ -706,6 +738,26 @@ func reroll_cost() -> float:
 
 
 # ================================================================== megaprojects
+func _mega_stages_done(mid: String) -> float:
+	for m in Content.megaprojects:
+		if m.id == mid:
+			if megas_completed.has(mid):
+				return float(m.get("stages", []).size())
+			return float(mega_progress.get(mid, {}).get("stage", 0))
+	return 0.0
+
+
+func mega_blocker(mid: String) -> String:
+	for m in Content.megaprojects:
+		if m.id == mid:
+			var rb: String = str(m.get("requires_building", ""))
+			if rb != "" and rb != "<null>":
+				var l := facility_line(rb)
+				if l == null or l.count <= 0:
+					return "Requires a %s" % Content.item_name(rb)
+	return ""
+
+
 func mega_state(mid: String) -> Dictionary:
 	if not mega_progress.has(mid):
 		mega_progress[mid] = {"stage": 0, "delivered": {}}
@@ -718,6 +770,9 @@ func mega_contribute(mid: String) -> float:
 		if x.id == mid:
 			m = x
 	if m.is_empty() or megas_completed.has(mid):
+		return 0.0
+	if mega_blocker(mid) != "":
+		emit_signal("notify", mega_blocker(mid), "warn")
 		return 0.0
 	var st := mega_state(mid)
 	var stages: Array = m.get("stages", [])
@@ -741,12 +796,18 @@ func mega_contribute(mid: String) -> float:
 		st.delivered = {}
 		if st.stage >= stages.size():
 			megas_completed[mid] = true
+			recompute_bonuses()
 			emit_signal("notify", "MEGAPROJECT COMPLETE: " + m.get("name", mid), "achievement")
 	return float(st.stage) / maxf(1.0, stages.size())
 
 
 func legacy_gain() -> float:
-	return floor(sqrt(maxf(0.0, lifetime_credits) / 1.0e7)) + 5.0 * megas_completed.size()
+	var g = floor(sqrt(maxf(0.0, lifetime_credits) / 1.0e7))
+	for m in Content.megaprojects:
+		if megas_completed.has(m.id):
+			var rw = m.get("reward", {})
+			g += float(rw.get("prestige", 5.0)) if rw is Dictionary else 5.0
+	return g
 
 
 func can_prestige() -> bool:
@@ -776,6 +837,7 @@ func tick(dt: float) -> void:
 		_recompute_storage()
 	_tick_prod.clear()
 	_tick_cons.clear()
+	_compute_support()
 	_simulate_power(dt)
 	_simulate_lines(dt)
 	_simulate_research(dt)
@@ -806,7 +868,7 @@ func tick(dt: float) -> void:
 
 
 func daylight() -> float:
-	var ph := fmod(game_time, DAY_LENGTH) / DAY_LENGTH
+	var ph := fmod(game_time, day_length()) / day_length()
 	return clampf(sin(ph * TAU) * 1.4 + 0.2, 0.0, 1.0)
 
 
@@ -851,9 +913,52 @@ func _burn(fuel_class: String, pinned: String, need_kj: float) -> float:
 	return clampf(got / need_kj, 0.0, 1.0)
 
 
+func _compute_support() -> void:
+	# support buildings (relays, substations, cooling towers) each cover SUPPORT_COVER machines
+	var producers := 0
+	var gens := 0
+	for l in lines:
+		if l.count <= 0:
+			continue
+		match l.kind():
+			ProdLine.Kind.PRODUCER:
+				producers += l.count
+			ProdLine.Kind.GENERATOR:
+				if not _is_accumulator(l):
+					gens += l.count
+	var s := {"speed": 0.0, "energy": 0.0, "power": 0.0}
+	var tput := setting("base_throughput", 6.0)
+	var ftput := setting("base_fluid_throughput", 400.0)
+	var psat := float(power.get("sat", 1.0))
+	for l in lines:
+		if l.count <= 0 or not l.enabled:
+			continue
+		var b: Dictionary = l.spec()
+		var elec := psat if float(b.get("power_kw", 0.0)) > 0.0 else 1.0
+		var sup: Dictionary = b.get("support", {})
+		if not sup.is_empty():
+			var cov_p := minf(1.0, l.count * SUPPORT_COVER / maxf(1.0, producers))
+			var cov_g := minf(1.0, l.count * SUPPORT_COVER / maxf(1.0, gens))
+			s.speed += float(sup.get("speed_bonus", 0.0)) * cov_p * elec
+			s.energy += float(sup.get("energy_bonus", 0.0)) * cov_p * elec
+			s.power += float(sup.get("power_bonus", 0.0)) * cov_g * elec
+		if b.get("role", "") == "logistics":
+			tput += float(b.get("throughput", 0.0)) * l.count * elec
+			ftput += float(b.get("fluid_throughput", 0.0)) * l.count * elec
+	support = s
+	throughput = {"solid_cap": tput, "fluid_cap": ftput, "solid_flow": _flow_solid, "fluid_flow": _flow_fluid,
+		"solid_sat": 1.0 if _flow_solid <= tput else tput / _flow_solid,
+		"fluid_sat": 1.0 if _flow_fluid <= ftput else ftput / _flow_fluid}
+
+
+func _is_accumulator(l: ProdLine) -> bool:
+	return l.spec().get("generator", {}).get("source", "") == "accumulator"
+
+
 func _simulate_power(dt: float) -> void:
-	# demand: electric consumers at last tick's activity (+ idle draw 10%)
+	# demand: electric consumers at last tick's activity (idle draw 10%)
 	var demand := 0.0
+	var energy_mult := 1.0 + float(support.get("energy", 0.0))
 	for l in lines:
 		if not l.enabled or l.count <= 0:
 			l.power_draw = 0.0
@@ -863,27 +968,35 @@ func _simulate_power(dt: float) -> void:
 		if kw <= 0.0 or b.get("burner", false) or b.get("role", "") == "generator":
 			l.power_draw = 0.0
 			continue
-		var mt = l.module_totals()
+		var mt: Dictionary = l.module_totals()
 		var load := 1.0
 		if l.kind() == ProdLine.Kind.PRODUCER:
 			load = maxf(0.1, l.activity if l.status != "no_power" else 1.0)
 		elif b.get("role", "") == "research":
 			load = 1.0 if current_research() != "" else 0.1
-		l.power_draw = kw * l.count * load * maxf(0.2, 1.0 + float(mt.energy))
+		l.power_draw = kw * l.count * load * maxf(0.2, energy_mult + float(mt.energy))
 		demand += l.power_draw
 	# supply
 	var capacity := 0.0
 	var gens: Array = []
 	var by_source := {}
+	var accum_cap := 0.0
+	var accum_rate := 0.0
+	var pb: Dictionary = bonuses.get("power_output", {})
 	for l in lines:
 		if l.kind() != ProdLine.Kind.GENERATOR or not l.enabled or l.count <= 0:
 			continue
 		var b: Dictionary = l.spec()
 		var g: Dictionary = b.get("generator", {})
+		if _is_accumulator(l):
+			accum_cap += float(b.get("capacity_kj", 0.0)) * l.count
+			accum_rate += float(b.get("power_out_kw", 0.0)) * l.count
+			l.status = "working"
+			l.activity = clampf(accum_kj / maxf(1.0, accum_cap), 0.0, 1.0) if accum_cap > 0 else 0.0
+			continue
 		var out = float(b.get("power_out_kw", 0.0)) * l.count
 		var src: String = g.get("source", g.get("fuel_class", g.get("fluid", "other")))
-		var pb: Dictionary = bonuses.get("power_output", {})
-		out *= 1.0 + float(pb.get(src, 0.0)) + float(pb.get("*", 0.0))
+		out *= 1.0 + float(pb.get(src, 0.0)) + float(pb.get("*", 0.0)) + float(support.get("power", 0.0))
 		var avail := 1.0
 		if g.has("source"):
 			match g.source:
@@ -891,6 +1004,8 @@ func _simulate_power(dt: float) -> void:
 					avail = daylight()
 				"wind":
 					avail = _wind
+				"tidal":
+					avail = 0.6 + 0.4 * sin(game_time / 300.0)
 				_:
 					avail = 1.0
 		elif g.has("fluid"):
@@ -898,26 +1013,26 @@ func _simulate_power(dt: float) -> void:
 		elif g.has("fuel_class"):
 			avail = 1.0 if _best_fuel(g.fuel_class, l.fuel, 1.0) != "" else 0.0
 		l.status = "working" if avail > 0.01 else ("no_fuel" if not g.has("source") else "idle")
+		if l.status == "no_fuel" and g.has("fluid"):
+			l.status = "no_input"
+			l.status_item = g.fluid
 		capacity += out * avail
 		gens.append([l, out * avail, out])
-	var accum_cap := 0.0
-	for l in lines:
-		if l.count > 0 and l.spec().has("capacity_kj"):
-			accum_cap += float(l.spec().capacity_kj) * l.count
-	# dispatch generators in order: free sources first
+	# dispatch: free sources first, then fluids, then fuel burners
 	gens.sort_custom(func(a, b): return _gen_priority(a[0]) < _gen_priority(b[0]))
-	var remaining := demand
+	var want := demand
 	if accum_kj < accum_cap:
-		remaining += minf((accum_cap - accum_kj) / dt, demand * 0.5 + 100.0)   # recharge headroom
+		want += minf((accum_cap - accum_kj) / dt, accum_rate)   # recharge headroom
+	var remaining := want
 	var supplied := 0.0
 	for g in gens:
 		var l: ProdLine = g[0]
 		var avail_kw: float = g[1]
 		var use := minf(avail_kw, remaining)
 		remaining -= use
-		supplied += use
 		var frac: float = use / maxf(0.001, g[2])
 		l.activity = frac
+		l.anim_phase = fmod(l.anim_phase + dt * frac, 1000.0)
 		var gs: Dictionary = l.spec().get("generator", {})
 		if gs.has("fluid"):
 			var units := float(gs.get("rate", 1.0)) * l.count * frac * dt
@@ -928,21 +1043,22 @@ func _simulate_power(dt: float) -> void:
 			var kj := float(gs.get("fuel_kw", l.spec().get("power_out_kw", 0.0))) * l.count * frac * dt
 			var sat := _burn(gs.fuel_class, l.fuel, kj)
 			if sat < 1.0:
-				supplied -= use * (1.0 - sat)
+				use *= sat
+		supplied += use
 		var key: String = gs.get("source", gs.get("fuel_class", gs.get("fluid", "other")))
 		by_source[key] = by_source.get(key, 0.0) + use
 	var surplus := supplied - demand
 	if surplus > 0.0:
-		accum_kj = minf(accum_cap, accum_kj + surplus * dt)
+		accum_kj = minf(accum_cap, accum_kj + minf(surplus, accum_rate) * dt)
 		supplied = demand
 	elif surplus < 0.0 and accum_kj > 0.0:
-		var draw := minf(-surplus * dt, accum_kj)
+		var draw := minf(minf(-surplus, accum_rate) * dt, accum_kj)
 		accum_kj -= draw
 		supplied += draw / dt
+		by_source["accumulator"] = draw / dt
 	var sat := 1.0 if demand <= 0.0 else clampf(supplied / demand, 0.0, 1.0)
 	power = {"demand": demand, "supply": supplied, "capacity": capacity, "sat": sat,
 		"accum": accum_kj, "accum_cap": accum_cap, "by_source": by_source}
-	# wind random walk
 	_wind = clampf(_wind + randf_range(-0.02, 0.02) * dt * 10.0, 0.25, 1.0)
 
 
@@ -955,10 +1071,22 @@ func _gen_priority(l: ProdLine) -> int:
 	return 2
 
 
+func _recipe_burns_own_output(r: Dictionary) -> bool:
+	for it in r.get("outputs", {}):
+		var d: Dictionary = Content.items.get(it, {})
+		if d.has("fuel_kj") and d.get("fuel_class", "chemical") == "chemical":
+			return true
+	return false
+
+
 func _simulate_lines(dt: float) -> void:
 	var psat := float(power.sat)
 	var dep_used := {}
 	var prod_bonus_mining := float(bonuses.get("mining_productivity", 0.0))
+	var ssat := float(throughput.get("solid_sat", 1.0))
+	var fsat := float(throughput.get("fluid_sat", 1.0))
+	var flow_s := 0.0
+	var flow_f := 0.0
 	for l in lines:
 		if l.kind() != ProdLine.Kind.PRODUCER:
 			continue
@@ -976,7 +1104,7 @@ func _simulate_lines(dt: float) -> void:
 		if r.is_empty():
 			l.status = "idle"
 			continue
-		var n = l.count
+		var n: int = l.count
 		if r.has("deposit"):
 			var slots := deposit_slots(r.deposit)
 			var used := int(dep_used.get(r.deposit, 0))
@@ -988,26 +1116,46 @@ func _simulate_lines(dt: float) -> void:
 				l.effective_count = 0
 				continue
 		l.effective_count = n
-		var mt = l.module_totals()
-		var speed := float(b.get("speed", 1.0)) * (1.0 + speed_bonus(r.category) + float(mt.speed))
+		var mt: Dictionary = l.module_totals()
+		var speed := float(b.get("speed", 1.0)) * (1.0 + speed_bonus(r.category) + float(mt.speed) + float(support.get("speed", 0.0)))
 		speed = maxf(speed, 0.05)
-		var nominal = n * speed / maxf(0.01, float(r.get("time", 1.0))) * dt
-		var crafts = nominal
+		var nominal: float = n * speed / maxf(0.01, float(r.get("time", 1.0))) * dt
+		var crafts: float = nominal
 		var limit := 1.0
 		var why := "working"
 		var why_item := ""
+		var ins: Dictionary = r.get("inputs", {})
+		var outs: Dictionary = r.get("outputs", {})
+		var prod := 1.0 + float(mt.productivity) + (prod_bonus_mining if r.has("deposit") else 0.0)
 		# energy
-		var electric = float(b.get("power_kw", 0.0)) > 0.0 and not b.get("burner", false)
-		if electric and psat < 1.0:
+		var electric: bool = float(b.get("power_kw", 0.0)) > 0.0 and not b.get("burner", false)
+		if electric and psat < limit:
 			limit = psat
 			why = "no_power"
-		if b.get("burner", false):
-			if _best_fuel("chemical", l.fuel, 1.0) == "":
+		var self_fuel := false
+		if b.get("burner", false) and _best_fuel("chemical", l.fuel, 1.0) == "":
+			if _recipe_burns_own_output(r):
+				self_fuel = true
+			else:
 				limit = 0.0
 				why = "no_fuel"
-		# inputs
-		for it in r.get("inputs", {}):
-			var need = float(r.inputs[it]) * crafts
+		# logistics throughput
+		var solid_out := 0.0
+		var fluid_out := 0.0
+		for it in outs:
+			if Content.is_fluid(it):
+				fluid_out += float(outs[it]) * prod
+			else:
+				solid_out += float(outs[it]) * prod
+		if solid_out > 0.0 and ssat < limit:
+			limit = ssat
+			why = "logistics"
+		if fluid_out > 0.0 and fsat < limit:
+			limit = fsat
+			why = "logistics"
+		# inputs (gross amounts must be present)
+		for it in ins:
+			var need: float = float(ins[it]) * crafts
 			if need <= 0.0:
 				continue
 			var have: float = inv.get(it, 0.0)
@@ -1016,54 +1164,66 @@ func _simulate_lines(dt: float) -> void:
 				limit = ratio
 				why = "no_input"
 				why_item = it
-		# outputs
-		var prod := 1.0 + float(mt.productivity) + (prod_bonus_mining if r.has("deposit") else 0.0)
-		for it in r.get("outputs", {}):
-			var amt = float(r.outputs[it]) * crafts * prod
-			if amt <= 0.0:
+		# outputs (net of the same item consumed)
+		for it in outs:
+			var net: float = (float(outs[it]) * prod - float(ins.get(it, 0.0))) * crafts
+			if net <= 0.0 or overflow_sell.has(it):
 				continue
-			var space = cap(it) - inv.get(it, 0.0)
-			if overflow_sell.has(it):
-				continue
-			var ratio := clampf(space / amt, 0.0, 1.0)
+			var space: float = cap(it) - inv.get(it, 0.0)
+			var ratio := clampf(space / net, 0.0, 1.0)
 			if ratio < limit:
 				limit = ratio
 				why = "output_full"
 				why_item = it
+		# throughput demand measured before the logistics limit
+		var pre_limit: float = minf(1.0, limit / maxf(0.0001, minf(ssat if solid_out > 0 else 1.0, fsat if fluid_out > 0 else 1.0))) if why == "logistics" else limit
+		flow_s += solid_out * nominal * pre_limit / dt
+		flow_f += fluid_out * nominal * pre_limit / dt
 		crafts *= limit
-		# burner fuel for the work actually done
-		if b.get("burner", false):
-			var kj = float(b.get("fuel_kw", 0.0)) * n * dt * (crafts / maxf(nominal, 1e-9))
-			var sat := _burn("chemical", l.fuel, kj) if kj > 0 else 1.0
-			l.fuel_sat = sat if crafts > 0 else (1.0 if _best_fuel("chemical", l.fuel, 1.0) != "" else 0.0)
-			crafts *= sat
+		# burner fuel for the work actually done (self-fuelling lines burn after producing)
+		var fuel_kj: float = float(b.get("fuel_kw", 0.0)) * n * dt * (crafts / maxf(nominal, 1e-9)) if b.get("burner", false) else 0.0
+		if fuel_kj > 0.0 and not self_fuel:
+			var fs := _burn("chemical", l.fuel, fuel_kj)
+			if fs < 1.0:
+				crafts *= fs
+				why = "no_fuel"
 		if crafts > 0.0:
-			for it in r.get("inputs", {}):
-				var a = float(r.inputs[it]) * crafts
-				inv[it] = maxf(0.0, inv.get(it, 0.0) - a)
-				_count_cons(it, a)
-			for it in r.get("outputs", {}):
-				var a = float(r.outputs[it]) * crafts * prod
-				inv[it] = inv.get(it, 0.0) + a
-				_count_prod(it, a)
-				var c := cap(it)
-				if inv[it] > c:
-					var extra: float = inv[it] - c
-					inv[it] = c
-					if overflow_sell.has(it):
-						var v := market_price(it) * extra
-						credits += v
-						lifetime_credits += v
-						_credits_acc += v
-						market_sat[it] = minf(1.0, float(market_sat.get(it, 0.0)) + extra / _sat_scale(it))
-			var poll = float(b.get("pollution", 0.0)) * n * (crafts / maxf(nominal, 1e-9)) * dt / 60.0
-			poll *= maxf(0.1, 1.0 + float(mt.pollution))
+			var items := {}
+			for it in ins:
+				items[it] = -float(ins[it]) * crafts
+			for it in outs:
+				items[it] = float(items.get(it, 0.0)) + float(outs[it]) * crafts * prod
+			for it in items:
+				var d: float = items[it]
+				if d < 0.0:
+					inv[it] = maxf(0.0, inv.get(it, 0.0) + d)
+					_count_cons(it, -d)
+				elif d > 0.0:
+					inv[it] = inv.get(it, 0.0) + d
+					_count_prod(it, d)
+					var c := cap(it)
+					if inv[it] > c:
+						var extra: float = inv[it] - c
+						inv[it] = c
+						if overflow_sell.has(it):
+							var v := market_price(it) * extra
+							credits += v
+							lifetime_credits += v
+							_credits_acc += v
+							market_sat[it] = minf(1.0, float(market_sat.get(it, 0.0)) + extra / _sat_scale(it))
+			if self_fuel and fuel_kj > 0.0:
+				_burn("chemical", l.fuel, fuel_kj)
+			var poll: float = float(b.get("pollution", 0.0)) * n * (crafts / maxf(nominal, 1e-9)) * dt / 60.0
+			if poll > 0.0:
+				poll *= maxf(0.1, 1.0 + float(mt.pollution))
 			pollution += poll
 		l.activity = crafts / maxf(nominal, 1e-9)
 		l.crafts_per_sec = crafts / dt
 		l.status = "working" if l.activity > 0.98 else why
 		l.status_item = why_item if l.activity <= 0.98 else ""
 		l.anim_phase = fmod(l.anim_phase + dt * l.activity, 1000.0)
+	_flow_solid = flow_s
+	_flow_fluid = flow_f
 
 
 func lab_speed() -> float:
@@ -1118,27 +1278,27 @@ func _simulate_research(dt: float) -> void:
 
 
 func _simulate_world(dt: float) -> void:
-	# pollution decay: absorbed by claimed land; scrubbers
-	var absorb := 2.0 + 3.0 * sectors_claimed.size()
-	var scrub := 0.0
+	# pollution: natural absorption by claimed land + negative-pollution buildings (scrubbers)
+	var absorb := 25.0 + 15.0 * sectors_claimed.size() + pollution * 0.04
 	var def := 0.0
-	var ammo_need := {}
+	var psat := float(power.sat)
+	var dbon: Dictionary = bonuses.get("defense", {})
 	for l in lines:
 		if l.count <= 0 or not l.enabled:
 			continue
 		var b: Dictionary = l.spec()
-		var sup: Dictionary = b.get("support", {})
-		if sup.has("pollution_absorb"):
-			scrub += float(sup.pollution_absorb) * l.count
-		if b.get("role", "") == "defense":
-			var rating = float(b.get("defense", 0.0)) * l.count
+		var role: String = b.get("role", "")
+		var elec := psat if float(b.get("power_kw", 0.0)) > 0.0 else 1.0
+		if role != "producer" and float(b.get("pollution", 0.0)) < 0.0:
+			absorb += -float(b.pollution) * l.count * elec
+		if role == "defense":
+			var rating = float(b.get("defense", 0.0)) * l.count * elec
 			var ammo_class = b.get("ammo")
-			var elec := float(b.get("power_kw", 0.0)) > 0.0
-			if elec:
-				rating *= float(power.sat)
-			if ammo_class != null and ammo_class != "":
-				var per_sec = float(b.get("ammo_per_min", 0.0)) * l.count / 60.0 * clampf(threat / maxf(1.0, def + rating), 0.2, 1.0)
-				var a := _best_ammo(str(ammo_class))
+			if ammo_class != null and str(ammo_class) != "":
+				var cls := str(ammo_class)
+				rating *= 1.0 + float(dbon.get(cls, 0.0))
+				var per_sec = float(b.get("ammo_per_min", 0.0)) * l.count / 60.0 * clampf(threat / maxf(1.0, def + rating), 0.15, 1.0)
+				var a := _best_ammo(cls)
 				if a == "":
 					rating *= 0.15
 					l.status = "no_input"
@@ -1152,24 +1312,29 @@ func _simulate_world(dt: float) -> void:
 					l.status = "working"
 			else:
 				l.status = "working"
-			l.activity = 1.0 if l.status == "working" else 0.2
+			rating *= 1.0 + float(dbon.get("*", 0.0))
+			l.activity = (1.0 if l.status == "working" else 0.2) * elec
 			l.anim_phase = fmod(l.anim_phase + dt * l.activity, 1000.0)
 			def += rating
-		elif b.get("role", "") in ["storage", "logistics", "support", "megaproject"]:
-			l.status = "working"
-			l.activity = float(power.sat) if float(b.get("power_kw", 0.0)) > 0.0 else 1.0
+		elif role in ["storage", "logistics", "support", "megaproject"]:
+			l.status = "working" if elec > 0.99 else "no_power"
+			l.activity = elec
 			l.anim_phase = fmod(l.anim_phase + dt * l.activity, 1000.0)
-	pollution = maxf(0.0, pollution - (absorb + scrub) * (1.0 + float(bonuses.get("pollution_reduction", 0.0))) * dt / 60.0)
-	defense = def * (1.0 + float(bonuses.get("defense", 0.0)))
-	# threat from pollution and hostile appearances
+	pollution = maxf(0.0, pollution - absorb * (1.0 + float(bonuses.get("pollution_reduction", 0.0))) * dt / 60.0)
+	defense = def
+	# threat: strongest hostile drawn in by pollution + frontier exposure of claimed sectors
 	var base_threat := 0.0
 	for th in Content.threats:
 		if pollution >= float(th.get("appears_at_pollution", 0.0)):
 			base_threat = maxf(base_threat, float(th.get("strength", 0.0)))
-	var target := base_threat * (1.0 + sqrt(pollution) / 40.0) if pollution > 0 else 0.0
+	var exposure := 0.0
+	for sid in sectors_claimed:
+		exposure += float(Content.sector_by_id.get(sid, {}).get("threat", 0.0))
+	var target := (base_threat + exposure) * (1.0 + sqrt(pollution) / 40.0) if pollution > 0 or exposure > 0 else 0.0
 	threat = lerpf(threat, target, 1.0 - exp(-dt / 30.0))
 	var old_siege := siege
-	siege = clampf(1.0 - defense / threat, 0.0, 1.0) if threat > 1.0 else 0.0
+	var frontier := sectors_claimed.size() > maxi(1, Content.start.get("sectors", []).size())
+	siege = clampf(1.0 - defense / threat, 0.0, 1.0) if threat > 1.0 and frontier else 0.0
 	if old_siege < 0.05 and siege >= 0.05 and not simulating_offline:
 		emit_signal("notify", "Frontier sectors under siege! Defense %s vs threat %s" % [Fmt.num(defense), Fmt.num(threat)], "bad")
 
@@ -1218,24 +1383,25 @@ func achievement_progress(cond: Dictionary) -> Vector2:
 			v = 1.0
 		"research_count", "techs_researched":
 			have = researched.size()
-		"credits_total", "earn_credits", "lifetime_credits":
+		"credits_total", "earn_credits", "lifetime_credits", "credits":
 			have = lifetime_credits
-		"credits":
-			have = credits
-		"power_kw", "power_production":
+		"power_kw", "power_production", "power":
 			have = float(power.supply)
 		"sector_claimed", "claim_sector":
 			have = 1.0 if sectors_claimed.has(target) else 0.0
 			v = 1.0
-		"sectors_claimed", "sector_count":
+		"sectors_claimed", "sector_count", "sectors":
 			have = sectors_claimed.size()
 		"prestige", "prestige_count":
 			have = prestige_count
 		"contracts_done", "contracts":
 			have = contracts_done
 		"megaproject", "megaproject_complete":
-			have = 1.0 if megas_completed.has(target) else 0.0
-			v = 1.0
+			if target == null or str(target) == "":
+				for m in Content.megaprojects:
+					have += _mega_stages_done(m.id)
+			else:
+				have = _mega_stages_done(str(target))
 		"lines", "line_count":
 			have = lines.size()
 		"defense":
@@ -1366,7 +1532,7 @@ func wipe_save() -> void:
 
 
 func offline_cap_hours() -> float:
-	return OFFLINE_BASE_CAP_H * (1.0 + float(bonuses.get("offline_efficiency", 0.0)))
+	return setting("offline_cap_hours", OFFLINE_BASE_CAP_H) * (1.0 + float(bonuses.get("offline_efficiency", 0.0)))
 
 
 func _offline_progress() -> void:

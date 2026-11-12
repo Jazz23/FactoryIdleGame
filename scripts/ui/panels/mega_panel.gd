@@ -69,7 +69,18 @@ func build() -> void:
 				bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 				rh.add_child(bar)
 				pv.add_child(rh)
-			pv.add_child(UI.accent_button("Contribute from storage", func(): Game.mega_contribute(mid); mark_dirty()))
-		if m.has("reward"):
-			pv.add_child(UI.label("Reward: " + str(m.reward), 13, UI.GOOD))
+			var blk := Game.mega_blocker(mid)
+			var cbtn := UI.accent_button("Contribute from storage", func(): Game.mega_contribute(mid); mark_dirty())
+			cbtn.disabled = blk != ""
+			pv.add_child(cbtn)
+			if blk != "":
+				pv.add_child(UI.label(blk, 14, UI.WARN))
+		var rw = m.get("reward", {})
+		if rw is Dictionary and not rw.is_empty():
+			var parts: Array = []
+			for e in rw.get("effects", []):
+				parts.append(preload("res://scripts/ui/panels/research_panel.gd")._effect_text(e))
+			if rw.has("prestige"):
+				parts.append("+%s Legacy on reset" % Fmt.num(float(rw.prestige)))
+			pv.add_child(UI.label("Reward: " + ", ".join(parts), 13, UI.GOOD))
 		v.add_child(p)
