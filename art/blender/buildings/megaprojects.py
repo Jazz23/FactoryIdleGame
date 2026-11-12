@@ -182,14 +182,15 @@ def orbital_assembler(spec, p):
         a = TAU * i / nstr
         hull.append(K.box((0.025 * s ** 0.5, 0.04 * s ** 0.5, hh * 0.6), (H0.x + math.cos(a) * hr, H0.y + math.sin(a) * hr, zt + 0.08 + hh * 0.4), al, bevel=0.003, base=True,
                           rot=(0, 0, a)))
-    for i in range(3):  # a few skin panels already fitted (12-fold positions)
-        a = TAU * (i * 4 + 1.5) / nstr
+    # skin panel band already fitted all round (12-fold, so the 1/12-turn loop stays seamless)
+    for i in range(nstr):
+        a = TAU * (i + 0.5) / nstr
         pnl = K.box((0.012, 2 * hr * math.sin(math.pi / nstr) * 1.02, hh * 0.19), (H0.x + math.cos(a) * hr * 1.01, H0.y + math.sin(a) * hr * 1.01, zt + 0.08 + hh * 0.43),
                     skin, bevel=0.003, base=True, rot=(0, 0, a))
         hull.append(pnl)
     hull.append(K.cyl(hr * 0.55, 0.1 * s ** 0.5, (H0.x, H0.y, zt + 0.08 + hh), st.accent_mat(), verts=48, name="docking_ring"))
-    for i in range(4):
-        a = TAU * i / 4 + 0.4
+    for i in range(nstr):  # lifting lugs, one per bay (12-fold like the rest of the hull)
+        a = TAU * (i + 0.5) / nstr
         hull.append(K.box((0.1 * s ** 0.5, 0.06, 0.08 * s ** 0.5), (H0.x + math.cos(a) * hr * 1.0, H0.y + math.sin(a) * hr * 1.0, zt + 0.08 + hh * 0.2), M.painted((0.75, 0.55, 0.02), name="handle"), bevel=0.006,
                           rot=(0, 0, a)))
     hp = KI.pivot(H0, children=hull)
@@ -212,14 +213,15 @@ def orbital_assembler(spec, p):
         bridge.append(KI.beam((sx * 0.14 * s ** 0.5, -gy - 0.15, bh), (sx * 0.14 * s ** 0.5, gy + 0.15, bh), 0.12 * s ** 0.5, 0.22 * s ** 0.5, gm, name="bridge"))
     for sy in (-1, 1):
         bridge.append(K.box((0.5 * s ** 0.5, 0.2 * s ** 0.5, 0.16 * s ** 0.5), (0, sy * gy, bh - 0.02), M.metal("dark_steel"), bevel=0.012, name="end_truck"))
-    bridge.append(K.box((0.42 * s ** 0.5, 0.36 * s ** 0.5, 0.2 * s ** 0.5), (0, -gy * 0.35, bh + 0.11 * s ** 0.5), M.metal("dark_steel", dirt=0.5), bevel=0.015, name="hoist"))
+    yh = H0.y - hr - 0.14 * s ** 0.5   # hoist lowers the panel just outside the hull wall
+    bridge.append(K.box((0.42 * s ** 0.5, 0.36 * s ** 0.5, 0.2 * s ** 0.5), (0, yh, bh + 0.11 * s ** 0.5), M.metal("dark_steel", dirt=0.5), bevel=0.015, name="hoist"))
     hook_z = zt + hh + 0.2 * s ** 0.5
     for sx in (-1, 1):
-        bridge.append(KI.strut((sx * 0.06, -gy * 0.35, bh), (sx * 0.06, -gy * 0.35, hook_z + 0.15), 0.006 * s ** 0.5, M.metal("steel"), verts=4))
-    bridge.append(K.box((0.16 * s ** 0.5, 0.1 * s ** 0.5, 0.18 * s ** 0.5), (0, -gy * 0.35, hook_z + 0.05), M.painted((0.75, 0.55, 0.02), name="hookblock"), bevel=0.01))
-    bridge.append(K.box((0.6 * s ** 0.5, 0.012, 0.4 * s ** 0.5), (0, -gy * 0.35, hook_z - 0.3 * s ** 0.5), skin, bevel=0.004, name="panel_load"))
+        bridge.append(KI.strut((sx * 0.06, yh, bh), (sx * 0.06, yh, hook_z + 0.15), 0.006 * s ** 0.5, M.metal("steel"), verts=4))
+    bridge.append(K.box((0.16 * s ** 0.5, 0.1 * s ** 0.5, 0.18 * s ** 0.5), (0, yh, hook_z + 0.05), M.painted((0.75, 0.55, 0.02), name="hookblock"), bevel=0.01))
+    bridge.append(K.box((0.6 * s ** 0.5, 0.012, 0.4 * s ** 0.5), (0, yh, hook_z - 0.3 * s ** 0.5), skin, bevel=0.004, name="panel_load"))
     for sx in (-1, 1):
-        bridge.append(KI.strut((0, -gy * 0.35, hook_z - 0.04), (sx * 0.28 * s ** 0.5, -gy * 0.35, hook_z - 0.1 * s ** 0.5), 0.004 * s ** 0.5, M.metal("steel"), verts=4))
+        bridge.append(KI.strut((0, yh, hook_z - 0.04), (sx * 0.28 * s ** 0.5, yh, hook_z - 0.1 * s ** 0.5), 0.004 * s ** 0.5, M.metal("steel"), verts=4))
     bp = KI.pivot((0, 0, 0), children=bridge)
     an.move(bp, lambda t: (gx * 0.55 * math.sin(TAU * t), 0, 0))
     _, bsk = KI.status_lamp((0.25 * s ** 0.5, gy, bh + 0.11 * s ** 0.5), (1.0, 0.55, 0.05), 12.0)

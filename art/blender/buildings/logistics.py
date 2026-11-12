@@ -500,7 +500,8 @@ def conveyor_hub(spec, p):
     tt.append(K.box((cs, cs, cs * 0.8), (0, 0, zt + 0.02), crate_m, bevel=0.012, base=True, name="crate"))
     tt.append(K.box((cs * 1.01, cs * 0.3, cs * 0.81), (0, 0, zt + 0.02), M.plastic((0.6, 0.55, 0.45), 0.6, name="tape"), bevel=0.004, base=True))
     ttp = KI.pivot((0, 0, 0), children=tt)
-    an.rotate(ttp, lambda t: (math.pi / 2) * KI.smooth01((t - 0.2) / 0.6))
+    # half turn per loop: rollers + crate are 180-degree symmetric, so the loop is seamless
+    an.rotate(ttp, lambda t: math.pi * KI.smooth01((t - 0.2) / 0.6))
     # four belt stubs with moving crates (in on -X and +Y, out on +X and -Y)
     rnd = random.Random(2)
 
@@ -528,7 +529,9 @@ def conveyor_hub(spec, p):
     an.value(socks[2], lambda t: 7.0 if t < 0.2 or t > 0.8 else 0.4)
     an.value(socks[1], lambda t: 8.0 if 0.2 <= t <= 0.8 else 0.4)
     K.box((0.2 * k, 0.12, 0.26 * k), (-tr - 0.0, -tr - 0.16, z0 + 0.3), M.painted((0.6, 0.6, 0.58), wear=0.5, name="jbox"), bevel=0.01, base=True) if w >= 1.5 else None
-    return Rig(height=ah + 0.45, frames=16, fps=12, update=an)
+    return Rig(height=ah + 0.45, frames=16, fps=12, update=an,
+               lights=[{"pos": [0, -tr * 0.6, zt + cs * 0.82], "color": [1.0, 0.1, 0.05], "energy": 0.3, "flicker": True},
+                       {"pos": [tr + 0.12, -tr - 0.08, ah + 0.2], "color": [0.3, 1.0, 0.3], "energy": 0.3, "flicker": False}])
 
 
 # =========================================================================== rail depot
@@ -653,6 +656,7 @@ def rail_depot(spec, p):
         for sx in (-1, 1):
             K.cyl(0.08, 0.06, (gx + sx * 0.6, yy, 0.12), M.metal("dark_steel"), rot=(0, math.pi / 2, 0), verts=16, base=False)
         KI.strut((gx - 0.7, yy, 0.3), (gx + 0.7, yy, gh * 0.7), 0.025, gm, verts=8)
+        K.box((1.56, 0.18, 0.3), (gx, yy, gh - 0.09), gm, bevel=0.012, base=True, name="portal_tie")  # top tie under the girders
     for sx in (-1, 1):
         KI.beam((gx + sx * 0.7, gy0 - 0.15, gh + 0.06), (gx + sx * 0.7, gy1 + 0.15, gh + 0.06), 0.16, 0.3, gm, name="girder")
     K.box((0.5, 0.6, 0.45), (gx + 1.0, gy1 - 0.2, gh - 0.45), M.painted((0.6, 0.6, 0.58), wear=0.4, name="cab"), bevel=0.02, base=True, name="crane_cab")
@@ -691,7 +695,7 @@ def rail_depot(spec, p):
     K.cyl(0.06, 3.0 + 0.3 * s, mp, M.metal("steel", dirt=0.6), verts=12, r2=0.04)
     for i in range(3):
         KI.floodlight(mp + Vector((0.12 * (i - 1), -0.1, 3.0 + 0.3 * s)), (0.6, -0.5, -0.6), size=0.2)
-    _, bk = KI.status_lamp((gx, gy1, gh + 0.36), (1.0, 0.55, 0.05), 12.0)
+    _, bk = KI.status_lamp((gx + 0.45, gy1, gh + 0.21), (1.0, 0.55, 0.05), 12.0)   # on the portal tie
     an.value(bk, lambda t: 14.0 * KI.blink(t, 4, 0.4))
     return Rig(height=max(gh + 0.7, 3.5 + 0.3 * s), frames=16, fps=10, update=an,
                lights=[{"pos": [mp.x, mp.y, 3.0 + 0.3 * s], "color": [1.0, 0.95, 0.85], "energy": 1.0, "flicker": False}])
@@ -721,7 +725,8 @@ def _drone(loc, size, st, an, hover=True, phase=0.0):
         pp = KI.pivot(tip + Vector((0, 0, 0.085 * size)), name="prop")
         bl = K.box((0.7 * size, 0.05 * size, 0.006), (0, 0, 0), dark, bevel=0.002, name="blade")
         KI.group([bl], pp)
-        an.spin(pp, 3.0 + 0.5 * (i % 2), axis="Z")
+        if hover:  # parked (charging) drones keep their props still
+            an.spin(pp, 3.0 + 0.5 * (i % 2), axis="Z")
         props.append(pp)
         objs.append(pp)
     dp = KI.pivot(loc, name="drone")
@@ -1022,15 +1027,18 @@ def _precipitator(spec, p):
     KI.ladder(Vector((cx + bw / 2 + 0.1, cy - bd * 0.3, z0)), zr - z0, rot_z=math.pi / 2, w=0.34, mat=st.safety(), cage=True)
     # inlet duct from the front-left, outlet to stack at the back-right
     dz = z0 + zs + H * 0.5
-    KI.frustum((H * 0.5, bd * 0.5), (H * 0.9, bd * 0.9), 0.4 * k, (cx - bw / 2 - 0.4 * k, cy, dz), body, rot=(0, math.pi / 2, 0), bevel=0.01, name="inlet_cone")
-    KI.beam((cx - bw / 2 - 0.4 * k, cy, dz), (-w * 0.495, cy, dz), bd * 0.5, H * 0.5, st.mat((0.3, 0.31, 0.32), name="duct"), name="inlet_duct")
+    lc = max(0.25, min(0.4 * k, (cx - bw / 2) + 0.49 * w - 0.08))   # keep the transition on the footprint
+    KI.frustum((H * 0.5, bd * 0.5), (H * 0.9, bd * 0.9), lc, (cx - bw / 2 - lc, cy, dz), body, rot=(0, math.pi / 2, 0), bevel=0.01, name="inlet_cone")
+    KI.beam((cx - bw / 2 - lc, cy, dz), (-w * 0.495, cy, dz), bd * 0.5, H * 0.5, st.mat((0.3, 0.31, 0.32), name="duct"), name="inlet_duct")
     sx_, sy_ = 0.36 * w, 0.32 * d
     sr = 0.14 * k
     KI.beam((cx + bw / 2, cy + bd * 0.2, dz), (sx_ - sr, cy + bd * 0.2, dz), 0.3 * k, 0.4 * k, st.mat((0.3, 0.31, 0.32), name="duct"))
     sh = zr + 0.6 * k
     K.cyl(sr, sh, (sx_, sy_, z0), M.metal("steel", dirt=st.dirt), verts=32, name="stack")
-    K.cyl(sr * 1.3, 0.22 * k, (sx_, sy_, z0 + sh), st.accent_mat(), verts=32)
-    fo, rotor = K.fan((sx_, sy_, z0 + sh + 0.18 * k), r=sr * 1.15, axis="z", blades=6)
+    # open collar on the stack top so the exhaust fan inside stays visible
+    KI.ring(sr * 1.36, sr * 1.24, 0.22 * k, (sx_, sy_, z0 + sh), st.accent_mat(), segs=40, centered=False)
+    K.cyl(sr * 1.24, 0.02, (sx_, sy_, z0 + sh), M.plastic((0.02, 0.02, 0.02), 0.9), verts=32, bevel=0)
+    fo, rotor = K.fan((sx_, sy_, z0 + sh + 0.16 * k), r=sr * 1.12, axis="z", blades=6)
     an.spin(rotor, 3.0 / 6.0)
     KI.cabinet((0.3 * w, -0.38 * d, z0), 0.0, w=0.32 * k, d=0.16, h=0.6 + 0.15 * s, mat=st.mat((0.6, 0.6, 0.58), wear=0.5))
     _, ls = KI.status_lamp((0.3 * w + 0.1 * k, -0.38 * d, z0 + 0.62 + 0.15 * s), (0.1, 1.0, 0.25), 10.0, r=0.025)

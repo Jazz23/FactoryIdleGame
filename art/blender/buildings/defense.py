@@ -82,16 +82,17 @@ def turret(spec, p):
     gm = M.metal("dark_steel", rough=0.3)
     elev = -0.12
     if variant == "gun":
+        Lg = 0.55 * k   # barrel length (kept short so the sweep barely leaves the footprint)
         for sy in (-1, 1):
             y = sy * hd * 0.2
             weap.append(K.cyl(0.04 * k, 0.2 * k, (hw * 0.45, y, ep.z), gm, rot=K.AXES["x"], verts=16, name="recoil"))
-            weap.append(K.cyl(0.018 * k, 0.7 * k, (hw * 0.6, y, ep.z), gm, rot=K.AXES["x"], verts=12, name="barrel"))
-            weap.append(K.cyl(0.028 * k, 0.07 * k, (hw * 0.6 + 0.65 * k, y, ep.z), gm, rot=K.AXES["x"], verts=12, name="muzzle"))
+            weap.append(K.cyl(0.018 * k, Lg, (hw * 0.6, y, ep.z), gm, rot=K.AXES["x"], verts=12, name="barrel"))
+            weap.append(K.cyl(0.028 * k, 0.07 * k, (hw * 0.6 + Lg - 0.05 * k, y, ep.z), gm, rot=K.AXES["x"], verts=12, name="muzzle"))
         head.append(K.box((0.24 * k, 0.12 * k, 0.16 * k), (-0.02 * k, -hd / 2 - 0.06 * k, zh + hh * 0.45), M.painted((0.08, 0.12, 0.05), wear=0.5, name="ammo_can"), bevel=0.008))
         head.append(K.box((0.12 * k, 0.04 * k, 0.03), (hw * 0.15, -hd / 2 - 0.02 * k, zh + hh * 0.62), M.metal("brass", dirt=0.5), bevel=0.003))
-        mz = ep + Vector((hw * 0.6 + 0.73 * k - ep.x, 0, 0))
+        mz = ep + Vector((hw * 0.6 + Lg + 0.03 * k - ep.x, 0, 0))
     elif variant in ("cannon", "howitzer"):
-        L = (0.8 if variant == "cannon" else 1.15) * k
+        L = (0.58 if variant == "cannon" else 0.78) * k
         cal = (0.035 if variant == "cannon" else 0.045) * k
         weap.append(K.cyl(cal * 2.4, 0.3 * k, (hw * 0.42, 0, ep.z), gm, rot=K.AXES["x"], verts=20, name="breech_sleeve"))
         for sy in (-1, 1):
@@ -108,17 +109,17 @@ def turret(spec, p):
             weap.append(K.cyl(0.07 * k, 0.55 * k, (hw * 0.3, y, ep.z), gm, rot=K.AXES["x"], verts=24, name="tube"))
             weap.append(K.torus(0.072 * k, 0.012 * k, (hw * 0.3 + 0.55 * k, y, ep.z), gm, rot=K.AXES["x"], segs=24, rsegs=6))
             weap.append(K.torus(0.075 * k, 0.015 * k, (hw * 0.3 + 0.2 * k, y, ep.z), M.metal("steel"), rot=K.AXES["x"], segs=24, rsegs=6))
-        mz = Vector((hw * 0.3 + 0.35 * k, 0, ep.z + 0.4 * k))
+        mz = Vector((hw * 0.3 + 0.55 * k, 0, ep.z))   # tube mouth in the weapon frame (elevation applied by the pivot)
         elev = -0.95
         for i in range(4):
             head.append(K.cyl(0.04 * k, 0.22 * k, (-hw * 0.3 + i * 0.09 * k, hd * 0.55, zh), M.painted((0.25, 0.27, 0.12), name="shell_olive"), verts=12))
     elif variant == "flame":
         weap.append(K.cyl(0.05 * k, 0.5 * k, (hw * 0.42, 0, ep.z), gm, rot=K.AXES["x"], verts=16, r2=0.035 * k, name="projector"))
         weap.append(K.cyl(0.04 * k, 0.08 * k, (hw * 0.42 + 0.5 * k, 0, ep.z), M.metal("copper", dirt=0.8), rot=K.AXES["x"], verts=16, r2=0.03 * k))
-        pm, ps = KI.soft_glow((1.0, 0.45, 0.08), 8.0, rim=False, name="pilot_flame", power=1.0)
+        pm, ps = KI.soft_glow((1.0, 0.45, 0.06), 4.0, rim=False, name="pilot_flame", power=1.0)
         pilot = K.sphere(0.035 * k, (hw * 0.42 + 0.6 * k, 0, ep.z + 0.02 * k), pm, segs=12, rings=8, scale=(1.6, 1, 1))
         weap.append(pilot)
-        an.value(ps, lambda t: 6.0 + 4.0 * KI.flicker(t, 0.3, 1.0))
+        an.value(ps, lambda t: 3.0 + 2.0 * KI.flicker(t, 0.3, 1.0))
         for sy in (-1, 1):
             head.append(K.cyl(0.08 * k, 0.4 * k, (-hw * 0.35, sy * hd * 0.32, zh + hh * 0.5), M.painted((0.5, 0.05, 0.02), wear=0.5, name="fuel_red"),
                               rot=K.AXES["x"], verts=24, base=False))
@@ -127,7 +128,7 @@ def turret(spec, p):
         emitters.append({"pos": list(mz), "type": "fire"})
     elif variant == "railgun":
         cm, cs = KI.anim_emit(st.glow_col, 6.0, "rail_coil")
-        L = 1.05 * k
+        L = 0.85 * k
         for sy in (-1, 1):
             weap.append(K.box((L, 0.03 * k, 0.07 * k), (hw * 0.42 + L / 2, sy * 0.05 * k, ep.z), gm, bevel=0.006, name="rail"))
         for i in range(6):
@@ -160,6 +161,13 @@ def turret(spec, p):
                 weap.append(K.cyl(0.055 * k, 0.012, c, M.plastic((0.02, 0.02, 0.02), 0.6), rot=K.AXES["x"], verts=20, base=False))
                 weap.append(K.cyl(0.04 * k, 0.03 * k, c - Vector((0.005, 0, 0)), M.painted((0.6, 0.6, 0.58), name="warhead"), rot=K.AXES["x"], verts=16, r2=0.005))
         mz = Vector((hw * 0.4 + 0.25 * k, 0, ep.z))
+    # markers that ride with the weapon so the Godot hints sit at the muzzle in the rest pose
+    mz_mark = KI.pivot(mz, name="muzzle_mark")
+    weap.append(mz_mark)
+    lmarks = []
+    for l_ in lights:
+        lmarks.append(KI.pivot(l_["pos"], name="light_mark"))
+        weap.append(lmarks[-1])
     epp = KI.pivot(ep, name="elevation")
     KI.bind(weap, epp)
     an.rotate(epp, lambda t: elev - 0.06 * math.sin(TAU * 2 * t), axis="Y")
@@ -177,9 +185,17 @@ def turret(spec, p):
             K.box((0.3 * k, 0.15 * k, 0.12 * k), (-0.32 * w + i * 0.01, 0.3 * d - i * 0.14 * k, z0), M.painted((0.18, 0.16, 0.1), wear=0.6, name="sandbag"), bevel=0.04 * k)
     if variant != "flame":
         emitters.append({"pos": list(mz), "type": "sparks"})
-    reach = (mz - Vector((0, 0, mz.z))).length
-    return Rig(height=max(zh + hh + 0.35 * k, mz.z + 0.25 * k) + (0.5 * k if variant == "mortar" else 0),
-               extra_points=[(reach * 1.1 * math.cos(i * math.pi / 4), reach * 1.1 * math.sin(i * math.pi / 4), mz.z) for i in range(8)], frames=16, fps=10, update=an, lights=lights, emitters=emitters)
+    # move muzzle/glow hints from the weapon's local frame to the rest pose (t=0)
+    import bpy
+    an(0.0)
+    bpy.context.view_layer.update()
+    mzw = list(mz_mark.matrix_world.translation)
+    for e in emitters:
+        e["pos"] = [round(v, 3) for v in mzw]
+    for l_, m_ in zip(lights, lmarks):
+        l_["pos"] = [round(v, 3) for v in m_.matrix_world.translation]
+    # framing: with_bounds samples the head sweep, so no full-circle reach points are needed
+    return Rig(height=max(zh + hh + 0.35 * k, mz.z + 0.25 * k), frames=16, fps=10, update=an, lights=lights, emitters=emitters)
 
 
 # =========================================================================== wall segment
@@ -330,15 +346,17 @@ def radar(spec, p):
         pm = st.mat((0.55, 0.56, 0.55) if st.tier < 4 else (0.75, 0.76, 0.77), name="array_face", rust=0.0, wear=0.4)
         tile = M.plastic((0.05, 0.06, 0.07), 0.35, name="array_tiles")
         for sgn in (-1, 1):
-            face = K.box((0.06 * k, aw, ah * 1.5), ac + Vector((sgn * 0.12 * k, 0, 0.05 * k)), pm, bevel=0.01, name="array")
-            face.rotation_euler = (0, sgn * math.radians(15), 0)
-            ant.append(face)
+            # each face + its tiles tilt back together about the face centre (A-frame, faces look up)
+            fc = ac + Vector((sgn * 0.14 * k, 0, 0.05 * k))
+            grp = [K.box((0.06 * k, aw, ah * 1.5), fc, pm, bevel=0.01, name="array")]
             for i in range(5):
                 for j in range(3):
-                    t_ = K.box((0.012, aw / 5 * 0.88, ah * 1.5 / 3 * 0.86), ac + Vector((sgn * (0.155 * k + 0.0), -aw / 2 + aw * (i + 0.5) / 5, 0.05 * k - ah * 0.75 + ah * 1.5 * (j + 0.5) / 3)),
-                               tile, bevel=0.002)
-                    t_.rotation_euler = (0, sgn * math.radians(15), 0)
-                    ant.append(t_)
+                    grp.append(K.box((0.012, aw / 5 * 0.88, ah * 1.5 / 3 * 0.86),
+                                     fc + Vector((sgn * 0.036 * k, -aw / 2 + aw * (i + 0.5) / 5, -ah * 0.75 + ah * 1.5 * (j + 0.5) / 3)),
+                                     tile, bevel=0.002))
+            fp = KI.pivot(fc, name="array_face", children=grp)
+            fp.rotation_euler = (0, -sgn * math.radians(15), 0)
+            ant.append(fp)
         ant.append(K.cyl(0.16 * k, ah * 0.6, (T.x, T.y, za + 0.08 * k), body, verts=24, name="drum"))
     else:
         refl_m = M.metal("aluminum", rough=0.3, dirt=0.3) if st.tier < 4 else st.mat((0.75, 0.76, 0.77), name="refl_white")

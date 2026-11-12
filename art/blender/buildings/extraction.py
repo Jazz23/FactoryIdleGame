@@ -475,7 +475,8 @@ def pumpjack(spec, p):
         an(t)
 
     top = zp + R * math.sin(math.radians(30)) + 0.25
-    return Rig(height=top, frames=16, fps=8, update=update)
+    return Rig(height=top, frames=16, fps=8, update=update,
+               lights=[{"pos": list(cp + Vector((0.08, -0.06, 1.0))), "color": [0.1, 1.0, 0.25], "energy": 0.3, "flicker": True}])
 
 
 # =========================================================================== water pump
@@ -621,7 +622,7 @@ def water_pump(spec, p):
     cpl.append(K.box((0.012, 0.072 * k * 2, 0.06 * k), pc + Vector((0, 0, zh + lh * 0.42)), M.painted((0.7, 0.4, 0.02), name="mark"), bevel=0.002))
     cp = KI.pivot(pc, name="coupling")
     KI.bind(cpl, cp)
-    an.spin(cp, 1.0 / 6.0 * 2)
+    an.spin(cp, 1.0)   # whole turn: the 2-fold marker bar must come back to its start pose
     # motor
     mz = zh + 0.08 + lh
     mr = 0.19 * k
@@ -664,7 +665,8 @@ def water_pump(spec, p):
         K.railing([(px0 + 0.03, py0 + 0.03, zt), (px1 - 0.05, py0 + 0.03, zt)], 0.7 * k, st.safety())
         K.railing([(px0 + 0.03, py0 + 0.03, zt), (px0 + 0.03, py1 - 0.05, zt)], 0.7 * k, st.safety())
     return Rig(height=zt + mz + mh + 0.2 * k, frames=16, fps=10, update=an,
-               emitters=[])
+               lights=[{"pos": list(cbx + Vector((0.0, -0.03, 0.55 * k + 0.05))), "color": list(st.glow_col if st.tier >= 3 else (0.1, 1.0, 0.3)),
+                        "energy": 0.3, "flicker": True}])
 
 
 # =========================================================================== gas well
@@ -766,8 +768,9 @@ def gas_well(spec, p):
     KI.pipe([(S.x - sl / 2 + 0.05, S.y, S.z + sr * 0.7), (F.x + 0.08, S.y, S.z + sr * 0.7), (F.x + 0.08, F.y, S.z + sr * 0.7), (F.x + 0.06, F.y, 0.5 + z0)],
             r=0.03 * k, mat=st.mat((0.5, 0.4, 0.03), name="gasline"), flanges=False)
     # flame: wind-blown layered soft blobs (opaque core, fading edges)
-    fmat_o, fs_o = KI.soft_glow((1.0, 0.32, 0.04), 6.0, rim=False, name="flame_outer", power=0.8)
-    fmat_i, fs_i = KI.soft_glow((1.0, 0.72, 0.28), 12.0, rim=False, name="flame_inner", power=1.0)
+    # moderate strengths: AgX washes strong emission out to white, a real flare reads deep orange
+    fmat_o, fs_o = KI.soft_glow((1.0, 0.42, 0.05), 3.0, rim=False, name="flame_outer", power=0.8)
+    fmat_i, fs_i = KI.soft_glow((1.0, 0.72, 0.25), 6.0, rim=False, name="flame_inner", power=1.0)
     fl_h = 0.5 + 0.18 * s
     fr0 = 0.1 * k
     blobs = []
@@ -787,8 +790,8 @@ def gas_well(spec, p):
             o.location = (dx * fl_h * (1 + 0.3 * KI.wave(t, 3, ph)), 0.05 * fl_h * KI.wave(t, 2, ph + 0.4), zf * fl_h + lift)
             sc = 0.85 + 0.25 * KI.flicker(t, ph * 3, 1.0)
             o.scale = (sc, sc, sc * (1.0 + 0.2 * KI.wave(t, 4, ph)))
-        fs_o.default_value = 5.0 + 3.0 * f
-        fs_i.default_value = 10.0 + 6.0 * f
+        fs_o.default_value = 2.4 + 1.4 * f
+        fs_i.default_value = 4.5 + 3.0 * f
         light.energy = 40.0 * k * (0.6 + 0.5 * f)
     an.add(flame_upd)
 

@@ -234,7 +234,7 @@ def arc_furnace(spec, p):
     eh = 1.9 * vr
     yb = V.y + vr * 1.25
     arm_z = zdelta + 0.75 * vr
-    wall_y = V.y + vr * 1.25 + 0.55 * s ** 0.5
+    wall_y = yb + 0.22 * s ** 0.5   # vault wall just behind the electrode masts
     cab = M.rubber((0.025, 0.025, 0.028))
     cu = M.metal("copper", dirt=0.7)
     arcs = []
@@ -268,7 +268,7 @@ def arc_furnace(spec, p):
     wh = arm_z + 0.35
     xs_ = [a_[0] for a_ in arcs]
     hx0, hx1 = min(xs_) - 0.45 * s ** 0.5, max(xs_) + 0.45 * s ** 0.5
-    hd = 0.42 * s ** 0.5
+    hd = max(0.3, min(0.42 * s ** 0.5, 0.49 * d - (wall_y - 0.08)))   # keep the vault on the footprint
     house = st.mat((0.2, 0.21, 0.2) if st.tier < 4 else (0.6, 0.61, 0.62), name="house_paint", wear=0.8)
     K.box((hx1 - hx0, hd, wh - 0.1), ((hx0 + hx1) / 2, wall_y + hd / 2 - 0.08, 0.1), house, bevel=0.02, base=True, name="transformer_house")
     for i in range(3):
@@ -409,7 +409,7 @@ def crusher(spec, p):
     mz = 0.38 + 0.06 * s
     mx = sx_ + R * 1.25 + 0.15
     mr = 0.13 * k
-    ml = 0.4 * k
+    ml = max(0.25, min(0.4 * k, (yf - 0.06 + 0.49 * d) / 1.21))   # fan cowl stays on the footprint
     my = yf - 0.06 - ml / 2
     K.box((ml * 1.2, ml * 1.1, mz - mr - 0.1), (mx, my + 0.05, 0.1), frame, bevel=0.01, base=True)
     KI.motor((mx, my, mz), axis="y", r=mr, length=ml, mat=M.painted((0.06, 0.16, 0.3), wear=st.wear, grime=st.grime, name="motor_paint"))
@@ -445,6 +445,7 @@ def crusher(spec, p):
     an.value(ls, lambda t: 2 + 9 * KI.blink(t, 2))
     KI.rock_pile((w * 0.36, -0.3 * d, 0.1), 0.25 * k, 0.2 * k, 0.12 * k, int(14 * k), rockm, seed=9, rmin=0.03 * k, rmax=0.06 * k)
     return Rig(height=hz + 0.3 * k + 0.2, frames=16, fps=12, update=an,
+               lights=[{"pos": [-0.36 * w + 0.08, -0.36 * d, 0.1 + 0.55 + 0.2 * s], "color": [0.1, 1.0, 0.25], "energy": 0.3, "flicker": True}],
                emitters=[{"pos": [C.x + fw_ * 0.08, C.y, hz + 0.3 * k], "type": "smoke"}])
 
 
@@ -508,6 +509,7 @@ def _cone_crusher(spec, p):
     _, ls = KI.status_lamp((-0.38 * w + 0.08, -0.36 * d, 0.1 + 0.5 + 0.2 * s), (0.1, 1.0, 0.25), 10.0, r=0.025)
     an.value(ls, lambda t: 2 + 9 * KI.blink(t, 2))
     return Rig(height=z3 + 0.35 * k + 0.2, frames=16, fps=12, update=an,
+               lights=[{"pos": [-0.38 * w + 0.08, -0.36 * d, 0.1 + 0.55 + 0.2 * s], "color": [0.1, 1.0, 0.25], "energy": 0.3, "flicker": True}],
                emitters=[{"pos": [C.x, C.y, z3 + 0.4 * k], "type": "smoke"}])
 
 
@@ -583,13 +585,14 @@ def press(spec, p):
             K.cyl(rr, 0.3 * k, (P.x + xx, P.y, zc + crown_h), M.metal("dark_steel", dirt=st.dirt), verts=32, name="main_cylinder")
             K.cyl(rr * 1.18, 0.05, (P.x + xx, P.y, zc + crown_h + 0.3 * k), st.accent_mat(), verts=32)
             K.bolts(Vector((P.x + xx, P.y, zc + crown_h + 0.3 * k + 0.05)), rr * 0.85, 8, r=0.012)
-        hpu = Vector((P.x + px + cw / 2 + 0.35 * k, P.y + pd * 0.15, z0))
-        hpu.x = min(hpu.x, 0.42 * w)
-        K.box((0.5 * k, 0.7 * k, 0.45 * k), hpu, M.painted((0.06, 0.16, 0.3), wear=st.wear, name="hpu_tank"), bevel=0.015, base=True, name="hpu")
+        # power unit squeezed between the press frame and the footprint edge
+        hw_ = max(0.3 * k, min(0.5 * k, 0.48 * w - (P.x + px + cw * 0.55 + 0.04 * k + 0.06)))
+        hpu = Vector((0.48 * w - hw_ / 2, P.y + pd * 0.15, z0))
+        K.box((hw_, 0.7 * k, 0.45 * k), hpu, M.painted((0.06, 0.16, 0.3), wear=st.wear, name="hpu_tank"), bevel=0.015, base=True, name="hpu")
         KI.motor(hpu + Vector((0, -0.1 * k, 0.45 * k + 0.1 * k)), axis="y", r=0.09 * k, length=0.28 * k,
                  mat=M.painted((0.06, 0.16, 0.3), wear=st.wear, name="motor_paint"))
         for i in range(3):
-            KI.bellows_hose([hpu + Vector((-0.2 * k, 0.2 * k - i * 0.1 * k, 0.45 * k)), Vector((hpu.x - 0.2 * k, P.y + 0.1 * k - i * 0.08 * k, zc + crown_h + 0.4 * k)),
+            KI.bellows_hose([hpu + Vector((-hw_ * 0.3, 0.2 * k - i * 0.1 * k, 0.45 * k)), Vector((hpu.x - hw_ * 0.3, P.y + 0.1 * k - i * 0.08 * k, zc + crown_h + 0.4 * k)),
                              Vector((P.x + 0.1 * k, P.y + 0.1 * k - i * 0.08 * k, zc + crown_h + 0.3 * k))], 0.015 * k)
         K.box((2 * px * 0.3, pd * 0.25, 0.12 * k), P + Vector((0, 0, zb - z0 + 0.07 + ld_h + 0.012)), M.molten((1.0, 0.42, 0.08), 6.0, 5.0), bevel=0.02, base=True, name="hot_billet")
         hl = KI.point_light(P + Vector((0, -pd * 0.5, zb - z0 + 0.4)), (1.0, 0.45, 0.12), 40.0 * k, 0.15)
@@ -691,7 +694,8 @@ def rolling_mill(spec, p):
     roll_len = 2 * hy + ht + 0.2
     for zz, r, sgn in ((zp + rw + 0.006, rw, -1), (zp - rw - 0.006, rw, 1), (zp + 2 * rw + 0.006 + rb, rb, 1), (zp - 2 * rw - 0.006 - rb, rb, -1)):
         grp = [K.cyl(r, roll_len, (Xs, Ym, zz), M.metal("steel", rough=0.18, dirt=0.3), rot=(math.pi / 2, 0, 0), verts=40, base=False, name="roll")]
-        grp.append(K.box((r * 0.5, 0.012, r * 0.18), (Xs + r * 0.45, Ym - roll_len / 2 - 0.004, zz), marks, bevel=0.001))
+        if r == rw:  # marks only on the work rolls (backup rolls turn rw/rb, not a whole number of turns)
+            grp.append(K.box((r * 0.5, 0.012, r * 0.18), (Xs + r * 0.45, Ym - roll_len / 2 - 0.004, zz), marks, bevel=0.001))
         rp = KI.pivot((Xs, Ym, zz), children=grp)
         rolls.append(rp)
         an.spin(rp, sgn * 1.0 * (rw / r), axis="Y")
@@ -708,7 +712,7 @@ def rolling_mill(spec, p):
             grp.append(K.cyl(0.06 * k, 0.08, (Xs, yy, zz), M.metal("dark_steel"), rot=(math.pi / 2, 0, 0), verts=16, base=False))
             grp += K.bolts(Vector((Xs, yy - 0.04, zz)), 0.045 * k, 4, axis="-y", r=0.01)
         sp = KI.pivot((Xs, Ym, zz), children=grp)
-        an.spin(sp, (1 if i == 0 else -1) * -0.5, axis="Y")
+        an.spin(sp, (1 if i == 0 else -1) * -1.0, axis="Y")   # same rate as the work roll it drives
     mr = 0.24 * k
     mlen = Xs - 0.21 * k - (-0.47 * w)
     if mlen > 0.3:
@@ -722,7 +726,7 @@ def rolling_mill(spec, p):
     # roller tables + strip
     tw = 0.34 * d
     tz = zp - 0.04
-    hot_m, hot_phase = KI.scrolling_hot_metal(color=(1.0, 0.3, 0.04), axis="X", period=0.25, strength=7.0)
+    hot_m, hot_phase = KI.scrolling_hot_metal(color=(1.0, 0.42, 0.05), axis="X", period=0.25, strength=4.0)
     table_rollers = []
     for xa, xb, thick in ((-w * 0.49, Xs - hwx / 2 - 0.05, 0.07 * k), (Xs + hwx / 2 + 0.05, w * 0.49, 0.03 * k)):
         L = xb - xa
@@ -801,7 +805,7 @@ def wire_drawer(spec, p):
         grp += K.bolts(Vector((x, cy, zt + 0.09 + ch)), cr * 0.7, 6, r=0.012)
         grp.append(K.box((cr * 0.5, 0.025, 0.012), (x + cr * 0.6, cy, zt + 0.094 + ch), M.painted((0.8, 0.55, 0.02), name="mark"), bevel=0.002))
         cp = KI.pivot((x, cy, 0), children=grp)
-        an.spin(cp, (2 + i) / 6.0 * 2)
+        an.spin(cp, 1.0 + i)   # whole turns (marker plate is asymmetric); later stands run faster
         K.cyl(cr * 0.5, 0.06, (x, cy, zt), frame, verts=24)
         # die box between capstans
         if i < n - 1:
@@ -860,7 +864,8 @@ def wire_drawer(spec, p):
     KI.cable(KI.sag((-0.38 * w + 0.1, 0.36 * d - 0.05, z0 + 0.3), (bx0, by1 - 0.1, z0 + 0.3), 0.05, 4), 0.014)
     sl, socks = KI.stack_light((bx1 - 0.08, by1 - 0.08, z0 + bh + 0.05))
     an.value(socks[2], lambda t: 6.0)
-    return Rig(height=zt + ch + 0.6 * k + 0.1, frames=16, fps=12, update=an)
+    return Rig(height=zt + ch + 0.6 * k + 0.1, frames=16, fps=12, update=an,
+               lights=[{"pos": [bx1 - 0.08, by1 - 0.08, z0 + bh + 0.15], "color": [0.1, 1.0, 0.25], "energy": 0.3, "flicker": False}])
 
 
 # =========================================================================== foundry
@@ -1007,8 +1012,17 @@ def foundry(spec, p):
     hood_m = st.mat((0.06, 0.062, 0.065), name="hood", wear=1.3)
     KI.frustum((cr * 2.5, cr * 2.5), (cr * 0.9, cr * 0.9), 0.25 * k, (Fx, Fy + 0.05, hz), hood_m, open_top=False, bevel=0.01)
     dz = hz + 0.25 * k
-    K.tube([(Fx, Fy + 0.05, dz), (Fx, Fy + 0.05, dz + 0.2 * k), (Fx, 0.47 * d, dz + 0.2 * k)],
+    stack_r = 0.11 * k
+    sy_ = 0.47 * d - stack_r
+    K.tube([(Fx, Fy + 0.05, dz), (Fx, Fy + 0.05, dz + 0.2 * k), (Fx, sy_, dz + 0.2 * k)],
            0.085 * k, hood_m, bend=0.2 * k)
+    # exhaust stack standing on the deck at the back edge (carries the duct)
+    stack_top = dz + 0.42 * k
+    K.cyl(stack_r, stack_top - zpf, (Fx, sy_, zpf), hood_m, verts=24, name="exhaust_stack")
+    K.cyl(stack_r * 1.15, 0.08, (Fx, sy_, stack_top - 0.08), M.metal("dark_steel", dirt=1.0), verts=24)
+    K.cyl(stack_r * 1.3, 0.1, (Fx, sy_, zpf), M.metal("dark_steel", dirt=1.0), verts=24)
+    for zz in (0.35, 0.7):
+        K.torus(stack_r * 1.02, 0.012, (Fx, sy_, zpf + (stack_top - zpf) * zz), M.metal("dark_steel"), segs=32)
     dz -= 0.05 * k
     for sx in (-1, 1):
         K.box((0.06, 0.06, hz - zpf), (Fx + sx * cr * 1.5, Fy + cr * 1.4, zpf), frame, bevel=0.005, base=True)
@@ -1034,10 +1048,10 @@ def foundry(spec, p):
     light = KI.point_light((lip.x, lip.y - 0.25, zl + mold_h + 0.4), (1.0, 0.5, 0.12), 0.0, 0.15)
     an.energy(light, lambda t: 10.0 + 70.0 * k * (1.0 if 0.12 < t < 0.56 else 0.15) * KI.flicker(t, 0.4, 0.2))
     an.add(lambda t: setattr(stream_s, "default_value", 4.5 + 1.5 * KI.flicker(t, 0.7, 0.4)))
-    return Rig(height=dz + 0.3 * k + 0.15 * k, frames=16, fps=10, update=an,
+    return Rig(height=max(dz + 0.3 * k + 0.15 * k, stack_top + 0.1), frames=16, fps=10, update=an,
                lights=[{"pos": [lip.x, lip.y, zl + mold_h + 0.3], "color": [1.0, 0.5, 0.15], "energy": 1.0, "flicker": True}],
-               emitters=[{"pos": [lip.x, lip.y, zl + mold_h + 0.05], "type": "sparks"},
-                         {"pos": [Fx, 0.47 * d, dz + 0.25 * k], "type": "smoke"}])
+               emitters=[{"pos": [lip.x, lip.y, zl + mold_h + 0.05], "type": "sparks"}]
+               + ([{"pos": [Fx, sy_, stack_top + 0.1], "type": "smoke"}] if p.get("smoke", True) else []))
 
 
 # =========================================================================== mixer
@@ -1105,18 +1119,23 @@ def mixer(spec, p):
     gbx = pc.x + 0.35 * k
     K.box((0.26 * k, 0.3 * k, 0.32 * k), (gbx, pc.y, pc.z - 0.16 * k), st.accent_mat() if st.tier != 1 else frame, bevel=0.02, base=True, name="gearbox")
     K.box((0.3 * k, 0.34 * k, pc.z - 0.16 * k - z0), (gbx, pc.y, z0), frame, bevel=0.01, base=True)
-    KI.motor((gbx, pc.y - 0.15 * k - 0.2 * k, pc.z - 0.02 * k), axis="-y", r=0.1 * k, length=0.3 * k,
+    # motor in front of the gearbox, shaft (+Y) into it, fan cowl facing out; sized to stay on the footprint
+    room = (pc.y - 0.15 * k) - (-0.49 * d)
+    ml_ = max(0.15, min(0.3 * k, room / 1.46))
+    mr_ = min(0.1 * k, 0.5 * ml_ + 0.05)
+    mcy = pc.y - 0.15 * k - 0.745 * ml_
+    KI.motor((gbx, mcy, pc.z - 0.02 * k), axis="y", r=mr_, length=ml_,
              mat=M.painted((0.06, 0.16, 0.3), wear=st.wear, grime=st.grime, name="motor_paint"))
-    K.box((0.25 * k, 0.32 * k, pc.z - 0.12 * k - z0), (gbx, pc.y - 0.33 * k, z0), frame, bevel=0.01, base=True)
+    K.box((mr_ * 2.2, ml_ * 1.1, pc.z - 0.02 * k - mr_ - z0), (gbx, mcy, z0), frame, bevel=0.01, base=True)
     # inlet: hopper on a stand + inclined screw feeder into the -X cone
     hx = D.x - Ld / 2 - rd * 0.2
-    hp = Vector((-0.38 * w, 0.32 * d, z0))
+    hp = Vector((-0.36 * w, 0.31 * d, z0))
     hh = D.z + rd * 0.7
     for sx in (-1, 1):
         for sy in (-1, 1):
             K.box((0.06, 0.06, hh - z0), hp + Vector((sx * 0.18 * k, sy * 0.18 * k, 0)), frame, bevel=0.005, base=True)
-    KI.frustum((0.2 * k, 0.2 * k), (0.62 * k, 0.62 * k), 0.45 * k, hp + Vector((0, 0, hh - z0)), body, open_top=True, thick=0.02)
-    KI.rock_pile(hp + Vector((0, 0, hh - z0 + 0.38 * k)), 0.26 * k, 0.26 * k, 0.05, int(18 * k), M.concrete(3.0, tint=(0.9, 0.85, 0.75)), seed=6,
+    KI.frustum((0.2 * k, 0.2 * k), (0.54 * k, 0.54 * k), 0.45 * k, hp + Vector((0, 0, hh - z0)), body, open_top=True, thick=0.02)
+    KI.rock_pile(hp + Vector((0, 0, hh - z0 + 0.38 * k)), 0.22 * k, 0.22 * k, 0.05, int(18 * k), M.concrete(3.0, tint=(0.9, 0.85, 0.75)), seed=6,
                  rmin=0.03, rmax=0.05)
     inlet = Vector((D.x - Ld / 2 - rd * 0.5, D.y, D.z + rd * 0.05))
     K.tube([hp + Vector((0, 0, hh - z0 - 0.05)), Vector((hp.x, hp.y, inlet.z + 0.35 * k)), inlet + Vector((-0.15 * k, 0, 0.1 * k)), inlet],
@@ -1134,6 +1153,7 @@ def mixer(spec, p):
     _, ls = KI.status_lamp((-0.36 * w + 0.08, -0.36 * d, z0 + 0.6 + 0.2 * s), (0.1, 1.0, 0.25), 10.0, r=0.025)
     an.value(ls, lambda t: 2 + 9 * KI.blink(t, 2))
     return Rig(height=max(hh + 0.45 * k, D.z + rd * 1.1 + 0.25 * k) + 0.05, frames=16, fps=10, update=an,
+               lights=[{"pos": [-0.36 * w + 0.08, -0.36 * d, z0 + 0.65 + 0.2 * s], "color": [0.1, 1.0, 0.25], "energy": 0.3, "flicker": True}],
                emitters=[{"pos": [ox + 0.15 * k, D.y, D.z + rd * 1.1 + 0.3 * k], "type": "steam"}])
 
 
