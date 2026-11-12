@@ -1,0 +1,12 @@
+# Godot
+.godot/
+*.import.tmp
+export/
+build/
+# Python
+.venv/
+__pycache__/
+# Art pipeline: downloadable sources and raw renders (regenerate via tools/)
+art/source/
+art/render/
+*.blend1
