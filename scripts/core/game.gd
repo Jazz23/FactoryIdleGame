@@ -875,11 +875,17 @@ func mega_contribute(mid: String) -> float:
 
 
 func legacy_gain() -> float:
-	var g = floor(sqrt(maxf(0.0, lifetime_credits) / 1.0e7))
+	var g: float = floor(sqrt(maxf(0.0, lifetime_credits) / 1.0e6))
 	for m in Content.megaprojects:
 		if megas_completed.has(m.id):
 			var rw = m.get("reward", {})
-			g += float(rw.get("prestige", 5.0)) if rw is Dictionary else 5.0
+			var pr = rw.get("prestige", null) if rw is Dictionary else null
+			if pr is bool:
+				g += 10.0 if pr else 0.0
+			elif pr != null:
+				g += float(pr)
+			else:
+				g += 2.0
 	return g
 
 
