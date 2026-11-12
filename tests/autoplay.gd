@@ -51,6 +51,9 @@ func _ready() -> void:
 	report()
 	diagnose()
 	_log("real time %.1fs" % ((Time.get_ticks_msec() - t0) / 1000.0))
+	if OS.get_cmdline_user_args().has("--save"):
+		Game.save_game()
+		_log("saved game")
 	var f := FileAccess.open("user://autoplay_log.txt", FileAccess.WRITE)
 	f.store_string("\n".join(log_lines))
 	get_tree().quit()
