@@ -262,10 +262,26 @@ func _build_bay(l: ProdLine) -> void:
 			s.centered = false
 			var org: Array = ds.meta.get("origin", [ds.texture.get_width() / 2, ds.texture.get_height() / 2])
 			s.offset = Vector2(-org[0], -org[1])
-			s.position = iso(o.x + BAY_W * 0.45, o.y + BAY_D * 0.62)
-			s.scale = Vector2(1.6, 1.6)
-			ground.add_child(s)
-			b.ground.append(s)
+			# patch sits under the machine row; a second one fills the longer bays
+			var dy: float = o.y + 1.4 + float(size[1]) / 2.0
+			for k in [0.3, 0.68]:
+				var sp := s if k == 0.3 else s.duplicate()
+				sp.position = iso(o.x + BAY_W * k, dy)
+				sp.flip_h = k > 0.5
+				ground.add_child(sp)
+				b.ground.append(sp)
+				for ed in ds.meta.get("emitters", []):
+					var px: Array = ed.get("px", [0, 0])
+					var kind: String = ed.get("type", "steam")
+					var em := FX.make_emitter("steam" if kind in ["bubbles", "steam", "vapor"] else kind)
+					em.position = sp.position + Vector2(px[0], px[1])
+					em.amount = 8
+					em.scale_amount_min *= 0.6
+					em.scale_amount_max *= 0.6
+					em.z_index = 1
+					ground.add_child(em)
+					em.emitting = true
+					b.ground.append(em)
 	# --- machines
 	var gap := 0.5
 	var fit := maxi(1, int(floor((BAY_W - 1.0) / (bw + gap))))
