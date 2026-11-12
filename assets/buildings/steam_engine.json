@@ -1,0 +1,31 @@
+{
+ "frames": 8,
+ "columns": 7,
+ "frame_w": 514,
+ "frame_h": 484,
+ "fps": 6,
+ "origin": [
+  204,
+  376
+ ],
+ "size": [
+  3,
+  3
+ ],
+ "height": 3.402,
+ "lights": [],
+ "emitters": [
+  {
+   "pos": [
+    -1.2,
+    0.96,
+    3.352
+   ],
+   "type": "steam",
+   "px": [
+    -15.4,
+    -331.9
+   ]
+  }
+ ]
+}

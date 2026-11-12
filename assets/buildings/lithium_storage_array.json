@@ -1,0 +1,18 @@
+{
+ "frames": 8,
+ "columns": 7,
+ "frame_w": 548,
+ "frame_h": 442,
+ "fps": 5,
+ "origin": [
+  236,
+  318
+ ],
+ "size": [
+  4,
+  3
+ ],
+ "height": 2.47,
+ "lights": [],
+ "emitters": []
+}

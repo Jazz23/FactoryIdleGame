@@ -1,0 +1,37 @@
+{
+ "frames": 8,
+ "columns": 6,
+ "frame_w": 662,
+ "frame_h": 600,
+ "fps": 7,
+ "origin": [
+  268,
+  460
+ ],
+ "size": [
+  4,
+  4
+ ],
+ "height": 4.07,
+ "lights": [
+  {
+   "pos": [
+    -0.8,
+    -0.8,
+    1.245
+   ],
+   "color": [
+    0.6,
+    0.8,
+    1.0
+   ],
+   "energy": 0.4,
+   "flicker": false,
+   "px": [
+    -102.4,
+    -97.6
+   ]
+  }
+ ],
+ "emitters": []
+}
