@@ -1,5 +1,7 @@
 # Industrium
 
+![A mid-game factory](docs/screenshot_factory.png)
+
 An idle megafactory game with photoreal, pre-rendered isometric art. Grow an abandoned lot into
 a planet-spanning industrial complex and launch the **Orbital Ark**.
 
