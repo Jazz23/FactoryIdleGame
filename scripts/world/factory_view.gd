@@ -30,6 +30,8 @@ var _belt_mat: ShaderMaterial
 var hover_uid := -1
 var selected_uid := -1
 var _counts := {}
+var _rebuild_pending := false
+var _updated_pending := {}
 
 
 static func iso(x: float, y: float, z := 0.0) -> Vector2:
@@ -75,9 +77,9 @@ func _ready() -> void:
 	_belt_mat = ShaderMaterial.new()
 	_belt_mat.shader = load("res://scripts/world/belt.gdshader")
 	_add_hall_lights()
-	Game.lines_changed.connect(rebuild)
-	Game.line_updated.connect(_on_line_updated)
-	Game.state_reset.connect(rebuild)
+	Game.lines_changed.connect(func(): _rebuild_pending = true)
+	Game.line_updated.connect(func(uid): _updated_pending[uid] = true)
+	Game.state_reset.connect(func(): _rebuild_pending = true)
 	rebuild()
 	center_on_bays()
 
@@ -404,6 +406,15 @@ func _make_sign(l: ProdLine) -> Control:
 
 
 func _process(delta: float) -> void:
+	if _rebuild_pending:
+		_rebuild_pending = false
+		_updated_pending.clear()
+		rebuild()
+	elif not _updated_pending.is_empty():
+		var ids := _updated_pending.keys()
+		_updated_pending.clear()
+		for uid in ids:
+			_on_line_updated(uid)
 	_handle_keys(delta)
 	var z := lerpf(camera.zoom.x, _cam_target_zoom, 1.0 - exp(-delta * 12.0))
 	camera.zoom = Vector2(z, z)

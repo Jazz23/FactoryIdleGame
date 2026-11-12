@@ -10,3 +10,4 @@ __pycache__/
 art/source/
 art/render/
 *.blend1
+build/
