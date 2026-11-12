@@ -42,6 +42,24 @@ func build() -> void:
 		h2.add_child(sl)
 		add_child(h2)
 	section("Display")
+	var uh := UI.hbox()
+	var ul := UI.label("UI scale", 15)
+	ul.custom_minimum_size.x = 110
+	uh.add_child(ul)
+	for f in [0.8, 0.9, 1.0, 1.15, 1.3]:
+		var fv: float = f
+		var b := UI.button("%d%%" % int(fv * 100), func():
+			get_tree().root.content_scale_factor = fv
+			var cf := ConfigFile.new()
+			cf.load("user://settings.cfg")
+			cf.set_value("display", "ui_scale", fv)
+			cf.save("user://settings.cfg")
+			mark_dirty()
+		)
+		if is_equal_approx(get_tree().root.content_scale_factor, fv):
+			b.add_theme_color_override("font_color", UI.ACCENT)
+		uh.add_child(b)
+	add_child(uh)
 	var fs := CheckBox.new()
 	fs.text = "Fullscreen"
 	fs.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN

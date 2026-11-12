@@ -84,14 +84,18 @@ func _ready() -> void:
 	center_on_bays()
 
 
+var hall_lights: Array = []
+
+
 func _add_hall_lights() -> void:
-	# overhead high-bay lamps: pools of warm light across the floor
+	# overhead high-bay lamps: pools of warm light across the floor (brighter at night)
 	for i in range(-2, 9):
 		for j in range(-8, 3):
 			var l := FX.make_light(Color(1.0, 0.9, 0.75), 0.42, 9.0)
 			l.position = iso(i * 14.0 + 6.0, j * 9.5 - 3.5)
 			l.z_index = -1
 			ground.add_child(l)
+			hall_lights.append(l)
 
 
 const DEPARTMENTS := [
@@ -419,7 +423,10 @@ func _process(delta: float) -> void:
 	var z := lerpf(camera.zoom.x, _cam_target_zoom, 1.0 - exp(-delta * 12.0))
 	camera.zoom = Vector2(z, z)
 	var dl := Game.daylight()
-	modulate_node.color = Color(0.62, 0.64, 0.7).lerp(Color(0.8, 0.79, 0.78), dl)
+	modulate_node.color = Color(0.5, 0.53, 0.62).lerp(Color(0.8, 0.79, 0.78), dl)
+	var le := lerpf(0.7, 0.38, dl)
+	for hl in hall_lights:
+		hl.energy = le
 	for uid in bays:
 		var b: Dictionary = bays[uid]
 		var l: ProdLine = b.line

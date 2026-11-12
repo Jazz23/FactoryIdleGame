@@ -6,6 +6,9 @@ var hud: HUD
 
 
 func _ready() -> void:
+	var cf := ConfigFile.new()
+	if cf.load("user://settings.cfg") == OK:
+		get_tree().root.content_scale_factor = float(cf.get_value("display", "ui_scale", 1.0))
 	for a in OS.get_cmdline_user_args():
 		if a == "--smoke":
 			add_child(load("res://tests/smoke_test.gd").new())
