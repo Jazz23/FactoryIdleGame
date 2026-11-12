@@ -1,0 +1,124 @@
+{
+ "deposits": [
+  {
+   "id": "iron_ore",
+   "name": "Iron Ore",
+   "item": "iron_ore",
+   "kind": "solid"
+  },
+  {
+   "id": "copper_ore",
+   "name": "Copper Ore",
+   "item": "copper_ore",
+   "kind": "solid"
+  },
+  {
+   "id": "coal",
+   "name": "Coal Seam",
+   "item": "coal",
+   "kind": "solid"
+  },
+  {
+   "id": "water",
+   "name": "Water Well",
+   "item": "water",
+   "kind": "fluid"
+  }
+ ],
+ "sectors": [
+  {
+   "id": "lot",
+   "name": "Abandoned Lot",
+   "desc": "",
+   "tier": 0,
+   "claim_cost": {},
+   "defense_required": 0,
+   "deposits": {
+    "iron_ore": 4,
+    "copper_ore": 3,
+    "coal": 3,
+    "water": 2
+   },
+   "threat": 0
+  },
+  {
+   "id": "ridge",
+   "name": "Ridge",
+   "desc": "",
+   "tier": 1,
+   "claim_cost": {
+    "gear": 50
+   },
+   "defense_required": 0,
+   "deposits": {
+    "iron_ore": 6
+   },
+   "threat": 5
+  }
+ ],
+ "threats": [
+  {
+   "id": "scrap",
+   "name": "Scrap Swarm",
+   "desc": "",
+   "strength": 10,
+   "appears_at_pollution": 50
+  }
+ ],
+ "contracts": [
+  {
+   "id": "c1",
+   "name": "Gear order",
+   "tier": 0,
+   "requires": {
+    "gear": 20
+   },
+   "reward_credits": 500,
+   "reward_items": {}
+  }
+ ],
+ "achievements": [
+  {
+   "id": "a1",
+   "name": "First Gear",
+   "desc": "Make a gear",
+   "condition": {
+    "type": "produce_total",
+    "target": "gear",
+    "value": 1
+   }
+  }
+ ],
+ "megaprojects": [
+  {
+   "id": "ark",
+   "name": "Orbital Ark",
+   "desc": "",
+   "stages": [
+    {
+     "name": "Foundation",
+     "requires": {
+      "gear": 100
+     }
+    }
+   ]
+  }
+ ],
+ "start": {
+  "credits": 300,
+  "items": {
+   "coal": 30,
+   "iron_plate": 20
+  },
+  "buildings": {
+   "burner_drill": 2,
+   "stone_furnace": 2,
+   "workbench": 1,
+   "water_pump": 1,
+   "boiler": 1
+  },
+  "sectors": [
+   "lot"
+  ]
+ }
+}

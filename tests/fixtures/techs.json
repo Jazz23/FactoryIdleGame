@@ -1,0 +1,63 @@
+{
+ "techs": [
+  {
+   "id": "basic_research",
+   "name": "Basic Research",
+   "desc": "",
+   "prereqs": [],
+   "cost": {
+    "blueprint_sheets": 1
+   },
+   "time": 5,
+   "units": 10,
+   "unlocks": [
+    "lab"
+   ],
+   "effects": [],
+   "tier": 0,
+   "repeatable": false
+  },
+  {
+   "id": "steam_power",
+   "name": "Steam Power",
+   "desc": "",
+   "prereqs": [
+    "basic_research"
+   ],
+   "cost": {
+    "blueprint_sheets": 1
+   },
+   "time": 10,
+   "units": 30,
+   "unlocks": [
+    "steam_engine"
+   ],
+   "effects": [],
+   "tier": 1,
+   "repeatable": false
+  },
+  {
+   "id": "smelting_1",
+   "name": "Furnace Insulation I",
+   "desc": "",
+   "prereqs": [
+    "basic_research"
+   ],
+   "cost": {
+    "blueprint_sheets": 1
+   },
+   "time": 10,
+   "units": 40,
+   "unlocks": [],
+   "effects": [
+    {
+     "type": "craft_speed",
+     "target": "smelting",
+     "value": 0.2
+    }
+   ],
+   "tier": 1,
+   "repeatable": false
+  }
+ ]
+}

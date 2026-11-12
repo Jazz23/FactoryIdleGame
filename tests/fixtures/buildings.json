@@ -1,0 +1,194 @@
+{
+ "buildings": [
+  {
+   "id": "burner_drill",
+   "name": "Burner Drill",
+   "desc": "",
+   "role": "producer",
+   "categories": [
+    "mining"
+   ],
+   "speed": 0.5,
+   "power_kw": 0,
+   "burner": true,
+   "fuel_kw": 150,
+   "module_slots": 0,
+   "pollution": 10,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "drill",
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "stone_furnace",
+   "name": "Burner Furnace",
+   "desc": "",
+   "role": "producer",
+   "categories": [
+    "smelting"
+   ],
+   "speed": 1,
+   "power_kw": 0,
+   "burner": true,
+   "fuel_kw": 90,
+   "module_slots": 0,
+   "pollution": 2,
+   "size": [
+    2,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "burner_furnace",
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "workbench",
+   "name": "Workbench",
+   "desc": "",
+   "role": "producer",
+   "categories": [
+    "assembling"
+   ],
+   "speed": 0.5,
+   "power_kw": 75,
+   "burner": false,
+   "fuel_kw": 0,
+   "module_slots": 0,
+   "pollution": 0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "assembler",
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "lab",
+   "name": "Field Lab",
+   "desc": "",
+   "role": "research",
+   "categories": [],
+   "speed": 1,
+   "power_kw": 60,
+   "burner": false,
+   "fuel_kw": 0,
+   "module_slots": 0,
+   "pollution": 0,
+   "size": [
+    3,
+    3
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "lab",
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "boiler",
+   "name": "Boiler",
+   "desc": "",
+   "role": "producer",
+   "categories": [
+    "boiling"
+   ],
+   "speed": 1,
+   "power_kw": 0,
+   "burner": true,
+   "fuel_kw": 1800,
+   "module_slots": 0,
+   "pollution": 30,
+   "size": [
+    3,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "boiler",
+    "params": {
+     "tier": 1
+    }
+   }
+  },
+  {
+   "id": "steam_engine",
+   "name": "Steam Engine",
+   "desc": "",
+   "role": "generator",
+   "categories": [],
+   "speed": 1,
+   "power_kw": 0,
+   "burner": false,
+   "fuel_kw": 0,
+   "module_slots": 0,
+   "pollution": 0,
+   "size": [
+    3,
+    5
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "steam_engine",
+    "params": {
+     "tier": 1
+    }
+   },
+   "power_out_kw": 900,
+   "generator": {
+    "fluid": "steam",
+    "rate": 30
+   }
+  },
+  {
+   "id": "water_pump",
+   "name": "Water Pump",
+   "desc": "",
+   "role": "producer",
+   "categories": [
+    "pumping"
+   ],
+   "speed": 1,
+   "power_kw": 0,
+   "burner": false,
+   "fuel_kw": 0,
+   "module_slots": 0,
+   "pollution": 0,
+   "size": [
+    1,
+    2
+   ],
+   "tier": 0,
+   "unlocked_by": null,
+   "visual": {
+    "archetype": "water_pump",
+    "params": {
+     "tier": 1
+    }
+   }
+  }
+ ]
+}

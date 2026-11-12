@@ -1,0 +1,213 @@
+{
+ "items": [
+  {
+   "id": "iron_ore",
+   "name": "Iron Ore",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 2,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "iron_ore"
+   }
+  },
+  {
+   "id": "copper_ore",
+   "name": "Copper Ore",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 2,
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "copper_ore"
+   }
+  },
+  {
+   "id": "coal",
+   "name": "Coal",
+   "kind": "solid",
+   "group": "raw",
+   "tier": 0,
+   "value": 1.5,
+   "fuel_kj": 4000,
+   "fuel_class": "chemical",
+   "visual": {
+    "archetype": "ore_chunks",
+    "material": "coal"
+   }
+  },
+  {
+   "id": "water",
+   "name": "Water",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 0,
+   "value": 0.05,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.2,
+     0.4,
+     0.8
+    ]
+   }
+  },
+  {
+   "id": "steam",
+   "name": "Steam",
+   "kind": "fluid",
+   "group": "fluids",
+   "tier": 1,
+   "value": 0.2,
+   "visual": {
+    "archetype": "fluid_orb",
+    "material": "glass",
+    "color": [
+     0.9,
+     0.9,
+     0.9
+    ]
+   }
+  },
+  {
+   "id": "iron_plate",
+   "name": "Iron Plate",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 0,
+   "value": 5,
+   "visual": {
+    "archetype": "plate",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "copper_plate",
+   "name": "Copper Plate",
+   "kind": "solid",
+   "group": "materials",
+   "tier": 0,
+   "value": 5,
+   "visual": {
+    "archetype": "plate",
+    "material": "copper"
+   }
+  },
+  {
+   "id": "gear",
+   "name": "Iron Gear",
+   "kind": "solid",
+   "group": "intermediates",
+   "tier": 0,
+   "value": 13,
+   "visual": {
+    "archetype": "gear",
+    "material": "iron"
+   }
+  },
+  {
+   "id": "blueprint_sheets",
+   "name": "Blueprint Sheets",
+   "kind": "solid",
+   "group": "research",
+   "tier": 0,
+   "value": 30,
+   "visual": {
+    "archetype": "flask",
+    "material": "glass",
+    "color": [
+     0.8,
+     0.2,
+     0.1
+    ]
+   }
+  },
+  {
+   "id": "burner_drill",
+   "name": "Burner Drill",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 60,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "stone_furnace",
+   "name": "Burner Furnace",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 40,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "workbench",
+   "name": "Workbench",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 90,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "lab",
+   "name": "Field Lab",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 120,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "boiler",
+   "name": "Boiler",
+   "kind": "solid",
+   "group": "power",
+   "tier": 0,
+   "value": 80,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "steam_engine",
+   "name": "Steam Engine",
+   "kind": "solid",
+   "group": "power",
+   "tier": 0,
+   "value": 150,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  },
+  {
+   "id": "water_pump",
+   "name": "Water Pump",
+   "kind": "solid",
+   "group": "production",
+   "tier": 0,
+   "value": 70,
+   "visual": {
+    "archetype": "building_kit",
+    "material": "steel"
+   }
+  }
+ ]
+}
