@@ -170,6 +170,19 @@ func _emergency() -> void:
 
 
 func _balance_deficits() -> void:
+	# latent demand: lines waiting on an input tell us exactly what is short
+	var short := {}
+	for l in Game.lines:
+		if l.status != "no_input" or l.status_item == "" or l.recipe == "" or l.count <= 0:
+			continue
+		var r: Dictionary = Content.recipes[l.recipe]
+		var b: Dictionary = l.spec()
+		var nominal = l.effective_count * float(b.get("speed", 1.0)) * (1.0 + Game.speed_bonus(r.category)) / maxf(0.01, float(r.get("time", 1.0)))
+		var it: String = l.status_item
+		short[it] = float(short.get(it, 0.0)) + float(r.inputs.get(it, 0.0)) * nominal * (1.0 - l.activity)
+	for it in short:
+		if not Content.buildings.has(it):
+			Planner.apply(Planner.plan(it, short[it] * 1.1), Game.credits * 0.3)
 	# expand production of any item consumed faster than it is produced while stock runs low
 	for it in Game.rates_cons.keys():
 		var c: float = Game.rates_cons[it]

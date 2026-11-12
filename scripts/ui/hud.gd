@@ -12,6 +12,7 @@ const NAV := [
 	["power", "Power", "P", "res://scripts/ui/panels/power_panel.gd"],
 	["storage", "Storage", "I", "res://scripts/ui/panels/storage_panel.gd"],
 	["stats", "Statistics", "", "res://scripts/ui/panels/stats_panel.gd"],
+	["codex", "Codex", "K", "res://scripts/ui/panels/codex_panel.gd"],
 	["mega", "Megaprojects", "", "res://scripts/ui/panels/mega_panel.gd"],
 	["achievements", "Achievements", "", "res://scripts/ui/panels/achievements_panel.gd"],
 	["settings", "Settings", "", "res://scripts/ui/panels/settings_panel.gd"],
@@ -51,8 +52,15 @@ func _ready() -> void:
 	_build_host()
 	var adv := Advisor.new()
 	adv.hud = self
-	adv.position = Vector2(10, 560)
 	add_child(adv)
+	adv.anchor_left = 0.0
+	adv.anchor_right = 0.0
+	adv.anchor_top = 1.0
+	adv.anchor_bottom = 1.0
+	adv.offset_left = 10
+	adv.offset_bottom = -10
+	adv.offset_top = -10
+	adv.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	toasts = UI.vbox(6)
 	toasts.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
 	toasts.position = Vector2(330, -40)
@@ -135,7 +143,8 @@ func _build_nav() -> void:
 		var b := UI.button("  " + n[1], func(): toggle(n[0]), 160)
 		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		b.add_theme_font_override("font", UI.font("head"))
-		b.add_theme_font_size_override("font_size", 20)
+		b.add_theme_font_size_override("font_size", 18)
+		b.custom_minimum_size.y = 30
 		if n[2] != "":
 			b.tooltip_text = "%s  [%s]" % [n[1], n[2]]
 		nav.add_child(b)
