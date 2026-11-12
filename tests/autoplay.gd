@@ -146,6 +146,7 @@ func decide() -> void:
 	_ensure_logistics()
 	_ensure_sectors()
 	_ensure_defense()
+	_control_pollution()
 	_megaprojects()
 	_upgrade_lines()
 	_balance_deficits()
@@ -402,6 +403,26 @@ func _ensure_defense() -> void:
 					ammo = it.id
 			if ammo != "":
 				Planner.apply(Planner.plan(ammo, float(b.get("ammo_per_min", 0)) * l.count / 60.0 * 1.1), Game.credits * 0.2)
+
+
+func _control_pollution() -> void:
+	if Game.pollution < 600.0:
+		return
+	var best := ""
+	var bs := 0.0
+	for b in Content.building_list:
+		if b.get("role", "") != "producer" and float(b.get("pollution", 0)) < 0.0 and Planner.building_available(b.id):
+			var v := -float(b.pollution) / maxf(1.0, Content.item_value(b.id))
+			if v > bs:
+				bs = v
+				best = b.id
+	if best == "":
+		return
+	var l := Game.facility_line(best)
+	if l == null:
+		l = Game.add_line(best, "")
+	if Game.line_add(l.uid, 3) == 0:
+		_craft_building(best)
 
 
 func _add_defense() -> void:

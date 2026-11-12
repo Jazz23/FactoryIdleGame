@@ -304,10 +304,39 @@ func toast(text: String, kind := "info") -> void:
 	tw.tween_callback(p.queue_free)
 
 
+func modal(title_text: String, body: Control, button := "Continue") -> PanelContainer:
+	var shade := ColorRect.new()
+	shade.color = Color(0, 0, 0, 0.55)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(shade)
+	var p := UI.panel(Color(0.06, 0.065, 0.07, 0.98), UI.ACCENT.darkened(0.3), 24)
+	p.custom_minimum_size = Vector2(760, 0)
+	shade.add_child(p)
+	var v := UI.vbox(14)
+	p.add_child(v)
+	v.add_child(UI.heading(title_text, 34))
+	v.add_child(body)
+	var h := UI.hbox()
+	h.add_child(UI.spacer())
+	h.add_child(UI.accent_button(button, func(): shade.queue_free(), 160))
+	v.add_child(h)
+	p.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	p.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	p.grow_vertical = Control.GROW_DIRECTION_BOTH
+	return p
+
+
+func show_intro() -> void:
+	var v := UI.vbox(10)
+	var txt := "The old Rustfield works are yours. Four burner drills, two furnaces, a fitting bench and a steam engine still turn over.\n\nGrow this lot into a planet-spanning industrial complex and launch the Orbital Ark.\n\n• Every bay on the floor is a production line. Click one to add buildings, change its recipe or upgrade it.\n• Build new lines from the Build menu (B). Click any item icon to see how it is made, and use the planner to build a whole supply chain in one click.\n• Research (R) unlocks new machines. Labs consume research items that you must produce.\n• Sell surplus on the Market (M) and claim new Frontier sectors (T) for more ore deposits. Pollution attracts trouble, so defend your claims.\n• The Advisor (bottom left) points out bottlenecks. Your factory keeps working while you are away."
+	var l := UI.label(txt, 18, UI.TEXT)
+	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	l.custom_minimum_size.x = 700
+	v.add_child(l)
+	modal("Welcome to Industrium", v, "Start the shift")
+
+
 func _on_offline(r: Dictionary) -> void:
-	var d := AcceptDialog.new()
-	d.title = "Welcome back"
-	d.theme = UI.theme()
 	var v := UI.vbox(8)
 	v.add_child(UI.label("You were away for %s. Your factory ran for %s of effective time." % [Fmt.duration(r.elapsed), Fmt.duration(r.simulated)], 17))
 	v.add_child(UI.label("Credits earned: " + Fmt.credits(r.credits), 20, UI.GOOD))
@@ -319,9 +348,7 @@ func _on_offline(r: Dictionary) -> void:
 	for k in keys.slice(0, 24):
 		g.add_child(UI.item_chip(k, items[k], 30))
 	v.add_child(g)
-	d.add_child(v)
-	add_child(d)
-	d.popup_centered(Vector2i(720, 360))
+	modal("Welcome back", v)
 
 
 func _unhandled_key_input(event: InputEvent) -> void:

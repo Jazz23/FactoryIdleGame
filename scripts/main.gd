@@ -35,6 +35,8 @@ func _ready() -> void:
 	ui_layer.add_child(hud)
 	view.bay_clicked.connect(func(uid): hud.open("line", uid); view.focus_line(uid))
 	_handle_cli()
+	if Game.play_time < 5.0 and not " ".join(OS.get_cmdline_user_args()).contains("--shot"):
+		hud.show_intro()
 
 
 func _handle_cli() -> void:
@@ -53,12 +55,14 @@ func _handle_cli() -> void:
 			view._cam_target_zoom = float(a.substr(7))
 		elif a.begins_with("--line="):
 			hud.open("line", Game.lines[int(a.substr(7))].uid)
+		elif a == "--intro":
+			hud.show_intro()
 		elif a == "--tree":
 			hud.open_tree()
 		elif a == "--fresh":
 			Game.new_game(false)
 			for c in hud.get_children():
-				if c is AcceptDialog:
+				if c is ColorRect:
 					c.queue_free()
 	if shot != "":
 		for i in frames:
