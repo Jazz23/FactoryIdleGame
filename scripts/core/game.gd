@@ -9,6 +9,8 @@ signal tech_completed(tech_id: String)
 signal sectors_changed
 signal state_reset
 signal offline_report(report: Dictionary)
+signal built(uid: int, n: int)
+signal sold(item: String, credits: float)
 
 const SAVE_PATH := "user://industrium_save.json"
 const TICK := 0.1
@@ -71,6 +73,7 @@ var _caps: Dictionary = {}
 var _storage_add := {"solid": 0.0, "fluid": 0.0}
 var _wind := 0.7
 const SUPPORT_COVER := 8.0
+const SLOTS_PER_DEPOSIT := 5     # extractors per listed deposit slot
 var support: Dictionary = {"speed": 0.0, "energy": 0.0, "power": 0.0}
 var throughput: Dictionary = {"solid_cap": 6.0, "fluid_cap": 400.0, "solid_flow": 0.0, "fluid_flow": 0.0, "solid_sat": 1.0, "fluid_sat": 1.0}
 var _flow_solid := 0.0
@@ -310,7 +313,76 @@ func line_add(uid: int, n: int = 1) -> int:
 	if added > 0:
 		_caps_dirty = true
 		emit_signal("line_updated", uid)
+		emit_signal("built", uid, added)
 	return added
+
+
+## Faster buildings that can run this line's recipe and are available to the player.
+func upgrade_options(uid: int) -> Array:
+	var l := get_line(uid)
+	if l == null or l.recipe == "":
+		return []
+	var cur := float(l.spec().get("speed", 1.0))
+	var out: Array = []
+	for bid in Content.buildings_for_recipe(l.recipe):
+		if bid == l.building or float(Content.buildings[bid].get("speed", 1.0)) <= cur:
+			continue
+		if inv.get(bid, 0.0) >= 1.0 or can_buy(bid) and _recipe_unlocked_for(bid):
+			out.append(bid)
+	out.sort_custom(func(a, b): return float(Content.buildings[a].get("speed", 1)) > float(Content.buildings[b].get("speed", 1)))
+	return out
+
+
+func _recipe_unlocked_for(bid: String) -> bool:
+	for rid in Content.recipes_by_output.get(bid, []):
+		if unlocked_recipes.has(rid):
+			return true
+	return false
+
+
+## Replaces up to all buildings of a line with `new_bid` (old ones return to storage).
+## Returns how many were upgraded.
+func upgrade_line(uid: int, new_bid: String) -> int:
+	var l := get_line(uid)
+	if l == null or l.recipe == "" or not Content.buildings_for_recipe(l.recipe).has(new_bid):
+		return 0
+	var target: ProdLine = null
+	for x in lines:
+		if x != l and x.recipe == l.recipe and x.building == new_bid:
+			target = x
+			break
+	var k := 0
+	while k < l.count:
+		if inv.get(new_bid, 0.0) >= 1.0:
+			inv[new_bid] -= 1.0
+		elif can_buy(new_bid) and credits >= buy_price(new_bid):
+			credits -= buy_price(new_bid)
+		else:
+			break
+		k += 1
+	if k == 0:
+		emit_signal("notify", "Need %s to upgrade." % Content.item_name(new_bid), "warn")
+		return 0
+	if k == l.count and target == null:
+		add_item(l.building, k)
+		l.building = new_bid
+		var slots := module_slots(l)
+		while l.modules.size() > slots:
+			add_item(l.modules.pop_back(), k)
+	else:
+		if target == null:
+			target = add_line(new_bid, l.recipe, false)
+		l.count -= k
+		add_item(l.building, k)
+		target.count += k
+		if l.count == 0:
+			for m in l.modules:
+				pass
+			lines.erase(l)
+	_caps_dirty = true
+	emit_signal("lines_changed")
+	emit_signal("notify", "Upgraded %d to %s." % [k, Content.item_name(new_bid)], "good")
+	return k
 
 
 func line_remove(uid: int, n: int = 1) -> void:
@@ -499,7 +571,7 @@ func deposit_slots(dep: String) -> int:
 		if not _is_start_sector(s.id):
 			n *= (1.0 - siege)
 		total += n
-	return int(floor(total + 1e-6))
+	return int(floor(total * SLOTS_PER_DEPOSIT + 1e-6))
 
 
 func _is_start_sector(sid: String) -> bool:
@@ -674,6 +746,7 @@ func sell(item: String, n: float) -> float:
 	lifetime_credits += total
 	_credits_acc += total
 	_count_cons(item, 0.0)
+	emit_signal("sold", item, total)
 	return total
 
 
@@ -928,7 +1001,7 @@ func _compute_support() -> void:
 					gens += l.count
 	var s := {"speed": 0.0, "energy": 0.0, "power": 0.0}
 	var tput := setting("base_throughput", 6.0)
-	var ftput := setting("base_fluid_throughput", 400.0)
+	var ftput := setting("base_fluid_throughput", 5000.0)
 	var psat := float(power.get("sat", 1.0))
 	for l in lines:
 		if l.count <= 0 or not l.enabled:
@@ -958,6 +1031,7 @@ func _is_accumulator(l: ProdLine) -> bool:
 func _simulate_power(dt: float) -> void:
 	# demand: electric consumers at last tick's activity (idle draw 10%)
 	var demand := 0.0
+	var demand_p := 0.0
 	var energy_mult := 1.0 + float(support.get("energy", 0.0))
 	for l in lines:
 		if not l.enabled or l.count <= 0:
@@ -976,6 +1050,8 @@ func _simulate_power(dt: float) -> void:
 			load = 1.0 if current_research() != "" else 0.1
 		l.power_draw = kw * l.count * load * maxf(0.2, energy_mult + float(mt.energy))
 		demand += l.power_draw
+		if is_priority(l):
+			demand_p += l.power_draw
 	# supply
 	var capacity := 0.0
 	var gens: Array = []
@@ -1057,9 +1133,31 @@ func _simulate_power(dt: float) -> void:
 		supplied += draw / dt
 		by_source["accumulator"] = draw / dt
 	var sat := 1.0 if demand <= 0.0 else clampf(supplied / demand, 0.0, 1.0)
-	power = {"demand": demand, "supply": supplied, "capacity": capacity, "sat": sat,
+	# priority circuit: water pumps, boilers and reactors are fed first
+	var sat_p := 1.0 if demand_p <= 0.0 else clampf(supplied / demand_p, 0.0, 1.0)
+	var rest := maxf(0.0, supplied - demand_p * sat_p)
+	var dn := demand - demand_p
+	var sat_n := 1.0 if dn <= 0.0 else clampf(rest / dn, 0.0, 1.0)
+	power = {"demand": demand, "supply": supplied, "capacity": capacity, "sat": sat_n, "sat_priority": sat_p, "overall": sat,
 		"accum": accum_kj, "accum_cap": accum_cap, "by_source": by_source}
 	_wind = clampf(_wind + randf_range(-0.02, 0.02) * dt * 10.0, 0.25, 1.0)
+
+
+const PRIORITY_CATEGORIES := ["pumping", "boiling", "fission", "fusion"]
+
+
+func is_priority(l: ProdLine) -> bool:
+	if l.recipe == "":
+		return false
+	var r: Dictionary = Content.recipes.get(l.recipe, {})
+	if r.get("category", "") in PRIORITY_CATEGORIES:
+		return true
+	# fuel extraction keeps the boilers lit
+	if r.has("deposit"):
+		for it in r.get("outputs", {}):
+			if Content.items.get(it, {}).has("fuel_kj"):
+				return true
+	return false
 
 
 func _gen_priority(l: ProdLine) -> int:
@@ -1087,6 +1185,22 @@ func _simulate_lines(dt: float) -> void:
 	var fsat := float(throughput.get("fluid_sat", 1.0))
 	var flow_s := 0.0
 	var flow_f := 0.0
+	# ---- deposit slots go to the fastest extractors first
+	var alloc := {}
+	var ext: Array = []
+	for l in lines:
+		if l.enabled and l.count > 0 and l.recipe != "" and Content.recipes.get(l.recipe, {}).has("deposit"):
+			ext.append(l)
+	ext.sort_custom(func(a, b): return float(a.spec().get("speed", 1)) > float(b.spec().get("speed", 1)))
+	for l in ext:
+		var dep: String = Content.recipes[l.recipe].deposit
+		var used := int(dep_used.get(dep, 0))
+		var k := clampi(deposit_slots(dep) - used, 0, l.count)
+		dep_used[dep] = used + k
+		alloc[l.uid] = k
+	# ---- pass 1: per-line desired crafts (all limits except shared inputs) + total input demand
+	var plans: Array = []
+	var demand := {}
 	for l in lines:
 		if l.kind() != ProdLine.Kind.PRODUCER:
 			continue
@@ -1106,10 +1220,7 @@ func _simulate_lines(dt: float) -> void:
 			continue
 		var n: int = l.count
 		if r.has("deposit"):
-			var slots := deposit_slots(r.deposit)
-			var used := int(dep_used.get(r.deposit, 0))
-			n = clampi(slots - used, 0, l.count)
-			dep_used[r.deposit] = used + n
+			n = int(alloc.get(l.uid, 0))
 			if n <= 0:
 				l.activity = 0.0
 				l.status = "no_slots"
@@ -1120,17 +1231,16 @@ func _simulate_lines(dt: float) -> void:
 		var speed := float(b.get("speed", 1.0)) * (1.0 + speed_bonus(r.category) + float(mt.speed) + float(support.get("speed", 0.0)))
 		speed = maxf(speed, 0.05)
 		var nominal: float = n * speed / maxf(0.01, float(r.get("time", 1.0))) * dt
-		var crafts: float = nominal
 		var limit := 1.0
 		var why := "working"
 		var why_item := ""
 		var ins: Dictionary = r.get("inputs", {})
 		var outs: Dictionary = r.get("outputs", {})
 		var prod := 1.0 + float(mt.productivity) + (prod_bonus_mining if r.has("deposit") else 0.0)
-		# energy
 		var electric: bool = float(b.get("power_kw", 0.0)) > 0.0 and not b.get("burner", false)
-		if electric and psat < limit:
-			limit = psat
+		var lsat: float = float(power.get("sat_priority", 1.0)) if is_priority(l) else psat
+		if electric and lsat < limit:
+			limit = lsat
 			why = "no_power"
 		var self_fuel := false
 		if b.get("burner", false) and _best_fuel("chemical", l.fuel, 1.0) == "":
@@ -1139,7 +1249,6 @@ func _simulate_lines(dt: float) -> void:
 			else:
 				limit = 0.0
 				why = "no_fuel"
-		# logistics throughput
 		var solid_out := 0.0
 		var fluid_out := 0.0
 		for it in outs:
@@ -1147,26 +1256,16 @@ func _simulate_lines(dt: float) -> void:
 				fluid_out += float(outs[it]) * prod
 			else:
 				solid_out += float(outs[it]) * prod
-		if solid_out > 0.0 and ssat < limit:
+		var pre_logistics := limit
+		var prio := is_priority(l)
+		if solid_out > 0.0 and ssat < limit and not prio:
 			limit = ssat
 			why = "logistics"
-		if fluid_out > 0.0 and fsat < limit:
+		if fluid_out > 0.0 and fsat < limit and not prio:
 			limit = fsat
 			why = "logistics"
-		# inputs (gross amounts must be present)
-		for it in ins:
-			var need: float = float(ins[it]) * crafts
-			if need <= 0.0:
-				continue
-			var have: float = inv.get(it, 0.0)
-			var ratio := clampf(have / need, 0.0, 1.0)
-			if ratio < limit:
-				limit = ratio
-				why = "no_input"
-				why_item = it
-		# outputs (net of the same item consumed)
 		for it in outs:
-			var net: float = (float(outs[it]) * prod - float(ins.get(it, 0.0))) * crafts
+			var net: float = (float(outs[it]) * prod - float(ins.get(it, 0.0))) * nominal
 			if net <= 0.0 or overflow_sell.has(it):
 				continue
 			var space: float = cap(it) - inv.get(it, 0.0)
@@ -1175,12 +1274,45 @@ func _simulate_lines(dt: float) -> void:
 				limit = ratio
 				why = "output_full"
 				why_item = it
-		# throughput demand measured before the logistics limit
-		var pre_limit: float = minf(1.0, limit / maxf(0.0001, minf(ssat if solid_out > 0 else 1.0, fsat if fluid_out > 0 else 1.0))) if why == "logistics" else limit
-		flow_s += solid_out * nominal * pre_limit / dt
-		flow_f += fluid_out * nominal * pre_limit / dt
-		crafts *= limit
-		# burner fuel for the work actually done (self-fuelling lines burn after producing)
+		flow_s += solid_out * nominal * minf(pre_logistics, 1.0) / dt
+		flow_f += fluid_out * nominal * minf(pre_logistics, 1.0) / dt
+		var desire: float = nominal * limit
+		for it in ins:
+			demand[it] = float(demand.get(it, 0.0)) + float(ins[it]) * desire
+		plans.append([l, b, r, mt, n, nominal, limit, why, why_item, prod, self_fuel, desire])
+	# ---- shared input supply ratios
+	var supply := {}
+	for it in demand:
+		var d: float = demand[it]
+		supply[it] = 1.0 if d <= 0.0 else clampf(inv.get(it, 0.0) / d, 0.0, 1.0)
+	# ---- pass 2: run
+	for pl in plans:
+		var l: ProdLine = pl[0]
+		var b: Dictionary = pl[1]
+		var r: Dictionary = pl[2]
+		var mt: Dictionary = pl[3]
+		var n: int = pl[4]
+		var nominal: float = pl[5]
+		var limit: float = pl[6]
+		var why: String = pl[7]
+		var why_item: String = pl[8]
+		var prod: float = pl[9]
+		var self_fuel: bool = pl[10]
+		var ins: Dictionary = r.get("inputs", {})
+		var outs: Dictionary = r.get("outputs", {})
+		var in_ratio := 1.0
+		for it in ins:
+			var sr: float = supply.get(it, 1.0)
+			# never consume more than is physically present right now
+			var need: float = float(ins[it]) * nominal * limit
+			if need > 0.0:
+				sr = minf(sr, clampf(inv.get(it, 0.0) / need, 0.0, 1.0))
+			if sr < in_ratio:
+				in_ratio = sr
+				if sr < 0.999:
+					why = "no_input"
+					why_item = it
+		var crafts: float = nominal * limit * in_ratio
 		var fuel_kj: float = float(b.get("fuel_kw", 0.0)) * n * dt * (crafts / maxf(nominal, 1e-9)) if b.get("burner", false) else 0.0
 		if fuel_kj > 0.0 and not self_fuel:
 			var fs := _burn("chemical", l.fuel, fuel_kj)
@@ -1279,7 +1411,7 @@ func _simulate_research(dt: float) -> void:
 
 func _simulate_world(dt: float) -> void:
 	# pollution: natural absorption by claimed land + negative-pollution buildings (scrubbers)
-	var absorb := 25.0 + 15.0 * sectors_claimed.size() + pollution * 0.04
+	var absorb := 30.0 + 20.0 * sectors_claimed.size() + pollution * 0.2
 	var def := 0.0
 	var psat := float(power.sat)
 	var dbon: Dictionary = bonuses.get("defense", {})

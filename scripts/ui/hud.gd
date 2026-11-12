@@ -60,6 +60,7 @@ func _ready() -> void:
 	toasts.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(toasts)
 	Game.notify.connect(toast)
+	UI.on_item_clicked = func(it): open("item", it)
 	Game.offline_report.connect(_on_offline)
 	Game.lines_changed.connect(func(): _dirty(["factory", "build", "power", "storage"]))
 	Game.research_changed.connect(func(): _dirty(["research"]))
@@ -68,8 +69,9 @@ func _ready() -> void:
 	Game.state_reset.connect(func(): _dirty(panels.keys()))
 
 
-func _resized_layout() -> void:
-	pass
+func _exit_tree() -> void:
+	# static Callables must not outlive the HUD (avoids a crash at engine shutdown)
+	UI.on_item_clicked = Callable()
 
 
 func _build_top() -> void:

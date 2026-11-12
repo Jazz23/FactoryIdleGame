@@ -62,6 +62,17 @@ func build() -> void:
 	add_child(_buy_lbl)
 	_power = UI.label("", 14, UI.DIM)
 	add_child(_power)
+	var ups := Game.upgrade_options(uid)
+	if not ups.is_empty() and l.count > 0:
+		var uh := UI.hbox()
+		var nb: String = ups[0]
+		var ub := UI.accent_button("Upgrade to %s" % Content.item_name(nb), func(): Game.upgrade_line(uid, nb); hud.open("factory"))
+		ub.icon = Content.icon(nb)
+		ub.expand_icon = false
+		ub.add_theme_constant_override("icon_max_width", 28)
+		uh.add_child(ub)
+		uh.add_child(UI.label("×%s speed · %s each (have %d)" % [Fmt.num(float(Content.buildings[nb].speed) / maxf(0.01, float(b.get("speed", 1)))), Fmt.credits(Game.buy_price(nb)), int(Game.inv.get(nb, 0.0))], 13, UI.DIM))
+		add_child(uh)
 	# recipe
 	if l.kind() == ProdLine.Kind.PRODUCER:
 		section("Recipe")

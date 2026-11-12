@@ -152,9 +152,18 @@ static func icon(tex: Texture2D, size := 32) -> TextureRect:
 	return r
 
 
+static var on_item_clicked: Callable
+
+
 static func item_icon(item: String, size := 32) -> TextureRect:
 	var r := icon(Content.icon(item), size)
-	r.tooltip_text = Content.item_name(item)
+	r.tooltip_text = Content.item_name(item) + "\n(click for details & planner)"
+	r.mouse_filter = Control.MOUSE_FILTER_STOP
+	r.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	r.gui_input.connect(func(e):
+		if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT and on_item_clicked.is_valid():
+			on_item_clicked.call(item)
+	)
 	return r
 
 

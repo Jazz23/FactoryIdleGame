@@ -6,6 +6,15 @@ var hud: HUD
 
 
 func _ready() -> void:
+	for a in OS.get_cmdline_user_args():
+		if a.begins_with("--autoplay"):
+			var scr = load("res://tests/autoplay.gd")
+			if scr == null or not scr.can_instantiate():
+				push_error("autoplay script failed to load")
+				get_tree().quit(1)
+				return
+			add_child(scr.new())
+			return
 	view = FactoryView.new()
 	add_child(view)
 	var fx_layer := CanvasLayer.new()

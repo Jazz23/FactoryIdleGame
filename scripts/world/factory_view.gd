@@ -264,6 +264,21 @@ func _build_bay(l: ProdLine) -> void:
 			b.ground.append(s)
 			b.items.append(s)
 		b.belt_y = y0
+	# --- positional machine sound
+	if shown > 0 and not b.machines.is_empty():
+		var arch: String = spec.get("visual", {}).get("archetype", "")
+		var snd := AudioStreamPlayer2D.new()
+		snd.stream = Sound.stream(Sound.loop_for(arch), true)
+		snd.bus = "Machines"
+		snd.max_distance = 2200.0
+		snd.attenuation = 2.2
+		snd.position = b.machines[0].position
+		snd.volume_db = -80.0
+		ground.add_child(snd)
+		if snd.stream:
+			snd.play(randf() * 2.0)
+		b.ground.append(snd)
+		b.sound = snd
 	# --- sign
 	var sign := _make_sign(l)
 	sign.position = iso(o.x, o.y + BAY_D) + Vector2(-10, -40)
@@ -324,6 +339,10 @@ func _process(delta: float) -> void:
 				s.position = iso(o.x + 0.6 + t * span, b.belt_y, 0.12)
 				s.visible = l.count > 0 and (act > 0.02 or Game.inv.get(Content.recipe_main_output(l.recipe), 0.0) > 0)
 			((b.belt as Polygon2D).material as ShaderMaterial).set_shader_parameter("offset", l.anim_phase * 0.9 * (BAY_W + AISLE_X * 0.5 - 0.6))
+		if b.has("sound"):
+			var snd: AudioStreamPlayer2D = b.sound
+			var target_db := linear_to_db(0.02 + 0.5 * act * clampf(float(b.machines.size()) / 3.0, 0.4, 1.0)) - 4.0
+			snd.volume_db = lerpf(snd.volume_db, target_db, 1.0 - exp(-delta * 4.0))
 		if not b.sign.is_empty():
 			var sg: Control = b.sign[0]
 			var sub: Label = sg.get_meta("sub")
