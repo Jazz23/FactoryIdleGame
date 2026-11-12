@@ -112,7 +112,7 @@ func suggestions() -> Array:
 				out.append(["%s needs %s — nobody makes it." % [l.title(), Content.item_name(item)], func(): _open_build_for(item), UI.WARN, Content.icon(item)])
 		elif l.count > 0 and l.status == "no_fuel":
 			out.append(["%s is out of fuel." % l.title(), func(): hud.open("line", l.uid), UI.WARN, null])
-		elif l.count > 0 and l.status == "output_full" and not seen.has("full_" + l.status_item) and not Content.is_fluid(l.status_item):
+		elif l.count > 0 and l.status == "output_full" and not seen.has("full_" + l.status_item) and (not Content.is_fluid(l.status_item) or l.recipe_spec().get("outputs", {}).size() > 1):
 			seen["full_" + l.status_item] = true
 			var item2: String = l.status_item
 			out.append(["%s storage is full — sell it or enable auto-sell." % Content.item_name(item2), func(): hud.open("market"), UI.WARN, Content.icon(item2)])

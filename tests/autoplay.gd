@@ -475,6 +475,11 @@ func _megaprojects() -> void:
 
 
 func _sell_surplus() -> void:
+	# byproduct jams: auto-sell whatever overflows on multi-output lines
+	for l in Game.lines:
+		if l.status == "output_full" and l.status_item != "" and l.recipe != "":
+			if Content.recipes[l.recipe].get("outputs", {}).size() > 1 or Content.is_fluid(l.status_item):
+				Game.overflow_sell[l.status_item] = true
 	for it in Game.inv.keys():
 		var have: float = Game.inv[it]
 		if have <= 0 or Content.buildings.has(it) or Content.is_fluid(it):

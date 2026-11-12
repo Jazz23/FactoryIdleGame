@@ -28,6 +28,8 @@ var _drag_start := Vector2.ZERO
 var _cam_target_zoom := 0.55
 var _belt_mat: ShaderMaterial
 var hover_uid := -1
+var selected_uid := -1
+var _counts := {}
 
 
 static func iso(x: float, y: float, z := 0.0) -> Vector2:
@@ -167,6 +169,7 @@ func rebuild() -> void:
 	_compute_layout()
 	for l in Game.lines:
 		_build_bay(l)
+		_counts[l.uid] = l.count
 
 
 func _free_bay(b: Dictionary) -> void:
@@ -181,9 +184,16 @@ func _on_line_updated(uid: int) -> void:
 	var l: ProdLine = Game.get_line(uid)
 	if l == null:
 		return
+	var before := int(_counts.get(uid, l.count))
 	if bays.has(uid):
 		_free_bay(bays[uid])
 	_build_bay(l)
+	_counts[uid] = l.count
+	if l.count > before and bays.has(uid):
+		var ms: Array = bays[uid].machines
+		var k := mini(l.count, ms.size()) - 1
+		if k >= 0 and ms[k] is MachineSprite:
+			_pop_in(ms[k])
 
 
 func _build_bay(l: ProdLine) -> void:
@@ -207,6 +217,7 @@ func _build_bay(l: ProdLine) -> void:
 	line.joint_mode = Line2D.LINE_JOINT_SHARP
 	ground.add_child(line)
 	b.ground.append(line)
+	b.outline = line
 	# --- floor wear & aisle clutter (deterministic per line)
 	var rnd := RandomNumberGenerator.new()
 	rnd.seed = hash(l.uid * 7919 + 13)
@@ -319,6 +330,30 @@ func _build_bay(l: ProdLine) -> void:
 var _env_cache := {}
 
 
+func _pop_in(m: Node2D) -> void:
+	m.scale = Vector2(1.0, 0.0)
+	m.modulate.a = 0.0
+	var tw := create_tween().set_parallel(true)
+	tw.tween_property(m, "scale", Vector2.ONE, 0.45).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tw.tween_property(m, "modulate:a", 1.0, 0.2)
+	var dust := FX.make_emitter("smoke")
+	dust.one_shot = true
+	dust.explosiveness = 0.9
+	dust.amount = 16
+	dust.lifetime = 1.4
+	dust.direction = Vector2(0, -0.3)
+	dust.spread = 180.0
+	dust.initial_velocity_min = 40
+	dust.initial_velocity_max = 90
+	dust.gravity = Vector2(0, 10)
+	dust.color_ramp.set_color(0, Color(0.45, 0.42, 0.38, 0.5))
+	dust.position = m.position
+	dust.z_index = 3
+	add_child(dust)
+	dust.emitting = true
+	get_tree().create_timer(2.0).timeout.connect(dust.queue_free)
+
+
 func _env_sprite(key: String) -> Sprite2D:
 	if not _env_cache.has(key):
 		var tex := Content.env_texture(key)
@@ -391,6 +426,17 @@ func _process(delta: float) -> void:
 				s.position = iso(o.x + 0.6 + t * span, b.belt_y, 0.12)
 				s.visible = l.count > 0 and (act > 0.02 or Game.inv.get(Content.recipe_main_output(l.recipe), 0.0) > 0)
 			((b.belt as Polygon2D).material as ShaderMaterial).set_shader_parameter("offset", l.anim_phase * 0.9 * (BAY_W + AISLE_X * 0.5 - 0.6))
+		if b.has("outline"):
+			var ol: Line2D = b.outline
+			if uid == selected_uid:
+				ol.default_color = Color(1.0, 0.75, 0.2, 0.75 + 0.25 * sin(Time.get_ticks_msec() / 180.0))
+				ol.width = 9.0
+			elif uid == hover_uid:
+				ol.default_color = Color(1.0, 0.8, 0.35, 0.85)
+				ol.width = 7.0
+			else:
+				ol.default_color = Color(0.85, 0.62, 0.1, 0.55)
+				ol.width = 5.0
 		if b.has("sound"):
 			var snd: AudioStreamPlayer2D = b.sound
 			var target_db := linear_to_db(0.02 + 0.5 * act * clampf(float(b.machines.size()) / 3.0, 0.4, 1.0)) - 4.0
@@ -491,6 +537,7 @@ func center_on_bays() -> void:
 
 
 func focus_line(uid: int) -> void:
+	selected_uid = uid
 	if not bays.has(uid):
 		return
 	var o: Vector2 = bays[uid].origin

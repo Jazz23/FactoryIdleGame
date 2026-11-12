@@ -95,6 +95,26 @@ func build() -> void:
 			section("Throughput (actual)")
 			_rates = UI.vbox(2)
 			add_child(_rates)
+			var oh := UI.hbox(10)
+			oh.add_child(UI.label("Auto-sell overflow:", 13, UI.DIM))
+			for it in l.recipe_spec().get("outputs", {}):
+				var item: String = it
+				var cb := CheckBox.new()
+				cb.text = Content.item_name(item)
+				cb.icon = Content.icon(item)
+				cb.expand_icon = true
+				cb.add_theme_constant_override("icon_max_width", 22)
+				cb.focus_mode = Control.FOCUS_NONE
+				cb.button_pressed = Game.overflow_sell.has(item)
+				cb.tooltip_text = "When %s storage is full, sell the excess instead of stopping this line." % Content.item_name(item)
+				cb.toggled.connect(func(on):
+					if on:
+						Game.overflow_sell[item] = true
+					else:
+						Game.overflow_sell.erase(item)
+				)
+				oh.add_child(cb)
+			add_child(oh)
 		if b.get("burner", false):
 			section("Fuel")
 			var fh := UI.hbox()

@@ -241,6 +241,8 @@ func toggle(key: String) -> void:
 func close_panel() -> void:
 	host.visible = false
 	current = ""
+	if view:
+		view.selected_uid = -1
 	for k in nav_buttons:
 		nav_buttons[k].add_theme_color_override("font_color", UI.TEXT)
 
